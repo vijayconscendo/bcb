@@ -35,20 +35,29 @@
         </nav>
   
         <!-- Profile and Sign Out buttons -->
-        <div class="user-controls">
-          <!-- <button class="profile-btn">
-            <img class="img-fluid btn-icon" src="assets/images/icons/profile-icon.png" alt="signin-icon"/>
-            <span>PROFILE..</span>
-          </button> -->
+        <div class="user-controls" *ngIf="!isDashboard">
           <button class="sign-out-btn" [routerLink]="['/dashboard']">
             <img class="img-fluid btn-icon" src="assets/images/icons/lock-icon.png" alt="signin-icon"/>
             <span>SIGN IN / REGISTER</span>
           </button>
         </div>
+
+        <div class="user-controls" *ngIf="isDashboard">
+            <button class="profile-btn">
+              <img class="img-fluid btn-icon" src="assets/images/icons/profile-icon.png" alt="signin-icon"/>
+              <span>PROFILE..</span>
+            </button>
+            <button class="sign-out-btn" [routerLink]="['/']">
+              <img class="img-fluid btn-icon" src="assets/images/icons/lock-icon.png" alt="signin-icon"/>
+              <span>SIGN OUT</span>
+            </button>
+          </div>
   
         <!-- Mobile Menu Toggle -->
         <div class="mobile-menu-toggle" (click)="toggleMobileMenu()">
-          <span [class.active]="isMobileMenuOpen">☰</span>
+          <span [class.active]="isMobileMenuOpen">
+            <img class="img-fluid" src="assets/images/icons/mobile-menu-icon.png" alt="menu-icon"/>
+          </span>
         </div>
       </div>
     </div>
@@ -196,10 +205,10 @@
           </ul>
         </li>
         <li class="mobile-nav-profile">
-          <a href="#">PROFILE...</a>
+          <a href="#"><img class="img-fluid" src="assets/images/icons/lock-icon.png" alt="signin-icon"/> <span>PROFILE...</span></a>
         </li>
         <li class="mobile-nav-signout">
-          <a href="#"><img class="img-fluid" src="assets/images/icons/lock-icon.png" alt="signin-icon"/> SIGN IN / REGISTER</a>
+          <a href="#"><img class="img-fluid" src="assets/images/icons/lock-icon.png" alt="signin-icon"/> <span>SIGN IN / REGISTER</span></a>
         </li>
       </ul>
     </div>

@@ -22,32 +22,32 @@ export class FeaturedSolutionsCarouselComponent {
     },
     // Add more items as needed
     {
-      img: 'assets/images/icons/secure-icon.png',
+      img: 'assets/images/icons/health-monitor-icon.png',
       alt: 'security',
       title: 'Financial Health Monitor',
       description: 'Keep your business’s finances stable with our financial management tools',
-      background: 'assets/images/media/ftd-secure.png'
+      background: 'assets/images/media/health-monitor.png'
     },
     {
-      img: 'assets/images/icons/secure-icon.png',
+      img: 'assets/images/icons/insights-icon.png',
       alt: 'security',
       title: 'Industry Insights',
       description: 'Keep your business’s finances stable with our financial management tools',
-      background: 'assets/images/media/ftd-secure.png'
+      background: 'assets/images/media/industry-insights.png'
     },
     {
-      img: 'assets/images/icons/secure-icon.png',
+      img: 'assets/images/icons/self-service.png',
       alt: 'security',
       title: 'Self-Service Tools',
       description: 'Keep your business’s finances stable with our financial management tools',
-      background: 'assets/images/media/ftd-secure.png'
+      background: 'assets/images/media/self-service-tools.png'
     },
     {
-      img: 'assets/images/icons/secure-icon.png',
+      img: 'assets/images/icons/chat-support-icon.png',
       alt: 'security',
-      title: 'Self-Service Tools',
+      title: 'Get 24/7 support',
       description: 'Keep your business’s finances stable with our financial management tools',
-      background: 'assets/images/media/ftd-secure.png'
+      background: 'assets/images/media/support-card.png'
     }
   ];
 

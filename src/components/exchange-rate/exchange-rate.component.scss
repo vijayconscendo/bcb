@@ -50,7 +50,7 @@
 .ngs-floating-label-wrapper {
     position: relative;
     margin: 1rem 0;
-    
+    z-index: 1;
     ng-select {
       width: 100%;
     }
@@ -73,20 +73,20 @@
       top: 0;
       font-size: 0.75rem;
       color: #222E37;
-      z-index: 1054;
+      z-index: 1;
     }
     ng-select.ng-select-focused ~ .floating-label {
       top: 0;
       font-size: 0.75rem;
       color: #222E37; 
-      z-index: 1054;
+      z-index: 1;
   
     }
   }
 
 
   .currency-input-wrapper{
-    margin: 2rem 0 1rem;        position: relative;
+    margin: 2rem 0 1rem;position: relative;
     .floating-label {
       position: absolute;
       left: 12px;

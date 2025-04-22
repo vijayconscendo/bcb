@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +9,14 @@ import { RouterModule } from '@angular/router';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  
+
+  // isDashboard to show hide items in header after login temp
+  isDashboard = false;
+  constructor(private router: Router) {}
+  // isDashboard End
+
+
   isBusinessSolutionsOpen = false;
   isSelfServiceToolsOpen = false;
   isSupportContactOpen = false;
@@ -21,6 +29,12 @@ export class HeaderComponent {
     if (typeof window !== 'undefined') {
       this.windowWidth = window.innerWidth;
     }
+
+
+    // isDashboard
+    this.router.events.subscribe(() => {
+      this.isDashboard = this.router.url.includes('/dashboard');
+    });
   }
 
   @HostListener('window:resize', ['$event'])

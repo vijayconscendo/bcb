@@ -1,7 +1,7 @@
 <div class="welcome-user-banner">
     <h2 class="welcome-text"><strong>Hi James,</strong> what would you like to do today?</h2>
-    <div class="container-fluid px-0 position-relative rounded-2 overflow-hidden">
-        <img src="assets/images/icons/close-icon-rounded.png" alt="welcome user image" class="img-fluid close-icon" />
+    <div class="container-fluid px-0 position-relative rounded-2 overflow-hidden" *ngIf="isVisibleUserBanner">
+        <img (click)="hideisVisibleUserBanner()" src="assets/images/icons/close-icon-rounded.png" alt="welcome user image" class="img-fluid close-icon" />
         <div class="row g-0">
             <div class="col-auto colLeft">
                 <img src="assets/images/media/join-the-club.png" alt="welcome user image" class="img-fluid" />

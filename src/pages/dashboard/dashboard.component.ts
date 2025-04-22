@@ -4,10 +4,11 @@ import { MySolutioncardsComponent } from "../../components/my-solutioncards/my-s
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { HistoryStatementsComponent } from '../../components/history-statements/history-statements.component';
 import { ExchangeRateComponent } from '../../components/exchange-rate/exchange-rate.component';
+import { DigitalhubPushSliderComponent } from '../../components/digitalhub-push-slider/digitalhub-push-slider.component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, WelcomeUserBannerComponent, MySolutioncardsComponent, HistoryStatementsComponent, ExchangeRateComponent],
+  imports: [CommonModule, WelcomeUserBannerComponent, MySolutioncardsComponent, HistoryStatementsComponent, ExchangeRateComponent, DigitalhubPushSliderComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
@@ -21,10 +22,7 @@ export class DashboardComponent {
 
     // Open Digital Hub
   // This is a simple toggle for the Digital Hub
-  isOpen = false;
-  toggleHub() {
-    this.isOpen = !this.isOpen;
-  }
+
   // End Digital Hub
 
 }
