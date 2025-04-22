@@ -1,0 +1,12 @@
+<div class="products-grid custom-container">
+  <div class="sec-title-wrap">
+      <h2 class="sec-title">Our most popular solutions</h2>
+      <p class="sec-description">Discover the solutions our business customers use the most</p>
+  </div>
+  <app-featured-product></app-featured-product>
+  <div class="row">
+    <div class="col-md-4 col-sm-6 mb-4" *ngFor="let product of products">
+      <app-product-card [product]="product"></app-product-card>
+    </div>
+  </div>
+</div>

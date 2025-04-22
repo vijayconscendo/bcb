@@ -1,0 +1,32 @@
+<div class="product-card">
+    <div class="card">
+      <div class="card-header">
+        <!-- <span class="badge" [ngClass]="{
+          'badge-primary': product.type === 'bank',
+          'badge-success': product.type === 'borrow',
+          'badge-info': product.type === 'save_invest'
+        }">
+          {{ product.type === 'bank' ? 'Bank' : 
+             product.type === 'borrow' ? 'Borrow' : 'Save & Invest' }}
+        </span> -->
+        <div class="card-img">
+          <img [src]="product.imageUrl" [alt]="product.title" class="img-fluid">
+        </div>
+      </div>
+
+      <div class="card-body">
+        <div>
+          <span class="badgeText">
+            {{ product.type === 'bank' ? 'Bank' : 
+               product.type === 'borrow' ? 'Borrow' : 'Save & Invest' }}
+          </span>
+          <h5 class="cardtitle">{{ product.title }}</h5>
+          <p class="cardtext">{{ product.description }}</p>
+        </div>
+        <div class="card-actions">
+          <button class="primaryBtnOutline">LEARN MORE</button>
+          <button class="primaryBtn">APPLY NOW</button>
+        </div>
+      </div>
+    </div>
+  </div>
