@@ -1,0 +1,120 @@
+<div class="exchange-rate-sec">
+  <h2 class="sec-heading-md">Exchange Rate</h2>
+  <div class="custom-container exchange-rate-container">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="row align-items-center">
+            <div class="col">
+              <div
+                class="ngs-floating-label-wrapper"
+                [class.focused]="selectedCountry || isFocused"
+              >
+                <label class="floating-label">Select a currency</label>
+                <ng-select
+                  [items]="countryList"
+                  bindLabel="name"
+                  [(ngModel)]="selectedCountry"
+                  placeholder=""
+                  [searchable]="false"
+                  (focus)="isFocused = true"
+                  (blur)="isFocused = false"
+                  [appendTo]="'body'"
+                  class="custom-ngs"
+                >
+                  <ng-template ng-label-tmp let-item="item">
+                    <img
+                      [src]="'https://flagcdn.com/24x18/' + item.code + '.png'"
+                      width="20"
+                      class="me-2"
+                    />
+                    {{ item.name }}
+                  </ng-template>
+
+                  <ng-template ng-option-tmp let-item="item">
+                    <img
+                      [src]="'https://flagcdn.com/24x18/' + item.code + '.png'"
+                      width="20"
+                      class="me-2"
+                    />
+                    {{ item.name }}
+                  </ng-template>
+                </ng-select>
+              </div>
+
+              <div class="currency-input-wrapper">
+                <span class="floating-label">Amount</span>
+                <div class="input-container">
+                    <span class="currency-type">R</span>
+                    <input type="number" value="" placeholder="0.00">
+                </div>
+              </div>
+
+            </div>
+            <div class="col-auto d-flex align-items-center h-100">
+              <img
+                src="assets/images/icons/exchange-rate-icon.png"
+                class="img-fluid"
+                alt="exchange-rate-icon"
+              />
+            </div>
+            <div class="col">
+              <div
+                class="ngs-floating-label-wrapper"
+                [class.focused]="selectedCountry || isFocused"
+              >
+                <label class="floating-label">Select a currency</label>
+                <ng-select
+                  [items]="countryList"
+                  bindLabel="name"
+                  [(ngModel)]="selectedCountry"
+                  placeholder=""
+                  [searchable]="false"
+                  (focus)="isFocused = true"
+                  (blur)="isFocused = false"
+                  [appendTo]="'body'"
+                  class="custom-ngs"
+                >
+                  <ng-template ng-label-tmp let-item="item">
+                    <img
+                      [src]="'https://flagcdn.com/24x18/' + item.code + '.png'"
+                      width="20"
+                      class="me-2"
+                    />
+                    {{ item.name }}
+                  </ng-template>
+
+                  <ng-template ng-option-tmp let-item="item">
+                    <img
+                      [src]="'https://flagcdn.com/24x18/' + item.code + '.png'"
+                      width="20"
+                      class="me-2"
+                    />
+                    {{ item.name }}
+                  </ng-template>
+                </ng-select>
+              </div>
+              <div class="currency-input-wrapper">
+                <span class="floating-label">Amount</span>
+                <div class="input-container">
+                    <span class="currency-type">U$</span>
+                    <input type="number" value="" placeholder="0.00">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-lg-4">
+          <div class="exchange-status">
+            <p class="time-and-date">14:10:56 UTCF riday, April 11, 2025</p>
+            <p class="address-line">
+              <span>19.01 South African Rand</span>
+              1 United States Dollar
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

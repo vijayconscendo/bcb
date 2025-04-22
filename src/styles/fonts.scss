@@ -1,0 +1,42 @@
+/* 
+  Font Family: Benton Sans Pro
+  Font Weight: Regular 400, Medium 500, Bold 700
+  Font Style: Normal
+*/
+
+@font-face {
+  font-family: 'BSP-Regular';
+  src: url(../assets/fonts/BentonSansPro-Regular.eot);
+  src: url(../assets/fonts/BentonSansPro-Regular.eot?#iefix) format('embedded-opentype'),
+       url(../assets/fonts/BentonSansPro-Regular.ttf) format('truetype'),
+       url(../assets/fonts/BentonSansPro-Regular.woff2) format('woff2'),
+       url(../assets/fonts/BentonSansPro-Regular.woff) format('woff'),
+       url(../assets/fonts/BentonSansPro-Regular.otf) format('otf'),
+       url(../assets/fonts/BentonSansPro-Regular.svg#BSP-Regular) format('svg');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'BSP-Medium';
+  src: url(../assets/fonts/BentonSansPro-Medium.eot);
+  src: url(../assets/fonts/BentonSansPro-Medium.eot?#iefix) format('embedded-opentype'),
+       url(../assets/fonts/BentonSansPro-Medium.ttf) format('truetype'),
+       url(../assets/fonts/BentonSansPro-Medium.woff2) format('woff2'),
+       url(../assets/fonts/BentonSansPro-Medium.woff) format('woff'),
+       url(../assets/fonts/BentonSansPro-Medium.otf) format('otf'),
+       url(../assets/fonts/BentonSansPro-Medium.svg#BSP-Medium) format('svg');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'BSP-Bold';
+  src: url(../assets/fonts/BentonSansPro-Bold.eot);
+  src: url(../assets/fonts/BentonSansPro-Bold.eot?#iefix) format('embedded-opentype'),
+       url(../assets/fonts/BentonSansPro-Bold.ttf) format('truetype'),
+       url(../assets/fonts/BentonSansPro-Bold.woff) format('woff'),
+       url(../assets/fonts/BentonSansPro-Bold.woff2) format('woff2'),
+       url(../assets/fonts/BentonSansPro-Bold.otf) format('otf'),
+       url(../assets/fonts/BentonSansPro-Bold.svg#BSP-Bold) format('svg');
+  font-weight: 700;
+}
+

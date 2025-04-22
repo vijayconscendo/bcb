@@ -1,0 +1,50 @@
+<div *ngIf="isBrowser">
+  <app-landing-banner></app-landing-banner>
+</div>
+<div *ngIf="isBrowser">
+  <app-featured-solutions-carousel></app-featured-solutions-carousel>
+</div>
+<div class="custom-container">
+    <div class="my-img-split">
+        <app-content-image-split
+        title="Your business is our top priority"
+        imageUrl="assets/images/cards/proirity-card-img.png"
+        imageAlt="Our service illustration"
+        buttonText="EXPLORE solutions"
+        [reverseLayout]="false"
+      >
+        <p>
+          The BCB Platform gives you access to our comprehensive banking, borrowing
+          and investment solutions.
+        </p>
+        <p>
+          Get tailor-made banking solutions, use our financial health monitor and
+          never worry about the status of your business's finances. No two
+          businesses are the same, that's why we tailor your experience.
+        </p>
+      </app-content-image-split>
+    </div>
+    <div class="my-img-split">
+        <app-content-image-split
+        title="We're giving you your time back"
+        imageUrl="assets/images/cards/insight-card.png"
+        imageAlt="Our service illustration"
+        buttonText="VIEW INSIGHTS"
+        [reverseLayout]="true"
+      >
+        <p>
+            From start-ups to businesses looking to scale up, our solutions ensure you don't waste time on mundane tasks. You have direct access to everything you need to ensure your business's success.
+        </p>
+        <p>You can easily track your income and expenses, get expert industry knowledge and access all of your Standard Bank solutions in one place. </p>
+      </app-content-image-split>
+    </div>
+</div>
+<app-explore-banner></app-explore-banner>
+<div class="custom-container" *ngIf="isBrowser">
+  <app-tab-carousel></app-tab-carousel>
+</div>
+<app-get-started></app-get-started>
+<app-download-app></app-download-app>
+<app-support-contact></app-support-contact>
+<app-switch-bank></app-switch-bank>
+<app-faq></app-faq>

@@ -1,0 +1,79 @@
+// Custom Carousel Controls
+// .custom-controls{
+//     width: 100%;display: flex; align-items: center; justify-content: center; margin-top: 2.5rem;
+//   }
+
+.bnr-carousel{
+  position:relative;
+  width: 100%;
+}
+.bnr-content{
+  padding: 185px 0 140px;
+}
+.bnr-inner{
+  width: 100%; max-width: 546px;
+  .bnr-title{
+    font-family: "BSP-Regular";font-size: 3rem; line-height: 1.3; color: var(--text-color);margin-bottom: 0.5rem;
+  }
+  .bnr-desc{
+    font-family: "BSP-Regular"; font-size: 1.125rem; line-height: 1.3; color: #222E37;margin-bottom: 1.5rem; max-width: 420px;
+  }
+  .bnr-btn{
+    padding: 1rem 2.875rem;
+  }
+}
+
+  .banner-one, .banner-two, .banner-three{
+    background-image: url("../../assets/images/banners/landing-banner-one.png");
+    background-repeat: no-repeat; background-size: cover; background-position: center;
+  }
+  
+  .custom-controls{
+    width: 100%;position: absolute; bottom: 104px; left: 0;z-index: 9;
+  }
+  .custom-navigation {
+    display: flex; align-items: center;gap: 15px; margin-top: 30px;
+  }
+  .custom-pagination {
+    display: flex; align-items: center; gap: 5px;
+
+    span{
+      display: inline-block; width: 30px;height: 3px;
+      background-color: #5C6C80;border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+  }
+  
+  .custom-prev,
+  .custom-next {
+    background: none;border: none;cursor: pointer;
+  }
+  
+  
+  @media screen and (max-width:680px) {
+    .custom-prev, .custom-next { display: none;}
+  }
+  // Custom Carousel Controls End
+
+
+  .slide-pagination {
+    display: flex;
+    gap: 8px;
+    margin-top: 1rem;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .slide-pagination span {
+    width: 30px;
+    height: 3px;
+    background-color: #5C6C80;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .slide-pagination span.active {
+    background-color: #0066ff;
+    width: 45px;
+  }

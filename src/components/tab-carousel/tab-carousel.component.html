@@ -1,0 +1,42 @@
+<div class="tab-carousel-sec">
+    <h2 class="heading-title">Gain valuable knowledge</h2>
+    <ul class="tabs-ul">
+        <li class="activeTab">
+            <button type="button">Starting a new business</button>
+        </li>
+        <li>
+            <button type="button">Managing your business</button>
+        </li>
+        <li>
+            <button type="button">Growing your business</button>
+        </li>
+    </ul>
+    <div class="tab-carousel-swiper">
+        <swiper-container
+        #tabCarouselSwiper
+        init="false"
+        class="featured-solutions-swiper"
+      >
+        <swiper-slide *ngFor="let slide of tabSlides">
+          <div class="featured-card">
+            <div class="card-image">
+              <img [src]="slide.img" alt="" class="img-fluid" />
+            </div>
+            <div class="card-info">
+              <div class="card-content">
+                <h4>{{ slide.title }}</h4>
+                <p>{{ slide.description }}</p>
+              </div>
+              <a [href]="slide.link" class="readmore-btn">read more</a>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+        <div class="custom-control">
+            <div class="custom-navigation">
+                <div class="tabslide-pagination"></div>
+            </div>
+        </div>
+        <a href="#" class="primaryBtn view-all">view all</a>
+    </div>
+</div>

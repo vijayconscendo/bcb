@@ -1,0 +1,24 @@
+
+.download-app-content{
+    max-width: 570px;
+    h2{
+        font-family: "BSP-Regular", sans-serif; font-size: 3rem; line-height: 1.3; margin-bottom: 1rem; color: var(--color-white); 
+    }
+    p{
+        font-family: "BSP-Regular", sans-serif; font-size: 1rem; line-height: 1.3; margin-bottom: 1.5rem; color: var(--color-white); max-width: 430px;
+    }
+}
+.download-app{
+    background-image: url("../../assets/images/background/download-bg.svg");
+    background-repeat: no-repeat; background-size: cover; background-position: center;
+}
+.colLeft{
+    display: flex; align-items: center; justify-content: flex-end;
+}
+.colRight{
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+
+.app-dowmload-btn{
+    display: flex; flex-direction: column; gap: 0.5rem;
+}

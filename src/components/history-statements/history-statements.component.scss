@@ -1,0 +1,111 @@
+.history-statements-sec{
+    margin: 80px 0;
+}
+
+.sec-heading-md{
+    font-family: "BSP-Regular", sans-serif;
+    font-size: 1.75rem;
+    line-height: 1.3;
+    color: #00164E;
+    margin-bottom: 1.25rem;
+}
+.table-container{
+    border: 1px solid #CED3D9; border-radius: 0.5rem; padding: 1rem; background-color: #FFFFFF; margin-bottom: 1.5rem;
+}
+.custom-table{
+    width: 100%; 
+    .table-header-ul, .table-body-ul{
+        width: 100%;
+        display: flex; list-style-type: none; padding: 0; margin: 0; gap: 0.5rem;
+        li{
+            padding: 0.657rem 1rem;
+            &:first-child{
+                // min-width: 120px;
+                width: 20%;
+            }
+            &:nth-child(2){
+                // min-width: 410px;
+                width: 50%;
+            }
+            &:last-child{
+                // min-width: 202px; 
+                text-align: right; margin-left: auto;
+                width: 30%;
+            }
+        }
+    }
+    .table-header-ul{
+        li{
+            span{
+                font-family: "BSP-Medium";
+                font-size: 0.75rem;
+                line-height: 18px;
+                color: #091C35;
+                display: inline-block;
+                padding: 5px 0;
+            }
+        }
+    }
+    .table-body-ul {
+        padding: 8px 0;border-bottom: 0.41px solid #E3E6EA;
+        li{
+            span{
+                font-family: "BSP-Regular";
+                font-size: 0.875rem;
+                line-height: 1.5;
+                color: #02070D;
+            }
+            &:last-child{
+                text-align: right;
+            }
+        }
+    }
+}
+
+.view-all-btn{
+    padding: 1rem 0.75rem; display: inline-flex; align-items: center; gap: 6px;
+    font-family: "BSP-Bold"; font-size: 0.875rem; line-height: normal; color: #0062E1; text-align: center;
+    border: none; background: transparent; text-transform: uppercase;
+}
+
+.danger-text{
+    color: #DC0A0A !important;
+    font-family: "BSP-Medium" !important;
+}
+.success-text{
+    color: #008533 !important;
+    font-family: "BSP-Medium" !important;
+}
+
+
+// Statement Table
+.statement-container{
+    border: 1px solid #CED3D9; border-radius: 0.5rem; padding: 1rem; background-color: #FFFFFF; margin-bottom: 1.5rem;
+}
+.statement-ul{
+    list-style-type: none; padding: 0; margin: 6px 0 0;
+    li{
+        display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem;
+        padding: 10px 0; border-bottom: 1px solid #E3E6EA;
+        .statement-date{
+            display: flex; align-items: center; gap: 0.5rem;
+            span{
+                font-family: "BSP-Regular";
+                font-size: 0.75rem;
+                line-height: 1.3;
+                color: #1A314D;
+            }
+        }
+        .statement-title{
+            font-family: "BSP-Regular";
+            font-size: 0.875rem;
+            line-height: 1.5;
+            color: #1A314D;
+            margin: 0.5rem 0 0;
+        }
+        .download-btn{
+            border: none; background-color: transparent;
+        }
+    }
+}
+

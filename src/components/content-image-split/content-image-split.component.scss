@@ -1,0 +1,52 @@
+@use '../../styles/custom-breakpoints' as bp;
+
+  .component-space-y{
+    margin-top: 104px; margin-bottom: 104px;
+  }
+  .reverse {
+    flex-direction: row-reverse;
+  }
+
+  .colLeft{
+    display: flex; align-items: center; padding: 1.5rem 2.5rem;
+    // @include bp.respond-below('sm') {
+    //   padding: 40px;
+    // }
+    // @include bp.respond-below('mobile-lg') {
+    //   padding: 0 0 30px;
+    // }
+  }
+  .text-content{
+    h2{
+        font-family: "BSP-Regular", sans-serif; font-size: 3rem; line-height: 1.3; margin-bottom: 1.875rem; color: var(--text-color); max-width: 420px;
+        @include bp.respond-below('sm') {
+          font-size: 2.375rem;
+        }
+        @include bp.respond-below('mobile-xxs') {
+          font-size: 1.75rem;
+        }
+    }
+    ::ng-deep > p{
+        font-family: "BSP-Regular", sans-serif; font-size: 1.125rem; line-height: 1.3; margin-bottom: 2rem; color: var(--text-color);
+    }
+    .primaryBtn{
+        min-width: 280px;
+    }
+  }
+
+  .colRight{
+    .img-container{
+      width: 100%; height: 100%; border-radius: 10px; overflow: hidden;
+    }
+}
+  
+   @media (max-width: 768px) {
+     .reverse {
+      flex-direction: column;
+    }
+  }
+  @media (max-width: 991.98px) {
+    .mobile-center{
+      justify-content: center !important;
+    }
+   }

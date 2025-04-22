@@ -1,0 +1,206 @@
+<header class="header">
+    <div class="custom-container">
+      <div class="header-content">
+        <!-- Logo -->
+        <a href="/" class="logo">
+          <img src="assets/standard-bank-Brand.png" alt="Standard Bank Brand" class="img-fluid">
+          <img src="assets/standard-bank-name.png" alt="Standard Bank" class="img-fluid">
+        </a>
+  
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav">
+          <ul class="navlinks">
+            <li class="navitem" 
+                (mouseenter)="toggleMenu('business', true)" 
+                (mouseleave)="toggleMenu('business', false)">
+              <a href="#" class="navlink">Business Solutions <span class="arrow">
+                <img src="assets/images/icons/chevron-down-white.png" alt="arrow-down" class="img-fluid" />
+              </span></a>
+            </li>
+            <li class="navitem" 
+                (mouseenter)="toggleMenu('selfService', true)" 
+                (mouseleave)="toggleMenu('selfService', false)">
+              <a href="#" class="navlink">Self-Service Tools <span class="arrow">
+                <img src="assets/images/icons/chevron-down-white.png" alt="arrow-down" class="img-fluid" />
+              </span></a>
+            </li>
+            <li class="navitem" 
+                (mouseenter)="toggleMenu('support', true)" 
+                (mouseleave)="toggleMenu('support', false)">
+              <a href="#" class="navlink">Support & Contact <span class="arrow">
+                <img src="assets/images/icons/chevron-down-white.png" alt="arrow-down" class="img-fluid" />
+              </span></a>
+            </li>
+          </ul>
+        </nav>
+  
+        <!-- Profile and Sign Out buttons -->
+        <div class="user-controls">
+          <!-- <button class="profile-btn">
+            <img class="img-fluid btn-icon" src="assets/images/icons/profile-icon.png" alt="signin-icon"/>
+            <span>PROFILE..</span>
+          </button> -->
+          <button class="sign-out-btn" [routerLink]="['/dashboard']">
+            <img class="img-fluid btn-icon" src="assets/images/icons/lock-icon.png" alt="signin-icon"/>
+            <span>SIGN IN / REGISTER</span>
+          </button>
+        </div>
+  
+        <!-- Mobile Menu Toggle -->
+        <div class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+          <span [class.active]="isMobileMenuOpen">☰</span>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Full-Width Mega Menus -->
+    <div class="mega-menu" [class.active]="isBusinessSolutionsOpen" (mouseenter)="toggleMenu('business', true)" (mouseleave)="toggleMenu('business', false)">
+      <div class="custom-container">
+        <div class="mega-menu-content">
+            <div class="mega-menu-column">
+                <h3>Business Banking</h3>
+                <ul>
+                  <li><a href="#">Business Accounts</a></li>
+                  <li><a href="#">Corporate Banking</a></li>
+                  <li><a href="#">Business Loans</a></li>
+                  <li><a href="#">Trade Solutions</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu-column">
+                <h3>Investment</h3>
+                <ul>
+                  <li><a href="#">Wealth Management</a></li>
+                  <li><a href="#">Investment Banking</a></li>
+                  <li><a href="#">Asset Management</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu-column">
+                <h3>Insurance</h3>
+                <ul>
+                  <li><a href="#">Business Insurance</a></li>
+                  <li><a href="#">Risk Management</a></li>
+                  <li><a href="#">Employee Benefits</a></li>
+                </ul>
+              </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="mega-menu" [class.active]="isSelfServiceToolsOpen" (mouseenter)="toggleMenu('selfService', true)" (mouseleave)="toggleMenu('selfService', false)">
+        <div class="custom-container">
+        <div class="mega-menu-content">
+        <div class="mega-menu-column">
+          <h3>Online Banking</h3>
+          <ul>
+            <li><a href="#">Internet Banking</a></li>
+            <li><a href="#">Mobile Banking</a></li>
+            <li><a href="#">USSD Banking</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-column">
+          <h3>Tools</h3>
+          <ul>
+            <li><a href="#">Calculators</a></li>
+            <li><a href="#">Rate Checker</a></li>
+            <li><a href="#">Document Center</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-column">
+          <h3>Self Help</h3>
+          <ul>
+            <li><a href="#">How-to Guides</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Video Tutorials</a></li>
+          </ul>
+        </div>
+      </div>
+      </div>
+    </div>
+  
+    <div class="mega-menu" [class.active]="isSupportContactOpen" (mouseenter)="toggleMenu('support', true)" (mouseleave)="toggleMenu('support', false)">
+        <div class="custom-container">
+        <div class="mega-menu-content">
+        <div class="mega-menu-column">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><a href="#">Call Center</a></li>
+            <li><a href="#">Email Us</a></li>
+            <li><a href="#">Live Chat</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-column">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Technical Support</a></li>
+            <li><a href="#">Report Fraud</a></li>
+            <li><a href="#">Lost Cards</a></li>
+          </ul>
+        </div>
+        <div class="mega-menu-column">
+          <h3>Find Us</h3>
+          <ul>
+            <li><a href="#">Branch Locator</a></li>
+            <li><a href="#">ATM Locator</a></li>
+            <li><a href="#">International Offices</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </div>
+  
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" [class.active]="isMobileMenuOpen">
+      <ul class="mobile-nav-links">
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-header" (click)="toggleMobileSubmenu('business')">
+            Business Solutions
+            <span class="mobile-arrow" [ngClass]="{'rotated': mobileActiveMenu === 'business'}">
+                <img class="img-fluid" src="assets/images/icons/arrow-down-icon.png" alt="arrow"/>
+            </span>
+          </div>
+          <ul class="mobile-submenu" [class.active]="mobileActiveMenu === 'business'">
+            <li><a href="#">Business Accounts</a></li>
+            <li><a href="#">Corporate Banking</a></li>
+            <li><a href="#">Business Loans</a></li>
+            <li><a href="#">Trade Solutions</a></li>
+            <li><a href="#">Wealth Management</a></li>
+            <li><a href="#">Business Insurance</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-header" (click)="toggleMobileSubmenu('selfService')">
+            Self-Service Tools
+            <span class="mobile-arrow" [ngClass]="{'rotated': mobileActiveMenu === 'selfService'}">
+                <img class="img-fluid" src="assets/images/icons/arrow-down-icon.png" alt="arrow"/>
+            </span>
+          </div>
+          <ul class="mobile-submenu" [class.active]="mobileActiveMenu === 'selfService'">
+            <li><a href="#">Internet Banking</a></li>
+            <li><a href="#">Mobile Banking</a></li>
+            <li><a href="#">Calculators</a></li>
+            <li><a href="#">How-to Guides</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav-item">
+          <div class="mobile-nav-header" (click)="toggleMobileSubmenu('support')">
+            Support & Contact
+            <span class="mobile-arrow" [ngClass]="{'rotated': mobileActiveMenu === 'support'}">
+                <img class="img-fluid" src="assets/images/icons/arrow-down-icon.png" alt="arrow"/>
+            </span>
+          </div>
+          <ul class="mobile-submenu" [class.active]="mobileActiveMenu === 'support'">
+            <li><a href="#">Call Center</a></li>
+            <li><a href="#">Email Us</a></li>
+            <li><a href="#">Technical Support</a></li>
+            <li><a href="#">Branch Locator</a></li>
+          </ul>
+        </li>
+        <li class="mobile-nav-profile">
+          <a href="#">PROFILE...</a>
+        </li>
+        <li class="mobile-nav-signout">
+          <a href="#"><img class="img-fluid" src="assets/images/icons/lock-icon.png" alt="signin-icon"/> SIGN IN / REGISTER</a>
+        </li>
+      </ul>
+    </div>
+</header>

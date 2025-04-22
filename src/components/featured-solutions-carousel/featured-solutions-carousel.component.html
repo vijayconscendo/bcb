@@ -1,0 +1,38 @@
+<div class="featured-solutions-sec">
+  <div class="custom-container">
+    <h2 class="sec-title">Featured solutions - Let us handle your business</h2>
+    <div>
+        <swiper-container
+        #featuredswiperContainer
+        init="false"
+        class="featured-solutions-swiper"
+      >
+        <swiper-slide *ngFor="let slide of featuredSlides">
+          <div class="slide"
+            [style.backgroundImage]="'url(' + slide.background + ')'">
+            <img [src]="slide.img" [alt]="slide.alt" class="img-fluid" />
+            <h3>{{ slide.title }}</h3>
+            <p>{{ slide.description }}</p>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+      <div class="custom-control">
+        <div class="custom-navigation">
+          <button class="ftd-prev">
+            <img
+              src="assets/images/icons/carousel-arrow-lt.png"
+              alt="left arrow"
+            />
+          </button>
+          <div class="ftd-pagination"></div>
+          <button class="ftd-next">
+            <img
+              src="assets/images/icons/carousel-arrow-rt.png"
+              alt="left arrow"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+// Import required Sass modules
+@use "sass:map";
+
+// Define your breakpoints
+$breakpoints: (
+    'xxl': 1800px,
+    'xl': 1700px,
+    'lg': 1440px,
+    'md': 1366px,
+    'sm': 1200px,
+    'xs': 1024px,
+    'tablet': 991px,
+    'mobile-lg': 768px,
+    'mobile-md': 640px,
+    'mobile-sm': 576px,
+    'mobile-xs': 480px,
+    'mobile-xxs': 360px,
+    'mobile-tiny':320px,
+) !default;
+
+// Mixin for min-width
+@mixin respond-above($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map.get($breakpoints, $breakpoint);
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+// Mixin for max-width
+@mixin respond-below($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map.get($breakpoints, $breakpoint);
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+// Mixin for between two breakpoints
+@mixin respond-between($lower, $upper) {
+  @if map.has-key($breakpoints, $lower) and map.has-key($breakpoints, $upper) {
+    $lower-breakpoint: map.get($breakpoints, $lower);
+    $upper-breakpoint: map.get($breakpoints, $upper);
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+      @content;
+    }
+  } @else {
+    @if not map.has-key($breakpoints, $lower) {
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
+    }
+    @if not map.has-key($breakpoints, $upper) {
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
+    }
+  }
+}
