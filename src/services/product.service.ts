@@ -20,21 +20,21 @@ export class ProductService {
       type: 'bank',
       title: 'MyMoBiz Account',
       description: 'Access affordable banking with a business account that offers you dedicated support',
-      imageUrl: 'assets/images/cards/product-card.png'
+      imageUrl: 'assets/images/cards/mymomiz-ac.png'
     },
     {
       id: 3,
       type: 'borrow',
       title: 'BizFlex Loan',
       description: 'Grow your business with this loan or access working capital, while repaying the loan as you earn revenue',
-      imageUrl: 'assets/images/cards/product-card.png'
+      imageUrl: 'assets/images/cards/bizflex-loan.png'
     },
     {
       id: 4,
       type: 'save_invest',
       title: 'Business Fixed Deposit Account',
       description: 'Get the certainty of a fixed rate for a fixed period on lump-sum deposits.',
-      imageUrl: 'assets/images/cards/product-card.png'
+      imageUrl: 'assets/images/cards/deposit-ac.png'
     }
   ];
 

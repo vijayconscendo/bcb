@@ -1,3 +1,9 @@
 <app-page-banner-one></app-page-banner-one>
 <app-unauth-solution-grid></app-unauth-solution-grid>
+<div *ngIf="isBrowser">
+    <app-explore-solutions-carousel></app-explore-solutions-carousel>
+</div>
 <app-ucount-banner></app-ucount-banner>
+<div *ngIf="isBrowser">
+    <app-money-transfer-carousel></app-money-transfer-carousel>
+</div>

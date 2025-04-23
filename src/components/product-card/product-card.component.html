@@ -1,6 +1,6 @@
 <div class="product-card">
-    <div class="card">
-      <div class="card-header">
+    <div class="pcard">
+      <div class="pcard-header">
         <!-- <span class="badge" [ngClass]="{
           'badge-primary': product.type === 'bank',
           'badge-success': product.type === 'borrow',
@@ -9,12 +9,12 @@
           {{ product.type === 'bank' ? 'Bank' : 
              product.type === 'borrow' ? 'Borrow' : 'Save & Invest' }}
         </span> -->
-        <div class="card-img">
+        <div class="pcard-img">
           <img [src]="product.imageUrl" [alt]="product.title" class="img-fluid">
         </div>
       </div>
 
-      <div class="card-body">
+      <div class="pcard-body">
         <div>
           <span class="badgeText">
             {{ product.type === 'bank' ? 'Bank' : 
