@@ -1,42 +1,49 @@
 <div class="tab-carousel-sec">
-    <h2 class="heading-title">Gain valuable knowledge</h2>
-    <ul class="tabs-ul">
-        <li class="activeTab">
-            <button type="button">Starting a new business</button>
-        </li>
-        <li>
-            <button type="button">Managing your business</button>
-        </li>
-        <li>
-            <button type="button">Growing your business</button>
-        </li>
-    </ul>
-    <div class="tab-carousel-swiper">
-        <swiper-container
-        #tabCarouselSwiper
-        init="false"
-        class="featured-solutions-swiper"
-      >
-        <swiper-slide *ngFor="let slide of tabSlides">
-          <div class="featured-card">
-            <div class="card-image">
-              <img [src]="slide.img" alt="" class="img-fluid" />
-            </div>
-            <div class="card-info">
-              <div class="card-content">
-                <h4>{{ slide.title }}</h4>
-                <p>{{ slide.description }}</p>
-              </div>
-              <a [href]="slide.link" class="readmore-btn">read more</a>
-            </div>
+  <h2 class="heading-title">Gain valuable knowledge</h2>
+  <ul class="tabs-ul">
+    <li
+      *ngFor="let tab of tabs"
+      [ngClass]="{ activeTab: currentTab === tab.id }"
+      (click)="toggleTab(tab.id)"
+    >
+      <button type="button">{{ tab.label }}</button>
+    </li>
+  </ul>
+  <div class="tab-carousel-swiper">
+    <swiper-container
+      *ngIf="swiperVisible"
+      #tabCarouselSwiper
+      init="false"
+      class="featured-solutions-swiper"
+    >
+      <swiper-slide *ngFor="let slide of currentSlides">
+        <div class="featured-card">
+          <div class="card-image">
+            <img [src]="slide.img" alt="" class="img-fluid" />
           </div>
-        </swiper-slide>
-      </swiper-container>
-        <div class="custom-control">
-            <div class="custom-navigation">
-                <div class="tabslide-pagination"></div>
+          <div class="card-info">
+            <div class="card-content">
+              <h4>{{ slide.title }}</h4>
+              <p>{{ slide.description }}</p>
             </div>
+            <a [href]="slide.link" class="readmore-btn">read more</a>
+          </div>
         </div>
-        <a href="#" class="primaryBtn view-all">view all</a>
+      </swiper-slide>
+    </swiper-container>
+    <div *ngIf="!swiperVisible" class="card-skeleton-container">
+      <div *ngFor="let item of [].constructor(currentSlides.length || 4)" class="card-skeleton">
+        <div class="skeleton-image"></div>
+        <div class="skeleton-title"></div>
+        <div class="skeleton-text"></div>
+        <div class="skeleton-link"></div>
+      </div>
     </div>
+    <div class="custom-control">
+      <div class="custom-navigation">
+        <div class="tabslide-pagination"></div>
+      </div>
+    </div>
+    <a href="#" class="primaryBtn view-all">view all</a>
+  </div>
 </div>
