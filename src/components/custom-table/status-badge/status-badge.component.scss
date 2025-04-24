@@ -1,0 +1,51 @@
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+  }
+  
+  .new {
+    background-color: #ebf8ff;
+    color: #3182ce;
+  }
+  
+  .new .status-dot {
+    background-color: #3182ce;
+  }
+  
+  .in-progress {
+    background-color: #fefcbf;
+    color: #d69e2e;
+  }
+  
+  .in-progress .status-dot {
+    background-color: #d69e2e;
+  }
+  
+  .assigned {
+    background-color: #e6fffa;
+    color: #319795;
+  }
+  
+  .assigned .status-dot {
+    background-color: #319795;
+  }
+  
+  .resolved {
+    background-color: #f0fff4;
+    color: #38a169;
+  }
+  
+  .resolved .status-dot {
+    background-color: #38a169;
+  }

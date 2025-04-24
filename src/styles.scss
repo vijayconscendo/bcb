@@ -118,7 +118,7 @@ body{
   height: 50px !important;
   min-height: 50px !important;
   border-radius: 0.75rem;
-  border-color: #E3E6EA;
+  border-color: #5C6C80;
 }
 .ng-select.custom-ngs .ng-select-container .ng-value-container .ng-input{
   position: absolute;
@@ -173,7 +173,13 @@ body{
   border-bottom-left-radius: 0.75rem;
   overflow: hidden;
   box-shadow: 0px 2px 3px 0px #00000029;
+}
+.ng-select.custom-ngs .ng-arrow-wrapper .ng-arrow{
+  border-color: #0062E1 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+}
 
+.ng-select.custom-ngs.ng-select-opened > .ng-select-container .ng-arrow {
+  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #0062E1;
 }
 
 /* Placeholder text */

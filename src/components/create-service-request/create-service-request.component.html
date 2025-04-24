@@ -1,0 +1,47 @@
+<div class="create-req-sec">
+    <div class="action-info">
+        <a href="#" class="backBtn"><img src="assets/images/icons/back-left-icon.png" alt="back"/><span> Back</span></a>
+        <h2 class="section-title">Service Request</h2>
+    </div>
+    <div class="create-req-container">
+        <div class="create-req-form">
+            <h4 class="form-title">Create a new request</h4>
+            <p class="form-desc">Share your thoughts by sending us a compliment, complaint or query, and easily monitor the status of your request. Your feedback enables us to ensure you have a seamless experience at all times. </p>
+        
+            <div class="formgroup">
+                <span class="labeltext">Category</span>
+                <ng-select
+                    [items]="categories"
+                    bindLabel="name"
+                    bindValue="id"
+                    [(ngModel)]="selectedCategory"
+                    placeholder="Select a category"
+                    class="custom-ngs"
+                >
+                </ng-select>
+            </div>
+            <div class="formgroup">
+                <span class="labeltext">Sub-Category</span>
+                <ng-select
+                    [items]="categories"
+                    bindLabel="name"
+                    bindValue="id"
+                    [(ngModel)]="selectedCategory"
+                    placeholder="Select a category"
+                    class="custom-ngs"
+                >
+                </ng-select>
+            </div>
+            <div class="formgroup">
+                <span class="labeltext">Sub-Category</span>
+                <input type="text" class="custom-input" placeholder="Add Subject" />
+            </div>
+            <div class="formgroup">
+                <span class="labeltext">Sub-Category</span>
+                <textarea class="custom-textarea" placeholder="Enter a detailed description of your request" rows="10"></textarea>
+                <span class="wordCount">0/120</span>
+            </div>
+            <a href="#" class="primaryBtn req-btn" [routerLink]="['/service-request/failed']">SEND REQUEST</a>
+        </div>
+    </div>
+</div>

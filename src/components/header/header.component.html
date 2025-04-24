@@ -31,6 +31,13 @@
                 <img src="assets/images/icons/chevron-down-white.png" alt="arrow-down" class="img-fluid" />
               </span></a>
             </li>
+            <li class="navitem" 
+                (mouseenter)="toggleMenu('profile', true)" 
+                (mouseleave)="toggleMenu('profile', false)">
+              <a href="#" class="navlink">My Profile <span class="arrow">
+                <img src="assets/images/icons/chevron-down-white.png" alt="arrow-down" class="img-fluid" />
+              </span></a>
+            </li>
           </ul>
         </nav>
   
@@ -156,6 +163,20 @@
       </div>
     </div>
     </div>
+    <div class="mega-menu" [class.active]="isMyProfileOpen" (mouseenter)="toggleMenu('profile', true)" (mouseleave)="toggleMenu('profile', false)">
+      <div class="custom-container">
+      <div class="mega-menu-content">
+      <div class="mega-menu-column">
+        <h3>My Profile</h3>
+        <ul>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Email</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
   
     <!-- Mobile Navigation -->
     <div class="mobile-nav" [class.active]="isMobileMenuOpen">

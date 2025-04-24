@@ -20,6 +20,7 @@ export class HeaderComponent {
   isBusinessSolutionsOpen = false;
   isSelfServiceToolsOpen = false;
   isSupportContactOpen = false;
+  isMyProfileOpen = false;
   isMobileMenuOpen = false;
   mobileActiveMenu: string | null = null;
   windowWidth = 0; // Initialize without window reference
@@ -61,6 +62,7 @@ export class HeaderComponent {
     this.isBusinessSolutionsOpen = false;
     this.isSelfServiceToolsOpen = false;
     this.isSupportContactOpen = false;
+    this.isMyProfileOpen = false;
   }
 
   // For desktop hover functionality
@@ -77,6 +79,9 @@ export class HeaderComponent {
         break;
       case 'support':
         this.isSupportContactOpen = isOpen;
+        break;
+      case 'profile':
+        this.isMyProfileOpen = isOpen;
         break;
     }
   }

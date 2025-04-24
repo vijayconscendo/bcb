@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { serviceRequestRoutes } from '../pages/service-request/service-request.routes';
 
 export const routes: Routes = [
     {
@@ -13,6 +14,12 @@ export const routes: Routes = [
         path: 'our-solutions',
         loadComponent: () => import('../pages/unauth-our-solutions/unauth-our-solutions.component').then(m => m.UnauthOurSolutionsComponent)
     },
+    // Replace the simple service-request with the child routes
+    ...serviceRequestRoutes,
+    // {
+    //     path: 'service-request',
+    //     loadComponent: () => import('../pages/service-request/service-request.component').then(m => m.ServiceRequestComponent)
+    // },
     {
         path: '**',
         redirectTo: '',
