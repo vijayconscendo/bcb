@@ -1,3 +1,4 @@
+@use "../../styles/custom-breakpoints" as bp;
 .tab-carousel-sec {
   padding: 104px 0;
 }
@@ -40,14 +41,21 @@
   }
 }
 
+.swiperslide{
+  display: flex;
+  height: auto !important;
+}
 // card styles
 .featured-card {
   overflow: hidden;
   border-radius: 0.75rem;
   margin-bottom: 1.125rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   .card-image {
     width: 100%;
-    height: 100%;
+    height: auto;
     border-radius: 0.75rem;
     overflow: hidden;
     object-fit: fill;
@@ -59,6 +67,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: 1;
     padding: 1.25rem 0 1.5625rem;
   }
   .card-content {
@@ -68,6 +77,9 @@
       line-height: 1.3;
       color: #222e37;
       margin-bottom: 1.25rem;
+      @include bp.respond-below('mobile-xs') {
+        font-size: 1rem; margin-bottom: 1.125rem;
+      }
     }
     p {
       font-family: "BSP-Regular", sans-serif;
@@ -75,6 +87,15 @@
       line-height: 1.3;
       color: #222e37;
       margin-bottom: 1.25rem;
+      display: -webkit-box;
+      line-clamp: 2;
+      -webkit-line-clamp: 2; 
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @include bp.respond-below('mobile-xs') {
+        font-size: 0.875rem; margin-bottom: 1.125rem;
+      }
     }
   }
   .readmore-btn {
@@ -166,9 +187,7 @@
 
 .card-skeleton {
   background: #fff;
-  padding: 16px;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   animation: pulse 1.5s infinite ease-in-out;
 }
 

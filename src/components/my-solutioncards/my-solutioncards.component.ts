@@ -32,7 +32,10 @@ export class MySolutioncardsComponent {
       },
       breakpoints: {
         640: {
-          slidesPerView: 3.2,
+          slidesPerView: 2,
+        },
+        991: {
+          slidesPerView: 3,
         },
       },
     };

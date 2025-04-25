@@ -66,7 +66,7 @@ export class TabCarouselComponent implements AfterViewInit, OnDestroy {
       description:
         'Focus on these traits for a successful start-up business positioned for gr',
       link: '#',
-    },
+    }
   ];
 
   // Slides for "Managing your business" tab
@@ -166,7 +166,7 @@ export class TabCarouselComponent implements AfterViewInit, OnDestroy {
 
     // Reassign config
     const swiperParams: SwiperOptions = {
-      slidesPerView: 1.2,
+      slidesPerView: 1.12,
       spaceBetween: 16,
       initialSlide: 0,
       centeredSlides: false,

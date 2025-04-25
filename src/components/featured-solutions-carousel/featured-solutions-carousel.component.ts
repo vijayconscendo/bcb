@@ -58,10 +58,10 @@ export class FeaturedSolutionsCarouselComponent {
     // Swiper parameters
     const swiperParams: SwiperOptions = {
       slidesPerView: 1,
-      spaceBetween: 24,
+      spaceBetween: 15,
       initialSlide: 0,
       // loop: true,
-      centeredSlides: true,
+      centeredSlides: false,
 
       // Connect to external elements
       pagination: {
@@ -78,6 +78,7 @@ export class FeaturedSolutionsCarouselComponent {
         },
         1024: {
           slidesPerView: 4,
+          spaceBetween: 24,
           centeredSlides: false,
         },
       },

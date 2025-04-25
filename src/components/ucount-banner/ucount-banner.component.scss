@@ -1,6 +1,11 @@
+@use '../../styles/custom-breakpoints' as bp;
+
 .ucount-banner{
     border: 1px solid #CED3D9; margin: 70px 0;
     padding: 40px 60px; border-radius: 20px; text-align: center;
+    @include bp.respond-below('sm') {
+        padding: 40px 1rem;
+    }
     .content{
         width: 100%; text-align: center; max-width: 668px; margin: 0 auto;
     }
@@ -14,9 +19,17 @@
         letter-spacing: 0px;
         color: #1A314D;
     }
+    h5{
+        @include bp.respond-below('mobile-lg') {
+            font-size: 1.125rem;
+        }
+    }
     p{
         font-family: "BSP-Regular";
         margin: 40px 0;
+        @include bp.respond-below('mobile-lg') {
+            font-size: 1rem; margin: 2rem 0;
+        }
     }
     button{
         width: 100%; max-width: 300px;

@@ -10,6 +10,9 @@
   color: var(--color-white);
   margin-bottom: 1.5rem;
 }
+.swiperslide{
+  display: flex; height: auto !important;
+}
 
 // Swiper styles starts
 .featured-solutions-swiper {
@@ -21,6 +24,7 @@
     background-repeat: no-repeat;
     border-radius: 0.5rem;
     overflow: hidden;
+    height: 100%;
     h3 {
       font-family: "BSP-Medium";
       font-size: 1.25rem;
@@ -92,8 +96,8 @@
 }
 
 @media screen and (max-width: 680px) {
-  .custom-prev,
-  .custom-next {
+  .ftd-prev,
+  .ftd-next {
     display: none;
   }
 }

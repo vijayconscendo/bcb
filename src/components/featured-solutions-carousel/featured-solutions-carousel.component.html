@@ -7,7 +7,7 @@
         init="false"
         class="featured-solutions-swiper"
       >
-        <swiper-slide *ngFor="let slide of featuredSlides">
+        <swiper-slide class="swiperslide" *ngFor="let slide of featuredSlides">
           <div class="slide"
             [style.backgroundImage]="'url(' + slide.background + ')'">
             <img [src]="slide.img" [alt]="slide.alt" class="img-fluid" />

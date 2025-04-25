@@ -243,3 +243,29 @@
 //       font-size: 14px;
 //     }
 //   }
+
+@media (max-width: 1200px) {
+  .desktop-nav{
+    .navlinks{ margin-left: 1.875rem;
+      .navitem{
+        margin-right: 1.875rem;
+      }
+      .navlink{
+        font-size: 0.875rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .desktop-nav{
+    .navlinks{ margin-left: 1.25rem;
+      .navitem{
+        margin-right: 1.25rem;
+      }
+      .navlink{
+        font-size: 0.875rem;
+      }
+    }
+  }
+}

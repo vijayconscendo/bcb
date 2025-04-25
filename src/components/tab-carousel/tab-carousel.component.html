@@ -9,6 +9,7 @@
       <button type="button">{{ tab.label }}</button>
     </li>
   </ul>
+  
   <div class="tab-carousel-swiper">
     <swiper-container
       *ngIf="swiperVisible"
@@ -16,7 +17,7 @@
       init="false"
       class="featured-solutions-swiper"
     >
-      <swiper-slide *ngFor="let slide of currentSlides">
+      <swiper-slide class="swiperslide" *ngFor="let slide of currentSlides">
         <div class="featured-card">
           <div class="card-image">
             <img [src]="slide.img" alt="" class="img-fluid" />

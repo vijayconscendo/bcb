@@ -29,6 +29,12 @@ export class ExploreSolutionsCarouselComponent {
         },
         breakpoints: {
           640: {
+            slidesPerView: 2,
+          },
+          991: {
+            slidesPerView: 3,
+          },
+          1024: {
             slidesPerView: 4,
           },
         },

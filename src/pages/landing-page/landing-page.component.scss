@@ -1,3 +1,15 @@
 .my-img-split{
     margin: 80px 0;
 }
+
+@media screen and (max-width:991px) {
+    .my-img-split{
+        margin: 60px 0;
+    }
+}
+
+@media screen and (max-width:680px) {
+    .my-img-split{
+        margin: 40px 0;
+    }
+}
