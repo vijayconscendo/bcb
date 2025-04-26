@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { AuthenticationService } from '../../services/authentication.service';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +15,7 @@ export class HeaderComponent {
 
   // isDashboard to show hide items in header after login temp
   isDashboard = false;
-  constructor(private router: Router) {}
+  constructor(private router: Router,private authService: AuthenticationService) {}
   // isDashboard End
 
 
@@ -84,5 +86,30 @@ export class HeaderComponent {
         this.isMyProfileOpen = isOpen;
         break;
     }
+  }
+  onSignIn(): void {
+    console.log('signin')
+    const credentials = {
+      username: 'businessownership',
+      password: 'Test@123'
+    };
+
+    this.authService.login(credentials)
+      .pipe(
+        finalize(() => {
+        })
+      )
+      .subscribe({
+        next: () => {
+          this.router.navigate(['/dashboard']);
+        },
+        error: error => {
+        }
+      });
+  }
+  onSignOut(): void {
+    console.log('signout')
+    this.authService.logout();
+    this.router.navigate(['/']);
   }
 }

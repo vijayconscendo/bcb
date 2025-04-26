@@ -43,7 +43,7 @@
   
         <!-- Profile and Sign Out buttons -->
         <div class="user-controls" *ngIf="!isDashboard">
-          <button class="sign-out-btn" [routerLink]="['/dashboard']">
+          <button class="sign-out-btn" (click)="onSignIn()"> <!--[routerLink]="['/dashboard']" -->
             <img class="img-fluid btn-icon" src="assets/images/icons/lock-icon.png" alt="signin-icon"/>
             <span>SIGN IN / REGISTER</span>
           </button>
@@ -54,7 +54,7 @@
               <img class="img-fluid btn-icon" src="assets/images/icons/profile-icon.png" alt="signin-icon"/>
               <span>PROFILE..</span>
             </button>
-            <button class="sign-out-btn" [routerLink]="['/']">
+            <button class="sign-out-btn" (click)="onSignOut()">
               <img class="img-fluid btn-icon" src="assets/images/icons/lock-icon.png" alt="signin-icon"/>
               <span>SIGN OUT</span>
             </button>
