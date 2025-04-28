@@ -1,3 +1,5 @@
+@use '../../styles/custom-breakpoints' as bp;
+
 .list-table-container{
     border: 1px solid #CED3D9; border-radius: 0.75rem; overflow: hidden;
     padding: 10px 0;margin-bottom: 2.5rem;background-color: #FFFFFF;
@@ -28,6 +30,9 @@
     border: 1px solid #0051FF; height: 48px; padding: 0.5rem 1.375rem; background-color: #FFFFFF;
     font-family: "BSP-Bold"; font-size: 1rem; line-height: normal; color: #0051FF; text-transform: uppercase;
     display: inline-flex; gap: 8px; align-items: center; justify-content: center;border-radius: 0.5rem;
+    @include bp.respond-below('tablet') {
+        font-size: .875rem;
+    }
 }
 
 // Tabs
@@ -41,8 +46,11 @@
         font-size: 1rem;
         line-height: 1.3;
         text-align: center;
-        color: #222E37;
+        color: var(--text-medium-gray);
         border: none; background-color: transparent;
+        @include bp.respond-below('mobile-xs') {
+            font-size: 0.875rem; padding: 1rem 1.5rem;
+        }
         &.activetab{
             color: #0051FF !important;
             &::after{
@@ -83,6 +91,17 @@
                        text-align: end;
                     }
                     border-bottom: 1px solid #CED3D9;
+                    &:nth-child(2){
+                        min-width: 208px;
+                        span.text{
+                            display: -webkit-box;
+                            line-clamp: 2;
+                            -webkit-line-clamp: 2; 
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
                 }
                 &:last-child{
                     td{
@@ -96,7 +115,7 @@
 
 .status-chip{
     display: inline-flex; align-items: center; justify-content: center;
-    padding: 4px 8px;
+    padding: 4px 8px; white-space: nowrap;
     border: 1px solid transparent;
     border-radius: 1rem;
     background-color: #ffffff;
@@ -106,10 +125,10 @@
         font-family: "BSP-Regular";
         font-size: 0.75rem;
         line-height: normal;
-        color: #222E37;
+        color: var(--text-medium-gray);
        }
     .dot{
-        width: 7px; height: 7px; background-color: #222E37; display: inline-block; border-radius: 50%;margin-right: 4px;
+        width: 7px; height: 7px; background-color: var(--text-medium-gray); display: inline-block; border-radius: 50%;margin-right: 4px;
     }
     &.in-progress{
         border-color: #FFE9C7 !important; background-color: rgba(255, 138, 0, 0.03) !important;

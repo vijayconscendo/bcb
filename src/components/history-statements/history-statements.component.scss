@@ -10,10 +10,14 @@
     margin-bottom: 1.25rem;
 }
 .table-container{
+    width: 100%;
     border: 1px solid #CED3D9; border-radius: 0.5rem; padding: 1rem; background-color: #FFFFFF; margin-bottom: 1.5rem;
 }
+.table-overflow{
+    width: 100%;overflow-x: auto;
+}
 .custom-table{
-    width: 100%; 
+    width: 100%; min-width: 500px;
     .table-header-ul, .table-body-ul{
         width: 100%;
         display: flex; list-style-type: none; padding: 0; margin: 0; gap: 0.5rem;

@@ -69,7 +69,7 @@ export class HeaderComponent {
 
   // For desktop hover functionality
   toggleMenu(menu: string, isOpen: boolean) {
-    if (this.windowWidth < 768) return; // Don't use hover on mobile
+    if (this.windowWidth < 1200) return; // Don't use hover on mobile
     
     this.closeAllMenus();
     switch (menu) {

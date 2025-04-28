@@ -1,0 +1,23 @@
+.countryswitch{
+    .countryflag-btn{
+        border: none; background-color: transparent; line-height: normal;
+        span{
+            font-family: "BSP-Regular";font-size: 0.75rem; line-height: normal; color: #FFFFFF; display: inline-block;margin: 0 5px;
+        }
+    }
+    .dropdown-menu{
+        li{
+           padding: 0.5rem 0.25rem;
+           img{
+            width: 20px;
+           }
+           span{
+            display: inline-block; margin-left: 6px;
+            font-family: "BSP-Regular"; font-size: 0.875rem; color: var(--text-color); line-height: normal;
+           }
+           &:not(:last-child){
+            border-bottom: 1px solid #e8e8e8;
+           }
+        }
+    }
+}

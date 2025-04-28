@@ -1,10 +1,20 @@
 <header class="header">
     <div class="custom-container">
       <div class="header-content">
+
+        <!-- Mobile Menu Toggle -->
+        <div class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+          <span [class.active]="isMobileMenuOpen">
+            <img class="img-fluid" 
+              [src]="isMobileMenuOpen ? 'assets/images/icons/close-icon-white.png' : 'assets/images/icons/mobile-menu-icon.png'" 
+              [alt]="isMobileMenuOpen ? 'close' : 'menu-icon'"/>
+          </span>
+        </div>
+
         <!-- Logo -->
         <a href="/" class="logo">
-          <img src="assets/standard-bank-Brand.png" alt="Standard Bank Brand" class="img-fluid">
-          <img src="assets/standard-bank-name.png" alt="Standard Bank" class="img-fluid">
+          <img src="assets/standard-bank-Brand.png" alt="Standard Bank Brand" class="img-fluid brand-icon">
+          <img src="assets/standard-bank-name.png" alt="Standard Bank" class="img-fluid brand-name">
         </a>
   
         <!-- Desktop Navigation -->
@@ -59,13 +69,40 @@
               <span>SIGN OUT</span>
             </button>
           </div>
-  
-        <!-- Mobile Menu Toggle -->
-        <div class="mobile-menu-toggle" (click)="toggleMobileMenu()">
-          <span [class.active]="isMobileMenuOpen">
-            <img class="img-fluid" src="assets/images/icons/mobile-menu-icon.png" alt="menu-icon"/>
-          </span>
+
+        <!-- User Profile -->
+        <div class="user-profile">
+          <div class="user-dropdown">
+            <button class="dropdowntoggle" type="button" id="userProfile" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="assets/images/icons/people-profile.png" alt="profile" class="img-fluid">
+              <img src="assets/images/icons/chevron-down-white.png" alt="chevron-down-white" class="img-fluid down-arrow">
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="userProfile">
+              <li *ngIf="isDashboard">
+                <a class="dropdown-item" href="#">
+                  <span>VijayaBhaskar Reddy</span>
+                </a>
+              </li>
+              <li class="li-divider">
+                <hr />
+              </li>
+              <li *ngIf="isDashboard">
+                <a class="signin" href="#" (click)="onSignOut()">
+                  <img class="img-fluid btn-icon" src="assets/images/icons/lock-icon.png" alt="signin-icon"/>
+                  <span>SIGN OUT</span>
+                </a>
+            </li>
+              <li *ngIf="!isDashboard">
+                  <a class="signin" href="#" (click)="onSignIn()">
+                    <img class="img-fluid btn-icon" src="assets/images/icons/lock-icon.png" alt="signin-icon"/>
+                    <span>SIGN IN / REGISTER</span>
+                  </a>
+              </li>
+            </ul>
+          </div>
         </div>
+         <!-- User Profile End-->
+
       </div>
     </div>
   
@@ -224,12 +261,6 @@
             <li><a href="#">Technical Support</a></li>
             <li><a href="#">Branch Locator</a></li>
           </ul>
-        </li>
-        <li class="mobile-nav-profile">
-          <a href="#"><img class="img-fluid" src="assets/images/icons/lock-icon.png" alt="signin-icon"/> <span>PROFILE...</span></a>
-        </li>
-        <li class="mobile-nav-signout">
-          <a href="#"><img class="img-fluid" src="assets/images/icons/lock-icon.png" alt="signin-icon"/> <span>SIGN IN / REGISTER</span></a>
         </li>
       </ul>
     </div>

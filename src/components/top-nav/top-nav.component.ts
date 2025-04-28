@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { CountrySwitchComponent } from '../country-switch/country-switch.component';
 
 @Component({
   selector: 'app-top-nav',
-  imports: [],
+  imports: [CountrySwitchComponent],
   templateUrl: './top-nav.component.html',
   styleUrl: './top-nav.component.scss'
 })

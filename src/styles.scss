@@ -4,6 +4,8 @@
   --color-primary: #0062E1;
   --color-dark-blue: #00164E;
   --text-color: #1A314D;
+  --text-light-gray: #697786;
+  --text-medium-gray: #222E37;
   --color-white: #FFFFFF;
 }
 
@@ -20,10 +22,6 @@ body{
     width: 100%; max-width: 1328px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem;
 }
 
-
-// .heading-title{
-//     font-family: "BSP-Regular", sans-serif; font-size: 2.625rem; line-height: 1.3; color: var(--text-color);
-// }
 
 // Common Heading styles
 .sec-title-wrap {

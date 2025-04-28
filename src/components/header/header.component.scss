@@ -1,19 +1,62 @@
 /* app.component.scss */
 
 .header {
-  background-color: #00164e; color: #ffffff; position: relative; z-index: 1000;
+  background-color: #00164e; color: #ffffff; position: relative; z-index: 9;
 }
 .header-content {
   display: flex; justify-content: space-between; align-items: center; padding: 1rem 0;
 }
 .logo {
-  display: flex; align-items: center; gap: 6px;
+  display: flex; align-items: center; gap: 6px; flex: 0 0 auto;
+  @media (max-width: 1200px) {
+    .brand-name{display: none;}
+  }
+}
+
+.user-profile{
+  display: none; flex: 1;
+  justify-content: flex-end;
+  @media (max-width: 767px) {
+    display: flex !important;
+  }
+}
+
+.user-dropdown{
+  .dropdowntoggle{
+    border: none; background-color: transparent;
+    .down-arrow{
+      margin-left: 0.2rem;
+    }
+    &[aria-expanded="true"]{.down-arrow{transform: rotate(-180deg);}}
+  }
+  .dropdown-menu{
+    padding: 0;
+    li{
+      padding: 0.5rem;
+      a{
+        text-decoration: none;padding: 1rem; 
+        font-family: "BSP-Medium"; font-size: 0.875rem; line-height: normal; color: var(--text-color);
+      }
+    }
+    .signin{
+      display: flex; align-items: center; gap: 5px;
+      background-color: #0062e1;
+      border-radius: 0.25rem;
+      color: #FFFFFF !important;
+    }
+    .li-divider{
+      padding: 0; margin: 0; 
+      hr{
+        padding: inherit; margin: inherit;
+      }
+    }
+  }
 }
 
 /* Desktop Navigation */
 .desktop-nav {
-  flex-grow: 1;
-  @media (max-width: 767px) {
+  // flex-grow: 1;
+  @media (max-width: 1200px) {
     display: none;
   }
 }
@@ -101,9 +144,10 @@
 
 /* User Controls */
 .user-controls {
+  flex: 1;
   display: flex;
   align-items: center;
-
+  justify-content: flex-end;
   @media (max-width: 767px) {
     display: none;
   }
@@ -138,11 +182,12 @@
 
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {
+  flex: 1;
   display: none;
   font-size: 24px;
   cursor: pointer;
 
-  @media (max-width: 767px) {
+  @media (max-width: 1200px) {
     display: block;
   }
 }
@@ -151,11 +196,12 @@
 .mobile-nav {
   display: none;
   background-color: #ffffff;
+  padding: 0.5rem 0;
   &.active {
-    display: block;
+    display: block; box-shadow: 0 12px 12px #00000047
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1200px) {
     display: none !important;
   }
 }
@@ -171,12 +217,14 @@
 
 .mobile-nav-header {
   padding: 1rem;
-  color: var(--text-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  font-weight: 500;
+  color: var(--text-color);
+  font-family: "BSP-Regular";
+  font-size: 1rem;
+  line-height: normal;
 }
 
 .mobile-arrow {
@@ -244,7 +292,7 @@
 //     }
 //   }
 
-@media (max-width: 1200px) {
+@media (max-width: 1365.99px) {
   .desktop-nav{
     .navlinks{ margin-left: 1.875rem;
       .navitem{

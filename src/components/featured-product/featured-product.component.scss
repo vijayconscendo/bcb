@@ -63,7 +63,7 @@
         font-size: 1rem;
         line-height: 1.5;
         margin-bottom: 1.75rem;
-        color: #697786;
+        color: var(--text-light-gray);
         @include bp.respond-below('sm'){margin-bottom:1rem;}
       }
   

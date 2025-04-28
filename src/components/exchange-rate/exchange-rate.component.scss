@@ -25,8 +25,17 @@
 .exchange-status{
     height: 100%; display: flex; flex-direction: column; justify-content: space-between;
     padding: 0 2.5rem; position: relative;
+    @media screen and (max-width:768px) {
+      padding: 0 1.125rem;
+    }
+    @media screen and (max-width:991px) {
+      justify-content: center; gap: 1rem;
+    }
      &::before{
-        content: ""; display: block; height: 100%; width: 0.4px; background-color: #697786; left: 0.5rem; top: 0; position: absolute;
+        content: ""; display: block; height: 100%; width: 0.4px; background-color: var(--text-light-gray); left: 0.5rem; top: 0; position: absolute;
+        @media screen and (max-width:768px) {
+          left: 0;
+        }
      }
     .time-and-date{
         font-family: "BSP-Medium";
@@ -42,6 +51,12 @@
         margin: 0;
         span{
             font-size: 1.25rem; display: block;
+        }
+        @include bp.respond-below("mobile-md") {
+          font-size: 1.25rem;
+          span{
+            font-size: 1.125rem;
+          }
         }
     }
 }
@@ -74,13 +89,13 @@
     &.focused .floating-label {
       top: 0;
       font-size: 0.75rem;
-      color: #222E37;
+      color: var(--text-medium-gray);
       z-index: 1;
     }
     ng-select.ng-select-focused ~ .floating-label {
       top: 0;
       font-size: 0.75rem;
-      color: #222E37; 
+      color: var(--text-medium-gray); 
       z-index: 1;
   
     }
@@ -96,7 +111,7 @@
       transform: translateY(-50%);
       background: #FFFFFF;
       padding: 0 4px;
-      color: #222E37;
+      color: var(--text-medium-gray);
       font-size: 0.75rem;
       transition: 0.2s ease all;
       pointer-events: none;

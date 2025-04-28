@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 import { environment } from '../environments/environment';
+import { SafeStorageService } from './safe-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,9 @@ export class AuthenticationService {
     private code_challenge_method = environment?.auth?.code_challenge_method;
     private nonce = environment?.auth?.nonce;
     private state = environment?.auth?.state;
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,
+    private safeStorageService: SafeStorageService
+  ) {}
 
 
   /**
@@ -93,13 +96,13 @@ export class AuthenticationService {
           expiresIn: response.expires_in || response.expiresIn
         })),
         tap(response => {
-          localStorage.setItem('accessToken', response.accessToken);
+          this.safeStorageService.setItem('accessToken', response.accessToken);
           if (response.refreshToken) {
-            localStorage.setItem('refreshToken', response.refreshToken);
+            this.safeStorageService.setItem('refreshToken', response.refreshToken);
           }
           if (response.expiresIn) {
             const expiresAt = new Date().getTime() + response.expiresIn * 1000;
-            localStorage.setItem('expiresAt', expiresAt.toString());
+            this.safeStorageService.setItem('expiresAt', expiresAt.toString());
           }
         }),
         catchError(this.handleError)
@@ -141,8 +144,8 @@ export class AuthenticationService {
    * @returns boolean indicating if the user is authenticated
    */
  isLoggedIn(): boolean {
-    const token = localStorage.getItem('accessToken');
-    const expiresAt = localStorage.getItem('expiresAt');
+    const token = this.safeStorageService.getItem('accessToken');
+    const expiresAt = this.safeStorageService.getItem('expiresAt');
     
     if (!token) {
       return false;
@@ -161,16 +164,16 @@ export class AuthenticationService {
    * @returns The access token string or null
    */
   getToken(): string | null {
-    return localStorage.getItem('accessToken');
+    return this.safeStorageService.getItem('accessToken');
   }
   
   /**
    * Logs out the user by clearing stored tokens
    */
   logout(): void {
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('refreshToken');
-    localStorage.removeItem('expiresAt');
+    this.safeStorageService.removeItem('accessToken');
+    this.safeStorageService.removeItem('refreshToken');
+    this.safeStorageService.removeItem('expiresAt');
   }
   
   /**

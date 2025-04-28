@@ -28,3 +28,19 @@
         }
     }
 }
+
+@media only screen and (max-width:768px) {
+    .new-service-request{
+        .content{
+            .avatar-icon{
+                max-width: 60px;
+            }
+            h3{
+                font-size: 1.5rem;
+            }
+            p{
+                font-size: 0.875rem;
+            }
+        } 
+    } 
+}
