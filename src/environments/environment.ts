@@ -1,3 +1,17 @@
+export interface AuthConfig {
+  client_id: string;
+  redirect_uri: string;
+  grant_type: string;
+  code_verifier: string;
+  client_secret: string;
+  response_type: string;
+  scope: string;
+  code_challenge: string;
+  code_challenge_method: string;
+  nonce: string;
+  state: string;
+}
+
 export const environment = {
   production: false,
   auth: {
@@ -14,5 +28,5 @@ export const environment = {
     code_challenge_method: 'S256',
     nonce: 'ad8c7dea-7d3d-49dc-8f0a-5e0cec70c389',
     state: 'ad8c7dea-7d3d-49dc-8f0a-5e0cec70c389',
-  },
+  } as AuthConfig, // 👈 Type assertion here
 };
