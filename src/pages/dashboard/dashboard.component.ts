@@ -8,7 +8,7 @@ import { DigitalhubPushSliderComponent } from '../../components/digitalhub-push-
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, WelcomeUserBannerComponent, MySolutioncardsComponent, HistoryStatementsComponent, ExchangeRateComponent, DigitalhubPushSliderComponent],
+  imports: [CommonModule, WelcomeUserBannerComponent, MySolutioncardsComponent, HistoryStatementsComponent, ExchangeRateComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
@@ -20,9 +20,18 @@ export class DashboardComponent {
   }
 
 
-    // Open Digital Hub
-  // This is a simple toggle for the Digital Hub
+  isChatwidgetOpen = false; 
 
-  // End Digital Hub
+  toggleIsisChatwidget() {
+    this.isChatwidgetOpen = !this.isChatwidgetOpen;
+  }
+
+
+  isContactWidget = false;
+
+  toggleContactWidget() {
+    this.isContactWidget = !this.isContactWidget;
+  }
+
 
 }

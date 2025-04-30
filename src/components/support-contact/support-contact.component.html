@@ -22,11 +22,57 @@
                         <div class="help-card-content">
                         <h5>Stay informed</h5>
                         <p>Keep up to date with our latest solutions and more</p>
-                        <a href="#" class="primaryBtn" target="_blank" rel="button">Subscribe to newsletter</a>
+                        <a href="#" class="primaryBtn" target="_blank" rel="button" data-bs-toggle="modal" data-bs-target="#subscribenewsletter">Subscribe to newsletter</a>
                     </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+
+
+<!-- Subscribe News Letter Modal -->
+<div class="modal fade newsletter-modal" id="subscribenewsletter" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Stay informed</h5>
+          <button type="button" class="btnclose" data-bs-dismiss="modal">
+            <img class="img-fluid" src="assets/images/icons/close-icon-white.png" alt="chat"/>
+          </button>
+        </div>
+        <div class="modal-body" *ngIf="!isSubscribed">
+            <div class="dialog-content">
+                <h3 class="heading-title">Get updates on what matters to you</h3>
+                <p class="text">Become part of our community and access valuable insights and updates.</p>
+                <div class="mail-input">
+                    <input type="text" placeholder="Enter your email">
+                    <p>*This information may be transcribed, used, and stored by third parties in accordance with our <a href="#" target="_blank"> privacy policy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer"  *ngIf="!isSubscribed">
+          <button type="button" class="textBtn" data-bs-dismiss="modal">CANCEL</button>
+          <button type="button" class="textBtn" (click)="toggleIsSubscribed()">SUBMIT</button>
+        </div>
+
+
+        <!-- Subscribed Successfully -->
+        <div class="modal-body" *ngIf="isSubscribed">
+            <div class="dialog-content">
+                 <img class="img-fluid img-avatar" src="assets/images/icons/success-check.png" alt="success" />
+                <h3 class="heading-title mb-3">Your message was submitted successfully</h3>
+                <p class="text">Look out for updates in your inbox</p>
+            </div>
+        </div>
+        <div class="modal-footer justify-content-center"  *ngIf="isSubscribed">
+          <button type="button" class="textBtn" data-bs-dismiss="modal">DONE</button>
+        </div>
+        <!-- Subscribed Successfully End -->
+
+      </div>
     </div>
 </div>
