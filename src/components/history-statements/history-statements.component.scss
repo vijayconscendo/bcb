@@ -60,10 +60,14 @@
                 color: #02070D;
             }
             &:last-child{
-                text-align: right;
+                text-align: right; padding-right: 0;
             }
         }
     }
+}
+
+.action-more{
+    padding: 0;margin-left: 0.875rem;background-color: transparent; border: none;
 }
 
 .view-all-btn{
