@@ -53,7 +53,7 @@
   
         <!-- Profile and Sign Out buttons -->
         <div class="user-controls" *ngIf="!isDashboard">
-          <button class="sign-out-btn" [routerLink]="['/dashboard']"> <!-- (click)="onSignIn()"-->
+          <button class="sign-out-btn" (click)="onSignIn()"> <!--[routerLink]="['/dashboard']" -->
             <img class="img-fluid btn-icon" src="assets/images/icons/lock-icon.png" alt="signin-icon"/>
             <span>SIGN IN / REGISTER</span>
           </button>
