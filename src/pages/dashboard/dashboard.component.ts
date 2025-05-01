@@ -4,11 +4,12 @@ import { MySolutioncardsComponent } from "../../components/my-solutioncards/my-s
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { HistoryStatementsComponent } from '../../components/history-statements/history-statements.component';
 import { ExchangeRateComponent } from '../../components/exchange-rate/exchange-rate.component';
+import { HelpWidgetsComponent } from '../../components/help-widgets/help-widgets.component';
 import { DigitalhubPushSliderComponent } from '../../components/digitalhub-push-slider/digitalhub-push-slider.component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, WelcomeUserBannerComponent, MySolutioncardsComponent, HistoryStatementsComponent, ExchangeRateComponent],
+  imports: [CommonModule, WelcomeUserBannerComponent, MySolutioncardsComponent, HistoryStatementsComponent, ExchangeRateComponent, DigitalhubPushSliderComponent, HelpWidgetsComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
@@ -18,20 +19,5 @@ export class DashboardComponent {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
-
-
-  isChatwidgetOpen = false; 
-
-  toggleIsisChatwidget() {
-    this.isChatwidgetOpen = !this.isChatwidgetOpen;
-  }
-
-
-  isContactWidget = false;
-
-  toggleContactWidget() {
-    this.isContactWidget = !this.isContactWidget;
-  }
-
 
 }

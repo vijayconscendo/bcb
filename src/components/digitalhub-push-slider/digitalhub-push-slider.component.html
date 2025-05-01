@@ -1,29 +1,23 @@
-<!-- Digital Hub Mini SIdebar  Open  -->
-<!-- Backdrop -->
-<div class="digital-hub-wrapper-backdrop" *ngIf="isOpen" (click)="toggleHub()"></div>
+      <!-- Toggle button - visible even when sidebar is closed -->
+      <button 
+        class="sidebar-toggle" 
+        [class.open]="sidebarOpen"
+        (click)="toggleSidebar()">
+        <div class="digital-hub-toggle">
+          <img class="img-fluid" src="assets/images/icons/digitalhub-icon.png" alt="digitalhub-icon"/>
+          <div class="vertical-text">Digital Hub</div>
+        </div>
+      </button>
 
-<!-- Wrapper that slides in/out -->
-<div class="digital-hub-wrapper" [class.open]="isOpen">
-  <!-- Toggle Button -->
-  <div class="digital-hub-toggle" (click)="toggleHub()">
-    <img class="img-fluid" src="assets/images/icons/digitalhub-icon.png" alt="digitalhub-icon"/>
-    <div class="vertical-text">Digital Hub</div>
-  </div>
-
-  <!-- Slide-in Panel -->
-  <div class="digital-hub-panel">
-    <div class="panel-header">
-      <h2>My Digital Hub</h2>
-      <button class="close-btn" (click)="toggleHub()">✕</button>
-    </div>
-
-    <div class="panel-content">
-      <div class="item">
-        🌐 Trade Suite
-        <button class="delete-btn">🗑️</button>
+      <!-- Sidebar -->
+      <div class="sidebar" [class.open]="sidebarOpen">
+        <div class="sidebar-content">
+          <h2>Sidebar</h2>
+          <ul>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+          </ul>
+        </div>
       </div>
-      <button class="add-btn">ADD NEW</button>
-    </div>
-  </div>
-</div>
-  <!-- Digital Hub Mini SIdebar  Close -->

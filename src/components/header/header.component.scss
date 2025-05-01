@@ -173,6 +173,10 @@
 
 .profile-btn {
   margin-right: 1rem;
+  span{
+    display: inline-block; width: 56px; 
+    text-overflow: ellipsis; white-space: nowrap;overflow: hidden;
+  }
 }
 
 .sign-out-btn {

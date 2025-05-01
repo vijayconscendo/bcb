@@ -1,119 +1,64 @@
-.no-pointer-events {
-    pointer-events: none !important;
-  }
-  
-  //   Digital Hub Styles Started
-  // .digital-hub-wrapper-backdrop {
-  //     position: fixed;
-  //     top: 0;
-  //     left: 0;
-  //     width: 100vw;
-  //     height: 100vh;
-  //     background-color: rgba(0, 0, 0, 0.5);
-  //     z-index:1054; 
-  //     pointer-events: none !important;
-  //   }
-    
-  .digital-hub-wrapper {
-      position: fixed;
-      bottom: 55px;
-      right: 0;
-      height: 686px;
-      overflow-y: auto;
-      display: flex;
-      align-items: stretch;
-      transform: translateX(calc(100% - 56px)); // Keep toggle button peeking out
-      transition: transform 0.3s ease-in-out;
-      z-index: 998;
-      font-family: Arial, sans-serif;
-    
-      &.open {
-        transform: translateX(0);
-      }
-    
-      .digital-hub-toggle {
-        display: flex;flex-direction: column;align-items: center; gap: 1rem;
-        width: 56px;
-        height: max-content;
-        padding: 1.625rem 0.5rem;
-        background-color: #0033a0;
-        color: white;
-        border-top-left-radius: 8px;
-        border-bottom-left-radius: 8px;
-        cursor: pointer;
-        box-shadow: -1px 0 4px rgba(0, 0, 0, 0.2);
-          
-        .vertical-text {
-          writing-mode: vertical-rl;
-          transform: rotate(180deg);
-          font-weight: bold;
-          font-size: 14px;
-          text-align: center;
-        }
-      }
-    
-      .digital-hub-panel {
-        width: 320px;
-        height: 100%;
-        background-color: #fff;
-        box-shadow: -2px 0 6px rgba(0, 0, 0, 0.2);
-        display: flex;
-        flex-direction: column;
-    
-        .panel-header {
-          padding: 1rem;
-          border-bottom: 1px solid #ddd;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-    
-          h2 {
-            margin: 0;
-            font-size: 18px;
-          }
-    
-          .close-btn {
-            font-size: 1.2rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-          }
-        }
-    
-        .panel-content {
-          padding: 1rem;
-          flex: 1;
-          overflow-y: auto;
-    
-          .item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #f9f9f9;
-            padding: 0.5rem 1rem;
-            margin-bottom: 1rem;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-          }
-    
-          .add-btn {
-            background-color: #0033a0;
-            color: white;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-          }
-    
-          .delete-btn {
-            background: none;
-            border: none;
-            font-size: 1rem;
-            color: red;
-            cursor: pointer;
-          }
-        }
-      }
+.sidebar {
+  position: fixed;
+  top: 160px;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #f8f9fa;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 100;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar-content {
+  padding: 20px;
+}
+
+.sidebar-toggle {
+  position: fixed;
+  top: 160px;
+  right: 0;
+  z-index: 101;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .digital-hub-toggle {
+    display: flex;flex-direction: column;align-items: center; gap: 1rem;
+    width: 56px;
+    height: max-content;
+    padding: 1.625rem 0.5rem;
+    background-color: #0033a0;
+    color: #FFFFFF;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    cursor: pointer;
+    box-shadow: -1px 0 4px rgba(0, 0, 0, 0.2);
+      
+    .vertical-text {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-family: "BSP-Bold";
+      font-size: 1rem; line-height: normal; color: #FFFFFF;
+      text-align: center;
     }
-    
-  //   Digital Hub Styles Ended
+  }
+}
+
+.sidebar-toggle.open {
+  right: 250px;
+}
+
+.toggle-icon {
+  font-size: 24px;
+}

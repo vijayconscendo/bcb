@@ -8,8 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './digitalhub-push-slider.component.scss'
 })
 export class DigitalhubPushSliderComponent {
-  isOpen = false;
-  toggleHub() {
-    this.isOpen = !this.isOpen;
+  sidebarOpen = false;
+
+  toggleSidebar() {
+    this.sidebarOpen = !this.sidebarOpen;
   }
 }

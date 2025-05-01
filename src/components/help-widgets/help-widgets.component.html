@@ -1,0 +1,114 @@
+<!-- Widgets -->
+<div class="custom-widgets">
+    <!-- Inline Contact Widget -->
+    <div class="contact-widget-container">
+      <button type="button" class="widget-btn" (click)="toggleContactWidget()">
+        <img *ngIf="!isContactWidget" class="img-fluid" src="assets/images/icons/avatar-beneficiary.png" alt="Open chat" />
+        <img *ngIf="isContactWidget" class="img-fluid" src="assets/images/icons/chat-close-rounded.png" alt="Close chat" />
+      </button>
+  
+      <div class="widget-popup" *ngIf="isContactWidget">
+        <div class="widget-popup-header">
+          <h4 class="widget-title">Contact your banker</h4>
+          <button class="close-widget" (click)="toggleContactWidget()">
+            <img class="img-fluid" src="assets/images/icons/close-icon-white.png" alt="Close" />
+          </button>
+        </div>
+  
+        <div class="widget-content">
+          <div class="info">
+            <div class="user-avatar">
+              <img class="img-fluid" src="assets/images/icons/user-icon.png" alt="User profile" />
+            </div>
+            <div class="details">
+              <h5>Jane Khumalo</h5>
+              <span>Business Banker</span>
+            </div>
+          </div>
+  
+          <div class="address-lines">
+            <p>
+              <a href="#">
+                <span>jane.khumalo&#64;standardbank.co.za</span>
+                <img class="img-fluid" src="assets/images/icons/mail-icon.png" alt="Email" />
+              </a>
+            </p>
+            <p>
+              <a href="#">
+                <span>011 234 8765</span>
+                <img class="img-fluid" src="assets/images/icons/phone-iphone.png" alt="Phone" />
+              </a>
+            </p>
+            <p>
+              <a href="#">
+                <span>Standard Bank, Nicolway</span>
+                <img class="img-fluid" src="assets/images/icons/location-outline.png" alt="Location" />
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Chat Modal Trigger -->
+    <button type="button" class="widget-btn" data-bs-toggle="modal" data-bs-target="#isChatWidgetModal">
+      <img class="img-fluid" src="assets/images/icons/chat-widget-icon.png" alt="Chat widget" />
+    </button>
+  </div>
+  
+  <!-- Contact Modal -->
+  <div class="modal fade custom-contact-modal" id="isChatWidgetModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <!-- Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">Contact your banker</h5>
+          <button type="button" class="btnclose" data-bs-dismiss="modal">
+            <img class="img-fluid" src="assets/images/icons/close-icon-white.png" alt="Close" />
+          </button>
+        </div>
+  
+        <!-- Form Content -->
+        <div class="modal-body" *ngIf="!isChatwidgetOpen">
+          <div class="dialog-content">
+            <h3 class="heading-title">Get in touch</h3>
+            <p class="text-md mb-4">Let us know what you need and your relationship banker will contact you soon.</p>
+            <p class="text-md mb-4">
+              For compliments, queries, or complaints,<br />
+              please log a <a href="#" target="_blank">service request</a>.
+            </p>
+  
+            <div class="mail-input">
+              <label class="label-name"><sup>*</sup>Subject</label>
+              <input type="text" placeholder="Enter subject here..." />
+            </div>
+  
+            <div class="mail-input">
+              <label class="label-name"><sup>*</sup>Message</label>
+              <textarea placeholder="Enter your message here..."></textarea>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Form Actions -->
+        <div class="modal-footer" *ngIf="!isChatwidgetOpen">
+          <button type="button" class="textBtn" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="textBtn" (click)="toggleIsChatwidget()">Submit</button>
+        </div>
+  
+        <!-- Success Message -->
+        <div class="modal-body" *ngIf="isChatwidgetOpen">
+          <div class="dialog-content">
+            <img class="img-fluid img-avatar" src="assets/images/icons/success-check.png" alt="Success" />
+            <h3 class="heading-title mb-3">Your message was submitted successfully</h3>
+            <p class="text-md">Your relationship banker will be in touch with you soon.</p>
+          </div>
+        </div>
+  
+        <div class="modal-footer justify-content-center" *ngIf="isChatwidgetOpen">
+          <button type="button" class="textBtn" data-bs-dismiss="modal">Done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
