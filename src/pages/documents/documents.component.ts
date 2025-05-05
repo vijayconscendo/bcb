@@ -2,10 +2,11 @@ import { CommonModule, Location  } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter } from 'rxjs';
+import { HelpWidgetsComponent } from '../../components/help-widgets/help-widgets.component';
 
 @Component({
   selector: 'app-documents',
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, HelpWidgetsComponent],
   templateUrl: './documents.component.html',
   styleUrl: './documents.component.scss'
 })
