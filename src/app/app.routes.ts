@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { serviceRequestRoutes } from '../pages/service-request/service-request.routes';
 import { authGuard } from '../services/authguard';
+import { documentsRoutes } from '../pages/documents/documents.routes';
 
 export const routes: Routes = [
     {
@@ -18,9 +19,14 @@ export const routes: Routes = [
     },
     // Replace the simple service-request with the child routes
     ...serviceRequestRoutes,
+    ...documentsRoutes,
     // {
     //     path: 'service-request',
     //     loadComponent: () => import('../pages/service-request/service-request.component').then(m => m.ServiceRequestComponent)
+    // },
+    // {
+    //     path: 'documents',
+    //     loadComponent: () => import('../pages/documents/documents.component').then(m => m.DocumentsComponent)
     // },
     {
         path: '**',

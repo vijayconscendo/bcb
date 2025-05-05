@@ -1,0 +1,38 @@
+<div class="page-bg-color">
+    <div class="custom-container">
+        <nav class="breadCrumb">
+            <ul>
+                <li>
+                    <a (click)="goBack()" class="backBtn">
+                        <img class="img-fluid" src="assets/images/icons/back-left-icon.png" alt="back button">
+                        <span>Back</span>
+                    </a> 
+                </li>
+                <li>
+                    <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
+                </li>
+                <li>
+                    <a class="route-name" routerLink="/"><span>Home</span></a>
+                </li>
+                <li>
+                    <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
+                </li>
+                <li>
+                    <a class="route-name" routerLink="/documents" [ngClass]="{ 'activeLink': currentRoute === 'documents' }">
+                        <span>Documents</span>
+                    </a>
+                </li>
+                <li>
+                    <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
+                </li>
+                <li *ngIf="currentRoute === 'unstamped-statements'">
+                    <span class="route-name activeLink">Unstamped Statements</span>
+                </li>
+                <li *ngIf="currentRoute === 'unstamped-statements'">
+                    <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
+                </li>
+            </ul>
+          </nav>
+        <router-outlet></router-outlet>
+    </div>
+</div>

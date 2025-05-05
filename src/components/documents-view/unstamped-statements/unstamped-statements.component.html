@@ -1,0 +1,144 @@
+<!-- Toolbar -->
+<div class="toolbar-info">
+  <div class="toolbar-content">
+    <div class="icon-avatar">
+      <img
+        class="img-fluid"
+        src="assets/images/icons/document-sm.png"
+        alt="document"
+      />
+    </div>
+    <div>
+      <h4>Unstamped statements</h4>
+      <p>Easily access all your unstamped bank statements across accounts.</p>
+    </div>
+  </div>
+</div>
+<!-- Toolbar End -->
+
+<div class="choose-account">
+  <div
+    class="ngs-floating-label-wrapper"
+    [class.focused]="selectedAccount || isFocused"
+  >
+    <label class="floating-label">Select an Account</label>
+    <ng-select
+      [items]="accountList"
+      bindLabel="name"
+      [(ngModel)]="selectedAccount"
+      placeholder=""
+      [searchable]="false"
+      (focus)="isFocused = true"
+      (blur)="isFocused = false"
+      [appendTo]="'body'"
+      class="custom-ngs"
+    >
+      <ng-template ng-option-tmp let-item="item">
+        {{ item.name }}
+      </ng-template>
+    </ng-select>
+  </div>
+
+  <div class="info-text">
+    <img class="img-fluid" src="assets/images/icons/info-gray.png" alt="info" />
+    <p>
+      Downloaded documents are not password protected. Standard Bank is not
+      responsible for any loss or damage you may suffer if any information is
+      accessed or used by a third party.
+    </p>
+  </div>
+</div>
+
+<div class="doc-card-container full-width-table">
+  <div class="responsive-table">
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th>&nbsp;</th>
+          <th><span>Date</span></th>
+          <th><span>Category</span></th>
+          <th><span>Description</span></th>
+          <th class="action-th"><span>Email</span></th>
+          <th class="action-th"><span>Preview</span></th>
+          <th class="action-th"><span>Download</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let doc of documents">
+          <td>
+            <img class="img-luid" [src]="doc.icons.account" alt="loan icon" />
+          </td>
+          <td>
+            <p class="ptext">{{ doc.date }}</p>
+          </td>
+          <td>
+            <p class="ptext">{{ doc.category }}</p>
+          </td>
+          <td>
+            <p class="ptext">
+              {{ doc.description }}
+              <span class="muted-text">{{ doc.status }}</span>
+            </p>
+          </td>
+          <td class="action-td">
+            <a href="#"
+              ><img class="img-luid" [src]="doc.icons.email" alt="send icon"
+            /></a>
+          </td>
+          <td class="action-td">
+            <a href="#"
+              ><img
+                class="img-luid"
+                [src]="doc.icons.preview"
+                alt="preview icon"
+            /></a>
+          </td>
+          <td class="action-td">
+            <a href="#"
+              ><img
+                class="img-luid"
+                [src]="doc.icons.download"
+                alt="download icon"
+            /></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Pagination -->
+<div class="custom-pagination">
+  <button type="button">
+    <img
+      src="assets/images/icons/carousel-arrow-lt.png"
+      alt="arrow"
+      class="img-fluid"
+    />
+  </button>
+  <ul>
+    <li class="selected">
+      <button type="button">1</button>
+    </li>
+    <li>
+      <button type="button">2</button>
+    </li>
+    <li>
+      <button type="button">3</button>
+    </li>
+    <li>
+      <button type="button">4</button>
+    </li>
+    <li>
+      <button type="button">5</button>
+    </li>
+  </ul>
+  <button type="button">
+    <img
+      src="assets/images/icons/carousel-arrow-rt.png"
+      alt="arrow"
+      class="img-fluid"
+    />
+  </button>
+</div>
+<!-- Pagination End-->

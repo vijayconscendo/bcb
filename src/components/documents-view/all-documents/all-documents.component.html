@@ -1,0 +1,211 @@
+<!-- Toolbar -->
+<div class="toolbar-info">
+    <div class="toolbar-content">
+        <div class="icon-avatar">
+            <img class="img-fluid" src="assets/images/icons/document-sm.png" alt="document">
+        </div>
+        <div>
+            <h4>Documents</h4>
+            <p>Easily access all your financial statements and documents.</p>
+        </div>
+    </div>
+</div>
+<!-- Toolbar End -->
+
+
+<div class="choose-account">
+
+    <div
+    class="ngs-floating-label-wrapper"
+    [class.focused]="selectedAccount || isFocused"
+    >
+    <label class="floating-label">Select an Account</label>
+    <ng-select
+        [items]="accountList"
+        bindLabel="name"
+        [(ngModel)]="selectedAccount"
+        placeholder=""
+        [searchable]="false"
+        (focus)="isFocused = true"
+        (blur)="isFocused = false"
+        [appendTo]="'body'"
+        class="custom-ngs"
+    >
+        <ng-template ng-option-tmp let-item="item">
+        {{ item.name }}
+        </ng-template>
+    </ng-select>
+    </div>
+
+    <div class="info-text">
+        <img class="img-fluid" src="assets/images/icons/info-gray.png" alt="info">
+        <p>Downloaded documents are not password protected. Standard Bank is not responsible for any loss or damage you may suffer if any information is accessed or used by a third party. </p>
+    </div>
+</div>
+
+
+<div class="doc-card-container">
+    <h4 class="doc-title">Bank Letters</h4>
+    <div class="responsive-table">
+        <table class="custom-table">
+            <tbody>
+                <tr>
+                    <td>
+                        <img class="img-luid" src="assets/images/icons/loan-account-icon.png" alt="loan icon">
+                    </td>
+                    <td>
+                        <p class="ptext">Bank confirmation letter</p>
+                    </td>
+                    <td>
+                        <p class="ptext">Official bank account confirmation letter PDF</p>
+                    </td>
+                    <td class="action-td">
+                        <a href="#"><img class="img-luid" src="assets/images/icons/send-icon.png" alt="send icon"></a>
+                    </td>
+                    <td class="action-td">
+                        <a href="#"><img class="img-luid" src="assets/images/icons/preview-icon.png" alt="preview icon"></a>
+                    </td>
+                    <td class="action-td">
+                        <a href="#"><img class="img-luid" src="assets/images/icons/download-icon-md.png" alt="download icon"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="doc-card-container">
+    <h4 class="doc-title">Stamped bank statemenets</h4>
+    <div class="responsive-table">
+    <table class="custom-table">
+        <tbody>
+            <tr>
+                <td>
+                    <img class="img-luid" src="assets/images/icons/loan-account-icon.png" alt="loan icon">
+                </td>
+                <td>
+                    <p class="ptext">3 months bank statemetns</p>
+                </td>
+                <td>
+                    <p class="ptext">Stamped Statement<br/>(22-February-2024 to 22-May-2024)</p>
+                </td>
+                <td class="action-td">
+                    <a href="#"><img class="img-luid" src="assets/images/icons/send-icon.png" alt="send icon"></a>
+                </td>
+                <td class="action-td">
+                    <a href="#"><img class="img-luid" src="assets/images/icons/preview-icon.png" alt="preview icon"></a>
+                </td>
+                <td class="action-td">
+                    <a href="#"><img class="img-luid" src="assets/images/icons/download-icon-md.png" alt="download icon"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img class="img-luid" src="assets/images/icons/loan-account-icon.png" alt="loan icon">
+                </td>
+                <td>
+                    <p class="ptext">6 months bank statemetns</p>
+                </td>
+                <td>
+                    <p class="ptext">Stamped Statement<br/>(22-February-2024 to 22-May-2024)</p>
+                </td>
+                <td class="action-td">
+                    <a href="#"><img class="img-luid" src="assets/images/icons/send-icon.png" alt="send icon"></a>
+                </td>
+                <td class="action-td">
+                    <a href="#"><img class="img-luid" src="assets/images/icons/preview-icon.png" alt="preview icon"></a>
+                </td>
+                <td class="action-td">
+                    <a href="#"><img class="img-luid" src="assets/images/icons/download-icon-md.png" alt="download icon"></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+
+
+<div class="doc-card-container">
+    <h4 class="doc-title">Unstamped bank statements</h4>
+    <div class="responsive-table">
+    <table class="custom-table">
+        <tbody>
+            <tr>
+                <td>
+                    <img class="img-luid" src="assets/images/icons/loan-account-icon.png" alt="loan icon">
+                </td>
+                <td>
+                    <p class="ptext">1 May 2025</p>
+                </td>
+                <td>
+                    <p class="ptext">Previous statement</p>
+                </td>
+                <td>
+                    <p class="ptext">Official bank statement <span class="muted-text">Unstamped</span></p>
+                </td>
+                <td class="action-td">
+                    <a href="#"><img class="img-luid" src="assets/images/icons/send-icon.png" alt="send icon"></a>
+                </td>
+                <td class="action-td">
+                    <a href="#"><img class="img-luid" src="assets/images/icons/preview-icon.png" alt="preview icon"></a>
+                </td>
+                <td class="action-td">
+                    <a href="#"><img class="img-luid" src="assets/images/icons/download-icon-md.png" alt="download icon"></a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img class="img-luid" src="assets/images/icons/loan-account-icon.png" alt="loan icon">
+                </td>
+                <td>
+                    <p class="ptext">1 April 2025</p>
+                </td>
+                <td>
+                    <p class="ptext">Previous statement</p>
+                </td>
+                <td>
+                    <p class="ptext">Official bank statement <span class="muted-text">Unstamped</span></p>
+                </td>
+                <td class="action-td">
+                    <a href="#"><img class="img-luid" src="assets/images/icons/send-icon.png" alt="send icon"></a>
+                </td>
+                <td class="action-td">
+                    <a href="#"><img class="img-luid" src="assets/images/icons/preview-icon.png" alt="preview icon"></a>
+                </td>
+                <td class="action-td">
+                    <a href="#"><img class="img-luid" src="assets/images/icons/download-icon-md.png" alt="download icon"></a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <img class="img-luid" src="assets/images/icons/loan-account-icon.png" alt="loan icon">
+                </td>
+                <td>
+                    <p class="ptext">1 March 2025</p>
+                </td>
+                <td>
+                    <p class="ptext">Previous statement</p>
+                </td>
+                <td>
+                    <p class="ptext">Official bank statement <span class="muted-text">Unstamped</span></p>
+                </td>
+                <td class="action-td">
+                    <a href="#"><img class="img-luid" src="assets/images/icons/send-icon.png" alt="send icon"></a>
+                </td>
+                <td class="action-td">
+                    <a href="#"><img class="img-luid" src="assets/images/icons/preview-icon.png" alt="preview icon"></a>
+                </td>
+                <td class="action-td">
+                    <a href="#"><img class="img-luid" src="assets/images/icons/download-icon-md.png" alt="download icon"></a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    </div>
+    <div class="bottom-actions">
+        <button type="button" class="text-btn" (click)="goToUnstampedStatements()"><span>View all statements</span><img class="img-luid" src="assets/images/icons/carousel-arrow-rt.png" alt="carousel-arrow-rt icon"></button>
+    </div>
+</div>
