@@ -9,15 +9,15 @@ import { Component } from '@angular/core';
 })
 export class HelpWidgetsComponent {
 
-  isContactWidget = false;
-  isChatwidgetOpen = false;
-  
-  toggleContactWidget(): void {
-    this.isContactWidget = !this.isContactWidget;
-  }
-  
-  toggleIsChatwidget(): void {
-    this.isChatwidgetOpen = !this.isChatwidgetOpen;
-  }
-  
+isContactWidget = false;
+isChatwidgetOpen = false;
+
+toggleContactWidget(): void {
+  this.isContactWidget = !this.isContactWidget;
+}
+
+toggleIsChatwidget(): void {
+  this.isChatwidgetOpen = !this.isChatwidgetOpen;
+}
+
 }

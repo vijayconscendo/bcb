@@ -17,17 +17,12 @@ export const routes: Routes = [
         path: 'our-solutions',
         loadComponent: () => import('../pages/unauth-our-solutions/unauth-our-solutions.component').then(m => m.UnauthOurSolutionsComponent)
     },
-    // Replace the simple service-request with the child routes
     ...serviceRequestRoutes,
     ...documentsRoutes,
-    // {
-    //     path: 'service-request',
-    //     loadComponent: () => import('../pages/service-request/service-request.component').then(m => m.ServiceRequestComponent)
-    // },
-    // {
-    //     path: 'documents',
-    //     loadComponent: () => import('../pages/documents/documents.component').then(m => m.DocumentsComponent)
-    // },
+    {
+        path: 'contact-us',
+        loadComponent: () => import('../pages/contact-us/contact-us.component').then(m => m.ContactUsComponent),
+    },
     {
         path: '**',
         redirectTo: '',

@@ -1,8 +1,18 @@
 <div>
     <div class="list-table-container">
         <div class="custom-tabs">
-            <button type="button" class="activetab">In Progress</button>
-            <button type="button">Resolved</button>
+            <button 
+                type="button" 
+                [class.activetab]="activeTab() === 'in-progress'"
+                (click)="changeTab('in-progress')">
+                In Progress
+            </button>
+            <button 
+                type="button" 
+                [class.activetab]="activeTab() === 'resolved'"
+                (click)="changeTab('resolved')">
+                Resolved
+            </button>
         </div>
         <div class="controls">
             <div class="custom-search">
@@ -11,7 +21,11 @@
                     class="img-fluid"
                     alt="search"
                 />
-                <input type="text" placeholder="Search">
+                <input 
+                    type="text" 
+                    placeholder="Search"
+                    [ngModel]="searchQuery()"
+                    (ngModelChange)="onSearch($event)">
             </div>
             <button type="button" class="filter-btn">
                 <span>FILTER</span>
@@ -35,197 +49,72 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @for (ticket of paginatedTickets(); track $index) {
                         <tr>
                             <td>
-                                <span class="text">Query</span>
+                                <span class="text">{{ ticket.type }}</span>
                             </td>
                             <td>
-                                <span class="text">Failed bank statement</span>
+                                <span class="text">{{ ticket.subject }}</span>
                             </td>
                             <td>
-                                <p class="text">I have not been able to access my bank statements for the past 3</p>
+                                <p class="text">{{ ticket.description }}</p>
                             </td>
                             <td>
-                                <span class="text">27/07/2024</span>
+                                <span class="text">{{ ticket.dateCreated }}</span>
                             </td>
                             <td>
-                                <div class="status-chip assigned">
+                                <div class="status-chip {{ ticket.statusClass }}">
                                     <span class="dot"></span>
-                                    <span class="status-text">New</span>
+                                    <span class="status-text">{{ ticket.status }}</span>
                                 </div>
                             </td>
                         </tr>
+                        } @empty {
                         <tr>
-                            <td>
-                                <span class="text">Query</span>
-                            </td>
-                            <td>
-                                <span class="text">Failed bank statement</span>
-                            </td>
-                            <td>
-                                <p class="text">I have not been able to access my bank statements for the past 3</p>
-                            </td>
-                            <td>
-                                <span class="text">27/07/2024</span>
-                            </td>
-                            <td>
-                                <div class="status-chip assigned">
-                                    <span class="dot"></span>
-                                    <span class="status-text">New</span>
-                                </div>
-                            </td>
+                            <td colspan="5" class="text-center">No tickets found</td>
                         </tr>
-                        <tr>
-                            <td>
-                                <span class="text">Query</span>
-                            </td>
-                            <td>
-                                <span class="text">Failed bank statement</span>
-                            </td>
-                            <td>
-                                <p class="text">I have not been able to access my bank statements for the past 3</p>
-                            </td>
-                            <td>
-                                <span class="text">27/07/2024</span>
-                            </td>
-                            <td>
-                                <div class="status-chip in-progress">
-                                    <span class="dot"></span>
-                                    <span class="status-text">In progress</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="text">Query</span>
-                            </td>
-                            <td>
-                                <span class="text">Failed bank statement</span>
-                            </td>
-                            <td>
-                                <p class="text">I have not been able to access my bank statements for the past 3</p>
-                            </td>
-                            <td>
-                                <span class="text">27/07/2024</span>
-                            </td>
-                            <td>
-                                <div class="status-chip in-progress">
-                                    <span class="dot"></span>
-                                    <span class="status-text">In progress</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="text">Query</span>
-                            </td>
-                            <td>
-                                <span class="text">Failed bank statement</span>
-                            </td>
-                            <td>
-                                <p class="text">I have not been able to access my bank statements for the past 3</p>
-                            </td>
-                            <td>
-                                <span class="text">27/07/2024</span>
-                            </td>
-                            <td>
-                                <div class="status-chip assigned">
-                                    <span class="dot"></span>
-                                    <span class="status-text">Assigned</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="text">Query</span>
-                            </td>
-                            <td>
-                                <span class="text">Failed bank statement</span>
-                            </td>
-                            <td>
-                                <p class="text">I have not been able to access my bank statements for the past 3</p>
-                            </td>
-                            <td>
-                                <span class="text">27/07/2024</span>
-                            </td>
-                            <td>
-                                <div class="status-chip assigned">
-                                    <span class="dot"></span>
-                                    <span class="status-text">Assigned</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="text">Query</span>
-                            </td>
-                            <td>
-                                <span class="text">Failed bank statement</span>
-                            </td>
-                            <td>
-                                <p class="text">I have not been able to access my bank statements for the past 3</p>
-                            </td>
-                            <td>
-                                <span class="text">27/07/2024</span>
-                            </td>
-                            <td>
-                                <div class="status-chip in-progress">
-                                    <span class="dot"></span>
-                                    <span class="status-text">In progress</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="text">Query</span>
-                            </td>
-                            <td>
-                                <span class="text">Failed bank statement</span>
-                            </td>
-                            <td>
-                                <p class="text">I have not been able to access my bank statements for the past 3</p>
-                            </td>
-                            <td>
-                                <span class="text">27/07/2024</span>
-                            </td>
-                            <td>
-                                <div class="status-chip in-progress">
-                                    <span class="dot"></span>
-                                    <span class="status-text">In progress</span>
-                                </div>
-                            </td>
-                        </tr>
+                        }
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
     <!-- Pagination -->
+    @if (hasPagination()) {
     <div class="custom-pagination">
-        <button type="button">
-            <img src="assets/images/icons/carousel-arrow-lt.png" alt="arrow" class="img-fluid" />
+        <button 
+            type="button" 
+            (click)="prevPage()" 
+            [disabled]="isFirstPage()"
+            [class.disabled]="isFirstPage()">
+            <img 
+                src="assets/images/icons/carousel-arrow-lt.png" 
+                alt="arrow" 
+                class="img-fluid"
+                [class.disabled-arrow]="isFirstPage()" />
         </button>
         <ul>
-            <li class="selected">
-                <button type="button">1</button>
+            @for (page of paginationNumbers(); track page) {
+            <li [class.selected]="page === currentPage()">
+                <button type="button" (click)="changePage(page)">{{ page }}</button>
             </li>
-            <li>
-                <button type="button">2</button>
-            </li>
-            <li>
-                <button type="button">3</button>
-            </li>
-            <li>
-                <button type="button">4</button>
-            </li>
-            <li>
-                <button type="button">5</button>
-            </li>
+            }
         </ul>
-        <button type="button">
-            <img src="assets/images/icons/carousel-arrow-rt.png" alt="arrow" class="img-fluid" />
+        <button 
+            type="button" 
+            (click)="nextPage()" 
+            [disabled]="isLastPage()"
+            [class.disabled]="isLastPage()">
+            <img 
+                src="assets/images/icons/carousel-arrow-rt.png" 
+                alt="arrow" 
+                class="img-fluid"
+                [class.disabled-arrow]="isLastPage()" />
         </button>
+        <!-- <div class="pagination-info" aria-live="polite">
+            {{ getPaginationLabel() }}
+        </div> -->
     </div>
-    <!-- Pagination End-->
-
+    }
 </div>

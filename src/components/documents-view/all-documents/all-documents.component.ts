@@ -26,12 +26,13 @@ import { NgSelectModule } from '@ng-select/ng-select';
 export class AllDocumentsComponent {
   isFocused = false;
   accountList = accounts;
-  // selectedAccount: any;
-  selectedAccount = this.accountList[0];
+  selectedAccount: any;
+  // selectedAccount = this.accountList[0];
 
   constructor(private router: Router) {}
 
   goToUnstampedStatements(){
     this.router.navigate(['/documents/unstamped-statements'])
   }
+  
 }
