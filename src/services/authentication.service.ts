@@ -86,7 +86,6 @@ export class AuthenticationService {
     body.set('client_id', this.client_id);
     body.set('code_verifier',this.code_verifier)
     body.set('redirect_uri', this.redirect_uri);
-    body.set('client_secret', this.client_secret);
     
     return this.http.post<any>(this.tokenUrl, body.toString(), { headers })
       .pipe(
@@ -96,6 +95,7 @@ export class AuthenticationService {
           expiresIn: response.expires_in || response.expiresIn
         })),
         tap(response => {
+          console.log('response',response);
           this.safeStorageService.setItem('accessToken', response.accessToken);
           if (response.refreshToken) {
             this.safeStorageService.setItem('refreshToken', response.refreshToken);
@@ -117,7 +117,7 @@ export class AuthenticationService {
    * @returns Observable with the final auth result
    */
   login(
-    credentials: { username: string; password: string },
+    code:any,
     queryParams?: Record<string, string>,
     useGetMethod = false
   ): Observable<any> {
@@ -125,7 +125,7 @@ export class AuthenticationService {
     //   this.getAccessCode(credentials, queryParams, useGetMethod).subscribe({
     //     next: (codeResponse) => {
     //       console.log('codeResponse',codeResponse)
-          this.getAccessToken('phn4XpFUgqJu2dDik5bGmlmVBFkI6Qn_IR4AAAAC').subscribe({         
+          this.getAccessToken(code).subscribe({         
             next: (tokenResponse) => {
                 console.log('coderesponses....')
               observer.next(tokenResponse);

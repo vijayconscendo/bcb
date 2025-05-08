@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { Component, HostListener,inject  } from '@angular/core';
+import { Router, RouterModule,ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from '../../services/authentication.service';
 import { finalize } from 'rxjs/operators';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -12,10 +13,11 @@ import { finalize } from 'rxjs/operators';
 })
 export class HeaderComponent {
   
+  private document = inject(DOCUMENT);
 
   // isDashboard to show hide items in header after login temp
   isDashboard = false;
-  constructor(private router: Router,private authService: AuthenticationService) {}
+  constructor(private router: Router,private authService: AuthenticationService,private route: ActivatedRoute) {}
   // isDashboard End
 
 
@@ -32,8 +34,29 @@ export class HeaderComponent {
     if (typeof window !== 'undefined') {
       this.windowWidth = window.innerWidth;
     }
-
-
+    this.route.queryParams.subscribe(params => {
+      // Get all parameters
+      console.log('All parameters:', params);
+      
+      // Get a specific parameter
+      const redirectUrl = params['redirect'];
+      console.log('Redirect URL:', redirectUrl);
+      if(params['code']){
+         this.authService.login(params['code'])
+      .pipe(
+        finalize(() => {
+        })
+      )
+      .subscribe({
+        next: () => {
+          this.router.navigate(['/dashboard']);
+        },
+        error: error => {
+        }
+      });
+      }
+    });
+    
     // isDashboard
     this.router.events.subscribe(() => {
       this.isDashboard = this.router.url.includes('/dashboard');
@@ -89,23 +112,53 @@ export class HeaderComponent {
   }
   onSignIn(): void {
     console.log('signin')
-    const credentials = {
-      username: 'businessownership',
-      password: 'Test@123'
-    };
+    // window.location.href = 'https://enterprisestssit.standardbank.co.za/as/authorization.oauth2' + ;
+    const baseUrl = 'https://enterprisestssit.standardbank.co.za/as/authorization.oauth2';
+    const urlParam = "https://localhost:3000";
 
-    this.authService.login(credentials)
-      .pipe(
-        finalize(() => {
-        })
-      )
-      .subscribe({
-        next: () => {
-          this.router.navigate(['/dashboard']);
-        },
-        error: error => {
-        }
-      });
+
+    // const url = `${baseUrl}?client_id=257f066d-ff65-4c4a-a311-ff63d6b6b9f2&response_type=code&scope=openid email profile&redirect_uri=${urlParam}&code_challenge=BizDLiK37qEpIiwtINOs8dPRp_FYidVvxm1Mo7VgSE4&code_challenge_method=S256&nonce=xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&state=xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx`
+    // Parameters
+    const url = 'https://enterprisestssit.standardbank.co.za/as/authorization.oauth2?client_id=257f066d-ff65-4c4a-a311-ff63d6b6b9f2&response_type=code&scope=openid email profile&redirect_uri=https://localhost:3000/dashboard&code_challenge=BizDLiK37qEpIiwtINOs8dPRp_FYidVvxm1Mo7VgSE4&code_challenge_method=S256&nonce=xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&state=xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
+    // const params = new URLSearchParams();
+    // params.append('client_id', '257f066d-ff65-4c4a-a311-ff63d6b6b9f2');
+    // params.append('response_type', 'code');
+    // params.append('scope', 'openid email profile');
+    // params.append('redirect_uri', urlParam);
+    // params.append('code_challenge', 'BizDLiK37qEpIiwtINOs8dPRp_FYidVvxm1Mo7VgSE4');
+    // params.append('code_challenge_method', 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx');
+    // params.append('state', 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx');
+    
+    // Construct final URL with parameters
+  
+    // const url = `${baseUrl}?${params}`;
+    // const encodedUrl = url.replace(/ /g, "%20");
+    // console.log('ddd',url)
+
+    window.open(url, "_self");
+    // window.open(url, '_blank', 'noopener,noreferrer');
+    // window.open(encodeURI(url), "_blank");
+    // window.location.href = url;
+    // window.open(url, '_self');
+    // Navigate
+    // window.location.href = url;
+    // const credentials = {
+    //   username: 'businessownership',
+    //   password: 'Test@123'
+    // };
+
+    // this.authService.login(credentials)
+    //   .pipe(
+    //     finalize(() => {
+    //     })
+    //   )
+    //   .subscribe({
+    //     next: () => {
+    //       this.router.navigate(['/dashboard']);
+    //     },
+    //     error: error => {
+    //     }
+    //   });
   }
   onSignOut(): void {
     console.log('signout')

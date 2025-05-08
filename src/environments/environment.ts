@@ -1,11 +1,11 @@
 export const environment = {
   production: false,
   auth: {
-    client_id: 'faad9acc-584a-493d-8c8a-d4b3d68f269c',
-    redirect_uri: 'https://localhost:8080',
-    grant_type: 'client_credentials',
+    client_id: '257f066d-ff65-4c4a-a311-ff63d6b6b9f2',
+    redirect_uri: 'https://localhost:3000/dashboard',
+    grant_type: 'authorization_code',
     code_verifier:
-      'iE8a__NHZK1Tf0aCCP_GlzPzZBVhgZ75Ut9qFhfjvcWTuu36Kl-oEALzcVBeNgcqAOJ3doOkP6IAKthJjRdUo8Ax_RwffpFhHiL7sgp6nD2cMjc9kp54pMoTYtEdOgtz',
+      'TJOu7ch7r3cdlk0bF~PaLWSKYamEEUZ9SNB1c4YhD7L',
     client_secret:
       'tNyW72w10WKh2yRXRaKMvYnO9kG7NORKWR5Vjq4wwRpbIA4iJzSIsA1oNKX7ciKt',
     response_type: 'code',
