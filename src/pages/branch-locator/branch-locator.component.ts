@@ -64,38 +64,72 @@ export class BranchLocatorComponent implements AfterViewInit {
     return `${branch.name}-${index}`;
   }
 
+  // async ngAfterViewInit() {
+  //   if (isPlatformBrowser(this.platformId)) {
+  //     const L = await import('leaflet');
+  //     this.leaflet = L;
+
+  //     this.map = L.map('map').setView([-26.27, 28.07], 13);
+
+  //     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  //       attribution: '&copy; OpenStreetMap contributors'
+  //     }).addTo(this.map);
+
+  //     this.branches.forEach((branch, index) => {
+  //       const marker = L.marker([branch.lat, branch.lng])
+  //         .addTo(this.map)
+  //         .bindPopup(`<strong>${branch.name}</strong><br>${branch.address}`);
+
+  //       marker.on('click', () => {
+  //         this.selectedBranch = branch;
+  //         this.cdr.detectChanges();
+
+  //         // Scroll selected branch card into view
+  //         setTimeout(() => {
+  //           const card = this.branchCards?.get(index);
+  //           card?.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  //         }, 0);
+  //       });
+
+  //       this.markers.push(marker);
+  //     });
+  //   }
+  // }
+
+
   async ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
       const L = await import('leaflet');
       this.leaflet = L;
-
+  
       this.map = L.map('map').setView([-26.27, 28.07], 13);
-
+  
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
       }).addTo(this.map);
-
+  
       this.branches.forEach((branch, index) => {
         const marker = L.marker([branch.lat, branch.lng])
           .addTo(this.map)
           .bindPopup(`<strong>${branch.name}</strong><br>${branch.address}`);
-
+  
         marker.on('click', () => {
           this.selectedBranch = branch;
           this.cdr.detectChanges();
-
+  
           // Scroll selected branch card into view
           setTimeout(() => {
             const card = this.branchCards?.get(index);
             card?.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 0);
         });
-
+  
         this.markers.push(marker);
       });
     }
   }
 
+  
   onBranchClick(branch: any, index: number) {
     this.selectedBranch = branch;
     this.map.setView([branch.lat, branch.lng], 15);
