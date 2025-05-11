@@ -18,7 +18,7 @@
         }
     }
     .backBtn{
-        display: flex; align-items: center; justify-content: center; gap: 0.3125rem; padding: 0;
+        display: flex; align-items: center; justify-content: center; gap: 0.3125rem; padding: 0; border: 1px solid #FFFFFF;
         background: transparent; border: none; font-family: "BSP-Medium";font-size: 1.125rem; line-height: normal; color: #FFFFFF;
     }
 }
@@ -50,3 +50,99 @@
         }
     }
 }
+
+
+// Modal Styles
+
+.newsletter-modal{
+    border: none;
+    @media (min-width: 576px) {
+        .modal-dialog {
+            max-width: 560px;
+        }
+    }
+    .modal-header{
+        background: linear-gradient(93.67deg, #0064FC 1.23%, #0033AA 58.64%);
+        .modal-title{
+            font-family: "BSP-Regular";
+            font-size: 1rem;
+            line-height: 130%;
+            color: #FFFFFF;
+        }
+        .btnclose{margin-left: auto; border: none; background-color: transparent; padding: 0;}
+    }
+    .modal-content{
+        border: none;
+    }
+    .modal-body{
+        padding: 1.875rem;
+    }
+    .dialog-content{
+        text-align: center;
+    }
+    .heading-title{
+        font-family: "BSP-Medium";
+        font-size: 1rem;
+        line-height: 1.3;
+        color: var(--text-color);
+        margin-bottom: 1.5rem;
+    }
+    .text{
+        font-family: "BSP-Regular";
+        font-size: 0.875rem;
+        line-height: 1.3;
+        color: var(--text-color);
+        margin-bottom: 0;
+        a{
+            color: #0033AA !important; text-decoration:  none;
+        }
+    }
+    .img-avatar{
+        width: 54px; margin-bottom: 1rem;
+    }
+    .mail-input{
+        text-align: start;
+        max-width: 446px; margin: 1.5rem auto 0;
+        input{
+            width: 100%;
+            border: 1px solid #5c6c80;
+            border-radius: 8px;
+            height: 48px;
+            background-color: #ffffff;
+            font-family: "BSP-Medium";
+            font-size: 1rem;
+            line-height: normal;
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            width: 100%;
+            &::placeholder {
+              font-family: "BSP-Regular";
+              font-size: 1rem;
+              line-height: normal;
+              color: #5c6c80;
+            }
+            &:focus {
+              outline: none;
+            }
+        }
+        p{
+            font-family: "BSP-Regular";
+            font-size: 0.75rem;
+            line-height: 1.3;
+            color: var(--text-light-gray);
+            margin: 5px 0;
+        }
+    }
+    .modal-footer{
+        justify-content: space-between; padding: 0 0.75rem; background-color: #F4F5F7; border: none;
+    }
+    .textBtn{
+        font-family: "BSP-Bold";
+        font-size: 0.875rem;
+        line-height: normal;
+        color:#0062E1;
+        text-transform: uppercase;
+        border: none; background-color: transparent;
+        padding: 1rem 0.75rem;
+    }
+}   

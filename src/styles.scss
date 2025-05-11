@@ -7,6 +7,7 @@
   --text-light-gray: #697786;
   --text-medium-gray: #222E37;
   --color-white: #FFFFFF;
+  --text-dark-gray: #5C6C80;
 }
 
 $color-white: var(--color-white);
@@ -117,8 +118,8 @@ body{
 .ng-select.custom-ngs .ng-select-container  {     
   height: 50px !important;
   min-height: 50px !important;
-  border-radius: 0.75rem;
-  border-color: #5C6C80;
+  border-radius: 0.5rem;
+  border-color: #CED3D9;
 }
 .ng-select.custom-ngs .ng-select-container .ng-value-container .ng-input{
   position: absolute;
@@ -186,6 +187,10 @@ body{
 .ng-select.custom-ngs .ng-placeholder {
   font-family: "BSP-Regular", sans-serif;
   color: #1A314D; /* Optional: different color for placeholder */
+}
+
+.ng-select.custom-ngs .ng-select-container .ng-value-container .ng-placeholder{
+  color: #5c6c80 !important;
 }
 
 /* Selected values */

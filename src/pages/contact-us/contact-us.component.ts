@@ -32,7 +32,14 @@ export class ContactUsComponent {
       image: 'assets/images/icons/icn_mail.png',
       title: 'Stay informed',
       description: "Receive the latest news and updates on our new solutions ",
-      buttonText: 'Subscribe to newsletters'
+      buttonText: 'Subscribe to newsletter'
     }
   ];
+
+  isSubscribed = false; 
+
+  toggleIsSubscribed() {
+    this.isSubscribed = !this.isSubscribed;
+  }
+
 }

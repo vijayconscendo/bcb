@@ -1,0 +1,74 @@
+<div class="branch-locator">
+    <div class="custom-container">
+    <div class="toolbar-block">
+        <button class="backBtn">
+            <img class="img-fluid" src="assets/images/icons/back-left-icon.png" alt="back button">
+            <span>Back</span>
+        </button> 
+        <h2 class="toolbar-title">Branch locator</h2>
+    </div>
+
+    <div class="container-fluid px-0">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="filter-block">
+
+                    <div class="formgroup">
+                        <span class="labeltext">I'm looking for a</span>
+                        <ng-select [items]="typeOptions" [(ngModel)]="selectedType" bindLabel="name" class="custom-ngs"></ng-select>
+                    </div>
+
+                    <div class="formgroup">
+                        <span class="labeltext">Enter your location</span>
+                        <input type="text" class="custom-input" [(ngModel)]="location" placeholder="e.g. Johannesburg" />
+                    </div>
+
+                    <div class="formgroup">
+                        <span class="labeltext">Filter by</span>
+                        <ng-select [items]="filterOptions" [(ngModel)]="selectedFilter" class="custom-ngs"></ng-select>
+                    </div>
+                
+                    <button class="search-btn primaryBtn" (click)="search()">SEARCH</button>
+                </div>
+
+                <div class="branch-results">
+                    <div *ngFor="let branch of branches; let i = index; trackBy: trackBranch"
+                        #branchCard
+                        class="branch-card"
+                        [class.active]="selectedBranch === branch"
+                        (click)="onBranchClick(branch, i)">
+                        <div>
+                            <h4>{{ branch.name }}</h4>
+                            <p>{{ branch.address }}</p>
+                            <a class="direction" href="https://www.google.com/maps/search/?api=1&query={{ branch.lat }},{{ branch.lng }}" target="_blank">
+                                DIRECTIONS
+                            </a>
+                        </div>
+                        <button type="button" class="arrow"><img class="img-fluid" src="assets/images/icons/icn_arrow_solid_right.png"  alt="arrow icon" /></button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-8">
+                <div class="map-container">
+                    <div id="map" class="map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="locator-wrapper">
+        <div class="sidebar">
+        
+
+      
+
+        </div>
+      
+        
+      </div> -->
+
+    </div>
+
+      
+</div>
