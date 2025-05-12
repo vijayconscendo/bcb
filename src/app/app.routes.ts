@@ -41,6 +41,14 @@ export const routes: Routes = [
     ...profileManagementRoutes,
     ...articleRoutes,
     {
+        path: 'bank-with-us',
+        loadComponent: () => import('../pages/bank-with-us/bank-with-us.component').then(m => m.BankWithUsComponent)
+    },
+    {
+        path: 'faq',
+        loadComponent: () => import('../pages/faq/faq.component').then(m => m.FaqComponent)
+    },
+    {
         path: '**',
         redirectTo: '',
         pathMatch: 'full'
