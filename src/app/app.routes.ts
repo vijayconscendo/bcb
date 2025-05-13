@@ -49,6 +49,14 @@ export const routes: Routes = [
         loadComponent: () => import('../pages/faq/faq.component').then(m => m.FaqComponent)
     },
     {
+        path: 'tradesuite',
+        loadComponent: () => import('../pages/tradesuite/tradesuite.component').then(m => m.TradesuiteComponent)
+    },
+    {
+        path: 'ob4b',
+        loadComponent: () => import('../pages/online-banking-for-business/online-banking-for-business.component').then(m => m.OnlineBankingForBusinessComponent)
+    },
+    {
         path: '**',
         redirectTo: '',
         pathMatch: 'full'

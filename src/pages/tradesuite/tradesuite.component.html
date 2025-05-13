@@ -1,0 +1,63 @@
+<div class="tradesuite-page">
+    <div class="custom-container">
+        <nav class="breadCrumb">
+            <ul>
+                <li>
+                    <a class="route-name" routerLink="/"><span>Home</span></a>
+                </li>
+                <li>
+                    <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
+                </li>
+                <li>
+                    <a class="route-name" routerLink="/"><span>Products and Services</span></a>
+                </li>
+                <li>
+                    <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
+                </li>
+                <li>
+                    <a class="route-name" routerLink="/"><span>Business Solutions</span></a>
+                </li>
+                <li>
+                    <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
+                </li>
+                <li>
+                    <a class="route-name" routerLink="/"><span>Tradepoint</span></a>
+                </li>
+                <li>
+                    <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
+                </li>
+            </ul>
+          </nav>
+
+
+          <h1 class="main-title">Simplify your import journey</h1>
+
+          <div class="container-fluid px-0 img-card-text">
+            <div class="row">
+                <div class="col-lg-6 colLeft">
+                    <img src="assets/images/cards/import-journey.png" alt="import journey" class="img-fluid">
+                </div>
+                <div class="col-lg-6">
+                    <div class="content">
+                        <p>Let us take care of your end-to-end import process</p>
+                        <p>As your trade partner, we make your end-to-end trade journey easier by proactively ensuring that the goods you import arrive on time, in the condition you’ve ordered, and at the price you expect.</p>
+                        <div class="btn-pair">
+                            <button class="primaryBtn" type="button">SIGN IN</button>
+                            <button class="primaryBtnOutline" type="button">REGISTER</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+          <app-benifit-cards></app-benifit-cards>
+          <app-tabs-with-list></app-tabs-with-list>
+          <div class="view-all-faqs">
+            <p>Have a look at out frequently asked questions to answer any queries you might have.</p>
+            <button type="button" class="primaryBtn">VIEW ALL FAQ'S</button>
+          </div>
+          <div *ngIf="isBrowser">
+            <app-offer-slider></app-offer-slider>
+          </div>
+    </div>
+</div>

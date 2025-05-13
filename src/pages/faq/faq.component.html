@@ -1,53 +1,119 @@
 
 <div class="faq-page">
     <div class="custom-container">
-        <h2 class="sec-title">FAQs</h2>
+        <div class="page-title">
+            <button class="back-to-prev" type="button" [routerLink]="['/']">
+                <img class="img-fluid" src="assets/images/icons/back_to_prev.png" alt="back to prev"/>
+            </button>
+            <h2 class="sec-title">FAQs</h2>
+        </div>
         <div class="sec-desc">
             <p>Need some help? You've come to the right place!</p>
             <p>Find the answers you need below.</p>
         </div>
         
-       <h3 class="title-md">What is the BCB Platform?</h3>
-      <div class="accordion custom-accordion" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  What is the BCB Platform?
-              </button>
+        <!-- By default close Replace 
+        [ngClass]="{ collapsed: i !== 0 }"
+        [ngClass]="{ show: i === 0 }"
+        [attr.aria-expanded]="i === 0"
+                with
+        [ngClass]="{ collapsed: true }"
+        [ngClass]="{ show: false }"
+        [attr.aria-expanded]="false" -->
+
+        <!-- What Is BCB -->
+        <h3 class="title-md">What is the BCB Platform?</h3>
+        <div class="accordion custom-accordion" id="whatisbcb">
+        <div class="accordion-item" *ngFor="let item of whatisBcb; let i = index">
+            <h2 class="accordion-header" [id]="'whatisbcb-heading' + item.id">
+            <button
+                class="accordion-button shadow-none"
+                [ngClass]="{ collapsed: true }"
+                type="button"
+                data-bs-toggle="collapse"
+                [attr.data-bs-target]="'#whatisbcb-collapse' + item.id"
+                [attr.aria-expanded]="false"
+                [attr.aria-controls]="'whatisbcb-collapse' + item.id"
+            >
+                {{ item.title }}
+            </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                  <p>The BCB Platform is a single home for all of your Standard Bank accounts and solutions. It connects you to a variety of products and services, as well as experts to take your business further. </p>
-                  <p>Access personalised recommendations and tools to better manage your business’s finances. You will also have access to industry experts and resources to help your business grow. </p>
-              </div>
+            <div
+            class="accordion-collapse collapse"
+            [ngClass]="{ show: false }"
+            [id]="'whatisbcb-collapse' + item.id"
+            [attr.aria-labelledby]="'whatisbcb-heading' + item.id"
+            data-bs-parent="#whatisbcb"
+            >
+            <div class="accordion-body">
+                <p *ngFor="let paragraph of item.content" [innerHTML]="paragraph"></p>
             </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  How do I register on the BCB Platform?
-              </button>
+            </div>
+        </div>
+        </div>
+
+        <!-- How secure is the BCB Platform? -->
+        <h3 class="title-md">How secure is the BCB Platform?</h3>
+        <div class="accordion custom-accordion" id="secureBcb">
+        <div class="accordion-item" *ngFor="let item of secureBcb; let i = index">
+            <h2 class="accordion-header" [id]="'secureBcb-heading' + item.id">
+            <button
+                class="accordion-button shadow-none"
+                [ngClass]="{ collapsed: true }"
+                type="button"
+                data-bs-toggle="collapse"
+                [attr.data-bs-target]="'#secureBcb-collapse' + item.id"
+                [attr.aria-expanded]="false"
+                [attr.aria-controls]="'secureBcb-collapse' + item.id"
+            >
+                {{ item.title }}
+            </button>
             </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                  <p>The BCB Platform is a single home for all of your Standard Bank accounts and solutions. It connects you to a variety of products and services, as well as experts to take your business further. </p>
-                  <p>Access personalised recommendations and tools to better manage your business’s finances. You will also have access to industry experts and resources to help your business grow. </p>
-              </div>
+            <div
+            class="accordion-collapse collapse"
+            [ngClass]="{ show: false }"
+            [id]="'secureBcb-collapse' + item.id"
+            [attr.aria-labelledby]="'secureBcb-heading' + item.id"
+            data-bs-parent="#secureBcb"
+            >
+            <div class="accordion-body">
+                <p *ngFor="let paragraph of item.content" [innerHTML]="paragraph"></p>
             </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingThree">
-              <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  How can I explore new solutions?
-              </button>
+            </div>
+        </div>
+        </div>
+
+        <!-- How do I register on the BCB Platform? -->
+        <h3 class="title-md">How do I register on the BCB Platform?</h3>
+        <div class="accordion custom-accordion" id="registerbcb">
+        <div class="accordion-item" *ngFor="let item of registerBcb; let i = index">
+            <h2 class="accordion-header" [id]="'registerbcb-heading' + item.id">
+            <button
+                class="accordion-button shadow-none"
+                [ngClass]="{ collapsed: true }"
+                type="button"
+                data-bs-toggle="collapse"
+                [attr.data-bs-target]="'#registerbcb-collapse' + item.id"
+                [attr.aria-expanded]="false"
+                [attr.aria-controls]="'registerbcb-collapse' + item.id"
+            >
+                {{ item.title }}
+            </button>
             </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                  <p>The BCB Platform is a single home for all of your Standard Bank accounts and solutions. It connects you to a variety of products and services, as well as experts to take your business further. </p>
-                  <p>Access personalised recommendations and tools to better manage your business’s finances. You will also have access to industry experts and resources to help your business grow. </p>
-              </div>
+            <div
+            class="accordion-collapse collapse"
+            [ngClass]="{ show: false }"
+            [id]="'registerbcb-collapse' + item.id"
+            [attr.aria-labelledby]="'registerbcb-heading' + item.id"
+            data-bs-parent="#registerbcb"
+            >
+            <div class="accordion-body">
+                <p *ngFor="let paragraph of item.content" [innerHTML]="paragraph"></p>
             </div>
-          </div>
-      </div>
+            </div>
+        </div>
+        </div>
+
+      
     </div>
 </div>
