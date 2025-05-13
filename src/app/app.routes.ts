@@ -2,6 +2,9 @@ import { Routes } from '@angular/router';
 import { serviceRequestRoutes } from '../pages/service-request/service-request.routes';
 import { authGuard } from '../services/authguard';
 import { documentsRoutes } from '../pages/documents/documents.routes';
+import { profile } from 'console';
+import { profileManagementRoutes } from '../pages/profile-management/profile-management.routes';
+import { articleRoutes } from '../pages/articles/articles.routes';
 
 export const routes: Routes = [
     {
@@ -22,6 +25,36 @@ export const routes: Routes = [
     {
         path: 'contact-us',
         loadComponent: () => import('../pages/contact-us/contact-us.component').then(m => m.ContactUsComponent),
+    },
+    {
+        path: 'branch-locator',
+        loadComponent: () => import('../pages/branch-locator/branch-locator.component').then(m => m.BranchLocatorComponent)
+    },
+    {
+        path: 'connect-with-us',
+        loadComponent: () => import('../pages/connect-with-us/connect-with-us.component').then(m => m.ConnectWithUsComponent)
+    },
+    {
+        path: 'help-and-support',
+        loadComponent: () => import('../pages/help-and-support/help-and-support.component').then(m => m.HelpAndSupportComponent)
+    },
+    ...profileManagementRoutes,
+    ...articleRoutes,
+    {
+        path: 'bank-with-us',
+        loadComponent: () => import('../pages/bank-with-us/bank-with-us.component').then(m => m.BankWithUsComponent)
+    },
+    {
+        path: 'faq',
+        loadComponent: () => import('../pages/faq/faq.component').then(m => m.FaqComponent)
+    },
+    {
+        path: 'tradesuite',
+        loadComponent: () => import('../pages/tradesuite/tradesuite.component').then(m => m.TradesuiteComponent)
+    },
+    {
+        path: 'ob4b',
+        loadComponent: () => import('../pages/online-banking-for-business/online-banking-for-business.component').then(m => m.OnlineBankingForBusinessComponent)
     },
     {
         path: '**',

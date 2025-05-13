@@ -1,0 +1,94 @@
+<div class="connect-with-us">
+    <div class="custom-container">
+        <div class="toolbar-block">
+            <button class="backBtn">
+                <img class="img-fluid" src="assets/images/icons/back-left-icon.png" alt="back button">
+                <span>Back</span>
+            </button> 
+            <h2 class="toolbar-title">Connect with us</h2>
+        </div>
+
+        <div class="form-wrapper">
+            <div class="container-fluid px-0">
+                <div class="row row-gap-5">
+                    <div class="col-lg-8">
+                        <p class="form-desc">Submit your details and one of our consultants will contact you soon.</p>
+                        <form>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="formgroup">
+                                        <span class="labeltext">Name and surname</span>
+                                        <input type="text" class="custom-input" placeholder="Enter your full name" name="" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="formgroup">
+                                        <span class="labeltext">ID/Passport number</span>
+                                        <input type="text" class="custom-input" placeholder="Enter ID/passport number" name="" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="formgroup">
+                                        <span class="labeltext">Email address</span>
+                                        <input type="text" class="custom-input" placeholder="Enter email address" name="" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="formgroup">
+                                        <span class="labeltext">Contact number</span>
+                                        <input type="text" class="custom-input" placeholder="Phone number" name="" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="formgroup">
+                                        <span class="labeltext">I'm looking for a</span>
+                                        <ng-select
+                                            [items]="categories"
+                                            bindLabel="name"
+                                            bindValue="id"
+                                            [(ngModel)]="selectedCategory"
+                                            placeholder="Select a category"
+                                            class="custom-ngs"
+                                        >
+                                        </ng-select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="formgroup">
+                                        <span class="labeltext">City/Town</span>
+                                        <input type="text" class="custom-input" placeholder="Enter city/town" name="" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="formgroup">
+                                        <span class="labeltext"><sup>*</sup> Message subject</span>
+                                        <input type="text" class="custom-input" placeholder="Enter" name="" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="formgroup">
+                                        <span class="labeltext"><sup>*</sup> Your message</span>
+                                        <textarea type="text" class="custom-textarea" placeholder="Enter your message" name="" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="primaryBtn submit-btn">SUBMIT</button>
+                        </form>
+                    </div>
+                    <div class="col-lg-4 d-flex align-items-center justify-content-center">
+                        <img class="img-fluid" src="assets/images/media/connect-with-us.png" alt="connect with us image">
+                    </div>  
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

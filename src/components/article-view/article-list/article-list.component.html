@@ -1,0 +1,109 @@
+<div class="artical-page">
+    <div class="custom-container">
+        <div>
+            <!-- Article Breadcrumb -->
+            <nav class="breadCrumb">
+                <ul>
+                    <li>
+                        <a [routerLink]="['/']" class="backBtn">
+                            <img class="img-fluid" src="assets/images/icons/back-left-icon.png" alt="back button">
+                            <span>Back</span>
+                        </a> 
+                    </li>
+                    <li>
+                        <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
+                    </li>
+                    <li>
+                        <a class="route-name" [routerLink]="['/']"><span>Home</span></a>
+                    </li>
+                    <li>
+                        <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
+                    </li>
+                    <li>
+                        <a class="route-name" [routerLink]="['/articles']"><span>Articles</span></a>
+                    </li>
+                    <li>
+                        <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
+                    </li>
+                </ul>
+                </nav>
+            <!-- Article Breadcrumb End -->
+    
+            <div class="page-info">
+                <h1 class="page-title">Starting a new business</h1>
+                <p class="page-description">First-time entrepreneurs often find that starting their new business works out differently to what they expected. We’ve collected articles by various business owners describing their own experiences, from finding funding to turning a hobby into a business empire.</p>
+            </div>
+        </div>
+
+        <h2 class="title-md">ARTICLES FOR STARTING YOUR BUSINESS</h2>
+        <div class="container-fluid px-0">
+            <div class="row">
+                <div class="col-lg-9 col-md-8 col-sm-12">            
+                    <div class="formgroup">
+                        <span class="labeltext">Search</span>
+                        <div class="search-container">
+                            <input type="text" placeholder="Enter your search here" />
+                            <button type="button">
+                                <img class="img-fluid" src="assets/images/icons/icon-search.svg" alt="search icon">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="formgroup">
+                        <span class="labeltext">Select year</span>
+                        <ng-select
+                            [items]="selectyear"
+                            bindLabel="name"
+                            bindValue="id"
+                            [(ngModel)]="selectedYear"
+                            placeholder="Please select"
+                            class="custom-ngs"
+                        >
+                        </ng-select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="grid-container">
+            <div class="artical-card featured-card" *ngFor="let article of paginatedArticles; let i = index"
+                 [ngClass]="{'featured-card': i === 0, 'horizontal-card': i !== 0}">
+              <img *ngIf="article.imageUrl" [src]="article.imageUrl" alt="Article image" />
+              <div class="content">
+                <div class="small-text"><span>{{ article.category }}</span><span>{{ article.date }}</span></div>
+                <h3><a [href]="article.readMoreLink">{{ article.title }}</a></h3>
+                <p *ngIf="article.summary">{{ article.summary }}</p>
+                <a [href]="article.readMoreLink" class="read-more">READ MORE <img class="img-fluid arrow" src="assets/images/icons/col-icon-right.png" alt="right arrow" /></a>
+              </div>
+            </div>
+        </div>
+          
+       <!-- Pagination -->
+        <div class="custom-pagination">
+            <button type="button" (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">
+            <img
+                src="assets/images/icons/carousel-arrow-lt.png"
+                alt="arrow"
+                class="img-fluid"
+            />
+            </button>
+            <ul>
+                <li class="selected" *ngFor="let page of [].constructor(totalPages()); let i = index" [class.active]="currentPage === i + 1"
+                >
+                    <button type="button" (click)="setPage(i + 1)">{{ i + 1 }}</button>
+                </li>
+            </ul>
+            <button type="button" (click)="setPage(currentPage + 1)" [disabled]="currentPage === totalPages()">
+            <img
+                src="assets/images/icons/carousel-arrow-rt.png"
+                alt="arrow"
+                class="img-fluid"
+            />
+            </button>
+        </div>
+        <!-- Pagination End-->
+
+    </div>
+</div>
+

@@ -1,0 +1,259 @@
+
+<div class="no-data" *ngIf="!isDeviceListAvailable">
+    <img class="img-fluid tick" src="assets/images/icons/no-device-found.png" alt="no device">
+    <h4>No devices found</h4>
+    <p>You don't have any active devices to manage.</p>
+    <button type="button" class="primaryBtn" data-bs-toggle="modal" data-bs-target="#linkdevice">LINK A DEVICE</button>
+</div>
+
+<div *ngIf="!isDeviceListAvailable">
+    <p class="description">Oversee and control all of your connected devices. You can monitor and remove your devices at any time.</p>
+    <button type="button" class="primaryBtn">LINK A DEVICE</button>
+
+    <div class="table-container">
+        <table class="table device-list-table">
+            <thead>
+                <tr>
+                    <th>
+                        <div class="checkbox-field">
+                            <input class="checkbox-input" id="selectall" type="checkbox" />
+                            <label class="checkbox" for="selectall">
+                              <span>
+                                <img class="img-fluid tick" src="assets/images/icons/checkbox-tick.png" alt="checkbox">
+                              </span>
+                              <div class="device-info">
+                                <div>
+                                    <p>Select all</p>
+                                </div>
+                              </div>
+                            </label>
+                        </div>
+                    </th>
+                    <th>
+                        <button type="button" class="delete-all" data-bs-toggle="modal" data-bs-target="#isRemovedevice"><img class="img-fluid" src="assets/images/icons/icn_bin.png" alt="delete" /></button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="activeRow">
+                        <div class="checkbox-field">
+                            <input class="checkbox-input" id="dev1" type="checkbox" />
+                            <label class="checkbox" for="dev1">
+                              <span>
+                                <img class="img-fluid tick" src="assets/images/icons/checkbox-tick.png" alt="checkbox">
+                              </span>
+                              <div class="device-info">
+                                <div class="device-frame">
+                                    <img class="img-fluid" src="assets/images/icons/mob-device.png" alt="mobile" />
+                                </div>
+                                <div>
+                                    <p>iPhone 14 Pro MAX (Preferred device) <img class="img-fluid" src="assets/images/icons/green-check.png" alt="check" /></p>
+                                    <p>Last used on: 24-03-2024, 07:30am</p>
+                                </div>
+                              </div>
+                            </label>
+                        </div>
+                    </td>
+                    <td class="activeRow">
+                        <div class="action-controls">
+                            <button type="button"><img class="img-fluid" src="assets/images/icons/icn_bin.png" alt="delete" /></button>
+                            <button type="button"><img class="img-fluid" src="assets/images/icons/icn_phone_settings.png" alt="icn_phone_settings" /></button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox-field">
+                            <input class="checkbox-input" id="dev1" type="checkbox" />
+                            <label class="checkbox" for="dev1">
+                              <span>
+                                <img class="img-fluid tick" src="assets/images/icons/checkbox-tick.png" alt="checkbox">
+                              </span>
+                              <div class="device-info">
+                                <div class="device-frame">
+                                    <img class="img-fluid" src="assets/images/icons/mob-device.png" alt="mobile" />
+                                </div>
+                                <div>
+                                    <p>iPhone 14 Pro MAX (Preferred device)</p>
+                                    <p>Last used on: 24-03-2024, 07:30am</p>
+                                </div>
+                              </div>
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="action-controls">
+                            <button type="button"><img class="img-fluid" src="assets/images/icons/icn_bin.png" alt="delete" /></button>
+                            <button type="button"><img class="img-fluid" src="assets/images/icons/icn_phone_settings.png" alt="icn_phone_settings" /></button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox-field">
+                            <input class="checkbox-input" id="dev1" type="checkbox" />
+                            <label class="checkbox" for="dev1">
+                              <span>
+                                <img class="img-fluid tick" src="assets/images/icons/checkbox-tick.png" alt="checkbox">
+                              </span>
+                              <div class="device-info">
+                                <div class="device-frame">
+                                    <img class="img-fluid" src="assets/images/icons/mob-device.png" alt="mobile" />
+                                </div>
+                                <div>
+                                    <p>iPhone 14 Pro MAX (Preferred device)</p>
+                                    <p>Last used on: 24-03-2024, 07:30am</p>
+                                </div>
+                              </div>
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="action-controls">
+                            <button type="button"><img class="img-fluid" src="assets/images/icons/icn_bin.png" alt="delete" /></button>
+                            <button type="button"><img class="img-fluid" src="assets/images/icons/icn_phone_settings.png" alt="icn_phone_settings" /></button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox-field">
+                            <input class="checkbox-input" id="dev1" type="checkbox" />
+                            <label class="checkbox" for="dev1">
+                              <span>
+                                <img class="img-fluid tick" src="assets/images/icons/checkbox-tick.png" alt="checkbox">
+                              </span>
+                              <div class="device-info">
+                                <div class="device-frame">
+                                    <img class="img-fluid" src="assets/images/icons/mob-device.png" alt="mobile" />
+                                </div>
+                                <div>
+                                    <p>iPhone 14 Pro MAX (Preferred device)</p>
+                                    <p>Last used on: 24-03-2024, 07:30am</p>
+                                </div>
+                              </div>
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="action-controls">
+                            <button type="button"><img class="img-fluid" src="assets/images/icons/icn_bin.png" alt="delete" /></button>
+                            <button type="button"><img class="img-fluid" src="assets/images/icons/icn_phone_settings.png" alt="icn_phone_settings" /></button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="checkbox-field">
+                            <input class="checkbox-input" id="dev1" type="checkbox" />
+                            <label class="checkbox" for="dev1">
+                              <span>
+                                <img class="img-fluid tick" src="assets/images/icons/checkbox-tick.png" alt="checkbox">
+                              </span>
+                              <div class="device-info">
+                                <div class="device-frame">
+                                    <img class="img-fluid" src="assets/images/icons/mob-device.png" alt="mobile" />
+                                </div>
+                                <div>
+                                    <p>iPhone 14 Pro MAX (Preferred device)</p>
+                                    <p>Last used on: 24-03-2024, 07:30am</p>
+                                </div>
+                              </div>
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="action-controls">
+                            <button type="button"><img class="img-fluid" src="assets/images/icons/icn_bin.png" alt="delete" /></button>
+                            <button type="button"><img class="img-fluid" src="assets/images/icons/icn_phone_settings.png" alt="icn_phone_settings" /></button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" class="load-more">LOAD MORE</button>
+    </div>
+</div>
+
+
+
+  <!-- Contact device Modal -->
+  <div class="modal fade custom-device-modal" id="isRemovedevice" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <!-- Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">Remove multiple devices</h5>
+          <button type="button" class="btnclose" data-bs-dismiss="modal">
+            <img class="img-fluid" src="assets/images/icons/close-icon-white.png" alt="Close" />
+          </button>
+        </div>
+  
+        <div class="modal-body">
+          <div class="dialog-content">
+            <h3 class="heading-title">Are you sure you want to remove these devices?</h3>
+            <p class="text-md">If you remove these devices from the list, you wont be able to access the BCB Platform from these devices until they are added again.</p>
+          </div>
+        </div>
+  
+        <div class="modal-footer">
+          <button type="button" class="textBtn" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="textBtn">Yes, Remove</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Contact device Modal -->
+    <div class="modal fade custom-device-modal link-device-modal" id="linkdevice" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <!-- Header -->
+            <div class="modal-header">
+              <h5 class="modal-title">Remove multiple devices</h5>
+              <button type="button" class="btnclose" data-bs-dismiss="modal">
+                <img class="img-fluid" src="assets/images/icons/close-icon-white.png" alt="Close" />
+              </button>
+            </div>
+      
+            <div class="modal-body">
+                <div class="container-fluid px-0">
+                    <div class="row">
+                        <div class="col-lg-5 text-center">
+                            <img class="img-fluid" src="assets/images/media/mobile.png" alt="mobile device">
+                        </div>
+                        <div class="col-lg-7">
+                            <h4>How to link a device to your profile</h4>
+                            <ol>
+                                <li>
+                                    <p>Download the Online Banking for Business App on your mobile device and sign in</p>
+                                </li>
+                                <li>
+                                    <p>Follow the steps required during the sign-in process</p>
+                                </li>
+                                <li>
+                                    <p>Once complete, your device will be automatically linked to your digital profile</p>
+                                </li>
+                            </ol>
+                            <div class="get-app">
+                                <a href="#"><img class="img-fluid" src="assets/images/media/app-store-w.png" alt="app store"></a>
+                                <a href="#"><img class="img-fluid" src="assets/images/media/google-play-w.png" alt="google play"></a>
+                                <a href="#"><img class="img-fluid" src="assets/images/media/app-gallery-w.png" alt="app gallery"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+            <!-- Form Actions -->
+            <div class="modal-footer">
+              <button type="button" class="textBtn" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="textBtn">Done</button>
+            </div>
+    
+          </div>
+        </div>
+      </div>
