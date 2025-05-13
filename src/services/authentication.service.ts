@@ -11,6 +11,7 @@ import { SafeStorageService } from './safe-storage.service';
 export class AuthenticationService {
     private accessCodeUrl = 'https://enterprisestssit.standardbank.co.za/as/authorization.oauth2';
     private tokenUrl = 'https://enterprisestssit.standardbank.co.za/as/token.oauth2';
+    private getdata = 'https://enterprisestssit.standardbank.co.za/idp/userinfo.openid';
     private grant_type = environment?.auth?.grant_type;
     private redirect_uri = environment?.auth?.redirect_uri;
     private client_id = environment?.auth?.client_id;
@@ -65,7 +66,25 @@ export class AuthenticationService {
   return this.http.get<{ accessCode: string }>(this.accessCodeUrl, { params: httpParams })
     .pipe(catchError(this.handleError));
 }
+private createHeaders(): HttpHeaders {
+  let headers = new HttpHeaders({
+    'Content-Type': 'application/json'
+  });
   
+  const token = localStorage.getItem('accessToken')
+  if (token) {
+    headers = headers.set('Authorization', `Bearer ${token}`);
+  }
+  
+  return headers;
+}
+getUserInfo(){
+    const headers = this.createHeaders();
+     return this.http.get<any>(this.getdata, { headers })
+      .pipe(
+        catchError(error => this.handleError(error))
+      );
+}
   /**
    * Exchanges the access code for an access token via the second API
    * @param accessCode The access code received from the first API
@@ -78,15 +97,21 @@ export class AuthenticationService {
   }> {
     // Set up headers for token request
     const headers = new HttpHeaders({
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/x-www-form-urlencoded',
+      
     });
+    // const headers = this.createHeaders();
+
     const body = new URLSearchParams();
     body.set('code', accessCode);
     body.set('grant_type', this.grant_type);
     body.set('client_id', this.client_id);
     body.set('code_verifier',this.code_verifier)
     body.set('redirect_uri', this.redirect_uri);
-    
+    // return this.http.get<any>(this.getdata, { headers })
+    //   .pipe(
+    //     catchError(error => this.handleError(error))
+    //   );
     return this.http.post<any>(this.tokenUrl, body.toString(), { headers })
       .pipe(
         map(response => ({
@@ -95,14 +120,18 @@ export class AuthenticationService {
           expiresIn: response.expires_in || response.expiresIn
         })),
         tap(response => {
-          console.log('response',response);
-          this.safeStorageService.setItem('accessToken', response.accessToken);
+          // console.log('response',response);
+          // this.safeStorageService.setItem('accessToken', response.accessToken);
+          localStorage.setItem('accessToken', response.accessToken);
+          sessionStorage.setItem('accessToken', response.accessToken);
           if (response.refreshToken) {
-            this.safeStorageService.setItem('refreshToken', response.refreshToken);
+            // this.safeStorageService.setItem('refreshToken', response.refreshToken);
+            localStorage.setItem('refreshToken', response.refreshToken);
           }
           if (response.expiresIn) {
             const expiresAt = new Date().getTime() + response.expiresIn * 1000;
-            this.safeStorageService.setItem('expiresAt', expiresAt.toString());
+            // this.safeStorageService.setItem('expiresAt', expiresAt.toString());
+            localStorage.setItem('expiresAt', expiresAt.toString());
           }
         }),
         catchError(this.handleError)
@@ -182,7 +211,7 @@ export class AuthenticationService {
    * @returns An observable error
    */
   private handleError(error: any): Observable<never> {
-    console.error('Authentication error:', error);
+    // console.error('Authentication error:', error);
     let errorMessage = 'An error occurred during authentication';
     
     if (error.error instanceof ErrorEvent) {
