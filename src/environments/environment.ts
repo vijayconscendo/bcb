@@ -2,7 +2,7 @@ export const environment = {
   production: false,
   auth: {
     client_id: '257f066d-ff65-4c4a-a311-ff63d6b6b9f2',
-    redirect_uri: 'https://localhost:3000/dashboard',
+    redirect_uri: 'http://localhost:3000/dashboard',
     grant_type: 'authorization_code',
     code_verifier:
       'TJOu7ch7r3cdlk0bF~PaLWSKYamEEUZ9SNB1c4YhD7L',

@@ -58,8 +58,8 @@
             <span>SIGN IN / REGISTER</span>
           </button>
         </div>
-
         <div class="user-controls" *ngIf="isDashboard">
+          <span *ngIf="firstName" class="profileName">{{firstName}}</span>
             <button class="profile-btn">
               <img class="img-fluid btn-icon" src="assets/images/icons/profile-icon.png" alt="signin-icon"/>
               <span>PROFILE</span>

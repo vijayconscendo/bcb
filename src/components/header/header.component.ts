@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, HostListener,inject  } from '@angular/core';
 import { Router, RouterModule,ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from '../../services/authentication.service';
-import { finalize } from 'rxjs/operators';
+import { finalize,take } from 'rxjs/operators';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
@@ -17,7 +17,8 @@ export class HeaderComponent {
 
   // isDashboard to show hide items in header after login temp
   isDashboard = false;
-  constructor(private router: Router,private authService: AuthenticationService,private route: ActivatedRoute) {}
+  constructor(private router: Router,private authService: AuthenticationService,private route: ActivatedRoute) {
+  }
   // isDashboard End
 
 
@@ -28,41 +29,47 @@ export class HeaderComponent {
   isMobileMenuOpen = false;
   mobileActiveMenu: string | null = null;
   windowWidth = 0; // Initialize without window reference
-
+  firstName:any;
+  
   ngOnInit() {
     // Safe reference to window in lifecycle hook
     if (typeof window !== 'undefined') {
       this.windowWidth = window.innerWidth;
-    }
+    }    
+      // isDashboard
+      this.router.events.subscribe(() => {
+        this.isDashboard = this.router.url.includes('/dashboard');
+      });
+   
     this.route.queryParams.subscribe(params => {
-      // Get all parameters
-      console.log('All parameters:', params);
-      
-      // Get a specific parameter
-      const redirectUrl = params['redirect'];
-      console.log('Redirect URL:', redirectUrl);
-      if(params['code']){
+      console.log('paramsccc',localStorage.getItem('accessToken'))
+      if(params['code'] && !localStorage.getItem('accessToken')){
          this.authService.login(params['code'])
       .pipe(
         finalize(() => {
         })
       )
       .subscribe({
-        next: () => {
-          this.router.navigate(['/dashboard']);
+        next: (res) => {
+          this.loadUserProfile();
         },
         error: error => {
         }
       });
+      } else if(localStorage.getItem('accessToken')){
+        this.loadUserProfile();
       }
     });
-    
-    // isDashboard
-    this.router.events.subscribe(() => {
-      this.isDashboard = this.router.url.includes('/dashboard');
-    });
+  
+  
   }
-
+  loadUserProfile(){
+    this.authService.getUserInfo().subscribe(res=>{
+      console.log('data',res)
+      this.firstName = res?.first_name;
+    })
+  }
+ 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     if (typeof window !== 'undefined') {
@@ -119,7 +126,7 @@ export class HeaderComponent {
 
     // const url = `${baseUrl}?client_id=257f066d-ff65-4c4a-a311-ff63d6b6b9f2&response_type=code&scope=openid email profile&redirect_uri=${urlParam}&code_challenge=BizDLiK37qEpIiwtINOs8dPRp_FYidVvxm1Mo7VgSE4&code_challenge_method=S256&nonce=xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&state=xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx`
     // Parameters
-    const url = 'https://enterprisestssit.standardbank.co.za/as/authorization.oauth2?client_id=257f066d-ff65-4c4a-a311-ff63d6b6b9f2&response_type=code&scope=openid email profile&redirect_uri=https://localhost:3000/dashboard&code_challenge=BizDLiK37qEpIiwtINOs8dPRp_FYidVvxm1Mo7VgSE4&code_challenge_method=S256&nonce=xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&state=xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
+    const url = 'https://enterprisestssit.standardbank.co.za/as/authorization.oauth2?client_id=257f066d-ff65-4c4a-a311-ff63d6b6b9f2&response_type=code&scope=openid email profile&redirect_uri=http://localhost:3000/dashboard&code_challenge=BizDLiK37qEpIiwtINOs8dPRp_FYidVvxm1Mo7VgSE4&code_challenge_method=S256&nonce=xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&state=xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
     // const params = new URLSearchParams();
     // params.append('client_id', '257f066d-ff65-4c4a-a311-ff63d6b6b9f2');
     // params.append('response_type', 'code');
@@ -134,6 +141,7 @@ export class HeaderComponent {
     // const url = `${baseUrl}?${params}`;
     // const encodedUrl = url.replace(/ /g, "%20");
     // console.log('ddd',url)
+    console.log('url',url)
 
     window.open(url, "_self");
     // window.open(url, '_blank', 'noopener,noreferrer');
