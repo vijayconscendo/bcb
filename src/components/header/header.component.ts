@@ -1,8 +1,8 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule,Location } from '@angular/common';
 import { Component, HostListener,inject  } from '@angular/core';
-import { Router, RouterModule,ActivatedRoute } from '@angular/router';
+import { Router, RouterModule,ActivatedRoute,NavigationEnd } from '@angular/router';
 import { AuthenticationService } from '../../services/authentication.service';
-import { finalize,take } from 'rxjs/operators';
+import { finalize,take,filter  } from 'rxjs/operators';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
@@ -17,7 +17,7 @@ export class HeaderComponent {
 
   // isDashboard to show hide items in header after login temp
   isDashboard = false;
-  constructor(private router: Router,private authService: AuthenticationService,private route: ActivatedRoute) {
+  constructor(private router: Router,private authService: AuthenticationService,private route: ActivatedRoute,private location: Location) {
   }
   // isDashboard End
 
@@ -36,9 +36,12 @@ export class HeaderComponent {
     if (typeof window !== 'undefined') {
       this.windowWidth = window.innerWidth;
     }    
-      // isDashboard
-      this.router.events.subscribe(() => {
-        this.isDashboard = this.router.url.includes('/dashboard');
+
+      this.checkIfDashboard();
+      this.location.onUrlChange((url: string) => {
+        console.log('URL changed to:', url);
+        this.isDashboard = url.includes('/dashboard');
+        console.log('isDashboard', this.isDashboard);
       });
    
     this.route.queryParams.subscribe(params => {
@@ -62,6 +65,12 @@ export class HeaderComponent {
     });
   
   
+  }
+  checkIfDashboard() {
+    const currentUrl = this.location.path();
+    console.log('Current path:', currentUrl);
+    this.isDashboard = currentUrl.includes('/dashboard');
+    console.log('isDashboard', this.isDashboard);
   }
   loadUserProfile(){
     this.authService.getUserInfo().subscribe(res=>{
