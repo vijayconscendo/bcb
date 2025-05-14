@@ -1,81 +1,10 @@
-.tradesuite-page{
-    background-color: #F4F5F7; padding: 3.125rem 0;
-}
-
-.backBtn{
-    border: 1px solid #0062E1;
-    border-radius: 30px;
-    padding: 3px 14px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px; cursor: pointer;
-    span{
-        font-family: "BSP-Medium";
-    font-size: 0.875rem;
-    line-height: normal;
-    text-align: center;
-
-    }
-}
-.breadCrumb{
-    margin-bottom: 1.5rem;
-    ul{
-        list-style: none; padding: 0; margin: 0; display: flex; align-items: center; justify-content: center;
-        li{
-            .route-name{
-                font-family: "BSP-Regular";
-                font-size: 0.875rem;
-                line-height: 1.3;
-                text-decoration: none;
-                color: var(--text-color);
-            }
-            &:not(:last-child){margin-right: 0.625rem;}
-        }
-    }
-}
-
-.main-title{
-    font-family: "BSP-Regular";
-    font-size: 3rem;
-    line-height: 1.3;
-    color: var(--text-color);
-    margin: 1.5rem 0 4.375rem;
-    text-align: center;
-}
-
-// img-card-text
-.img-card-text{ background-color: #FFFFFF; border-radius: 0.625rem; margin-bottom: 4.375rem;
-    .colLeft{
-        img{
-            width: 100%;
-        };
-    }
-    .content{
-        display: flex; flex-direction: column; justify-content: space-between;
-        width: 100%; height: 100%;padding: 2.5rem 2.5rem 1.6875rem 0.375rem;
-        p{
-            font-family: "BSP-Regular"; font-size: 1.375rem; line-height: 2rem; color: #3C4B6C; margin-bottom: 2rem;
-        }
-        .btn-pair{
-            display: flex; gap: 20px;
-            button{
-                width: 100%;
-            }
-        }
-    }
-}
-
-
-// view-all-faqs
-.view-all-faqs{
-    display: flex; align-items: center;justify-content: space-between;
-    padding: 6.25rem 0; gap: 2rem;
-    p{
-        font-family: "BSP-Regular"; font-size: 1rem; line-height: 1.5; color: #3C4B6C;margin: 0;
-    }
-    button{
-        width: 100%; max-width: 300px;
-    }
-}
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh; /* full viewport height */
+  }
+  
+  .router-container {
+    flex: 1;
+    overflow-y: auto;
+  }

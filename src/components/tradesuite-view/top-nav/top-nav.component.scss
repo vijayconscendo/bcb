@@ -1,0 +1,16 @@
+
+.top-nav-two{
+    background-color: #10223E; padding: 13px 0;
+
+}
+.top-nav-container{
+    display: flex; align-items: center; gap: 1rem;
+}
+.text-icon-btn{
+        background-color: transparent; border: none; padding: 0; display: inline-flex; align-items: center; gap: 1rem;
+        .text-title{
+            font-family: "BSP-Regular";font-size: 0.875rem; line-height: normal; margin: 0; color: #FFFFFF;
+        }
+}
+
+
