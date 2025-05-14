@@ -38,10 +38,19 @@ export class HeaderComponent {
     }    
 
       this.checkIfDashboard();
-      this.location.onUrlChange((url: string) => {
-        console.log('URL changed to:', url);
-        this.isDashboard = url.includes('/dashboard');
-        console.log('isDashboard', this.isDashboard);
+      // this.location.onUrlChange((url: string) => {
+      //   console.log('URL changed to:', url);
+      //   this.isDashboard = url.includes('/dashboard');
+      //   console.log('isDashboard', this.isDashboard);
+      // });
+
+      this.router.events.subscribe(event => {
+        if (event instanceof NavigationEnd) {
+          const url = event.urlAfterRedirects;
+          console.log('URL changed to:', url);
+          this.isDashboard = url.startsWith('/dashboard');
+          console.log('isDashboard', this.isDashboard);
+        }
       });
    
     this.route.queryParams.subscribe(params => {

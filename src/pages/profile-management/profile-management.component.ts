@@ -7,13 +7,6 @@ import { DeviceManagementComponent } from '../../components/profile-management-v
 import { ConsentsComponent } from '../../components/profile-management-view/consents/consents.component';
 
 
-interface Tab {
-  id: string;
-  title: string;
-  component?: any;
-  content?: string;
-}
-
 @Component({
   selector: 'app-profile-management',
   imports: [RouterModule, CommonModule, BusinessDetailsComponent, NotificationsComponent, DeviceManagementComponent, ConsentsComponent],
@@ -21,11 +14,5 @@ interface Tab {
   styleUrl: './profile-management.component.scss'
 })
 export class ProfileManagementComponent {
-  activeTab = 'tab1';
 
-  tabs: Tab[] = [
-    { id: 'tab1', title: 'Tab 1', component: BusinessDetailsComponent },
-    { id: 'tab2', title: 'Tab 2', content: 'Content of Tab 2' },
-    { id: 'tab3', title: 'Tab 3', content: 'Content of Tab 3' }
-  ];
 }

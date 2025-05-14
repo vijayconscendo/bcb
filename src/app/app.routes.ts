@@ -5,7 +5,6 @@ import { serviceRequestRoutes } from '../pages/service-request/service-request.r
 import { authGuard } from '../services/authguard';
 import { documentsRoutes } from '../pages/documents/documents.routes';
 import { profile } from 'console';
-import { profileManagementRoutes } from '../pages/profile-management/profile-management.routes';
 import { articleRoutes } from '../pages/articles/articles.routes';
 
 export const routes: Routes = [
@@ -44,7 +43,10 @@ export const routes: Routes = [
                 path: 'help-and-support',
                 loadComponent: () => import('../pages/help-and-support/help-and-support.component').then(m => m.HelpAndSupportComponent)
             },
-            ...profileManagementRoutes,
+            {
+                path: 'my-profile',
+                loadComponent: () => import('../pages/profile-management/profile-management.component').then(m => m.ProfileManagementComponent)
+            },
             ...articleRoutes,
             {
                 path: 'bank-with-us',
@@ -57,6 +59,10 @@ export const routes: Routes = [
             {
                 path: 'ob4b',
                 loadComponent: () => import('../pages/online-banking-for-business/online-banking-for-business.component').then(m => m.OnlineBankingForBusinessComponent)
+            },
+            {
+                path: 'profile-selection',
+                loadComponent: () => import('../pages/profile-selection/profile-selection.component').then(m => m.ProfileSelectionComponent)
             },
         ]
     },

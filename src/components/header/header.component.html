@@ -51,26 +51,39 @@
           </ul>
         </nav>
   
-        <!-- Profile and Sign Out buttons -->
+        <!-- Profile and Sign Out buttons (Web View)-->
         <div class="user-controls" *ngIf="!isDashboard">
-          <button class="sign-out-btn"   (click)="onSignIn()"> <!--[routerLink]="['/dashboard']" (click)="onSignIn()"--> 
-            <img class="img-fluid btn-icon" src="assets/images/icons/lock-icon.png" alt="signin-icon"/>
-            <span>SIGN IN / REGISTER</span>
-          </button>
+          <div class="profile-dropdown">
+            <button class="sign-out-btn" id="signInRegisterBtn" data-bs-toggle="dropdown" aria-expanded="false"> <!--[routerLink]="['/dashboard']" (click)="onSignIn()"--> 
+              <img class="img-fluid btn-icon" src="assets/images/icons/lock-icon.png" alt="signin-icon"/>
+              <span>SIGN IN / REGISTER</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="signInRegisterBtn">
+              <li><a class="dropdown-item" (click)="onSignIn()">SIGN IN</a></li>
+              <li><a class="dropdown-item" href="/">REGISTER</a></li>
+            </ul>
+          </div>
         </div>
         <div class="user-controls" *ngIf="isDashboard">
-          <span *ngIf="firstName" class="profileName">{{firstName}}</span>
-            <button class="profile-btn">
-              <img class="img-fluid btn-icon" src="assets/images/icons/profile-icon.png" alt="signin-icon"/>
-              <span>PROFILE</span>
-            </button>
+            <div class="profile-dropdown">
+              <button *ngIf="firstName" class="profile-btn" id="profileMenuBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                <img class="img-fluid btn-icon" src="assets/images/icons/profile-icon.png" alt="signin-icon"/>
+                <span>{{firstName}}</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileMenuBtn">
+                <li><a class="dropdown-item" routerLink="/my-profile">My Profile</a></li>
+                <li><a class="dropdown-item" routerLink="/profile-selection">Switch Profile</a></li>
+              </ul>
+            </div>
+
             <button class="sign-out-btn" [routerLink]="['/']"><!--(click)="onSignOut()" -->
               <img class="img-fluid btn-icon" src="assets/images/icons/lock-icon.png" alt="signin-icon"/>
               <span>SIGN OUT</span>
             </button>
           </div>
+        <!-- Profile and Sign Out buttons End(Web View)-->
 
-        <!-- User Profile -->
+        <!-- User Profile In Mobile-->
         <div class="user-profile">
           <div class="user-dropdown">
             <button class="dropdowntoggle" type="button" id="userProfile" data-bs-toggle="dropdown" aria-expanded="false">
@@ -79,13 +92,21 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="userProfile">
               <li *ngIf="isDashboard">
-                <a class="dropdown-item" href="#">
-                  <span>VijayaBhaskar Reddy</span>
+                <a class="dropdown-item" href="#" *ngIf="firstName">
+                  <span>{{firstName}}</span>
                 </a>
               </li>
-              <li class="li-divider">
-                <hr />
+              <li *ngIf="isDashboard">
+                <a class="dropdown-item" routerLink="/my-profile" >
+                  <span>My Profile</span>
+                </a>
               </li>
+              <li *ngIf="isDashboard">
+                <a class="dropdown-item" href="#" >
+                  <span>Switch Profile</span>
+                </a>
+              </li>
+
               <li *ngIf="isDashboard">
                 <a class="signin" href="#" (click)="onSignOut()">
                   <img class="img-fluid btn-icon" src="assets/images/icons/lock-icon.png" alt="signin-icon"/>
