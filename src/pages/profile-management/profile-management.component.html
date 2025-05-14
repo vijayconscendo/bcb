@@ -8,23 +8,41 @@
             <h2 class="toolbar-title">Profile management</h2>
         </div>
         <div class="tab-wrapper">
-            <ul class="tabs-ul">
-                <li class="activeTab">                    
-                    <button type="button" [routerLink]="'/profile-management/business-details'">Business details</button>
-                </li>
-                <li>                    
-                    <button type="button" [routerLink]="'/profile-management/notifications'">Notifications</button>
-                </li>
-                <li>                    
-                    <button type="button" [routerLink]="'/profile-management/device-management'">Device management</button>
-                </li>
-                <li>                    
-                    <button type="button" [routerLink]="'/profile-management/consents'">Consents</button>
-                </li>
-              </ul>
-              <div class="routing-content">
-                <router-outlet></router-outlet>
+            <div class="tab-settings">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="tab-one-tab" data-bs-toggle="tab" data-bs-target="#tab-one-pane" type="button" role="tab" aria-controls="tab-one-pane" aria-selected="true">Business Details</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab-two-tab" data-bs-toggle="tab" data-bs-target="#tab-two-pane" type="button" role="tab" aria-controls="tab-two-pane" aria-selected="false">Notifications</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab-three-tab" data-bs-toggle="tab" data-bs-target="#tab-three-pane" type="button" role="tab" aria-controls="tab-three-pane" aria-selected="false">Device Management</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab-four-tab" data-bs-toggle="tab" data-bs-target="#tab-four-pane" type="button" role="tab" aria-controls="tab-four-pane" aria-selected="false">Consents</button>
+                  </li>
+                </ul>
+              
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active" id="tab-one-pane" role="tabpanel" aria-labelledby="tab-one-tab">
+                    <app-business-details></app-business-details>
+                  </div>
+              
+                  <div class="tab-pane fade" id="tab-two-pane" role="tabpanel" aria-labelledby="tab-two-tab">
+                    <app-notifications></app-notifications>
+                  </div>
+              
+                  <div class="tab-pane fade" id="tab-three-pane" role="tabpanel" aria-labelledby="tab-three-tab">
+                    <app-device-management></app-device-management>
+                  </div>
+              
+                  <div class="tab-pane fade" id="tab-four-pane" role="tabpanel" aria-labelledby="tab-four-tab">
+                    <app-consents></app-consents>
+                  </div>
+                </div>
               </div>
+
         </div>
     </div>
 </div>
