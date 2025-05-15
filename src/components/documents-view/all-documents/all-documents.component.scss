@@ -188,6 +188,83 @@
     }
   }
 
+// search-and-filter
+.search-and-filter{
+    display: flex; gap: 2rem; padding: 2rem 0 0;
+    .search-container{
+        display: flex; align-items: center; width: 100%; max-width: 328px; margin: 0.5rem 0;
+        border: 1px solid #E3E6EA; height: 50px; padding: 0.5rem 1rem; border-radius: 0.5rem;
+        input{
+            border: none; height: 100%; margin-left: 0.3125rem; flex-grow: 1;
+            font-family: "BSP-Bold"; font-size: 1rem; color: var(--text-color);
+            &:focus{outline: none;}
+            &::placeholder{
+                font-family: "BSP-Regular"; font-size: 1rem; color: var(--text-light-gray);
+            }
+        }
+    }
+    
+    .filter-btn{
+        display: flex; align-items: center; gap: 0.625rem; padding: 0.5rem 1rem; background-color: #FFFFFF;
+        border: 1px solid var(--color-primary); height: 50px; border-radius: 0.5rem; color: var(--color-primary);
+        margin: 0.5rem 0;
+        span{
+            font-family: "BSP-Bold"; font-size: 0.875rem;line-height: normal;text-transform: uppercase;
+        }
+    }
+}
 
- 
-  
+.filter-block{
+    padding: 1.5rem; background-color: #F4F5F7;
+    .title-md{
+        font-family: "BSP-Medium"; font-size: 1.5rem; line-height: normal; margin-bottom: 1.5rem;
+    }
+}
+
+
+.pair-date-picker{
+    display: flex; gap: 1.25rem;
+}
+// custom-input-group
+.custom-date-picker{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%; max-width: 290px;
+    background-color: #FFFFFF;
+    justify-content: space-between;
+    border: 1px solid #E3E6EA;
+    border-radius: 0.5rem;
+    height: 50px;
+    padding: 0 1rem;
+    .date-input{
+        padding-right: 0.5rem;
+        border: none;
+        &:focus{outline: none;}
+    }
+    .date-btn{
+        padding: 0;
+        background-color: transparent; border: none;
+    }
+    .dropdown-menu.show{
+        top: 100% !important;
+    }
+}
+
+.filter-buttons{
+    display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+    .fl-btn{
+        padding: 0.625rem 1.5rem; border-radius: 3.125rem;border: 1px solid transparent;
+        font-family: "BSP-Medium"; font-size: 1rem; line-height: normal; background-color: transparent; text-transform: uppercase;
+    }
+    .apply-btn{
+        background-color: var(--color-primary-dark); color: #FFFFFF;
+    }
+    .close-btn{ 
+        background-color: #FFFFFF; color: var(--color-primary-dark);border-color: var(--color-primary-dark);
+    }
+    .clear-btn{
+        background-color: transparent; color: var(--color-primary-dark);
+    }
+}

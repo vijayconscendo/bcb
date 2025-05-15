@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { NgbDatepickerModule, NgbCalendar, NgbDatepickerConfig   } from '@ng-bootstrap/ng-bootstrap';
 
   // countries.ts
   const accounts = [
@@ -17,12 +18,23 @@ import { NgSelectModule } from '@ng-select/ng-select';
 
 @Component({
   selector: 'app-unstamped-statements',
-  imports: [CommonModule, NgSelectModule, FormsModule],
+  imports: [CommonModule, NgSelectModule, FormsModule, NgbDatepickerModule ],
   templateUrl: './unstamped-statements.component.html',
-  styleUrl: '../all-documents/all-documents.component.scss'
+  styleUrl: '../all-documents/all-documents.component.scss',
 })
 export class UnstampedStatementsComponent {
+  selectedDate: any;
+  isSearchFilter: boolean = false;
 
+  toggleSearchFilter(): void {
+    this.isSearchFilter = !this.isSearchFilter;
+  }
+
+  constructor(private calendar: NgbCalendar, private config: NgbDatepickerConfig) {
+    // Customize calendar configuration
+    this.config.navigation = 'select'; // Enables dropdown selectors for month/year
+    this.config.showWeekNumbers = false;
+  }
 
   documents = [
     {
@@ -128,4 +140,7 @@ export class UnstampedStatementsComponent {
   accountList = accounts;
   // selectedAccount: any;
   selectedAccount = this.accountList[0];
+
+
+
 }

@@ -6,6 +6,7 @@ import { authGuard } from '../services/authguard';
 import { documentsRoutes } from '../pages/documents/documents.routes';
 import { profile } from 'console';
 import { articleRoutes } from '../pages/articles/articles.routes';
+import { OnlineBankingLayoutComponent } from '../components/layouts/online-banking-layout/online-banking-layout.component';
 
 export const routes: Routes = [
     {
@@ -66,7 +67,7 @@ export const routes: Routes = [
             },
         ]
     },
-      // 🔁 Tradesuite layout routes
+      // 🔁 Tradesuite Layout Routes
     {
         path: 'tradesuite',
         component: TradesuiteLayoutComponent,
@@ -74,6 +75,17 @@ export const routes: Routes = [
             {
                 path: '',
                 loadChildren: () => import('../pages/tradesuite/tradesuite.routes').then(m => m.tradesuiteRoutes)
+            }
+        ]
+    },
+    // Online Banking Layout Routes
+    {
+        path: 'online-banking',
+        component: OnlineBankingLayoutComponent,
+        children: [
+            {
+                path: '',
+                loadChildren: () => import('../pages/online-banking/online-banking-routes').then(m => m.onlineBankingRoutes)
             }
         ]
     },
