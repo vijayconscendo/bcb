@@ -2,28 +2,27 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { DatePickerComponent } from '../../generic-components/date-picker/date-picker.component';
 
-  // countries.ts
-  const accounts = [
-    { name: 'Business Current Account **** 6098' },
-    { name: 'Business Current Account **** 6098' },
-    { name: 'Business Current Account **** 6098' },
-    { name: 'Business Current Account **** 6098' },
-    { name: 'Business Current Account **** 6098' },
-    { name: 'Business Current Account **** 6098' },
-    { name: 'Business Current Account **** 6098' },
-    { name: 'Business Current Account **** 6098' },
-  ];
+// countries.ts
+const accounts = [
+  { name: 'Business Current Account **** 6098' },
+  { name: 'Business Current Account **** 6098' },
+  { name: 'Business Current Account **** 6098' },
+  { name: 'Business Current Account **** 6098' },
+  { name: 'Business Current Account **** 6098' },
+  { name: 'Business Current Account **** 6098' },
+  { name: 'Business Current Account **** 6098' },
+  { name: 'Business Current Account **** 6098' },
+];
 
 @Component({
   selector: 'app-unstamped-statements',
-  imports: [CommonModule, NgSelectModule, FormsModule],
+  imports: [CommonModule, NgSelectModule, FormsModule, DatePickerComponent],
   templateUrl: './unstamped-statements.component.html',
-  styleUrl: '../all-documents/all-documents.component.scss'
+  styleUrl: '../all-documents/all-documents.component.scss',
 })
 export class UnstampedStatementsComponent {
-
-
   documents = [
     {
       date: '1 May 2025',
@@ -34,8 +33,8 @@ export class UnstampedStatementsComponent {
         email: 'assets/images/icons/send-icon.png',
         preview: 'assets/images/icons/preview-icon.png',
         download: 'assets/images/icons/download-icon-md.png',
-        account: 'assets/images/icons/loan-account-icon.png'
-      }
+        account: 'assets/images/icons/loan-account-icon.png',
+      },
     },
     {
       date: '1 April 2025',
@@ -46,8 +45,8 @@ export class UnstampedStatementsComponent {
         email: 'assets/images/icons/send-icon.png',
         preview: 'assets/images/icons/preview-icon.png',
         download: 'assets/images/icons/download-icon-md.png',
-        account: 'assets/images/icons/loan-account-icon.png'
-      }
+        account: 'assets/images/icons/loan-account-icon.png',
+      },
     },
     {
       date: '1 March 2025',
@@ -58,8 +57,8 @@ export class UnstampedStatementsComponent {
         email: 'assets/images/icons/send-icon.png',
         preview: 'assets/images/icons/preview-icon.png',
         download: 'assets/images/icons/download-icon-md.png',
-        account: 'assets/images/icons/loan-account-icon.png'
-      }
+        account: 'assets/images/icons/loan-account-icon.png',
+      },
     },
     {
       date: '1 April 2025',
@@ -70,8 +69,8 @@ export class UnstampedStatementsComponent {
         email: 'assets/images/icons/send-icon.png',
         preview: 'assets/images/icons/preview-icon.png',
         download: 'assets/images/icons/download-icon-md.png',
-        account: 'assets/images/icons/loan-account-icon.png'
-      }
+        account: 'assets/images/icons/loan-account-icon.png',
+      },
     },
     {
       date: '1 March 2025',
@@ -82,8 +81,8 @@ export class UnstampedStatementsComponent {
         email: 'assets/images/icons/send-icon.png',
         preview: 'assets/images/icons/preview-icon.png',
         download: 'assets/images/icons/download-icon-md.png',
-        account: 'assets/images/icons/loan-account-icon.png'
-      }
+        account: 'assets/images/icons/loan-account-icon.png',
+      },
     },
     {
       date: '1 April 2025',
@@ -94,8 +93,8 @@ export class UnstampedStatementsComponent {
         email: 'assets/images/icons/send-icon.png',
         preview: 'assets/images/icons/preview-icon.png',
         download: 'assets/images/icons/download-icon-md.png',
-        account: 'assets/images/icons/loan-account-icon.png'
-      }
+        account: 'assets/images/icons/loan-account-icon.png',
+      },
     },
     {
       date: '1 March 2025',
@@ -106,8 +105,8 @@ export class UnstampedStatementsComponent {
         email: 'assets/images/icons/send-icon.png',
         preview: 'assets/images/icons/preview-icon.png',
         download: 'assets/images/icons/download-icon-md.png',
-        account: 'assets/images/icons/loan-account-icon.png'
-      }
+        account: 'assets/images/icons/loan-account-icon.png',
+      },
     },
     {
       date: '1 April 2025',
@@ -118,10 +117,9 @@ export class UnstampedStatementsComponent {
         email: 'assets/images/icons/send-icon.png',
         preview: 'assets/images/icons/preview-icon.png',
         download: 'assets/images/icons/download-icon-md.png',
-        account: 'assets/images/icons/loan-account-icon.png'
-      }
+        account: 'assets/images/icons/loan-account-icon.png',
+      },
     },
-
   ];
 
   isFocused = false;
