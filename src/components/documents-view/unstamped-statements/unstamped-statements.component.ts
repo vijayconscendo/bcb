@@ -23,6 +23,17 @@ const accounts = [
   styleUrl: '../all-documents/all-documents.component.scss',
 })
 export class UnstampedStatementsComponent {
+  selectedDate: any;
+  isSearchFilter: boolean = false;
+
+  toggleSearchFilter(): void {
+    this.isSearchFilter = !this.isSearchFilter;
+  }
+
+  constructor() {
+    this.selectedDate = new Date();
+  }
+
   documents = [
     {
       date: '1 May 2025',
@@ -126,4 +137,7 @@ export class UnstampedStatementsComponent {
   accountList = accounts;
   // selectedAccount: any;
   selectedAccount = this.accountList[0];
+
+
+
 }

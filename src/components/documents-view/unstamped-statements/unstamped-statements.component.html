@@ -47,8 +47,67 @@
       accessed or used by a third party.
     </p>
   </div>
+
+  <div class="search-and-filter">
+    <div class="search-container">
+      <img class="search" src="assets/images/icons/search-icon.png" alt="search icon">
+      <input type="text" placeholder="Search">
+    </div>
+    <button type="button" class="filter-btn" (click)="toggleSearchFilter()"><span>FILTER</span><img class="search" src="assets/images/icons/filter-icon.png" alt="filter icon"></button>
+  </div>
+
 </div>
 <app-date-picker></app-date-picker>
+
+@if (isSearchFilter) {
+  <div class="filter-block">
+    <h3 class="title-md">Filter</h3>
+    <p-calendar [(ngModel)]="selectedDate" dateFormat="mm/dd/yy"></p-calendar>
+    <div class="pair-date-picker">
+      <div class="custom-date-picker">
+        <input
+        class="date-input"
+        placeholder="yyyy-mm-dd"
+        name="dp"
+  
+        ngbDatepicker
+        #d="ngbDatepicker"
+        [displayMonths]="1"
+        [navigation]="'select'"
+        [showWeekNumbers]="false"
+        [outsideDays]="'visible'"
+      />
+          <button class="date-btn" (click)="d.toggle()" type="button">
+            <img class="img-fluid" src="assets/images/icons/icn_calendar.png" alt="icn_calendar">
+          </button>
+      </div>
+      <div class="custom-date-picker">
+        <input
+        class="date-input"
+        placeholder="yyyy-mm-dd"
+        name="dp"
+  
+        ngbDatepicker
+        #d="ngbDatepicker"
+        [displayMonths]="1"
+        [navigation]="'select'"
+        [showWeekNumbers]="false"
+        [outsideDays]="'visible'"
+      />
+          <button class="date-btn" (click)="d.toggle()" type="button">
+            <img class="img-fluid" src="assets/images/icons/icn_calendar.png" alt="icn_calendar">
+          </button>
+      </div>
+    </div>
+
+    <div class="filter-buttons mt-4">
+      <button type="button" class="apply-btn fl-btn">APPLY</button>
+      <button type="button" class="close-btn fl-btn">CLOSE</button>
+      <button type="button" class="clear-btn fl-btn">CLEAR ALL</button>
+  </div>
+  </div>
+}
+
 
 <div class="doc-card-container full-width-table">
   <div class="responsive-table">
