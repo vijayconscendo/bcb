@@ -1,4 +1,6 @@
 @use "../src/styles/custom-breakpoints" as bp;
+@use "../src/styles/buttons";
+@use "../src/styles/ng-select";
 
 :root{
   /* Primary Colors */
@@ -71,25 +73,6 @@ body{
 // ----- HEADING COMMON STYLES END -----
 
 
-// ----- BUTTON COMMON STYLES -----
-  .primaryBtn{
-    display: inline-flex; justify-content: center; align-items: center;
-    background-color: var(--color-primary);
-    color: #FFFFFF; text-decoration: none;
-    font-family: "BSP-Medium", sans-serif; font-size: 0.875rem; letter-spacing: 0.0625rem; text-transform: uppercase; line-height: normal;
-    padding: 1rem;border: none;border-radius: 0.5rem; cursor: pointer; transition: all 0.3s ease;
-  }
-
-  .primaryBtnOutline{
-    display: inline-flex; justify-content: center; align-items: center;
-    background-color: #FFFFFF;
-    color: #0062E1; text-decoration: none;
-    font-family: "BSP-Medium", sans-serif; font-size: 0.875rem; letter-spacing: 0.0625rem; text-transform: uppercase; line-height: normal;
-    padding: 1rem;border:1px solid #0062E1;border-radius: 0.5rem; cursor: pointer; transition: all 0.3s ease;
-  }
-// ----- BUTTON COMMON STYLES END-----
-
-
 // ----- SWIPER CUSTOM STYLES -----
 .swiper-carousel,
 .tab-carousel-swiper,
@@ -124,118 +107,6 @@ body{
 
 // ----- SWIPER CUSTOM STYLES END -----
   
-
-// ----- NGSELECT COMMON STYLES -----
-.ng-select.custom-ngs {
-  border:0;border-radius: 0;
-}
-.ng-select.custom-ngs .ng-select-container  {     
-  height: 50px !important;
-  min-height: 50px !important;
-  border-radius: 0.5rem;
-  border-color: var(--color-gray-pale);
-}
-.ng-select.custom-ngs .ng-select-container .ng-value-container .ng-input{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.ng-select.custom-ngs .ng-input input {
-  height: 100% !important;
-  line-height: normal !important;
-  font-size: 1rem !important;
-}
-
-
-/* Apply to both the container and dropdown */
-.ng-select.custom-ngs,
-.ng-select.custom-ngs .ng-dropdown-panel {
-  font-family: "BSP-Regular", sans-serif;
-  font-size: 1rem;
-  line-height: normal;
-  color: #1A314D;
-}
-
-/* Specific elements that need styling */
-.ng-select.custom-ngs .ng-select-container {
-  font-family: inherit;
-  color: inherit;
-}
-
-/* Input field */
-.ng-select.custom-ngs .ng-input input {
-  font-family: "BSP-Regular", sans-serif !important;
-  font-size: 1rem !important;
-  color: #1A314D !important;
-  line-height: normal !important;
-}
-
-/* Dropdown options */
-.ng-select.custom-ngs .ng-option {
-  font-family: inherit;
-  color: inherit;
-  padding: 10.5px;
-}
-.ng-select.custom-ngs .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked{
-  background-color: #0062E1 !important;
-  color: #FFFFFF !important;
-  .ng-option-label{
-    font-weight: 400 !important;
-  }
-}
-.ng-select.custom-ngs .ng-dropdown-panel.ng-select-bottom{
-  border-bottom-right-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
-  overflow: hidden;
-  box-shadow: 0px 2px 3px 0px #00000029;
-}
-.ng-select.custom-ngs .ng-arrow-wrapper .ng-arrow{
-  border-color: #0062E1 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
-}
-
-.ng-select.custom-ngs.ng-select-opened > .ng-select-container .ng-arrow {
-  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #0062E1;
-}
-
-/* Placeholder text */
-.ng-select.custom-ngs .ng-placeholder {
-  font-family: "BSP-Regular", sans-serif;
-  color: #1A314D; /* Optional: different color for placeholder */
-}
-
-.ng-select.custom-ngs .ng-select-container .ng-value-container .ng-placeholder{
-  color: #5c6c80 !important;
-}
-
-/* Selected values */
-.ng-select.custom-ngs .ng-value {
-  font-family: inherit;
-  color: inherit;
-}
-
-/* Clear and dropdown icons */
-.ng-select.custom-ngs .ng-clear,
-.ng-select.custom-ngs .ng-arrow {
-  color: #1A314D; /* Match icon color to text */
-}
-
-
-/* Remove focus ring/outline */
-.ng-select.custom-ngs .ng-select-container:focus,
-.ng-select.custom-ngs .ng-select-container:focus-within,
-.ng-select.custom-ngs .ng-select-container:active,
-.ng-select.custom-ngs.ng-select-focused .ng-select-container {
-  outline: none !important;
-  box-shadow: none !important;
-  border-color: var(--color-gray-pale) !important; /* Keep your original border color */
-}
-
-/* Remove border when dropdown is open */
-.ng-select.custom-ngs.ng-select-opened .ng-select-container {
-  border-color: var(--color-gray-pale) !important; /* Same as your default border */
-  z-index: inherit;
-}
-// ----- NGSELECT COMMON STYLES END -----
 
 
 // ----- PRIMENG COMMON STYLES -----

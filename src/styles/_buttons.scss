@@ -1,0 +1,64 @@
+@use "custom-breakpoints" as bp;
+
+/* ----- BUTTON COMMON STYLES ----- */
+.primaryBtn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-decoration: none;
+  font-family: "BSP-Medium", sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+  line-height: normal;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primaryBtn:hover {
+  background-color: rgba(0, 98, 225, 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.primaryBtn:disabled {
+  background-color: #CCCCCC;
+  color: #888888;
+  cursor: not-allowed;
+}
+
+.primaryBtnOutline {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  text-decoration: none;
+  font-family: "BSP-Medium", sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+  line-height: normal;
+  padding: 1rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+}
+
+.primaryBtnOutline:hover {
+  background-color: rgba(0, 98, 225, 0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.primaryBtnOutline:disabled {
+  border-color: #CCCCCC;
+  color: #888888;
+  cursor: not-allowed;
+}
+/* ----- BUTTON COMMON STYLES END ----- */
