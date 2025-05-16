@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { DatePickerComponent } from '../../generic-components/date-picker/date-picker.component';
+
+import { CalendarModule } from 'primeng/calendar';
 
 // countries.ts
 const accounts = [
@@ -18,20 +20,22 @@ const accounts = [
 
 @Component({
   selector: 'app-unstamped-statements',
-  imports: [CommonModule, NgSelectModule, FormsModule, DatePickerComponent],
+  imports: [CommonModule, NgSelectModule, FormsModule, DatePickerComponent, CalendarModule],
   templateUrl: './unstamped-statements.component.html',
   styleUrl: '../all-documents/all-documents.component.scss',
 })
 export class UnstampedStatementsComponent {
-  selectedDate: any;
+  selectedDateFrom: any;
+  selectedDateTo: any;
   isSearchFilter: boolean = false;
-
+  // @ViewChild('calendar') calendar!: Calendar;
   toggleSearchFilter(): void {
     this.isSearchFilter = !this.isSearchFilter;
   }
 
   constructor() {
-    this.selectedDate = new Date();
+    this.selectedDateFrom = new Date();
+    this.selectedDateTo = new Date();
   }
 
   documents = [

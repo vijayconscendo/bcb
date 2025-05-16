@@ -1,4 +1,7 @@
 @use "../src/styles/custom-breakpoints" as bp;
+@use "primeng/resources/themes/lara-light-blue/theme.css";
+@use "primeng/resources/primeng.css";
+
 
 :root{
   --color-primary: #0062E1;
@@ -225,3 +228,25 @@ body{
 }
 
 
+// .p-calendar {
+//   width: 100%;
+// }
+
+.p-calendar .p-inputtext {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-family: "BSP-Regular";
+  font-size: 1rem;
+  color: var(--text-color);
+  border-color: #E3E6EA;
+  box-shadow: none;
+}
+.p-calendar .p-inputtext:hover{
+  border-color: #E3E6EA;
+  box-shadow: none;
+  
+}
+.p-calendar .p-inputtext:focus {
+  border-color: #E3E6EA;
+  box-shadow: none;
+}
