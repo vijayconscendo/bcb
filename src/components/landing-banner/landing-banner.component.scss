@@ -13,7 +13,7 @@
 .bnr-inner{
   width: 100%; max-width: 546px;
   .bnr-title{
-    font-family: "BSP-Regular";font-size: 3rem; line-height: 1.3; color: var(--text-color);margin-bottom: 0.5rem;
+    font-family: "BSP-Regular";font-size: 3rem; line-height: 1.3; color: var(--color-text);margin-bottom: 0.5rem;
     @include bp.respond-below('sm') {
       font-size: 2.375rem;
     }

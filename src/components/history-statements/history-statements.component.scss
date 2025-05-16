@@ -11,7 +11,7 @@
 }
 .table-container{
     width: 100%;
-    border: 1px solid #CED3D9; border-radius: 0.5rem; padding: 1rem; background-color: #FFFFFF; margin-bottom: 1.5rem;
+    border: 1px solid var(--color-gray-pale); border-radius: 0.5rem; padding: 1rem; background-color: #FFFFFF; margin-bottom: 1.5rem;
 }
 .table-overflow{
     width: 100%;overflow-x: auto;
@@ -51,7 +51,7 @@
         }
     }
     .table-body-ul {
-        padding: 8px 0;border-bottom: 0.41px solid #E3E6EA;
+        padding: 8px 0;border-bottom: 0.41px solid var(--color-gray-pale);
         li{
             span{
                 font-family: "BSP-Regular";
@@ -88,13 +88,13 @@
 
 // Statement Table
 .statement-container{
-    border: 1px solid #CED3D9; border-radius: 0.5rem; padding: 1rem; background-color: #FFFFFF; margin-bottom: 1.5rem;
+    border: 1px solid var(--color-gray-pale); border-radius: 0.5rem; padding: 1rem; background-color: #FFFFFF; margin-bottom: 1.5rem;
 }
 .statement-ul{
     list-style-type: none; padding: 0; margin: 6px 0 0;
     li{
         display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem;
-        padding: 10px 0; border-bottom: 1px solid #E3E6EA;
+        padding: 10px 0; border-bottom: 1px solid var(--color-gray-pale);
         .statement-date{
             display: flex; align-items: center; gap: 0.5rem;
             span{

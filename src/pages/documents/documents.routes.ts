@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
 import { DocumentsComponent } from './documents.component';
-import { AllDocumentsComponent } from '../../components/documents-view/all-documents/all-documents.component';
-import { UnstampedStatementsComponent } from '../../components/documents-view/unstamped-statements/unstamped-statements.component';
+import { AllDocumentsComponent } from '../../components/documentComponents/all-documents/all-documents.component';
+import { UnstampedStatementsComponent } from '../../components/documentComponents/unstamped-statements/unstamped-statements.component';
+
 
 
 export const documentsRoutes: Routes = [

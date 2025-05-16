@@ -1,6 +1,6 @@
 @use '../../styles/custom-breakpoints' as bp;
 .switch-bank-sec{
-    background-color: #E3E6EA;
+    background-color: var(--color-gray-pale);
 }
 .switch-bank-container{
     border-radius: 0.75rem; overflow: hidden;

@@ -84,13 +84,13 @@
               font-family: "BSP-Medium";
               font-size: 1rem;
               margin: 0;
-              color: var(--text-color);
+              color: var(--color-text);
             }
   
             span {
               font-family: "BSP-Regular";
               font-size: 0.75rem;
-              color: var(--text-light-gray);
+              color: var(--color-gray-light);
             }
           }
         }
@@ -166,14 +166,14 @@
         .heading-title {
           font-family: "BSP-Medium";
           font-size: 1rem;
-          color: var(--text-color);
+          color: var(--color-text);
           margin-bottom: 1.5rem;
         }
   
         .text-md {
           font-family: "BSP-Regular";
           font-size: 1rem;
-          color: var(--text-color);
+          color: var(--color-text);
   
           a {
             font-family: "BSP-Medium";
@@ -219,7 +219,7 @@
         display: block;
         font-family: "BSP-Medium";
         font-size: 12px;
-        color: var(--text-light-gray);
+        color: var(--color-gray-light);
         margin-bottom: 5px;
   
         sup {
@@ -258,7 +258,7 @@
       p {
         font-family: "BSP-Regular";
         font-size: 0.75rem;
-        color: var(--text-light-gray);
+        color: var(--color-gray-light);
         margin: 5px 0;
       }
     }

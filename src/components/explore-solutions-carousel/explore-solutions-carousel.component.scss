@@ -1,5 +1,5 @@
 .explore-solutions-sec {
-  background-color: #e3e6ea;
+  background-color: var(--color-gray-pale);
   padding: 4rem 0;
 }
 .carousel-container {
@@ -11,7 +11,7 @@
 .custom-carousel {
   .slide {
     background-color: #ffffff;
-    border: 1px solid #ced3d9;
+    border: 1px solid var(--color-gray-pale);
     border-radius: 0.625rem;
     padding: 1rem;
     height: 270px;

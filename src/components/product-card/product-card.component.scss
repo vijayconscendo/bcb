@@ -8,9 +8,9 @@
       overflow: hidden;
       transition: transform 0.3s ease;
       overflow: hidden;
-      border:1px solid #CED3D9;
+      border:1px solid var(--color-gray-pale);
       @include bp.respond-below('sm'){
-        box-shadow: none; border: 1px solid #CED3D9;
+        box-shadow: none; border: 1px solid var(--color-gray-pale);
       }
       &:hover {
         transform: translateY(-5px);

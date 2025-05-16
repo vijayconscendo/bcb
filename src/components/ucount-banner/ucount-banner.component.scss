@@ -1,7 +1,7 @@
 @use '../../styles/custom-breakpoints' as bp;
 
 .ucount-banner{
-    border: 1px solid #CED3D9; margin: 70px 0;
+    border: 1px solid var(--color-gray-pale); margin: 70px 0;
     padding: 40px 60px; border-radius: 20px; text-align: center;
     @include bp.respond-below('sm') {
         padding: 40px 1rem;

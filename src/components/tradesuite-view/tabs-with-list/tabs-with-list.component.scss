@@ -1,8 +1,8 @@
 .tabs-with-list{
-    border: 1px solid #E3E6EA; border-radius: 0.75rem; background-color: #FFFFFF; overflow: hidden;
+    border: 1px solid var(--color-gray-pale); border-radius: 0.75rem; background-color: #FFFFFF; overflow: hidden;
 }
 .nav-tabs{
-    border-bottom:1px solid #E3E6EA; background-color: transparent;padding: 0 1.875rem;
+    border-bottom:1px solid var(--color-gray-pale); background-color: transparent;padding: 0 1.875rem;
     .nav-item:not(:last-child){margin-right: 2rem;}
     .nav-link{
         font-family: "BSP-Medium"; font-size: 0.75rem; line-height: 1.5; color: #3C4B6C; border: none; margin-bottom: 0;
@@ -21,7 +21,7 @@
     padding: 1.25rem 1.875rem 3.125rem;
 }
 .list-name{
-    font-family: "BSP-Medium"; font-size: 1rem; line-height: 1.5; color: var(--text-color); margin-bottom: 1rem;
+    font-family: "BSP-Medium"; font-size: 1rem; line-height: 1.5; color: var(--color-text); margin-bottom: 1rem;
 }
 .list-with-icon{
     list-style-type: none; padding: 0; margin-bottom: 2rem;
@@ -34,7 +34,7 @@
              width: 10px; height: 10px; border-radius: 50%; background: linear-gradient(112.82deg, #FF681D 3.64%, #FFB81D 95.93%);
         }
         p{
-            font-family: "BSP-Regular"; font-size: 1rem; line-height: 1.5; color: var(--text-color);
+            font-family: "BSP-Regular"; font-size: 1rem; line-height: 1.5; color: var(--color-text);
         }
     }
 }

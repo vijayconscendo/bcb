@@ -35,7 +35,7 @@
         font-size: 0.875rem;
         line-height: 1.3;
         text-decoration: none;
-        color: var(--text-color);
+        color: var(--color-text);
       }
       &:not(:last-child) {
         margin-right: 0.625rem;
@@ -48,7 +48,7 @@
   font-family: "BSP-Regular";
   font-size: 3rem;
   line-height: 1.3;
-  color: var(--text-color);
+  color: var(--color-text);
   margin: 1.5rem 0 4.375rem;
   text-align: center;
 }
@@ -59,7 +59,7 @@
   border-radius: 0.625rem;
   margin-bottom: 4.375rem;
   overflow: hidden;
-  border: 1px solid #e3e6ea;
+  border: 1px solid var(--color-gray-pale);
   .colLeft {
     img {
       width: 100%;
@@ -76,7 +76,7 @@
       font-family: "BSP-Medium";
       font-size: 1.375rem;
       line-height: 2rem;
-      color: var(--text-color);
+      color: var(--color-text);
       margin-bottom: 2rem;
     }
     p {
@@ -103,14 +103,14 @@
     font-family: "BSP-Regular";
     font-size: 1.75rem;
     line-height: 1.3;
-    color: var(--text-color);
+    color: var(--color-text);
     margin-bottom: 1rem;
   }
   .title-desc {
     font-family: "BSP-Regular";
     font-size: 1.125rem;
     line-height: 1.3;
-    color: var(--text-color);
+    color: var(--color-text);
     margin-bottom: 1rem;
   }
 }
@@ -118,7 +118,7 @@
   font-family: "BSP-Regular";
   font-size: 1.75rem;
   line-height: 1.3;
-  color: var(--text-color);
+  color: var(--color-text);
   margin-bottom: 1.5rem;
 }
 
@@ -146,7 +146,7 @@
         font-family: "BSP-Medium";
         font-size: 1.75rem;
         line-height: 1.5;
-        color: var(--text-color);
+        color: var(--color-text);
         margin-bottom: 0.625rem;
       }
       .goal-card-text {
@@ -186,14 +186,14 @@
 }
 
 .tabs-with-list {
-  border: 1px solid #e3e6ea;
+  border: 1px solid var(--color-gray-pale);
   border-radius: 0.75rem;
   background-color: #ffffff;
   overflow: hidden;
   margin-bottom: 4.375rem;
 
   .nav-tabs {
-    border-bottom: 1px solid #e3e6ea;
+    border-bottom: 1px solid var(--color-gray-pale);
     background-color: transparent;
     padding: 0 1.875rem;
     .nav-item:not(:last-child) {
@@ -230,7 +230,7 @@
     font-family: "BSP-Medium";
     font-size: 1rem;
     line-height: 1.5;
-    color: var(--text-color);
+    color: var(--color-text);
     margin-bottom: 1rem;
   }
 
@@ -257,7 +257,7 @@
         font-family: "BSP-Regular";
         font-size: 1rem;
         line-height: 1.5;
-        color: var(--text-color);
+        color: var(--color-text);
         a {
           font-family: "BSP-Medium";
           color: var(--color-primary);
@@ -277,7 +277,7 @@
 .get-in-touch {
   margin-bottom: 4.375rem;
   .contact-card {
-    border: 1px solid #e3e6ea;
+    border: 1px solid var(--color-gray-pale);
     border-radius: 0.625rem;
     padding: 2rem 1.5rem 1rem;
     display: flex;
@@ -289,14 +289,14 @@
       font-family: "BSP-Regular";
       font-size: 1.375rem;
       line-height: 1.5;
-      color: var(--text-color);
+      color: var(--color-text);
       margin-bottom: 0.25rem;
     }
     p {
       font-family: "BSP-Regular";
       font-size: 0.875rem;
       line-height: 1.5;
-      color: var(--text-color);
+      color: var(--color-text);
       margin-bottom: 0.25rem;
       a {
         color: inherit;

@@ -1,9 +1,9 @@
 @use "../../styles/custom-breakpoints" as bp;
 
 .faq-sec{
-    background-color: #E3E6EA; padding: 5rem 0;
+    background-color: var(--color-gray-pale); padding: 5rem 0;
 .sec-title{
-    font-family: "BSP-Regular"; font-size: 3rem; line-height: 1.3; color: var(--text-color); margin-bottom: 2rem;
+    font-family: "BSP-Regular"; font-size: 3rem; line-height: 1.3; color: var(--color-text); margin-bottom: 2rem;
     @include bp.respond-below('sm') {
         font-size: 2.375rem;
       }
@@ -16,10 +16,10 @@
 }
 .custom-accordion{
     min-height: 345px; margin-bottom: 15px;
-    .accordion-item{ margin-bottom: 10px; border: 1px solid #CED3D9;
+    .accordion-item{ margin-bottom: 10px; border: 1px solid var(--color-gray-pale);
         .accordion-header{
             .accordion-button{
-                background-color: #F4F5F7; font-family: "BSP-Medium"; font-size: 1.25rem; line-height: 1.3; color: var(--text-color); padding: 17px 20px;
+                background-color: #F4F5F7; font-family: "BSP-Medium"; font-size: 1.25rem; line-height: 1.3; color: var(--color-text); padding: 17px 20px;
                 @include bp.respond-below('tablet'){font-size: 1.125rem;}
                 @include bp.respond-below('mobile-lg'){font-size: 1rem;}
                 &::after{
@@ -41,7 +41,7 @@
     .accordion-body{
         padding: 0 20px 40px;
         p{
-            font-family: "BSP-Regular"; font-size: 1rem; line-height: 1.3; color: var(--text-color); margin-bottom: 24px;
+            font-family: "BSP-Regular"; font-size: 1rem; line-height: 1.3; color: var(--color-text); margin-bottom: 24px;
             @include bp.respond-below('mobile-lg'){font-size: 0.875rem;}
             @include bp.respond-below('mobile-xxs'){font-size: 0.625rem;}
             &:last-child{margin-bottom: 0;}

@@ -1,7 +1,7 @@
 @use '../../styles/custom-breakpoints' as bp;
 
 .list-table-container{
-    border: 1px solid #CED3D9; border-radius: 0.75rem; overflow: hidden;
+    border: 1px solid var(--color-gray-pale); border-radius: 0.75rem; overflow: hidden;
     padding: 10px 0;margin-bottom: 2.5rem;background-color: #FFFFFF;
 }
 .responsive-table{
@@ -17,7 +17,7 @@
     padding:0.5rem 1.125rem; height: 3rem; width: 100%; max-width: 400px;
     input{
         border: none; width: 100%;
-        font-family: "BSP-Regular"; font-size: 1rem; line-height: normal; color: var(--text-color);
+        font-family: "BSP-Regular"; font-size: 1rem; line-height: normal; color: var(--color-text);
         &::placeholder{
             color: #5C6C80;
         }
@@ -38,7 +38,7 @@
 // Tabs
 .custom-tabs{
     display: flex; align-items: center; width: 100%;
-    border-bottom: 1px solid #CED3D9; margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-gray-pale); margin-bottom: 0.5rem;
     button{
         position: relative;
         padding: 1rem 2.5rem;
@@ -66,9 +66,9 @@
     table{
         width: 100%;
         th{
-            background-color: #E3E6EA; padding: 1.1875rem 1rem; font-weight: 500;
+            background-color: var(--color-gray-pale); padding: 1.1875rem 1rem; font-weight: 500;
             span{
-                font-family: "BSP-Medium"; font-size: 0.875rem; color: var(--text-color);
+                font-family: "BSP-Medium"; font-size: 0.875rem; color: var(--color-text);
             }
             &:last-child{
                 text-align: end;
@@ -79,7 +79,7 @@
                 td{
                     padding: 1rem;
                     .text{
-                        font-family: "BSP-Regular"; font-size: 0.875rem; color: var(--text-color); margin: 0;
+                        font-family: "BSP-Regular"; font-size: 0.875rem; color: var(--color-text); margin: 0;
                     }
                     p.text{
                         max-width: 450px;
@@ -90,7 +90,7 @@
                     &:last-child{
                        text-align: end;
                     }
-                    border-bottom: 1px solid #CED3D9;
+                    border-bottom: 1px solid var(--color-gray-pale);
                     &:nth-child(2){
                         min-width: 208px;
                         span.text{
@@ -174,7 +174,7 @@
                 font-size: 1rem;
                 line-height: normal;
                 text-align: center;
-                color: var(--text-color);
+                color: var(--color-text);
             }
             &.selected{
                 button{

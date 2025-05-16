@@ -87,7 +87,7 @@
     font-family: "BSP-Regular";
     font-size: 1rem;
     line-height: 1.5;
-    color: #CED3D9;
+    color: var(--color-gray-pale);
     margin: 0;
     max-width: 66%;
     @include bp.respond-below('tablet') {
