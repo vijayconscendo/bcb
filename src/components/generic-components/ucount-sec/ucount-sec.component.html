@@ -1,0 +1,22 @@
+<div class="ucount" *ngIf="steps?.length && description && buttonText && buttonLink">
+  <div class="title-sec">
+    <img class="img-fluid" [src]="imageUrl" alt="ucount" *ngIf="imageUrl" />
+    <p>{{ description }}</p>
+  </div>
+
+  <div class="container-fluid px-0 count-block">
+    <div class="row">
+      <div class="col-lg-4" *ngFor="let step of steps">
+        <div class="ucount-block">
+          <h4>{{ step.number }}</h4>
+          <span>{{ step.title }}</span>
+          <p>{{ step.content }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="primaryBtn" [routerLink]="buttonLink">
+    {{ buttonText }}
+  </button>
+</div>

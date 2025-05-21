@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { DynamicSwiperComponent } from '../../components/generic-components/dynamic-swiper/dynamic-swiper.component';
 
 @Component({
   selector: 'app-faq',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, DynamicSwiperComponent],
   templateUrl: './faq.component.html',
   styleUrl: './faq.component.scss'
 })
@@ -77,5 +78,51 @@ export class FaqComponent {
       ]
     }
   ];
+
+customBreakpoints = {
+    640: {
+    slidesPerView: 2,
+  },
+  1024: {
+    slidesPerView: 3,
+    spaceBetween: 24,
+  },
+  1440: {
+    slidesPerView: 4,
+    spaceBetween: 32,
+  },
+}
+
+customBreakpoints2 = {
+    640: {
+    slidesPerView: 1,
+  },
+  1024: {
+    slidesPerView: 1,
+    spaceBetween: 24,
+  },
+  1440: {
+    slidesPerView: 1,
+    spaceBetween: 32,
+  },
+}
+
+teamMembers = [
+  { name: 'Alice', role: 'Designer', image: 'assets/alice.jpg' },
+  { name: 'Bob', role: 'Developer', image: 'assets/bob.jpg' },
+  { name: 'Carol', role: 'Manager', image: 'assets/carol.jpg' },
+  { name: 'sdsad', role: 'Manager', image: 'assets/carol.jpg' },
+  { name: 'Carasdsaol', role: 'Manager', image: 'assets/carol.jpg' },
+  { name: 'Casadasdrol', role: 'Manager', image: 'assets/carol.jpg' },
+];
+
+teamMembers2 = [
+  { name: 'Alice', role: 'Designer', image: 'assets/alice.jpg' },
+  { name: 'Bob', role: 'Developer', image: 'assets/bob.jpg' },
+  { name: 'Carol', role: 'Manager', image: 'assets/carol.jpg' },
+  { name: 'sdsad', role: 'Manager', image: 'assets/carol.jpg' },
+  { name: 'Carasdsaol', role: 'Manager', image: 'assets/carol.jpg' },
+  { name: 'Casadasdrol', role: 'Manager', image: 'assets/carol.jpg' },
+];
 
 }

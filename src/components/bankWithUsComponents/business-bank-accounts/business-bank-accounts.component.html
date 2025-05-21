@@ -1,0 +1,75 @@
+<div class="bank-with-us-page">
+    <!-- Banner with edge-to-edge image -->
+    <app-page-banner
+        [title]="'Open a business banking account today'"
+        [imageUrl]="'assets/images/banners/solutions-banner.png'"
+    ></app-page-banner>
+
+    <div class="custom-container">
+        <div>
+            <nav class="breadCrumb">
+                <ul>
+                    <li>
+                        <a [routerLink]="['/']" class="backBtn">
+                            <img class="img-fluid" src="assets/images/icons/back-left-icon.png" alt="back button">
+                            <span>Back</span>
+                        </a> 
+                    </li>
+                    <li>
+                        <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
+                    </li>
+                    <li>
+                        <a class="route-name" [routerLink]="['/']"><span>Home</span></a>
+                    </li>
+                    <li>
+                        <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
+                    </li>
+                    <li>
+                        <a class="route-name" [routerLink]="['/']"><span>Products and Services</span></a>
+                    </li>
+                    <li>
+                        <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
+                    </li>
+                    <li>
+                        <a class="route-name"><span>Bank with us</span></a>
+                    </li>
+                    <li>
+                        <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
+                    </li>
+                </ul>
+                </nav>
+            <!-- Article Breadcrumb End -->
+            <app-page-intro
+                [title]="'Business bank accounts'"
+                [description]="'Being able to move your money around freely is what keeps you in business. Opening a bank account with us lets you do it safely and easily anytime, on any device.'">
+            </app-page-intro>
+        </div>
+    </div>
+
+    <div class="custom-container pb-5">
+        <h3 class="title-md">Some of the Benefits</h3>
+        <app-image-heading-card [imageHeaduingCards]="imageHeadingCardsData"></app-image-heading-card>
+    </div>
+
+    <div class="custom-container pb-5">
+        <h3 class="title-md">What are you looking for?</h3>
+            <ul class="tabs-ul">
+                <li class="activeTab"><button type="button">All</button></li>
+                <li><button type="button">Agricultural</button></li>
+                <li><button type="button">Flexible</button></li>
+                <li><button type="button">Term</button></li>
+            </ul>
+        <div class="account-cards-container">
+            <app-mymobiz-account-card 
+                *ngFor="let product of bankingProducts"
+                [title]="product.title"
+                [description]="product.description"
+                [price]="product.price"
+                [badge]="product.badge"
+                [pricetenure]="product.pricetenure"
+                [class.featured]="product.featured">
+            </app-mymobiz-account-card>
+        </div>
+    </div>
+
+</div>

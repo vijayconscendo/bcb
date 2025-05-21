@@ -32,7 +32,7 @@ export class AllDocumentsComponent {
   constructor(private router: Router) {}
 
   goToUnstampedStatements(){
-    this.router.navigate(['/documents/unstamped-statements'])
+    this.router.navigate(['/my-documents/unstamped-statements'])
   }
   
 }

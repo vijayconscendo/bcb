@@ -1,0 +1,27 @@
+<div class="card-with-links" *ngIf="title && description && links?.length">
+  <h4>{{ title }}</h4>
+  <p>{{ description }}</p>
+  <ul>
+    <li *ngFor="let link of links">
+      <a [href]="link.url">
+        <span>{{ link.label }}</span>
+        <img class="img-fluid arrow" [src]="arrowIconUrl" alt="arrow" />
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+<!-- How To Use -->
+
+<!-- cardLinks = [
+  { label: 'My Updates', url: '#' },
+  { label: 'Link your card to your online banking profile', url: '#' },
+  { label: 'Get or change your PIN', url: '#' }
+];
+
+ <app-card-with-links
+  [title]="'Getting Started'"
+  [description]="'Learn to make the most of your new card.'"
+  [links]="cardLinks">
+</app-card-with-links> -->

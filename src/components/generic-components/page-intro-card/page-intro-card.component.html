@@ -1,0 +1,53 @@
+<!-- <div class="featured-product-container" [ngClass]="'className'">
+  <div class="row g-0">
+    <div class="col-md-6">
+      <div class="featured-image">
+        <img [src]="imageSrc" [alt]="imageAlt" class="img-fluid" />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="featured-content">
+        <div>
+          <h2>{{ title }}</h2>
+          <p>{{ description }}</p>
+        </div>
+
+        <div class="action-buttons" *ngIf="showButtons">
+          <button class="primaryBtnOutline">{{primaryOutlineButtonLabel}}</button>
+          <button class="primaryBtn">{{primaryButtonLabel}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="page-intro-card" [ngClass]="className">
+    <div class="row">
+    <div class="col-md-5">
+          <div class="intro-card-image">
+            <img [src]="imageSrc" [alt]="imageAlt || title" class="img-fluid" />
+         </div>
+    </div>
+    <div class="col-md-7">
+        <div class="card-info">
+            <div class="card-content">
+                <h4>{{ title }}</h4>
+                <p>{{ description }}</p>
+                <div class="curency">
+                    <div class="currency-text">
+                        <span>R</span>
+                        <h5>95</h5>
+                    </div>
+                    <span class="currency-tenure">Min Monthly fee</span>
+                </div>
+            </div>
+
+            <div class="action-buttons" *ngIf="showButtons">
+                <a class="primaryBtn a-btn" [href]="primaryButtonLink">{{ primaryButtonLabel }}</a>
+                <a class="primaryBtnOutline a-btn" [href]="primaryOutlineButtonLink">{{ primaryOutlineButtonLabel }}</a>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>

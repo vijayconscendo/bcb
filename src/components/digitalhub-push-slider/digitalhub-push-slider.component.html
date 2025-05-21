@@ -1,23 +1,25 @@
-      <!-- Toggle button - visible even when sidebar is closed -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade right-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-slideout">
+    <div class="modal-content modalcontent">
       <button 
-        class="sidebar-toggle" 
-        [class.open]="sidebarOpen"
-        (click)="toggleSidebar()">
+        class="sidebar-toggle">
         <div class="digital-hub-toggle">
           <img class="img-fluid" src="assets/images/icons/digitalhub-icon.png" alt="digitalhub-icon"/>
           <div class="vertical-text">Digital Hub</div>
         </div>
       </button>
-
-      <!-- Sidebar -->
-      <div class="sidebar" [class.open]="sidebarOpen">
-        <div class="sidebar-content">
-          <h2>Sidebar</h2>
-          <ul>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
-          </ul>
+      <div class="content-wrapper">
+        <div class="width-382">
+          <!-- <app-welcome-slider></app-welcome-slider> -->
+           <app-create-digital-hub></app-create-digital-hub>
         </div>
+        <!-- <app-more-links></app-more-links> -->
       </div>
+    </div>
+  </div>
+</div>

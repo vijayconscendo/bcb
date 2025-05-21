@@ -3,10 +3,11 @@ import { AppLayoutComponent } from '../components/layouts/app-layout/app-layout.
 import { TradesuiteLayoutComponent } from '../components/layouts/tradesuite-layout/tradesuite-layout.component';
 import { serviceRequestRoutes } from '../pages/service-request/service-request.routes';
 import { authGuard } from '../services/authguard';
-import { documentsRoutes } from '../pages/documents/documents.routes';
+import {  myDocumentsRoutes } from '../pages/my-documents/my-documents.routes';
 import { profile } from 'console';
 import { articleRoutes } from '../pages/articles/articles.routes';
 import { OnlineBankingLayoutComponent } from '../components/layouts/online-banking-layout/online-banking-layout.component';
+import { bankWithUsRoutes } from '../pages/bank-with-us/bank-with-us-routes';
 
 export const routes: Routes = [
     {
@@ -27,7 +28,7 @@ export const routes: Routes = [
                 loadComponent: () => import('../pages/unauth-our-solutions/unauth-our-solutions.component').then(m => m.UnauthOurSolutionsComponent)
             },
             ...serviceRequestRoutes,
-            ...documentsRoutes,
+            ...myDocumentsRoutes,
             {
                 path: 'contact-us',
                 loadComponent: () => import('../pages/contact-us/contact-us.component').then(m => m.ContactUsComponent),
@@ -49,10 +50,11 @@ export const routes: Routes = [
                 loadComponent: () => import('../pages/profile-management/profile-management.component').then(m => m.ProfileManagementComponent)
             },
             ...articleRoutes,
-            {
-                path: 'bank-with-us',
-                loadComponent: () => import('../pages/bank-with-us/bank-with-us.component').then(m => m.BankWithUsComponent)
-            },
+            ...bankWithUsRoutes,
+            // {
+            //     path: 'bank-with-us',
+            //     loadChildren: () => import('../pages/bank-with-us/bank-with-us-routes').then(m => m.bankWithUsRoutes)
+            // },
             {
                 path: 'faq',
                 loadComponent: () => import('../pages/faq/faq.component').then(m => m.FaqComponent)
@@ -65,6 +67,14 @@ export const routes: Routes = [
                 path: 'profile-selection',
                 loadComponent: () => import('../pages/profile-selection/profile-selection.component').then(m => m.ProfileSelectionComponent)
             },
+            {
+                path: 'product-detail',
+                loadComponent: () => import('../pages/product-detail/product-detail.component').then(m => m.ProductDetailComponent)
+            },
+            {
+                path: 'business-current-account-application',
+                loadComponent: () => import('../pages/business-current-account-application/business-current-account-application.component').then(m => m.BusinessCurrentAccountApplicationComponent)
+            }
         ]
     },
       // 🔁 Tradesuite Layout Routes

@@ -61,4 +61,31 @@
   color: #888888;
   cursor: not-allowed;
 }
+
+
+
+.primaryBtnWhite {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  text-decoration: none;
+  font-family: "BSP-Medium", sans-serif;
+  font-size: 0.875rem;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+  line-height: normal;
+  padding: 1rem;
+  border: 1px solid var(--color-white);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primaryBtnWhite:hover {
+  background-color: var(--color-primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  color: var(--color-white);
+}
 /* ----- BUTTON COMMON STYLES END ----- */

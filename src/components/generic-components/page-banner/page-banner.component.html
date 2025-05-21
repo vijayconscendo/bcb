@@ -1,0 +1,31 @@
+<section class="banner" *ngIf="title || text || imageUrl">
+  <div class="banner-content-wrapper" *ngIf="title || text || buttonText">
+    <div class="banner-content">
+      <h1 class="banner-title" *ngIf="title">{{ title }}</h1>
+      <p class="banner-text" *ngIf="text">{{ text }}</p>
+      <button
+        *ngIf="buttonText"
+        type="button"
+        class="primaryBtn"
+        (click)="onClick()"
+      >
+        {{ buttonText }}
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="banner-image"
+    *ngIf="imageUrl"
+    [ngStyle]="{ 'background-image': 'url(' + imageUrl + ')' }"
+  ></div>
+</section>
+
+<!-- USAGE -->
+<!-- <app-page-banner
+  [title]="'Welcome to Our Platform'"
+  [text]="'Explore powerful features tailored to your business'"
+  [buttonText]="'Learn More'"
+  [imageUrl]="'assets/images/banners/another-banner.png'"
+  (buttonClick)="handleBannerButtonClick()"
+></app-page-banner> -->

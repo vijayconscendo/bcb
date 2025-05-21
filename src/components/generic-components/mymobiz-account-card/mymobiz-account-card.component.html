@@ -1,0 +1,56 @@
+<div class="card-container">
+  <div class="account-card" [ngClass]="{ 'has-badge': badge }">
+    <div *ngIf="badge" class="card-badge">
+      {{badge}}
+    </div>
+    
+    <div class="card-content">
+      <h2 class="card-title">{{title}}</h2>
+      <div class="title-underline"></div>
+      
+      <p class="card-description" *ngFor="let para of (description?.split('\n') || [])">{{description}}</p>
+      
+      <div class="price-container">
+        <div>
+            <h3 class="price"><span>R</span>{{price}}</h3>
+            <span class="pricetenure">{{pricetenure}}</span>
+        </div>
+        <div>
+            <h3 class="price"><span>R</span>{{price}}</h3>
+            <span class="pricetenure">{{pricetenure}}</span>
+        </div>
+                <div>
+            <h3 class="price"><span>R</span>{{price}}</h3>
+            <span class="pricetenure">{{pricetenure}}</span>
+        </div>
+        <div>
+            <h3 class="price"><span>R</span>{{price}}</h3>
+            <span class="pricetenure">{{pricetenure}}</span>
+        </div>
+      </div>
+      
+      <div class="card-footer">
+        <div class="compare-container">
+            <div class="checkbox-field">
+                <input class="checkbox-input" id="selectall" type="checkbox" (change)="toggleCompare()" />
+                <label class="checkbox" for="selectall">
+                    <span>
+                        <img class="img-fluid tick" src="assets/images/icons/checkbox-tick.png" alt="checkbox">
+                    </span>
+                    <div class="check-text">
+                        <div>
+                            <p>Add to compare</p>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </div>
+        
+        <div class="button-container">
+          <button class="primaryBtn" (click)="applyNow()">APPLY NOW</button>
+          <button class="primaryBtnOutline" (click)="tellMore()">TELL ME MORE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

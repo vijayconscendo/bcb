@@ -1,0 +1,40 @@
+.c-card{
+    padding: 1.5rem 0.5rem 1.5rem 1.5rem;
+    background-color: var(--color-white);
+    height: 100%;
+    .c-card-header{
+        padding-bottom: 1.5rem; border-bottom: 1px solid var(--color-gray-pale);
+        .title{
+            font-family: "BSP-Medium";
+            font-size: 1.5rem;
+            line-height: 1.3;
+            color: var(--color-text);
+            margin: 0;
+            max-width: 264px;
+        }
+    }
+}
+.start-intro{
+    font-family: "BSP-Regular"; font-size: 0.875rem; line-height: 1.3; color: var(--color-text); padding: 1.5rem 0; margin: 0;
+}
+.hub-card-list{
+    max-height: 500px; overflow-y: auto; padding-right: 1rem;
+}
+.hub-card{
+    display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1rem;
+    border: 1px solid var(--color-gray-pale); border-radius: 0.5rem; padding: 1.25rem 1rem; background-color: var(--color-white);
+    .icon-block{
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        h6{
+            font-family: "BSP-Medium"; font-size: 1rem; line-height: 1.3; color: var(--color-text); margin: 0;
+        }
+    }
+    .delete-btn{
+        border: none; background-color: var(--color-white); min-width: max-content;
+    }
+    .action-btn{
+        border: none;
+        font-family: "BSP-Bold"; font-size: 0.875rem; line-height: normal; color: var(--color-primary); margin: 0;
+        padding: 1rem 1.375rem; border-radius: 0.5rem; background-color: var(--color-white); text-transform: uppercase;
+    }
+}

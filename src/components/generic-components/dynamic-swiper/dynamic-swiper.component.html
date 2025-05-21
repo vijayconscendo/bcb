@@ -1,0 +1,75 @@
+<div *ngIf="isBrowser" class="custom-swiper-wrapper" [id]="uniqueId">
+  <swiper-container #customSwiper init="false" class="custom-swiper">
+    <!-- <swiper-slide class="swiper-slide" *ngFor="let slide of slides">
+      <p>{{ slide }}</p>
+    </swiper-slide> -->
+    <swiper-slide class="swiper-slide" *ngFor="let slide of slides">
+        <ng-container *ngTemplateOutlet="itemTemplate; context: { $implicit: slide }"></ng-container>
+    </swiper-slide>
+  </swiper-container>
+
+  <div class="custom-control">
+    <div class="custom-navigation">
+      <button class="swiper-prev">
+        <img src="assets/images/icons/carousel-arrow-lt.png" alt="Previous" />
+      </button>
+      <div class="swiper-pagination"></div>
+      <button class="swiper-next">
+        <img src="assets/images/icons/carousel-arrow-rt.png" alt="Next" />
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <div *ngIf="isBrowser">
+    <swiper-container
+        #customSwiper
+        init="false"
+        class="custom-swiper"
+    >
+        <swiper-slide class="swiper-slide">
+            <p>Content Goes here</p>
+        </swiper-slide>
+        <swiper-slide class="swiper-slide">
+            <p>Content Goes here</p>
+        </swiper-slide>
+        <swiper-slide class="swiper-slide">
+            <p>Content Goes here</p>
+        </swiper-slide>
+        <swiper-slide class="swiper-slide">
+            <p>Content Goes here</p>
+        </swiper-slide>
+        <swiper-slide class="swiper-slide">
+            <p>Content Goes here</p>
+        </swiper-slide>
+        <swiper-slide class="swiper-slide">
+            <p>Content Goes here</p>
+        </swiper-slide>
+    </swiper-container>
+    <div class="custom-control">
+        <div class="custom-navigation">
+            <button class="swiper-prev">
+            <img
+                src="assets/images/icons/carousel-arrow-lt.png"
+                alt="left arrow"
+            />
+            </button>
+            <div class="swiper-pagination"></div>
+            <button class="swiper-next">
+            <img
+                src="assets/images/icons/carousel-arrow-rt.png"
+                alt="left arrow"
+            />
+            </button>
+        </div>
+    </div>
+</div> -->
+
+
+<!-- If your slides are simple like [{ title: 'Slide 1' }, { title: 'Slide 2' }], then:
+<app-reusable-swiper [slides]="slideList" />
+<swiper-slide *ngFor="let slide of slides">
+  <p>{{ slide.title }}</p>
+</swiper-slide> -->

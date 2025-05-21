@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { DatePickerComponent } from '../../generic-components/date-picker/date-picker.component';
 
 import { CalendarModule } from 'primeng/calendar';
 
@@ -20,7 +19,7 @@ const accounts = [
 
 @Component({
   selector: 'app-unstamped-statements',
-  imports: [CommonModule, NgSelectModule, FormsModule, DatePickerComponent, CalendarModule],
+  imports: [CommonModule, NgSelectModule, FormsModule, CalendarModule],
   templateUrl: './unstamped-statements.component.html',
   styleUrl: '../all-documents/all-documents.component.scss',
 })

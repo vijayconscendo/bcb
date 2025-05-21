@@ -1,0 +1,14 @@
+<div class="cta-sec">
+  <h4>{{ heading }}</h4>
+  @if(description){
+    <p>{{ description }}</p>
+  }
+  <a
+    class="primaryBtn button"
+    [href]="buttonUrl"
+    [target]="openInNewTab ? '_blank' : '_self'"
+    role="button"
+  >
+    {{ buttonLabel }}
+  </a>
+</div>

@@ -80,7 +80,8 @@ body{
 .guidance-swiper-sec,
 .sol-cards-container,
 .explore-sol-slider,
-.money-trans-slider{
+.money-trans-slider,
+.commonSiwper, .custom-swiper{
     .swiper-pagination-bullet {
       display: inline-block !important;width: 30px;height: 3px;
       background-color: rgba(92, 108, 128, 0.5); border-radius: 4px;
@@ -104,8 +105,42 @@ body{
       background-color: var(--color-white);
     }
   }
-
+.digital-hub-pusher-slider{
+  .swiper-pagination-bullet {
+    display: inline-block !important;width: 6px;height: 6px;
+    background-color: rgba(92, 108, 128, 0.5); border-radius: 50%;
+    transition: background-color 0.3s ease; margin: 0 0.25rem;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: var(--color-primary) !important; 
+  }
+  .swiper-button-disabled{
+    opacity: 0.5 !important;
+    pointer-events: none !important;
+  }
+}
 // ----- SWIPER CUSTOM STYLES END -----
+
+
+// Dynamic Swiper Styles start
+.custom-swiper-wrapper{
+  .swiper-pagination{
+      .swiper-pagination-bullet {
+        display: inline-block !important;width: 30px;height: 3px;
+        background-color: rgba(92, 108, 128, 0.5); border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+      .swiper-pagination-bullet-active {
+        background-color: var(--color-primary) !important; 
+      }
+    }
+    .swiper-button-disabled{
+      opacity: 0.5 !important;
+      pointer-events: none !important;
+    }
+}
+
+// Dynamic Swiper Styles end
   
 
 
@@ -133,3 +168,12 @@ body{
   box-shadow: none;
 }
 // ----- PRIMENG COMMON STYLES END -----
+
+
+.featured-card {
+  &.wide-card-img {
+    .featured-card__image img {
+      height: 200px;
+    }
+  }
+}

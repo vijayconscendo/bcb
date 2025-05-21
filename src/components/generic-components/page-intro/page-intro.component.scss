@@ -1,0 +1,29 @@
+.page-intro{
+    padding: 3rem 0; text-align: center; width: 100%; max-width: 800px; margin: 0 auto;
+    .page-intro-title{
+        font-family: "BSP-Regular";
+        font-size: 2.625rem;
+        line-height: normal;
+        color: var(--color-text);
+        margin-bottom: 0;
+        @media (max-width: 768px) {
+            font-size: 2rem;
+          }
+          @media (max-width: 480px) {
+            font-size: 1.75rem;
+          }
+    }
+    .page-intro-desc{
+        font-family: "BSP-Regular";
+        font-size: 1.25rem;
+        line-height: 1.5;
+        color: var(--color-gray-light);
+        margin:2rem 0 0.625rem;
+        @media (max-width: 768px) {
+            font-size: 1.125rem;
+          }
+          @media (max-width: 480px) {
+            font-size: 1rem;
+          }
+    }
+}

@@ -1,0 +1,35 @@
+<div class="c-card">
+  <div class="slider-wrapper">
+    <div *ngIf="isBrowser" class="slider-container digital-hub-pusher-slider">
+      <button class="slide-prev">
+        <img src="assets/images/icons/sliderc-arrow-l.png" alt="left arrow" />
+      </button>
+      <swiper-container
+        #guidanceswiperContainer
+        init="false"
+        class="guidance-swiper"
+      >
+        <swiper-slide *ngFor="let slide of slideData" class="swiperslide">
+          <div class="slide-card">
+            <div class="slide-card-header">
+              <h3>{{ slide.title }}</h3>
+            </div>
+            <div class="slide-card-image">
+              <img class="img-fluid" [src]="slide.image" [alt]="slide.alt" />
+            </div>
+            <div class="slide-card-body">
+              <h5>{{ slide.subTitle }}</h5>
+              <p>{{ slide.description }}</p>
+            </div>
+            <button type="button" class="skip" [routerLink]="slide.buttonLink">{{slide.buttonLabel}}</button>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+      <button class="slide-next">
+        <img src="assets/images/icons/sliderc-arrow-r.png" alt="left arrow" />
+      </button>
+      <div class="push-slide-pagination"></div>
+    </div>
+  </div>
+
+</div>
