@@ -21,7 +21,7 @@
               <h5>{{ slide.subTitle }}</h5>
               <p>{{ slide.description }}</p>
             </div>
-            <button type="button" class="skip" [routerLink]="slide.buttonLink">{{slide.buttonLabel}}</button>
+            <button type="button" class="skip"(click)="handleSlideClick(slide)">{{slide.buttonLabel}}</button>
           </div>
         </swiper-slide>
       </swiper-container>

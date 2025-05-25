@@ -1,11 +1,11 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Inject, Input, PLATFORM_ID, ViewChild } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, EventEmitter, Inject, Input, Output, PLATFORM_ID, ViewChild } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { SwiperOptions } from 'swiper/types';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-welcome-slider',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './welcome-slider.component.html',
   styleUrl: './welcome-slider.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
@@ -19,12 +19,13 @@ export class WelcomeSliderComponent {
     description: string;
   }[] = [];
 
+  @Output() showCreateHub = new EventEmitter<void>();
 
-    isBrowser: boolean;
+  isBrowser: boolean;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private router: Router) {
     this.isBrowser = isPlatformBrowser(this.platformId);
-  }
+    }
 
 
   @ViewChild('guidanceswiperContainer', { static: false }) guidanceswiperContainer!: ElementRef;
@@ -101,5 +102,19 @@ slideData = [
     buttonLink: '#'
   }
 ];
+
+
+  onShowCreateHub() {
+    this.showCreateHub.emit();
+  }
+
+  handleSlideClick(slide: any): void {
+  this.showCreateHub.emit();
+
+  // Navigate only if it's not '#'
+  if (slide.buttonLink && slide.buttonLink !== '#') {
+    this.router.navigateByUrl(slide.buttonLink);
+  }
+}
 
 }

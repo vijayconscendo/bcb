@@ -1,12 +1,19 @@
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
+<button data-bs-toggle="modal" data-bs-target="#digitalhubSlider"
+  class="sidebar-toggle fixed-toggle" *ngIf="!sidebarToggle" (click)="shoHideSidebarToggle()">
+  <div class="digital-hub-toggle">
+    <img class="img-fluid" src="assets/images/icons/digitalhub-icon.png" alt="digitalhub-icon"/>
+    <div class="vertical-text">Digital Hub</div>
+  </div>
 </button>
 
 <!-- Modal -->
-<div class="modal fade right-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade right-modal" id="digitalhubSlider" tabindex="-1" aria-labelledby="digitalhubSliderLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-slideout">
     <div class="modal-content modalcontent">
-      <button 
+      <button data-bs-dismiss="modal" aria-label="Close" type="button" class="close-btn" *ngIf="sidebarToggle" (click)="shoHideSidebarToggle()">
+        <img class="img-fluid" src="assets/images/icons/icn_close_standard.png" alt="icn_close_standard"/>
+      </button>
+      <button data-bs-dismiss="modal" aria-label="Close" *ngIf="sidebarToggle" (click)="shoHideSidebarToggle()"
         class="sidebar-toggle">
         <div class="digital-hub-toggle">
           <img class="img-fluid" src="assets/images/icons/digitalhub-icon.png" alt="digitalhub-icon"/>
@@ -15,8 +22,8 @@
       </button>
       <div class="content-wrapper">
         <div class="width-382">
-          <!-- <app-welcome-slider></app-welcome-slider> -->
-           <app-create-digital-hub></app-create-digital-hub>
+          <app-welcome-slider (showCreateHub)="onShowCreateHubClicked()" *ngIf="!showCreateHubComponent"></app-welcome-slider>
+           <app-create-digital-hub *ngIf="showCreateHubComponent"></app-create-digital-hub>
         </div>
         <!-- <app-more-links></app-more-links> -->
       </div>

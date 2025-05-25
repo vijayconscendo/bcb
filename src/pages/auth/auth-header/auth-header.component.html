@@ -1,0 +1,56 @@
+<div class="get-the-app" *ngIf="!isGetTheApp">
+    <button type="button" class="close-btn" (click)="toggleGetTheApp()"><img class="img-fluid" src="assets/images/icons/icn_close_standard.png" alt="Icon close"></button>
+    <a href="#" class="brand-icon"><img class="img-fluid" src="assets/standard-bank-Brand.png" alt="Standardbank brand"></a>
+    <div class="content">
+        <h6>Download our banking app</h6>
+        <p>The Standard Bank app gives you full visibility of your accounts and total control over your money.</p>
+    </div>
+    <button type="button" class="btn-install">Install</button>
+</div>
+<div class="header">
+    <a href="#"><img class="img-fluid" src="assets/standard-bank-Brand.png" alt="Standardbank brand"></a>
+    <p class="terms-text" *ngIf="isTermsPage()">Terms and conditions </p>
+    <div>
+        <button *ngIf="!isTermsPage()" type="button" class="icn-text-btn" data-bs-toggle="modal" data-bs-target="#contactUs"><img class="img-fluid" src="assets/images/icons/icn_call-center-w.png" alt="call icon"><span>Contact us</span></button>
+    </div>
+</div>
+
+<div class="modal fade contactModal" id="contactUs" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="contactUsLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modalheader">
+            <h4>Contact us</h4>
+            <button type="button" data-bs-dismiss="modal" aria-label="Close"><img class="img-fluid" src="assets/images/icons/icn_close_standard.png" alt="icon close"></button>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="contact-field">
+                    <img class="img-fluid" src="assets/images/icons/southafrica-flag.png" alt="southafrica">
+                    <div>
+                        <span>South Africa</span>
+                        <a href="tel:+086 010 9075">086 010 9075</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="contact-field">
+                    <img class="img-fluid" src="assets/images/icons/international-flag.png" alt="globe">
+                    <div>
+                        <span>International</span>
+                        <a href="tel:+086 010 9075">086 010 9075</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="contact-field">
+                    <img class="img-fluid" src="assets/images/icons/mail-icon-rounded.png" alt="mail icon">
+                    <div>
+                        <span>Email</span>
+                        <a href="mailto:BusinessBankingDigitalSupport@standardbank.co.za">BusinessBankingDigitalSupport&#64;standardbank.co.za</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

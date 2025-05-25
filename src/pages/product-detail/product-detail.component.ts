@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 
 import { CalendarModule } from 'primeng/calendar';
+import { ToolbarOneComponent } from '../../components/generic-components/toolbar-one/toolbar-one.component';
 
 // countries.ts
 const accounts = [
@@ -18,7 +19,7 @@ const accounts = [
 ];
 @Component({
   selector: 'app-product-detail',
-  imports: [CommonModule, NgSelectModule, FormsModule, CalendarModule],
+  imports: [CommonModule, NgSelectModule, FormsModule, CalendarModule, ToolbarOneComponent],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss'
 })

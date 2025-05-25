@@ -62,7 +62,21 @@
   cursor: not-allowed;
 }
 
+.btn-common{
+  display: inline-flex; align-items: center; justify-content: center; text-decoration: none;
+  font-family: "BSP-Medium"; font-size: 0.875rem; text-transform: uppercase; line-height: normal;
+  padding: 1rem; border: 1px solid transparent; border-radius: 0.5rem; cursor: pointer; background-color: transparent;
+  transition: all 0.3s ease;
+}
 
+.btn-outline-white{
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.btn-text{
+  color: var(--color-white);
+}
 
 .primaryBtnWhite {
   display: inline-flex;

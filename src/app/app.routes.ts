@@ -51,10 +51,6 @@ export const routes: Routes = [
             },
             ...articleRoutes,
             ...bankWithUsRoutes,
-            // {
-            //     path: 'bank-with-us',
-            //     loadChildren: () => import('../pages/bank-with-us/bank-with-us-routes').then(m => m.bankWithUsRoutes)
-            // },
             {
                 path: 'faq',
                 loadComponent: () => import('../pages/faq/faq.component').then(m => m.FaqComponent)
@@ -64,16 +60,16 @@ export const routes: Routes = [
                 loadComponent: () => import('../pages/online-banking-for-business/online-banking-for-business.component').then(m => m.OnlineBankingForBusinessComponent)
             },
             {
-                path: 'profile-selection',
-                loadComponent: () => import('../pages/profile-selection/profile-selection.component').then(m => m.ProfileSelectionComponent)
-            },
-            {
                 path: 'product-detail',
                 loadComponent: () => import('../pages/product-detail/product-detail.component').then(m => m.ProductDetailComponent)
             },
             {
                 path: 'business-current-account-application',
                 loadComponent: () => import('../pages/business-current-account-application/business-current-account-application.component').then(m => m.BusinessCurrentAccountApplicationComponent)
+            },
+            {
+                path: 'my-mobiz-account',
+                loadComponent: () => import('../pages/my-mobiz-account/my-mobiz-account.component').then(m => m.MyMobizAccountComponent)
             }
         ]
     },
@@ -98,6 +94,22 @@ export const routes: Routes = [
                 loadChildren: () => import('../pages/online-banking/online-banking-routes').then(m => m.onlineBankingRoutes)
             }
         ]
+    },
+    {
+        path : 'sign-in',
+        loadComponent: () => import('../pages/auth/sign-in/sign-in.component').then(m => m.SignInComponent)
+    },
+    {
+        path : 'sign-up',
+        loadComponent: () => import('../pages/auth/register/register.component').then(m => m.RegisterComponent)
+    },
+    {
+        path : 'profile-selection',
+        loadComponent: () => import('../pages/auth/profile-selection/profile-selection.component').then(m => m.ProfileSelectionComponent)
+    },
+    {
+        path : 'terms-and-conditions',
+        loadComponent: () => import('../pages/auth/terms-conditions/terms-conditions.component').then(m => m.TermsConditionsComponent)
     },
     // Fallback
     {

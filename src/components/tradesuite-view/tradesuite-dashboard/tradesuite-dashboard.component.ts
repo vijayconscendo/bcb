@@ -2,10 +2,11 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Inject, PLATFORM_ID, Vie
 import { TopNavComponent } from '../top-nav/top-nav.component';
 import { SwiperOptions } from 'swiper/types';
 import { isPlatformBrowser } from '@angular/common';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-tradesuite-dashboard',
-  imports: [TopNavComponent],
+  imports: [TopNavComponent, HeaderComponent],
   templateUrl: './tradesuite-dashboard.component.html',
   styleUrl: './tradesuite-dashboard.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

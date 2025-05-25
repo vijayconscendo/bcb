@@ -1,0 +1,12 @@
+.page-wrapper {
+    height: 100dvh;
+    overflow-y: auto;
+    background: linear-gradient(90deg, #0033AA 0%, #00A0E0 100%);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    app-profile-selection-card {
+        width: 100%;
+    }
+}

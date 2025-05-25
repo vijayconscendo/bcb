@@ -1,262 +1,352 @@
 <div class="product-detail">
-    <div class="custom-container">
+  <div class="custom-container">
     <!-- Breadcrumb -->
-        <nav class="breadCrumb">
-            <ul>
-                <li>
-                    <a class="backBtn">
-                        <img class="img-fluid" src="assets/images/icons/back-left-icon.png" alt="back button">
-                        <span>Back</span>
-                    </a> 
-                </li>
-                <li>
-                    <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-                </li>
-                <li>
-                    <a class="route-name" routerLink="/"><span>Home</span></a>
-                </li>
-                <li>
-                    <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-                </li>
-                <li>
-                    <a class="route-name"><span>Product-detail</span></a>
-                </li>
-                <li>
-                    <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-                </li>
-
-            </ul>
-          </nav>
-     <!-- Breadcrumb end -->
+    <nav class="breadCrumb">
+      <ul>
+        <li>
+          <a class="backBtn">
+            <img
+              class="img-fluid"
+              src="assets/images/icons/back-left-icon.png"
+              alt="back button"
+            />
+            <span>Back</span>
+          </a>
+        </li>
+        <li>
+          <img
+            class="img-fluid"
+            src="assets/images/icons/breadcrumb-rt.png"
+            alt="breadcrumb-rt"
+          />
+        </li>
+        <li>
+          <a class="route-name" routerLink="/"><span>Home</span></a>
+        </li>
+        <li>
+          <img
+            class="img-fluid"
+            src="assets/images/icons/breadcrumb-rt.png"
+            alt="breadcrumb-rt"
+          />
+        </li>
+        <li>
+          <a class="route-name"><span>Product-detail</span></a>
+        </li>
+        <li>
+          <img
+            class="img-fluid"
+            src="assets/images/icons/breadcrumb-rt.png"
+            alt="breadcrumb-rt"
+          />
+        </li>
+      </ul>
+    </nav>
+    <!-- Breadcrumb end -->
     <h1 class="page-title">Bank account</h1>
     <!-- Toolbar -->
-    <div class="toolbar-info">
-        <div class="toolbar-header">
-            <div class="icon-avatar">
-            <img
-                class="img-fluid"
-                src="assets/images/icons/document-sm.png"
-                alt="document"
-            />
-            </div>
-            <div>
-                <h4>Business Current Account</h4>
-            </div>
-        </div>
-        <div class="account-bal">
-            <span class="labeltext">Available balance</span>
-            <h4>R 756 568.00</h4>
-        </div>
-        <div class="container-fluid px-0 toolbar-footer">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="acc-info-wrapper">
-                        <div class="acc-info">
-                            <span class="labeltext">Account number</span>
-                            <h5>0987 6543 3212</h5>
-                        </div>
-                        <div class="acc-info">
-                            <span class="labeltext">Account type</span>
-                            <h5>Cheque Account</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="ac-detail-btns">
-                        <button type="button" class="primaryBtnWhite">TRANSACT</button>
-                        <button type="button" class="primaryBtnOutline">VIEW ACCOUNT DETAILS</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <app-toolbar-one></app-toolbar-one>
     <!-- Toolbar End -->
     <div class="tab-container">
-        <div class="tabs-list">
-            <button type="button" class="activeTab">Transaction History</button>
-            <button type="button">Documents</button>
-        </div>
-    <div class="choose-account">
-    <div
-        class="ngs-floating-label-wrapper"
-        [class.focused]="selectedAccount || isFocused"
-    >
-        <label class="floating-label">Previous statements</label>
-        <ng-select
-        [items]="accountList"
-        bindLabel="name"
-        [(ngModel)]="selectedAccount"
-        placeholder=""
-        [searchable]="false"
-        (focus)="isFocused = true"
-        (blur)="isFocused = false"
-        [appendTo]="'body'"
-        class="custom-ngs"
+      <div class="tabs-list">
+        <button type="button" class="activeTab">Transaction History</button>
+        <button type="button">Documents</button>
+      </div>
+      <div class="choose-account">
+        <div
+          class="ngs-floating-label-wrapper"
+          [class.focused]="selectedAccount || isFocused"
         >
-        <ng-template ng-option-tmp let-item="item">
-            {{ item.name }}
-        </ng-template>
-        </ng-select>
-    </div>
-
-    <div class="info-text">
-        <img class="img-fluid" src="assets/images/icons/info-gray.png" alt="info" />
-        <p>
-        Downloaded documents are not password protected. Standard Bank is not
-        responsible for any loss or damage you may suffer if any information is
-        accessed or used by a third party.
-        </p>
-    </div>
-
-    <div class="search-and-filter">
-        <div class="search-container">
-        <img class="search" src="assets/images/icons/search-icon.png" alt="search icon">
-        <input type="text" placeholder="Search">
+          <label class="floating-label">Previous statements</label>
+          <ng-select
+            [items]="accountList"
+            bindLabel="name"
+            [(ngModel)]="selectedAccount"
+            placeholder=""
+            [searchable]="false"
+            (focus)="isFocused = true"
+            (blur)="isFocused = false"
+            [appendTo]="'body'"
+            class="custom-ngs"
+          >
+            <ng-template ng-option-tmp let-item="item">
+              {{ item.name }}
+            </ng-template>
+          </ng-select>
         </div>
-        <button type="button" class="filter-btn" (click)="toggleSearchFilter()"><span>FILTER</span><img class="search" src="assets/images/icons/filter-icon.png" alt="filter icon"></button>
-    </div>
 
-    </div>
+        <div class="info-text">
+          <img
+            class="img-fluid"
+            src="assets/images/icons/info-gray.png"
+            alt="info"
+          />
+          <p>
+            Downloaded documents are not password protected. Standard Bank is
+            not responsible for any loss or damage you may suffer if any
+            information is accessed or used by a third party.
+          </p>
+        </div>
 
-    @if (isSearchFilter) {
-    <div class="filter-block">
+        <div class="search-and-filter">
+          <div class="search-container">
+            <img
+              class="search"
+              src="assets/images/icons/search-icon.png"
+              alt="search icon"
+            />
+            <input type="text" placeholder="Search" />
+          </div>
+          <button
+            type="button"
+            class="filter-btn"
+            (click)="toggleSearchFilter()"
+          >
+            <span>FILTER</span
+            ><img
+              class="search"
+              src="assets/images/icons/filter-icon.png"
+              alt="filter icon"
+            />
+          </button>
+        </div>
+      </div>
+
+      @if (isSearchFilter) {
+      <div class="filter-block">
         <h3 class="title-md">Filter</h3>
 
         <div class="pair-date-picker">
-        <div class="p-custom-calendar-wrapper">
+          <div class="p-custom-calendar-wrapper">
             <span class="labeltext"></span>
             <div class="p-custom-calendar">
-            <p-calendar 
+              <p-calendar
                 #calendarFrom
                 [(ngModel)]="selectedDateFrom"
                 dateFormat="dd MM yy"
-                [showIcon]="false">
-            </p-calendar>
-            <span class="custom-icon" (click)="calendarFrom.toggle()">
-                <img class="img-fluid" src="assets/images/icons/icn_calendar.png" alt="icn_calendar"/>
-            </span>
+                [showIcon]="false"
+              >
+              </p-calendar>
+              <span class="custom-icon" (click)="calendarFrom.toggle()">
+                <img
+                  class="img-fluid"
+                  src="assets/images/icons/icn_calendar.png"
+                  alt="icn_calendar"
+                />
+              </span>
             </div>
-        </div>
-        <div class="p-custom-calendar-wrapper">
+          </div>
+          <div class="p-custom-calendar-wrapper">
             <span class="labeltext"></span>
             <div class="p-custom-calendar">
-            <p-calendar 
+              <p-calendar
                 #calendarTo
                 [(ngModel)]="selectedDateTo"
                 dateFormat="dd MM yy"
-                [showIcon]="false">
-            </p-calendar>
-            <span class="custom-icon" (click)="calendarTo.toggle()">
-                <img class="img-fluid" src="assets/images/icons/icn_calendar.png" alt="icn_calendar"/>
-            </span>
+                [showIcon]="false"
+              >
+              </p-calendar>
+              <span class="custom-icon" (click)="calendarTo.toggle()">
+                <img
+                  class="img-fluid"
+                  src="assets/images/icons/icn_calendar.png"
+                  alt="icn_calendar"
+                />
+              </span>
             </div>
-        </div>
+          </div>
         </div>
 
         <div class="filter-buttons mt-4">
-        <button type="button" class="apply-btn fl-btn">APPLY</button>
-        <button type="button" class="close-btn fl-btn">CLOSE</button>
-        <button type="button" class="clear-btn fl-btn">CLEAR ALL</button>
+          <button type="button" class="apply-btn fl-btn">APPLY</button>
+          <button type="button" class="close-btn fl-btn">CLOSE</button>
+          <button type="button" class="clear-btn fl-btn">CLEAR ALL</button>
+        </div>
+      </div>
+      }
+
+      <div class="doc-card-container full-width-table">
+        <div class="responsive-table">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th>&nbsp;</th>
+                <th><span>Date</span></th>
+                <th><span>Category</span></th>
+                <th><span>Description</span></th>
+                <th class="action-th"><span>Email</span></th>
+                <th class="action-th"><span>Preview</span></th>
+                <th class="action-th"><span>Download</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let doc of documents">
+                <td>
+                  <img
+                    class="img-luid"
+                    [src]="doc.icons.account"
+                    alt="loan icon"
+                  />
+                </td>
+                <td>
+                  <p class="ptext">{{ doc.date }}</p>
+                </td>
+                <td>
+                  <p class="ptext">{{ doc.category }}</p>
+                </td>
+                <td>
+                  <p class="ptext">
+                    {{ doc.description }}
+                    <span class="muted-text">{{ doc.status }}</span>
+                  </p>
+                </td>
+                <td class="action-td">
+                  <a href="#"
+                    ><img
+                      class="img-luid"
+                      [src]="doc.icons.email"
+                      alt="send icon"
+                  /></a>
+                </td>
+                <td class="action-td">
+                  <a href="#"
+                    ><img
+                      class="img-luid"
+                      [src]="doc.icons.preview"
+                      alt="preview icon"
+                  /></a>
+                </td>
+                <td class="action-td">
+                  <a href="#"
+                    ><img
+                      class="img-luid"
+                      [src]="doc.icons.download"
+                      alt="download icon"
+                  /></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
-    </div>
-    }
 
 
-    <div class="doc-card-container full-width-table">
-    <div class="responsive-table">
-        <table class="custom-table">
-        <thead>
-            <tr>
-            <th>&nbsp;</th>
-            <th><span>Date</span></th>
-            <th><span>Category</span></th>
-            <th><span>Description</span></th>
-            <th class="action-th"><span>Email</span></th>
-            <th class="action-th"><span>Preview</span></th>
-            <th class="action-th"><span>Download</span></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let doc of documents">
-            <td>
-                <img class="img-luid" [src]="doc.icons.account" alt="loan icon" />
-            </td>
-            <td>
-                <p class="ptext">{{ doc.date }}</p>
-            </td>
-            <td>
-                <p class="ptext">{{ doc.category }}</p>
-            </td>
-            <td>
-                <p class="ptext">
-                {{ doc.description }}
-                <span class="muted-text">{{ doc.status }}</span>
-                </p>
-            </td>
-            <td class="action-td">
-                <a href="#"
-                ><img class="img-luid" [src]="doc.icons.email" alt="send icon"
-                /></a>
-            </td>
-            <td class="action-td">
-                <a href="#"
-                ><img
-                    class="img-luid"
-                    [src]="doc.icons.preview"
-                    alt="preview icon"
-                /></a>
-            </td>
-            <td class="action-td">
-                <a href="#"
-                ><img
-                    class="img-luid"
-                    [src]="doc.icons.download"
-                    alt="download icon"
-                /></a>
-            </td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-    </div>
-    </div>
+
 
 
     <!-- Pagination -->
     <div class="custom-pagination">
-    <button type="button">
+      <button type="button">
         <img
-        src="assets/images/icons/carousel-arrow-lt.png"
-        alt="arrow"
-        class="img-fluid"
+          src="assets/images/icons/carousel-arrow-lt.png"
+          alt="arrow"
+          class="img-fluid"
         />
-    </button>
-    <ul>
+      </button>
+      <ul>
         <li class="selected">
-        <button type="button">1</button>
+          <button type="button">1</button>
         </li>
         <li>
-        <button type="button">2</button>
+          <button type="button">2</button>
         </li>
         <li>
-        <button type="button">3</button>
+          <button type="button">3</button>
         </li>
         <li>
-        <button type="button">4</button>
+          <button type="button">4</button>
         </li>
         <li>
-        <button type="button">5</button>
+          <button type="button">5</button>
         </li>
-    </ul>
-    <button type="button">
+      </ul>
+      <button type="button">
         <img
-        src="assets/images/icons/carousel-arrow-rt.png"
-        alt="arrow"
-        class="img-fluid"
+          src="assets/images/icons/carousel-arrow-rt.png"
+          alt="arrow"
+          class="img-fluid"
         />
-    </button>
+      </button>
     </div>
     <!-- Pagination End-->
-
-    </div>
+  </div>
 </div>
+
+
+<!-- Mobile Filter Start -->
+<button class="mob-filter-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobFilterBottomSheet" aria-controls="mobFilterBottomSheet">
+  <img src="assets/images/icons/icn_filter-mobile.png" alt="filter icon"/>
+</button>
+
+<!-- <div class="offcanvas offcanvas-bottom bottom-sheet" tabindex="-1" id="mobFilterBottomSheet">
+  <div class="bts-header">
+    <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
+      <img src="assets/images/icons/icn_close-white.png" alt="close">
+    </button>
+    <h5 class="bts-title">Offcanvas bottom</h5>
+    <button type="button" class="text-btn">APPLY</button>
+  </div>
+  <div class="body-content">
+      <h5 class="block-title">Choose transaction date range</h5>
+      <div class="filter-field mb-4">
+        <span class="filter-label">From</span>
+          <div class="p-custom-calendar-wrapper">
+            <div class="p-custom-calendar">
+              <p-calendar
+                #calendarFrom
+                [(ngModel)]="selectedDateFrom"
+                dateFormat="dd MM yy"
+                [showIcon]="false"
+              >
+              </p-calendar>
+              <span class="custom-icon" (click)="calendarFrom.toggle()">
+                <img
+                  class="img-fluid"
+                  src="assets/images/icons/icn_calendar.png"
+                  alt="icn_calendar"
+                />
+              </span>
+            </div>
+          </div>
+      </div>
+      <div class="filter-field mb-4">
+        <span class="filter-label">To</span>
+          <div class="p-custom-calendar-wrapper">
+            <div class="p-custom-calendar">
+              <p-calendar
+                #calendarFrom
+                [(ngModel)]="selectedDateFrom"
+                dateFormat="dd MM yy"
+                [showIcon]="false"
+              >
+              </p-calendar>
+              <span class="custom-icon" (click)="calendarFrom.toggle()">
+                <img
+                  class="img-fluid"
+                  src="assets/images/icons/icn_calendar.png"
+                  alt="icn_calendar"
+                />
+              </span>
+            </div>
+          </div>
+      </div>
+      <button type="button" class="btn-common primary-text px-0">Clear filter</button>
+    </div>
+</div> -->
+
+
+<div class="offcanvas offcanvas-bottom action-sheet" tabindex="-1" id="mobFilterBottomSheet">
+  <div class="statement-container">
+    <div>
+      <div class="statement-btn-group">
+          <h6 class="btn-group-title">Stamped statements</h6>
+          <button type="button" class="statemet-btn">Send via email</button>
+          <button type="button" class="statemet-btn">Download</button>
+          <button type="button" class="statemet-btn">Preview</button>
+      </div>
+      <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" class="btn-common bg-white primary-text w-100 mt-3">Cancel</button>
+    </div>
+  </div>
+</div>
+<!-- Mobile Filter End -->

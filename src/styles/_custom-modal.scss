@@ -1,0 +1,51 @@
+  
+//   Modal Styles
+  .custom-modal {
+    .modal-dialog {
+      @media (min-width: 576px) {
+        max-width: 560px;
+      }
+    }
+  
+    .modal-header {
+      background: linear-gradient(93.67deg, #0064fc 1.23%, #0033aa 58.64%);
+  
+      .modal-title {
+        font-family: "BSP-Regular";
+        font-size: 1rem;
+        color: #fff;
+      }
+  
+      .btnclose {
+        margin-left: auto;
+        background: transparent;
+        border: none;
+        padding: 0;
+      }
+    }
+  
+    .modal-content {
+      border: none;
+    }
+  
+    .modal-footer {
+      padding: 0 0.75rem;
+      background-color: #f4f5f7;
+      border: none;
+      justify-content: space-between;
+  
+      &.justify-content-center {
+        justify-content: center;
+      }
+      .textBtn {
+        font-family: "BSP-Bold";
+        font-size: 0.875rem;
+        color: #0062e1;
+        text-transform: uppercase;
+        border: none;
+        background: transparent;
+        padding: 1rem 0.75rem;
+      }
+    }
+  }
+  

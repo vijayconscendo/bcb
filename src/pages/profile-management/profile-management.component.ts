@@ -5,11 +5,12 @@ import { BusinessDetailsComponent } from '../../components/profile-management-vi
 import { NotificationsComponent } from '../../components/profile-management-view/notifications/notifications.component';
 import { DeviceManagementComponent } from '../../components/profile-management-view/device-management/device-management.component';
 import { ConsentsComponent } from '../../components/profile-management-view/consents/consents.component';
+import { ProfileSelectionCardComponent } from '../../components/generic-components/profile-selection-card/profile-selection-card.component';
 
 
 @Component({
   selector: 'app-profile-management',
-  imports: [RouterModule, CommonModule, BusinessDetailsComponent, NotificationsComponent, DeviceManagementComponent, ConsentsComponent],
+  imports: [RouterModule, CommonModule, BusinessDetailsComponent, NotificationsComponent, DeviceManagementComponent, ConsentsComponent, ProfileSelectionCardComponent],
   templateUrl: './profile-management.component.html',
   styleUrl: './profile-management.component.scss'
 })

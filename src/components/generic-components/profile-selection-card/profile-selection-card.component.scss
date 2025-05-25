@@ -1,0 +1,159 @@
+
+.profile-selection-card {
+  width: 100%; max-width: 604px;
+  padding: 2rem 1.5rem; margin: 0 auto;
+  background-color: var(--color-white);
+  border-radius: 0.75rem;
+  box-shadow: 0 48px 56px rgba(0, 0, 0, 0.24);
+  @media (max-width: 768px) {
+    padding: 1.5rem 1rem;
+  }
+}
+
+.profile-card-header {
+  .title {
+    font-family: "BSP-Bold";
+    font-size: 1.5rem;
+    color: var(--color-text);
+    line-height: 1.3;
+    margin-bottom: 0.25rem;
+
+    @media (max-width: 680px) {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0.5rem 0;
+  height: 50px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-gray-pale);
+  border-radius: 0.5rem;
+
+  input {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    margin-left: 0.3125rem;
+    border: none;
+    font-family: "BSP-Medium";
+    font-size: 1rem;
+    color: var(--color-text);
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      font-family: "BSP-Regular";
+      font-size: 1rem;
+      color: var(--color-gray-light);
+    }
+  }
+}
+
+.profiles-list {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.profile-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  margin-bottom: 0.125rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+
+  &:hover {
+    border-color: var(--color-gray-pale);
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    font-family: "BSP-Medium";
+    font-size: 1rem;
+    color: var(--color-white);
+    text-transform: uppercase;
+    background-color: var(--color-primary-dark);
+
+    @media (max-width: 680px) {
+      font-size: 0.875rem;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    h6 {
+      font-family: "BSP-Medium";
+      font-size: 1rem;
+      color: var(--color-text);
+      margin: 0;
+      line-height: 1.3;
+
+      @media (max-width: 680px) {
+        font-size: 0.875rem;
+      }
+    }
+
+    span {
+      font-family: "BSP-Regular";
+      font-size: 0.75rem;
+      color: var(--color-gray-light);
+      line-height: normal;
+    }
+  }
+}
+
+.selected-profile {
+  border: 1px solid var(--color-gray-pale);
+  background-color: var(--color-gray-pale);
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  cursor: default;
+
+  .checked-icon {
+    width: 24px;
+    margin-left: auto;
+  }
+}
+
+.btn-group {
+  padding-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  @media (max-width: 360px) {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  button {
+    flex: 1;
+    max-width: 40%;
+
+    @media (max-width: 480px) {
+      max-width: 100%;
+    }
+
+    @media (max-width: 360px) {
+      width: 100%;
+    }
+  }
+}

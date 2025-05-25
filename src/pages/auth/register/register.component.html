@@ -1,0 +1,73 @@
+<div class="page-wrapper">
+  <app-auth-header></app-auth-header>
+  <div class="container-fluid hero-container p-0">
+    <div class="row h-100 g-0">
+      <div class="col-lg-6 hero-left order-lg-0 order-1 d-lg-flex d-none">
+        <div class="hero-title">
+          <span class="hero-subtitle">Welcome to</span>
+          <h1 class="hero-headline">
+            <span class="brand-name">BCB</span> Platform
+          </h1>
+        </div>
+      </div>
+      <div class="col-lg-6 hero-right order-lg-1 order-0">
+        <div class="signup-wrapper">
+          <button type="button" class="back-btn">
+            <img
+              class="img-fluid"
+              src="assets/images/icons/icn_chevron_left.png"
+              alt="back arrow"
+            />
+            <span>Back</span>
+          </button>
+
+          <!-- Login Form -->
+          <div class="login-container">
+            <div class="login-header">
+              <h3 class="login-title">Welcome to BCB Platform</h3>
+              <p class="login-subtitle">
+                Use your existing online business banking details to sign in
+              </p>
+            </div>
+
+            <form (ngSubmit)="onSignIn()" #loginForm="ngForm">
+              <div class="login-button-wrapper">
+                <button
+                  type="submit"
+                  class="primaryBtn login-btn"
+                  [disabled]="isLoading"
+                >
+                  SIGN IN
+                  <!-- <span *ngIf="isLoading" class="login-spinner"></span> -->
+                </button>
+              </div>
+            </form>
+
+            <div class="login-footer">
+              <p class="login-note">
+                By signing in, I agree to the
+                <a routerLink="/terms-and-conditions" class="login-link">T&Cs</a>
+              </p>
+              <p class="login-update">Latest update: 03 June 2024</p>
+            </div>
+
+            <div class="login-invite">
+              <p class="login-invite-text">
+                <a href="#" class="login-link">
+                  Received an invitation to BCB Platform?
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <p class="footer-text">
+            Standard Bank is a licensed financial services provider in terms of
+            the Financial Advisory and Intermediary Services Act and a
+            registered credit provider in terms of the National Credit Act.
+            registration number NCRCP15.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
