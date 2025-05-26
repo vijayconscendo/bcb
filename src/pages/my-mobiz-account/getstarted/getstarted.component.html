@@ -1,0 +1,287 @@
+      <h4 class="form-subtitle">Personal details</h4>
+      <div class="container-fluid px-0 mb-4">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="formgroup">
+              <span class="labeltext">Title</span>
+              <ng-select
+                [items]="selectyear"
+                bindLabel="name"
+                bindValue="id"
+                [(ngModel)]="selectedYear"
+                placeholder="Please select"
+                class="custom-ngs"
+              >
+              </ng-select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="formgroup">
+              <span class="labeltext">ID Number</span>
+              <input
+                type="text"
+                class="custom-input"
+                placeholder="Enter your ID Number"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="formgroup">
+              <span class="labeltext">First Name</span>
+              <input
+                type="text"
+                class="custom-input"
+                placeholder="Enter your first name"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="formgroup">
+              <span class="labeltext">Surname</span>
+              <input
+                type="text"
+                class="custom-input"
+                placeholder="Enter your surname"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="formgroup">
+              <span class="labeltext">Celphone Number</span>
+              <input
+                type="text"
+                class="custom-input"
+                placeholder="Enter your cellphone number"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="formgroup">
+              <span class="labeltext">Email Address</span>
+              <input
+                type="text"
+                class="custom-input"
+                placeholder="Enter your email address"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Personal Details End -->
+      <!-- Business Details Start -->
+      <h4 class="form-subtitle">Personal details</h4>
+      <div class="container-fluid px-0 mb-4">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="formgroup">
+              <span class="labeltext">Business Address - Province</span>
+              <ng-select
+                [items]="selectyear"
+                bindLabel="name"
+                bindValue="id"
+                [(ngModel)]="selectedYear"
+                placeholder="Please select"
+                class="custom-ngs"
+              >
+              </ng-select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="formgroup">
+              <span class="labeltext">Business Type</span>
+              <ng-select
+                [items]="selectyear"
+                bindLabel="name"
+                bindValue="id"
+                [(ngModel)]="selectedYear"
+                placeholder="Please select"
+                class="custom-ngs"
+              >
+              </ng-select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="formgroup">
+              <span class="labeltext">Company Name</span>
+              <ng-select
+                [items]="selectyear"
+                bindLabel="name"
+                bindValue="id"
+                [(ngModel)]="selectedYear"
+                placeholder="Enter your company name"
+                class="custom-ngs"
+              >
+              </ng-select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Business Details End -->
+
+     <!-- Prominent Influential Persons -->
+     <h4 class="form-subtitle">Prominent Influential Persons:</h4>
+    <div>
+        <label>Are you a public official?</label>
+        <div class="radio-container">
+        <div class="radio-btn">
+          <input class="radio-input" id="query" type="radio" name="reqtype" />
+          <label class="radio" for="query">Yes</label>
+        </div>
+        <div class="radio-btn">
+          <input
+            class="radio-input"
+            id="complaint"
+            type="radio"
+            name="reqtype"
+          />
+          <label class="radio" for="complaint">No</label>
+        </div>
+      </div>
+    </div>
+    <div>
+        <label>Are you or any person linked to the entity a public official in a position of authority?</label>
+        <div class="radio-container">
+        <div class="radio-btn">
+          <input class="radio-input" id="query" type="radio" name="reqtype" />
+          <label class="radio" for="query">Yes</label>
+        </div>
+        <div class="radio-btn">
+          <input
+            class="radio-input"
+            id="complaint"
+            type="radio"
+            name="reqtype"
+          />
+          <label class="radio" for="complaint">No</label>
+        </div>
+      </div>
+    </div>
+     <!-- Prominent Influential Persons End-->
+
+      <!-- Data privacy start -->
+      <h4 class="form-subtitle">Data Privacy</h4>
+      <ul class="list-with-icon">
+        <li>
+          <p>
+            We understand that your personal information is important to you. By
+            using our products, you acknowledge that your personal information
+            will be processed by us and third parties (if necessary) according
+            to our Privacy Statement, which is in line with all applicable laws
+            on protecting and processing personal information.
+          </p>
+        </li>
+      </ul>
+      <button type="button" class="link-btn">See more</button>
+      <div class="checkbox-field my-4">
+        <input class="checkbox-input" id="selectall" type="checkbox" />
+        <label class="checkbox" for="selectall">
+          <span>
+            <img
+              class="img-fluid tick"
+              src="assets/images/icons/checkbox-tick.png"
+              alt="checkbox"
+            />
+          </span>
+          <div class="check-text">
+            <div>
+              <p>
+                I have read and understood the contents of the
+                <a href="#" class="link">Privacy Statement.</a>
+              </p>
+            </div>
+          </div>
+        </label>
+      </div>
+      <!-- Data privacy end -->
+      <!-- Marketing Start -->
+      <h4 class="form-subtitle">Marketing</h4>
+      <p class="text mb-4">
+        Please answer the questions below regarding the processing of your
+        personal information for marketing purposes:
+      </p>
+      <!-- Marketing End -->
+      <h5 class="form-small-title">Data sharing within the Group</h5>
+      <p class="text">
+        A member of the Group may wish to inform you of exclusive offers and/or
+        services that may benefit you. Are you happy for us to share your
+        personal information within our Group for this purpose?
+      </p>
+      <button type="button" class="link-btn">See less</button>
+      <div class="radio-container">
+        <div class="radio-btn">
+          <input class="radio-input" id="query" type="radio" name="reqtype" />
+          <label class="radio" for="query">Yes</label>
+        </div>
+        <div class="radio-btn">
+          <input
+            class="radio-input"
+            id="complaint"
+            type="radio"
+            name="reqtype"
+          />
+          <label class="radio" for="complaint">No</label>
+        </div>
+      </div>
+      <h5 class="form-small-title">Data sharing with Third Parties</h5>
+      <p class="text">
+        We may partner with third parties outside of the Group in order to bring
+        you exclusive offers and/or services that may benefit you. Are you happy
+        for us to share your personal information with these third parties for
+        this purpose?
+      </p>
+      <button type="button" class="link-btn">See less</button>
+      <div class="radio-container">
+        <div class="radio-btn">
+          <input class="radio-input" id="query" type="radio" name="reqtype" />
+          <label class="radio" for="query">Yes</label>
+        </div>
+        <div class="radio-btn">
+          <input
+            class="radio-input"
+            id="complaint"
+            type="radio"
+            name="reqtype"
+          />
+          <label class="radio" for="complaint">No</label>
+        </div>
+      </div>
+      <h5 class="form-small-title">
+        Data sharing across borders within the Group
+      </h5>
+      <p class="text">
+        A member of the Group outside of this country may wish to inform you of
+        exclusive offers and/or services that may benefit you. We will ensure
+        that your personal information is given the same protection as is
+        required locally. Are you happy for us to share your personal
+        information across borders within the Group for this purpose?
+      </p>
+      <button type="button" class="link-btn">See less</button>
+      <div class="radio-container">
+        <div class="radio-btn">
+          <input class="radio-input" id="query" type="radio" name="reqtype" />
+          <label class="radio" for="query">Yes</label>
+        </div>
+        <div class="radio-btn">
+          <input
+            class="radio-input"
+            id="complaint"
+            type="radio"
+            name="reqtype"
+          />
+          <label class="radio" for="complaint">No</label>
+        </div>
+      </div>
+      <p class="text">
+        Please note that you have the right to change your consent and
+        preferences at any time in the future at any branch, by contacting your
+        relationship manager, calling us on 0860 123 000, emailing us on
+        <a href="information@standardbank.co.za"
+          >information&#64;standardbank.co.za</a
+        >
+        or logging in to our banking channels to update your preferences.
+      </p>
+      <div class="mb-5">
+        <p class="text">Your information will be managed securely</p>
+      </div>

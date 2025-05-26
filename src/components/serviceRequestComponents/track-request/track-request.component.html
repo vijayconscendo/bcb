@@ -1,0 +1,91 @@
+<div class="new-sevice-request-sec">
+    <div class="action-info">
+        <a href="#" class="backBtn"><img src="assets/images/icons/back-left-icon.png" alt="back"/><span> Back</span></a>
+        <h2 class="section-title">Track Request</h2>
+    </div>
+
+    <app-track-toolbar></app-track-toolbar>
+
+    <!-- Track Tabs -->
+    <div class="track-tabs">
+    <ul class="nav nav-tabs step-tabs" id="myTab" role="tablist">
+        <button class="tab-step-button active" id="new-pane-tab" data-bs-toggle="tab" data-bs-target="#new-pane" type="button" role="tab" aria-controls="new-pane" aria-selected="true">
+            <div class="tab-step">
+                <div class="tab-step-icon">
+                    <span class="num">1</span>
+                    <img src="assets/images/icons/icon_step-blue-check.png" alt="new request icon"/>
+                </div>
+                <div class="tab-step-info">
+                    <h5>New</h5>
+                    <span>Case was submitted and assigned to a team</span>
+                </div>
+            </div>
+        </button>
+        <div class="connect-line"></div>
+        <button class="tab-step-button" id="progress-tab" data-bs-toggle="tab" data-bs-target="#in-progress" type="button" role="tab" aria-controls="in-progress" aria-selected="false">
+            <div class="tab-step">
+                <div class="tab-step-icon">
+                    <span class="num">2</span>
+                    <img src="assets/images/icons/icon_step-blue-check.png" alt="new request icon"/>
+                </div>
+                <div class="tab-step-info">
+                    <h5>In progress</h5>
+                    <span>Case was submitted and assigned to a team</span>
+                </div>
+            </div>
+        </button>
+        <div class="connect-line"></div>
+        <button class="tab-step-button" id="resolved-tab" data-bs-toggle="tab" data-bs-target="#resolved" type="button" role="tab" aria-controls="resolved" aria-selected="false">
+            <div class="tab-step">
+                <div class="tab-step-icon">
+                    <span class="num">3</span>
+                    <img src="assets/images/icons/icon_step-blue-check.png" alt="new request icon"/>
+                </div>
+                <div class="tab-step-info">
+                    <h5>Resolved</h5>
+                    <span>Query was resolved on 20 July 2024</span>
+                </div>
+            </div>
+        </button>
+        <div class="connect-line"></div>
+        <button class="tab-step-button" id="resolved-tab" data-bs-toggle="tab" data-bs-target="#resolved" type="button" role="tab" aria-controls="resolved" aria-selected="false">
+            <div class="tab-step">
+                <div class="tab-step-icon">
+                    <span class="num">4</span>
+                    <img src="assets/images/icons/icon_step-blue-check.png" alt="new request icon"/>
+                </div>
+                <div class="tab-step-info">
+                    <h5>Reopened</h5>
+                    <span>Query was reopened on 01 August 2024</span>
+                </div>
+            </div>
+        </button>
+        <div class="connect-line"></div>
+        <button class="tab-step-button" id="resolvedagain-tab" data-bs-toggle="tab" data-bs-target="#resolvedagain" type="button" role="tab" aria-controls="resolvedagain" aria-selected="false">
+            <div class="tab-step">
+                <div class="tab-step-icon">
+                    <span class="num">5</span>
+                    <img src="assets/images/icons/icon_step-blue-check.png" alt="new request icon"/>
+                </div>
+                <div class="tab-step-info">
+                    <h5>Resolved</h5>
+                    <span>Query was resolved on 20 July 2024</span>
+                </div>
+            </div>
+        </button>
+    </ul>
+    <div class="tab-content tabcontent" id="myTabContent">
+        <div class="tab-pane fade show active" id="new-pane" role="tabpanel" aria-labelledby="new-pane-tab" tabindex="0">
+            <app-assigned></app-assigned>
+        </div>
+        <div class="tab-pane fade" id="in-progress" role="tabpanel" aria-labelledby="progress-tab" tabindex="0">...</div>
+        <div class="tab-pane fade" id="resolved" role="tabpanel" aria-labelledby="resolved-tab" tabindex="0">
+            <app-resolved></app-resolved>
+        </div>
+        <div class="tab-pane fade" id="resolvedagian" role="tabpanel" aria-labelledby="resolvedgain-tab" tabindex="0">
+            ...
+        </div>
+    </div>
+    </div>
+
+</div>

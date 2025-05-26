@@ -1,0 +1,118 @@
+    .stepper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      position: relative;
+    }
+
+    .step-number {
+      position: relative;
+      width: 1.125rem;
+      height: 1.125rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 12px;
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+
+    .step-title {
+        font-family: "BSP-Regular";
+        font-size: 0.875rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        color: var(--color-text);
+    }
+
+    .step-connector {
+      position: absolute;
+      top: 0.5625rem;
+      left: 50%;
+      right: -50%;
+      height: 2px;
+      background-color: var(--color-gray-pale);
+      z-index: 1;
+      transition: all 0.3s ease;
+    }
+
+    /* Active step styles */
+    .step.active .step-number {
+      background-color: var(--color-orange);
+      color: var(--color-orange);;
+    }
+
+    .step.active .step-title {
+      color: var(--color-text);
+    }
+
+    .step.active .step-connector {
+      background-color: var(--color-orange);
+    }
+
+    /* Completed step styles */
+    .step.completed .step-number {
+      background-color: #28a745;
+      color: var(--color-white);
+    }
+
+    .step.completed .step-title {
+      color: #28a745;
+    }
+
+    .step.completed .step-connector {
+      background-color: #28a745;
+    }
+
+    /* Inactive step styles */
+    .step.inactive .step-number {
+      background-color: var(--color-gray-pale);
+      color: var(--color-text);
+    }
+
+    .step.inactive .step-title {
+      color: var(--color-text); opacity: 0.6;
+    }
+
+    /* Demo controls */
+    .demo-controls {
+        display: flex; align-items: center;justify-content: space-around; gap: 1rem;
+        button{
+            width: 100%; max-width: 160px;
+        }
+    }
+
+    /* Step content area */
+    .step-content {
+      min-height: 200px; margin-top: 2.5rem;
+      padding: 1rem 2.625rem;
+    }
+
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .stepper-container {
+        padding: 20px;
+      }
+
+      .step-title {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .step-title {
+        font-size: 12px;
+      }
+    }
