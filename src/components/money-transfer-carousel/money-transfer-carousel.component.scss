@@ -7,10 +7,12 @@
 }
 
 .slide {
+  display: block;
   background-color: transparent;
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
+  text-decoration: none;
   .slide-header {
     border-radius: 8px;
     overflow: hidden;
@@ -29,5 +31,11 @@
     margin: 24px 0;
     color: #1a314d;
     text-transform: none;
+  }
+  &:hover {
+    .slide-header img {
+      transform: scale(1.05);
+      transition: transform 0.3s linear;
+    }
   }
 }

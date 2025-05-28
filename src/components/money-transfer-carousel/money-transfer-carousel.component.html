@@ -1,7 +1,7 @@
 <div class="carousel-container">
   <div class="custom-container">
     <div class="title-bar">
-      <h2 class="text-heading-md">Manage your money wherever you are</h2>
+      <h2 class="text-heading-md mb-4">Manage your money wherever you are</h2>
     </div>
     <app-dynamic-swiper
       [slides]="moneyUsage"
@@ -9,7 +9,7 @@
       [breakpoints]="customBreakpoints"
     ></app-dynamic-swiper>
     <ng-template #slideTemplate let-item>
-      <div class="slide">
+      <a class="slide" [routerLink]="item.link">
         <div class="slide-header">
           <img
             [src]="item.image"
@@ -19,7 +19,7 @@
           />
         </div>
         <h3>{{ item.title }}</h3>
-      </div>
+      </a>
     </ng-template>
   </div>
 </div>
