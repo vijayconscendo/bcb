@@ -1,0 +1,49 @@
+      <div class="filter-block">
+        <h3 class="heading-base fw-md mb-4">Filter</h3>
+        <div class="pair-date-picker">
+          <div>
+            <span class="label-base">From</span>
+            <div class="p-custom-calendar">
+              <p-calendar
+                #calendarFrom
+                [(ngModel)]="selectedDateFrom"
+                dateFormat="dd MM yy"
+                [showIcon]="false"
+              >
+              </p-calendar>
+              <span class="calendar-icon" (click)="calendarFrom.toggle()">
+                <img
+                  class="img-fluid"
+                  src="assets/images/icons/icn_calendar.png"
+                  alt="icn_calendar"
+                />
+              </span>
+            </div>
+          </div>
+          <div>
+            <span class="label-base">To</span>
+            <div class="p-custom-calendar">
+              <p-calendar
+                #calendarTo
+                [(ngModel)]="selectedDateTo"
+                dateFormat="dd MM yy"
+                [showIcon]="false"
+              >
+              </p-calendar>
+              <span class="calendar-icon" (click)="calendarTo.toggle()">
+                <img
+                  class="img-fluid"
+                  src="assets/images/icons/icn_calendar.png"
+                  alt="icn_calendar"
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-buttons mt-4">
+          <button type="button" class="apply-btn fl-btn">APPLY</button>
+          <button type="button" class="close-btn fl-btn">CLOSE</button>
+          <button type="button" class="clear-btn fl-btn">CLEAR ALL</button>
+        </div>
+      </div>

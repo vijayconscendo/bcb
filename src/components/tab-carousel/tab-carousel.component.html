@@ -1,5 +1,19 @@
 <div class="tab-carousel-sec">
   <h2 class="heading-title">Gain valuable knowledge</h2>
+  <!-- Mobile NgSelect -->  <div class="mobile-tab-selector">
+    <ng-select
+      [items]="tabs"
+      bindLabel="label"
+      bindValue="id"
+      [(ngModel)]="currentTab"
+      (change)="toggleTab(currentTab)"
+      [clearable]="false"
+      [searchable]="false"
+      placeholder="Select a tab"
+      class="tab-ng-select custom-ngs"
+    ></ng-select>
+  </div>
+  <!-- Desktop tabs -->
   <ul class="tabs-ul">
     <li
       *ngFor="let tab of tabs"

@@ -1,93 +1,218 @@
 <div class="artical-page">
-    <div class="artical-page-wrapper">
-        <div class="artical-page-container">
-            <!-- Article Breadcrumb -->
-            <nav class="breadCrumb">
-                <ul>
-                    <li>
-                        <a [routerLink]="['/']" class="backBtn">
-                            <img class="img-fluid" src="assets/images/icons/back-left-icon.png" alt="back button">
-                            <span>Back</span>
-                        </a> 
-                    </li>
-                    <li>
-                        <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-                    </li>
-                    <li>
-                        <a class="route-name" [routerLink]="['/']"><span>Home</span></a>
-                    </li>
-                    <li>
-                        <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-                    </li>
-                    <li>
-                        <a class="route-name" [routerLink]="['/articles']"><span>Articles</span></a>
-                    </li>
-                    <li>
-                        <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-                    </li>
-                </ul>
-              </nav>
-            <!-- Article Breadcrumb End -->
-            
+  <div class="artical-page-wrapper">
+    <div class="artical-page-container">
+      <!-- Article Banner -->
+      <div class="artical-banner">
+        <img
+          class="img-fluid"
+          src="assets/images/banners/artical-banner-one.jpg"
+          alt="article image"
+        />
+      </div>
+      <!-- Article Banner End-->
 
-            <!-- Article Banner -->
-            <div class="artical-banner">
-                <img class="img-fluid" src="assets/images/banners/artical-banner-one.jpg" alt="article image">
-            </div>
-            <!-- Article Banner End-->
+      <!-- Article Breadcrumb -->
+      <nav class="breadCrumb">
+        <ul>
+          <li>
+            <a class="route-name" [routerLink]="['/']"><span>Home</span></a>
+          </li>
+          <li>
+            <img
+              class="img-fluid"
+              src="assets/images/icons/breadcrumb-rt.png"
+              alt="breadcrumb-rt"
+            />
+          </li>
+          <li>
+            <a class="route-name" [routerLink]="['/articles']"
+              ><span>Articles</span></a
+            >
+          </li>
+          <li>
+            <img
+              class="img-fluid"
+              src="assets/images/icons/breadcrumb-rt.png"
+              alt="breadcrumb-rt"
+            />
+          </li>
+        </ul>
+      </nav>
+      <!-- Article Breadcrumb End -->
 
+      <!-- Article Tagline and Date -->
+      <div class="artical-tagline">
+        <p>Start your business</p>
+        <p>15 Aug 2023</p>
+      </div>
+      <!-- Article Tagline and Date End -->
 
-            <!-- Article Tagline and Date -->
-             <div class="artical-tagline">
-                <p>Start your business</p>
-                <p>15 Aug 2023</p>
-             </div>
-            <!-- Article Tagline and Date End -->
+      <div class="article-content">
+        <h1 class="article-title">
+          12 things to know before starting your own business
+        </h1>
+        <p class="article-title-description">
+          If you’re an entrepreneur planning to start your own business, we’ve
+          listed some vital aspects to consider.
+        </p>
+        <p class="text">
+          Starting your own business can be a rewarding but challenging journey,
+          especially in these ever-changing times. The entrepreneurial journey
+          often feels lonely, and you may find yourself feeling lost as you
+          venture on this path, but with the information below, the daunting
+          task should feel less stressful.
+        </p>
+      </div>
 
-            <div class="article-content">
-                <h1 class="article-title">12 things to know before starting your own business</h1>
-                <p class="article-title-description">If you’re an entrepreneur planning to start your own business, we’ve listed some vital aspects to consider.</p>
-                <p class="text">Starting your own business can be a rewarding but challenging journey, especially in these ever-changing times. The entrepreneurial journey often feels lonely, and you may find yourself feeling lost as you venture on this path, but with the information below, the daunting task should feel less stressful.   </p>
-            </div>
+      <div>
+        <h2 class="title-md">
+          Here are 12 things you should know before starting your own business.
+        </h2>
+        <h3 class="title-sm">1: Understand the structure of your business</h3>
+        <p class="text">
+          Different models, such as sole proprietor, partnership, private
+          company, NPO or trust, have different applications and benefits, so
+          it’s important to do your research and take a long view right from the
+          start. Each of these models has tax and legal liability implications
+          that are important to consider. Visit
+          <a href="http://www.cipc.co.za" target="_blank">www.cipc.co.za</a> for
+          an overview of the different types of businesses that can be
+          registered in South Africa.
+        </p>
+        <h3 class="title-sm">2: Know your market and build for them</h3>
+        <p class="text">
+          Some of the best businesses globally were birthed from a need that was
+          identified by the business owner. Without a need, there is no market.
+          It is important to conduct market analysis and idea validation to
+          ensure that your business is not only required but commercially
+          viable.
+        </p>
+        <h3 class="title-sm">
+          3: You’ll often be working alone, but you are not alone
+        </h3>
+        <p class="text">
+          As mentioned before, the entrepreneurial journey may feel lonely as
+          you pour into your business to make it a success. However, you are not
+          alone: your success will be aided by the network and community you
+          rely on for support. This support also includes banks, which are not
+          just institutions to hold funds but partners in your growth. Also look
+          for mentorship opportunities where possible and join local
+          small-business associations or social media groups dedicated to
+          supporting small-business owners.
+        </p>
 
-        </div>
-        <div>
-            <div class="artical-page-container">
-                <h2 class="title-md">Here are 12 things you should know before starting your own business.</h2>
-                <h3 class="title-sm">1: Understand the structure of your business</h3>
-                <p class="text">Different models, such as sole proprietor, partnership, private company, NPO or trust, have different applications and benefits, so it’s important to do your research and take a long view right from the start. Each of these models has tax and legal liability implications that are important to consider. Visit <a href="http://www.cipc.co.za" target="_blank">www.cipc.co.za</a> for an overview of the different types of businesses that can be registered in South Africa.</p>
-                <h3 class="title-sm">2: Know your market and build for them</h3>
-                <p class="text">Some of the best businesses globally were birthed from a need that was identified by the business owner. Without a need, there is no market. It is important to conduct market analysis and idea validation to ensure that your business is not only required but commercially viable.</p>
-                <h3 class="title-sm">3: You’ll often be working alone, but you are not alone</h3>
-                <p class="text">As mentioned before, the entrepreneurial journey may feel lonely as you pour into your business to make it a success. However, you are not alone: your success will be aided by the network and community you rely on for support. This support also includes banks, which are not just institutions to hold funds but partners in your growth. Also look for mentorship opportunities where possible and join local small-business associations or social media groups dedicated to supporting small-business owners.</p>
+        <h3 class="title-sm">4: You will need to multitask</h3>
+        <p class="text">
+          While mature enterprises may be able to hire specialists to manage
+          various business areas, when you’re starting out, you will have to be
+          able to handle a lot of these functions yourself, from marketing and
+          sales to finance and regulatory. Take advantage of online learning
+          opportunities to broaden and deepen your skills, such as the
+          <a href="https://thinkubate.co/"
+            >business skills development course offered by Thinkubate .</a
+          >
+        </p>
 
-                <h3 class="title-sm">4: You will need to multitask</h3>
-                <p class="text">While mature enterprises may be able to hire specialists to manage various business areas, when you’re starting out, you will have to be able to handle a lot of these functions yourself, from marketing and sales to finance and regulatory. Take advantage of online learning opportunities to broaden and deepen your skills, such as the <a href="https://thinkubate.co/">business skills development course offered by Thinkubate .</a></p>
+        <h3 class="title-sm">5: Efficiency is key to success</h3>
+        <p class="text">
+          As a business owner taking on multiple roles, it is essential that you
+          find the right tools for the many jobs you will need to do.
+          Fortunately, there are a number of digital solutions that can provide
+          the cost- and time-efficiency, as well as scalability, that are vital
+          for a small business’s success. Online portals such as
+          <a href="https://enterprisemarketplace.standardbank.co.za/"
+            >Standard Bank’s Marketplace</a
+          >
+          are essential resources that will enable you to find the right digital
+          solution for your business.
+        </p>
 
-                <h3 class="title-sm">5: Efficiency is key to success</h3>
-                <p class="text">As a business owner taking on multiple roles, it is essential that you find the right tools for the many jobs you will need to do. Fortunately, there are a number of digital solutions that can provide the cost- and time-efficiency, as well as scalability, that are vital for a small business’s success. Online portals such as <a href="https://enterprisemarketplace.standardbank.co.za/">Standard Bank’s Marketplace</a> are essential resources that will enable you to find the right digital solution for your business.</p>
+        <h3 class="title-sm">6: It won’t be easy</h3>
+        <p class="text">
+          The truth is that only 1 out of every 4 small businesses runs for
+          longer than a year. One of the ways to give your business a better
+          chance of survival is to equip yourself with the necessary tools to
+          succeed, such as having a mentor, establishing a strong support
+          structure and knowing how to sell the right product to the right
+          market.
+        </p>
 
-                <h3 class="title-sm">6: It won’t be easy</h3>
-                <p class="text">The truth is that only 1 out of every 4 small businesses runs for longer than a year. One of the ways to give your business a better chance of survival is to equip yourself with the necessary tools to succeed, such as having a mentor, establishing a strong support structure and knowing how to sell the right product to the right market.</p>
+        <h3 class="title-sm">7: Work-life balance is important</h3>
+        <p class="text">
+          While you may be tempted to work 24/7, it’s essential that you take
+          time away from your business to spend with friends and family. Not
+          only will this downtime make you a more effective business owner by
+          helping to avoid burnout, but it’s also a great way to stay motivated
+          by reminding yourself why you’re putting in the hard work to build
+          something in the first place.
+        </p>
 
-                <h3 class="title-sm">7: Work-life balance is important</h3>
-                <p class="text">While you may be tempted to work 24/7, it’s essential that you take time away from your business to spend with friends and family. Not only will this downtime make you a more effective business owner by helping to avoid burnout, but it’s also a great way to stay motivated by reminding yourself why you’re putting in the hard work to build something in the first place.</p>
+        <h3 class="title-sm">8: The red tape is real</h3>
+        <p class="text">
+          No matter how much you enjoy the core work of your business, you’ll
+          have to come to terms with the fact that administrative tasks are
+          going to take up a lot of your time. To add to that administrative
+          burden, there will be required compliance submissions to SARS and CIPC
+          that need to be considered. Planning is key to managing these
+          successfully, so make sure you understand what needs to be registered
+          when and include these important points on your business roadmap.
+          Websites such as
+          <a href="https://bizportal.gov.za/default.aspx">BizPortal</a> provide
+          a handy step-by-step guide to the registration process, as well as the
+          ability to submit many registration documents online.
+        </p>
 
-                <h3 class="title-sm">8: The red tape is real</h3>
-                <p class="text">No matter how much you enjoy the core work of your business, you’ll have to come to terms with the fact that administrative tasks are going to take up a lot of your time. To add to that administrative burden, there will be required compliance submissions to SARS and CIPC that need to be considered. Planning is key to managing these successfully, so make sure you understand what needs to be registered when and include these important points on your business roadmap. Websites such as <a href="https://bizportal.gov.za/default.aspx">BizPortal</a> provide a handy step-by-step guide to the registration process, as well as the ability to submit many registration documents online.</p>
+        <h3 class="title-sm">9: You’ll need to explore funding options</h3>
+        <p class="text">
+          Initially, your business may not be able to access traditional sources
+          of funding such as a business loan. Consider alternatives such as
+          personal savings, development funds, investment from family or friends
+          or crowdfunding through platforms such as
+          <a href="https://thundafund.africa/partner/2D63C1D362770850ACFD"
+            >Thundafund
+          </a>
+        </p>
 
-                <h3 class="title-sm">9: You’ll need to explore funding options</h3>
-                <p class="text">Initially, your business may not be able to access traditional sources of funding such as a business loan. Consider alternatives such as personal savings, development funds, investment from family or friends or crowdfunding through platforms such as <a href="https://thundafund.africa/partner/2D63C1D362770850ACFD">Thundafund </a></p>
+        <h3 class="title-sm">10: There will be risk involved</h3>
+        <p class="text">
+          While more established enterprises may be able to absorb a certain
+          amount of loss, disruptions resulting from damage, theft or other
+          external factors can prove fatal to a small business. A customised
+          business insurance solution can go a long way to mitigating this risk,
+          and you should always explore
+          <a
+            href="https://www.standardbank.co.za/southafrica/business/products-and-services/insure-what-matters/small-business-insurance"
+            >solutions that can be tailored to the needs of your business and
+            sector.</a
+          >
+        </p>
 
-                <h3 class="title-sm">10: There will be risk involved</h3>
-                <p class="text">While more established enterprises may be able to absorb a certain amount of loss, disruptions resulting from damage, theft or other external factors can prove fatal to a small business. A customised business insurance solution can go a long way to mitigating this risk, and you should always explore <a href="https://www.standardbank.co.za/southafrica/business/products-and-services/insure-what-matters/small-business-insurance">solutions that can be tailored to the needs of your business and sector.</a></p>
+        <h3 class="title-sm">11: Manage your expectations</h3>
+        <p class="text">
+          Financial discipline is a vital component of a successful small
+          business. Pay yourself a salary and keep a strict separation between
+          your personal and business funds. Having a separate
+          <a
+            href="https://www.standardbank.co.za/southafrica/business/products-and-services/bank-with-us/business-bank-accounts/our-accounts"
+            >business bank account</a
+          >
+          is a must and has the added benefit of providing access to value-added
+          services that can help make your business a success.
+        </p>
 
-                <h3 class="title-sm">11: Manage your expectations</h3>
-                <p class="text">Financial discipline is a vital component of a successful small business. Pay yourself a salary and keep a strict separation between your personal and business funds. Having a separate <a href="https://www.standardbank.co.za/southafrica/business/products-and-services/bank-with-us/business-bank-accounts/our-accounts">business bank account</a> is a must and has the added benefit of providing access to value-added services that can help make your business a success.</p>
-
-                <h3 class="title-sm">12: Take time to reflect</h3>
-                <p class="text">Building a business is about more than just earning money; it’s about putting in the time, money and hard work to build a lasting legacy for yourself, your family and your society. Whenever you need to, take a moment to reflect on the <a href="https://www.standardbank.co.za/southafrica/business/bizconnect/success-stories">inspiring achievements of your fellow entrepreneurs</a> and perhaps share your own success story in the future.</p>
-            </div>
-        </div>
+        <h3 class="title-sm">12: Take time to reflect</h3>
+        <p class="text">
+          Building a business is about more than just earning money; it’s about
+          putting in the time, money and hard work to build a lasting legacy for
+          yourself, your family and your society. Whenever you need to, take a
+          moment to reflect on the
+          <a
+            href="https://www.standardbank.co.za/southafrica/business/bizconnect/success-stories"
+            >inspiring achievements of your fellow entrepreneurs</a
+          >
+          and perhaps share your own success story in the future.
+        </p>
+      </div>
     </div>
+  </div>
 </div>

@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
 import { SwiperOptions } from 'swiper/types';
 
 @Component({
@@ -13,7 +13,15 @@ export class MySolutioncardsComponent {
   
   @ViewChild('swiperContainer') swiperContainer!: ElementRef;
 
+  isBrowser: boolean;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
+
   ngAfterViewInit() {
+
+    if (!this.isBrowser) return;
     const swiperEl = this.swiperContainer.nativeElement;
 
     // Swiper parameters
@@ -34,8 +42,11 @@ export class MySolutioncardsComponent {
         640: {
           slidesPerView: 2,
         },
-        991: {
+        1024: {
           slidesPerView: 3,
+        },
+        1200: {
+          slidesPerView: 4,
         },
       },
     };

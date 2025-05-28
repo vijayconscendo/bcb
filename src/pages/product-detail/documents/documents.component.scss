@@ -1,0 +1,144 @@
+.choose-account {
+  padding: 1.5rem;
+  background-color: #ffffff;
+  .info-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    margin-top: 14px;
+    max-width: 700px;
+    p {
+      font-family: "BSP-Regular";
+      font-size: 1rem;
+      line-height: 1.3;
+      color: #697786;
+      margin-bottom: 0;
+      @media screen and (max-width: 768px) {
+        font-size: 0.875rem;
+      }
+      @media screen and (max-width: 680px) {
+        font-size: 0.75rem;
+      }
+    }
+  }
+}
+
+// search-and-filter
+.search-and-filter {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0 0;
+}
+
+
+.ngs-floating-label-wrapper {
+  position: relative;
+  max-width: 627px;
+  margin: 1rem 0 1.375rem;
+  z-index: 1;
+  ng-select {
+    width: 100%;
+  }
+
+  .floating-label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ffffff;
+    padding: 0 4px;
+    color: #999;
+    font-size: 1rem;
+    transition: 0.2s ease all;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &.focused .floating-label {
+    top: 0;
+    font-size: 0.75rem;
+    color: var(--text-medium-gray);
+    z-index: 9;
+  }
+  ng-select.ng-select-focused ~ .floating-label {
+    top: 0;
+    font-size: 0.75rem;
+    color: var(--text-medium-gray);
+    z-index: 9;
+  }
+}
+
+.responsive-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.custom-table {
+  tr > th:first-child,
+  tr > td:first-child {
+    text-align: center;
+  }
+  tr {
+    td {
+      padding: 2rem 0.5rem;
+    }
+  }
+}
+
+.custom-table {
+  width: 100%;
+  @media screen and (max-width: 1024px) {
+    min-width: 991px;
+  }
+  thead {
+    tr {
+      th {
+        padding: 1rem 0.5rem;
+        vertical-align: middle;
+        background-color: var(--color-gray-pale);
+        span {
+          font-family: "BSP-Medium";
+          font-size: 0.75rem;
+          line-height: 1.3;
+          color: #091c35;
+          font-weight: 500;
+        }
+      }
+      .action-th {
+        text-align: center;
+        width: 6.25rem;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        padding: 1rem 0.5rem;
+        vertical-align: middle;
+        border-bottom: 1px solid var(--color-gray-pale);
+        .icon-and-text {
+          display: flex;
+          align-items: center;
+        }
+        .ptext {
+          font-family: "BSP-Regular";
+          font-size: 0.875rem;
+          line-height: 1.5;
+          color: #091c35;
+          margin: 0;
+          .muted-text {
+            display: block;
+            opacity: 0.8;
+          }
+        }
+      }
+      &:last-child > td {
+        border-bottom: none;
+      }
+      .action-td {
+        text-align: center;
+        width: 6.25rem;
+      }
+    }
+  }
+}

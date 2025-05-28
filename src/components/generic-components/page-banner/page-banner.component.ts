@@ -12,6 +12,7 @@ export class PageBannerComponent {
   @Input() text?: string;
   @Input() buttonText?: string;
   @Input() imageUrl?: string;
+  @Input() bannerContentClass?: string;
   @Output() buttonClick = new EventEmitter<void>();
 
   onClick() {

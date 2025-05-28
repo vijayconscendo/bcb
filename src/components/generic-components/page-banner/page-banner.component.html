@@ -1,5 +1,5 @@
 <section class="banner" *ngIf="title || text || imageUrl">
-  <div class="banner-content-wrapper" *ngIf="title || text || buttonText">
+  <div class="banner-content-wrapper" [ngClass]="bannerContentClass" *ngIf="title || text || buttonText">
     <div class="banner-content">
       <h1 class="banner-title" *ngIf="title">{{ title }}</h1>
       <p class="banner-text" *ngIf="text">{{ text }}</p>
@@ -27,5 +27,6 @@
   [text]="'Explore powerful features tailored to your business'"
   [buttonText]="'Learn More'"
   [imageUrl]="'assets/images/banners/another-banner.png'"
+  [bannerContentClass]="'blue-background'"
   (buttonClick)="handleBannerButtonClick()"
 ></app-page-banner> -->

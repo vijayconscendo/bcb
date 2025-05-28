@@ -1,50 +1,36 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angular/core';
 import { SwiperOptions } from 'swiper/types';
+import { DynamicSwiperComponent } from '../generic-components/dynamic-swiper/dynamic-swiper.component';
 
 @Component({
   selector: 'app-money-transfer-carousel',
-  imports: [],
+  imports: [DynamicSwiperComponent],
   templateUrl: './money-transfer-carousel.component.html',
   styleUrl: './money-transfer-carousel.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class MoneyTransferCarouselComponent {
-  @ViewChild('swiperMoneyTransCarousel') swiperMoneyTransCarousel!: ElementRef;
-  ngAfterViewInit() {
-    const swiperMoneyTransfer = this.swiperMoneyTransCarousel.nativeElement;
+  
+  customBreakpoints = {
+    640: {
+    slidesPerView: 2,
+  },
+  1024: {
+    slidesPerView: 3,
+    spaceBetween: 24,
+  },
+  1440: {
+    slidesPerView: 4,
+    spaceBetween: 32,
+  },
+}
 
-    // Swiper parameters
-    const swiperParams: SwiperOptions = {
-      slidesPerView: 1,
-      spaceBetween: 24,
-      loop: false,
-      // Connect to external elements
-      pagination: {
-        el: '.mt-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.mt-next',
-        prevEl: '.mt-prev',
-      },
-      breakpoints: {
-        640: {
-          slidesPerView: 2,
-        },
-        991: {
-          slidesPerView: 3,
-        },
-        1024: {
-          slidesPerView: 4,
-        },
-      },
-    };
+moneyUsage = [
+  { title: 'Online banking', alt: 'Online banking', image: 'assets/images/media/laptop-online.png' },
+  { title: 'Mobile app', alt: 'Mobile app', image: 'assets/images/media/mobile-online.png' },
+  { title: 'ATM', alt: 'ATM', image: 'assets/images/media/atm-machine.png' },
+  { title: 'Cellphone banking', alt: 'Cellphone banking', image: 'assets/images/media/sms-code.png' },
+  { title: 'Cellphone banking', alt: 'Cellphone banking', image: 'assets/images/media/sms-code.png' },
+];
 
-    // Assign parameters
-    Object.assign(swiperMoneyTransfer, swiperParams);
-
-    setTimeout(() => {
-      swiperMoneyTransfer.initialize();
-    }, 100);
-  }
 }

@@ -1,13 +1,7 @@
 .sol-cards-container{
     padding: 2.5rem 0;
 }
-.sec-heading-md{
-    font-family: "BSP-Regular", sans-serif;
-    font-size: 1.75rem;
-    line-height: 1.3;
-    color: #FFFFFF;
-    margin-bottom: 2rem;
-}
+
 .sol-card{
     padding: 1rem; background-color: #0062E1; border-radius: 0.5rem; width: 100%;
 }
@@ -44,13 +38,13 @@
     }
 }
 
-.transact-btn{
+.explore-btn{
     margin-top: 1rem;
     font-family: "BSP-Medium", sans-serif;
     font-size: 0.75rem;
     line-height: normal;
-    text-align: center; color: #0062E1; min-width: 127px; text-align: center;
-    padding: 8px 12px; border-radius: 8px; background-color: #FFFFFF; border: none;
+    text-align: center; color: var(--color-white); min-width: 127px; text-align: center;
+    padding: 0.5rem 0.75rem; border-radius: 0.5rem; background-color: rgba(0, 51, 170, 1); border: none;
 }
 
 swiper-container {

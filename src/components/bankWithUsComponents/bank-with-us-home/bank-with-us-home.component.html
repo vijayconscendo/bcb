@@ -1,15 +1,11 @@
 <div class="bank-with-us-page">
-    <!-- Banner with edge-to-edge image -->
-<section class="banner">
-    <div class="banner-content-wrapper">
-        <div class="banner-content">
-            <h1 class="banner-title">Its time to make the switch</h1>
-            <p class="banner-text">Bank with people who are serious about where your business is going</p>
-            <button type="button" class="primaryBtn">CALL ME BACK</button>
-        </div>
-    </div>
-    <div class="banner-image" style="background-image: url('assets/images/banners/solutions-banner.png');"></div>
-</section>
+<!-- Banner with edge-to-edge image -->
+<app-page-banner
+    [title]="'Its time to make the switch'"
+    [text]="'Bank with people who are serious about where your business is going'"
+    [imageUrl]="'assets/images/banners/solutions-banner.png'"
+    [buttonText]="'CALL ME BACK'">
+</app-page-banner>
 
 <div>
     <div class="custom-container">
@@ -55,7 +51,7 @@
     </div>
 
     <div class="custom-container">
-        <h3 class="title-md">Why switch your business account to us?</h3>
+        <h3 class="text-heading-md">Why switch your business account to us?</h3>
         <div class="container-fluid px-0 py-3 goal-card-container">
             <div class="row gx-lg-0 gy-5">
                 <div class="col-lg-3 col-md-6 col-sm-12 column">

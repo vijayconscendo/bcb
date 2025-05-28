@@ -1,33 +1,4 @@
 
-
-<div class="custom-container">
-    <app-dynamic-swiper 
-        [slides]="teamMembers"
-        [itemTemplate]="slideTemplate"
-        [breakpoints]="customBreakpoints"
-    ></app-dynamic-swiper>
-    <ng-template #slideTemplate let-member>
-        <div class="card">
-            <img [src]="member.image" alt="{{ member.name }}" />
-            <h3>{{ member.name }}</h3>
-            <p>{{ member.role }}</p>
-        </div>
-    </ng-template>
-
-
-        <app-dynamic-swiper 
-        [slides]="teamMembers2"
-        [itemTemplate]="slideTemplate2"
-        [breakpoints]="customBreakpoints2"
-    ></app-dynamic-swiper>
-    <ng-template #slideTemplate2 let-member>
-        <div class="card">
-            <img [src]="member.image" alt="{{ member.name }}" />
-            <h3>{{ member.name }}</h3>
-            <p>{{ member.role }}</p>
-        </div>
-    </ng-template>
-</div>
 <div class="faq-page">
     <div class="custom-container">
         <div class="page-title">

@@ -1,4 +1,10 @@
-<app-page-banner-one></app-page-banner-one>
+<!-- Banner with edge-to-edge image -->
+<app-page-banner
+    [title]="'Our solutions'"
+    [text]="'Explore our solutions to help you manage your finances better.'"
+    [imageUrl]="'assets/images/banners/solutions-banner.png'"
+    [bannerContentClass]="'pageBannerContent'"
+></app-page-banner>
 <app-unauth-solution-grid></app-unauth-solution-grid>
 <div *ngIf="isBrowser">
     <app-explore-solutions-carousel></app-explore-solutions-carousel>

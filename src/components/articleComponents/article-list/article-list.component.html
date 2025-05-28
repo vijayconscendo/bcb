@@ -1,6 +1,5 @@
 <div class="artical-page">
     <div class="custom-container">
-        <div>
             <!-- Article Breadcrumb -->
             <nav class="breadCrumb">
                 <ul>
@@ -28,30 +27,28 @@
                 </ul>
                 </nav>
             <!-- Article Breadcrumb End -->
-    
-            <div class="page-info">
-                <h1 class="page-title">Starting a new business</h1>
-                <p class="page-description">First-time entrepreneurs often find that starting their new business works out differently to what they expected. We’ve collected articles by various business owners describing their own experiences, from finding funding to turning a hobby into a business empire.</p>
-            </div>
-        </div>
+            <!-- Page Intro -->
+            <app-page-intro
+                [title]="'Starting a new business'"
+                [description]="'First-time entrepreneurs often find that starting their new business works out differently to what they expected. We’ve collected articles by various business owners describing their own experiences, from finding funding to turning a hobby into a business empire.'"
+            ></app-page-intro>
 
-        <h2 class="title-md">ARTICLES FOR STARTING YOUR BUSINESS</h2>
+        <h2 class="heading-base fw-md mb-4">ARTICLES FOR STARTING YOUR BUSINESS</h2>
         <div class="container-fluid px-0">
             <div class="row">
                 <div class="col-lg-9 col-md-8 col-sm-12">            
-                    <div class="formgroup">
-                        <span class="labeltext">Search</span>
-                        <div class="search-container">
-                            <input type="text" placeholder="Enter your search here" />
-                            <button type="button">
-                                <img class="img-fluid" src="assets/images/icons/icon-search.svg" alt="search icon">
-                            </button>
-                        </div>
+                    <div class="mb-4">
+                        <span class="label-base">Search</span>
+                            <app-custom-search
+                                [(value)]="searchTerm"
+                                placeholder="Search here..."
+                            >
+                            </app-custom-search>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-12">
                     <div class="formgroup">
-                        <span class="labeltext">Select year</span>
+                        <span class="label-base">Select year</span>
                         <ng-select
                             [items]="selectyear"
                             bindLabel="name"

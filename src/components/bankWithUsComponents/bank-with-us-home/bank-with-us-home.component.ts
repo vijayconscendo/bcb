@@ -3,10 +3,11 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SwiperOptions } from 'swiper/types';
+import { PageBannerComponent } from '../../generic-components/page-banner/page-banner.component';
 
 @Component({
   selector: 'app-bank-with-us-home',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, PageBannerComponent],
   templateUrl: './bank-with-us-home.component.html',
   styleUrl: './bank-with-us-home.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

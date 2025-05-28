@@ -1,0 +1,122 @@
+<div class="choose-account">
+        <div
+          class="ngs-floating-label-wrapper"
+          [class.focused]="selectedAccount || isFocused"
+        >
+          <label class="floating-label">Available documents</label>
+          <ng-select
+            [items]="accountList"
+            bindLabel="name"
+            [(ngModel)]="selectedAccount"
+            placeholder=""
+            [searchable]="false"
+            (focus)="isFocused = true"
+            (blur)="isFocused = false"
+            [appendTo]="'body'"
+            class="custom-ngs"
+          >
+            <ng-template ng-option-tmp let-item="item">
+              {{ item.name }}
+            </ng-template>
+          </ng-select>
+        </div>
+
+        <div class="info-text">
+          <img
+            class="img-fluid"
+            src="assets/images/icons/info-gray.png"
+            alt="info"
+          />
+          <p>
+            Downloaded documents are not password protected. Standard Bank is
+            not responsible for any loss or damage you may suffer if any
+            information is accessed or used by a third party.
+          </p>
+        </div>
+
+        <div class="search-and-filter">
+          <app-custom-search
+            [(value)]="searchTerm"
+            placeholder="Search documents..."
+          >
+          </app-custom-search>
+          <button
+            type="button"
+            class="primaryBtnOutline"
+            (click)="toggleSearchFilter()"
+          >
+            <span>FILTER</span
+            ><img
+              class="search"
+              src="assets/images/icons/filter-icon.png"
+              alt="filter icon"
+            />
+          </button>
+        </div>
+      </div>
+     @if (isSearchFilter) {
+      <app-filter-block (closeFilter)="toggleSearchFilter()">
+      </app-filter-block>
+      }
+              <div class="responsive-table">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th>&nbsp;</th>
+                <th><span>Date</span></th>
+                <th><span>Category</span></th>
+                <th><span>Description</span></th>
+                <th class="action-th"><span>Email</span></th>
+                <th class="action-th"><span>Preview</span></th>
+                <th class="action-th"><span>Download</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let doc of documents">
+                <td>
+                  <img
+                    class="img-luid"
+                    [src]="doc.icons.account"
+                    alt="document icon"
+                  />
+                </td>
+                <td>
+                  <p class="ptext">{{ doc.date }}</p>
+                </td>
+                <td>
+                  <p class="ptext">{{ doc.category }}</p>
+                </td>
+                <td>
+                  <p class="ptext">
+                    {{ doc.description }}
+                    <span class="muted-text">{{ doc.status }}</span>
+                  </p>
+                </td>
+                <td class="action-td">
+                  <a href="#"
+                    ><img
+                      class="img-luid"
+                      [src]="doc.icons.email"
+                      alt="send icon"
+                  /></a>
+                </td>
+                <td class="action-td">
+                  <a href="#"
+                    ><img
+                      class="img-luid"
+                      [src]="doc.icons.preview"
+                      alt="preview icon"
+                  /></a>
+                </td>
+                <td class="action-td">
+                  <a href="#"
+                    ><img
+                      class="img-luid"
+                      [src]="doc.icons.download"
+                      alt="download icon"
+                  /></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>

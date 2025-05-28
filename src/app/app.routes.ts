@@ -56,10 +56,6 @@ export const routes: Routes = [
                 loadComponent: () => import('../pages/faq/faq.component').then(m => m.FaqComponent)
             },
             {
-                path: 'ob4b',
-                loadComponent: () => import('../pages/online-banking-for-business/online-banking-for-business.component').then(m => m.OnlineBankingForBusinessComponent)
-            },
-            {
                 path: 'product-detail',
                 loadComponent: () => import('../pages/product-detail/product-detail.component').then(m => m.ProductDetailComponent)
             },
@@ -70,6 +66,10 @@ export const routes: Routes = [
             {
                 path: 'my-mobiz-account',
                 loadComponent: () => import('../pages/my-mobiz-account/my-mobiz-account.component').then(m => m.MyMobizAccountComponent)
+            },
+            {
+                path: 'ways-to-bank',
+                loadChildren: () => import('../pages/ways-to-bank/ways-to-bank.routes').then(m => m.waysToBankRoutes),
             }
         ]
     },

@@ -5,6 +5,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  gap: 0.625rem;
   background-color: var(--color-primary);
   color: var(--color-white);
   text-decoration: none;
@@ -13,7 +14,8 @@
   letter-spacing: 0.0625rem;
   text-transform: uppercase;
   line-height: normal;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
+  min-height: 3.125rem;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -35,6 +37,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  gap: 0.625rem;
   background-color: var(--color-white);
   color: var(--color-primary);
   text-decoration: none;
@@ -43,7 +46,8 @@
   letter-spacing: 0.0625rem;
   text-transform: uppercase;
   line-height: normal;
-  padding: 1rem;
+  min-height: 3.125rem;
+  padding: 0.5rem 1rem;
   border: 1px solid var(--color-primary);
   border-radius: 0.5rem;
   cursor: pointer;
@@ -63,9 +67,9 @@
 }
 
 .btn-common{
-  display: inline-flex; align-items: center; justify-content: center; text-decoration: none;
+  display: inline-flex; align-items: center; justify-content: center;gap:0.625rem;text-decoration: none;
   font-family: "BSP-Medium"; font-size: 0.875rem; text-transform: uppercase; line-height: normal;
-  padding: 1rem; border: 1px solid transparent; border-radius: 0.5rem; cursor: pointer; background-color: transparent;
+  padding: 0.5rem 1rem;min-height: 3.125rem;border: 1px solid transparent; border-radius: 0.5rem; cursor: pointer; background-color: transparent;
   transition: all 0.3s ease;
 }
 
@@ -101,5 +105,25 @@
   background-color: var(--color-primary);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   color: var(--color-white);
+}
+
+
+.backBtn{
+    border: 1px solid var(--color-primary);
+    border-radius: 30px;
+    padding: 3px 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px; cursor: pointer;
+    background-color: transparent;
+    span{
+        font-family: "BSP-Medium";
+        font-size: 0.875rem;
+        line-height: normal;
+        text-align: center;
+        color: var(--color-primary);
+    }
 }
 /* ----- BUTTON COMMON STYLES END ----- */

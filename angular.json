@@ -30,7 +30,7 @@
               },
               "src/favicon.ico",
               "src/assets"
-            ],
+            ],            
             "styles": [
               "src/styles/fonts.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -41,6 +41,11 @@
               "src/styles.scss",
               "src/styles/_custom-breakpoints.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            },
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ],

@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import {
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
@@ -8,10 +9,11 @@ import {
   OnDestroy,
 } from '@angular/core';
 import { SwiperOptions } from 'swiper/types';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @Component({
   selector: 'app-tab-carousel',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule, NgSelectModule],
   templateUrl: './tab-carousel.component.html',
   styleUrl: './tab-carousel.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -24,7 +26,6 @@ export class TabCarouselComponent implements AfterViewInit, OnDestroy {
     { id: 'grow-business', label: 'Growing your business' },
   ];
   currentTab: string = this.tabs[0].id;
-
   toggleTab(tab: string) {
     if (this.currentTab === tab) return; // Avoid unnecessary reinitialization
     this.swiperVisible = false;

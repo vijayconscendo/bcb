@@ -1,0 +1,48 @@
+<button class="mobile-filter-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileFilterSheet" aria-controls="mobileFilterSheet">
+  <img src="assets/images/icons/icn_filter-mobile.png" alt="filter icon" />
+</button>
+
+<div class="offcanvas offcanvas-bottom mobile-sheet" tabindex="-1" id="mobileFilterSheet">
+  <div class="sheet-header">
+    <button type="button" class="sheet-close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
+      <img src="assets/images/icons/icn_close-white.png" alt="close" />
+    </button>
+    <h5 class="sheet-title">Filter Transactions</h5>
+    <button type="button" class="apply-btn">APPLY</button>
+  </div>
+
+  <div class="filter-content">
+    <h5 class="filter-block-title">Choose transaction date range</h5>
+    <div class="mb-4">
+      <span class="label-base">From</span>
+        <div class="p-custom-calendar">
+          <p-calendar
+            #calendarFrom
+            [(ngModel)]="selectedDateFrom"
+            dateFormat="dd MM yy"
+            [showIcon]="false"
+          ></p-calendar>
+          <span class="calendar-icon" (click)="calendarFrom.toggle()">
+            <img class="img-fluid" src="assets/images/icons/icn_calendar.png" alt="calendar icon" />
+          </span>
+        </div>
+    </div>
+
+    <div class="mb-4">
+      <span class="label-base">To</span>
+        <div class="p-custom-calendar">
+          <p-calendar
+            #calendarTo
+            [(ngModel)]="selectedDateTo"
+            dateFormat="dd MM yy"
+            [showIcon]="false"
+          ></p-calendar>
+          <span class="calendar-icon" (click)="calendarTo.toggle()">
+            <img class="img-fluid" src="assets/images/icons/icn_calendar.png" alt="calendar icon" />
+          </span>
+        </div>
+    </div>
+
+    <button type="button" class="btn-common primary-text px-0">Clear filter</button>
+  </div>
+</div>

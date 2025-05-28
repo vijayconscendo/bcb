@@ -1,16 +1,25 @@
 import { CommonModule } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angular/core';
-import { SwiperOptions } from 'swiper/types';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { DynamicSwiperComponent } from '../generic-components/dynamic-swiper/dynamic-swiper.component';
 
 @Component({
   selector: 'app-featured-solutions-carousel',
-  imports: [CommonModule],
+  imports: [CommonModule, DynamicSwiperComponent],
   templateUrl: './featured-solutions-carousel.component.html',
   styleUrl: './featured-solutions-carousel.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class FeaturedSolutionsCarouselComponent {
 
+  featuredBreakpoints = {
+    640: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 24,
+    },
+  };
 
   featuredSlides = [
     {
@@ -48,49 +57,6 @@ export class FeaturedSolutionsCarouselComponent {
       title: 'Get 24/7 support',
       description: 'Keep your business’s finances stable with our financial management tools',
       background: 'assets/images/media/support-card.png'
-    }
-  ];
-
-  @ViewChild('featuredswiperContainer') featuredswiperContainer!: ElementRef;
-  ngAfterViewInit() {
-    const swiperE2 = this.featuredswiperContainer.nativeElement;
-
-    // Swiper parameters
-    const swiperParams: SwiperOptions = {
-      slidesPerView: 1,
-      spaceBetween: 15,
-      initialSlide: 0,
-      // loop: true,
-      centeredSlides: false,
-
-      // Connect to external elements
-      pagination: {
-        el: '.ftd-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.ftd-next',
-        prevEl: '.ftd-prev',
-      },
-      breakpoints: {
-        640: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 24,
-          centeredSlides: false,
-        },
-      },
-    };
-
-    // Assign parameters
-    Object.assign(swiperE2, swiperParams);
-
-    setTimeout(() => {
-    swiperE2.initialize();
-    }, 100);
-  }
+    }  ];
   
-
 }

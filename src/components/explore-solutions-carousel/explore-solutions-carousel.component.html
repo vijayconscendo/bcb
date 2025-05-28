@@ -1,57 +1,85 @@
-<div class="explore-solutions-sec">
+<div class="page-wrapper">
     <div class="custom-container">
-        <div class="carousel-container">
-            <div class="sec-title-wrap">
-                <h2 class="sec-title">Our full range of solutions</h2>
-                <p class="sec-description">Access a wide range of solutions suited to meet your needs, whether you're starting, growing or managing your business</p>
-            </div>
-        
-            <div class="custom-carousel explore-sol-slider">
-                <swiper-container #swiperExploreSolutions init="false">
-                    <swiper-slide>
-                        <div class="slide">
-                            <img src="assets/images/icons/bank-img.png" alt="bank" class="img-fluid" />
-                            <h3>Bank</h3>
-                          </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="slide">
-                            <img src="assets/images/icons/borrow-img.png" alt="borrow" class="img-fluid" />
-                            <h3>Borrow</h3>
-                          </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="slide">
-                            <img src="assets/images/icons/grow-img.png" alt="insure" class="img-fluid" />
-                            <h3>Save & Invest</h3>
-                          </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="slide">
-                            <img src="assets/images/icons/insure-img.png" alt="insure" class="img-fluid" />
-                            <h3>Insure</h3>
-                          </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="slide">
-                            <img src="assets/images/icons/insure-img.png" alt="bank" class="img-fluid" />
-                            <h3>Bank</h3>
-                          </div>
-                    </swiper-slide>
-                </swiper-container>
-                <div class="custom-controls">
-                    <div class="custom-navigation">
-                      <button class="custom-prev">
-                        <img src="assets/images/icons/carousel-arrow-lt.png" alt="left arrow" />
-                      </button>
-                      <div class="custom-pagination"></div>
-                      <button class="custom-next">
-                        <img src="assets/images/icons/carousel-arrow-rt.png" alt="left arrow" />
-                      </button>
-                    </div>
-                  </div>
-            </div>
-              
+      <div class="title-bar">
+          <h2 class="text-heading-md">Our full range of solutions</h2>
+          <p class="text-subtitle">Access a wide range of solutions suited to meet your needs, whether you're starting, growing or managing your business</p>
+      </div>
+      <app-dynamic-swiper 
+          [slides]="solutioncards"
+          [itemTemplate]="slideTemplate"
+          [breakpoints]="customBreakpoints"
+      ></app-dynamic-swiper>
+      <ng-template #slideTemplate let-solution>
+        <div class="slide" (click)="openModal(solution)" data-bs-toggle="modal" data-bs-target="#selectSolutionModal">
+          <img [src]="solution.image" alt="{{ solution.title }}" class="img-fluid" />
+          <h3>{{ solution.title }}</h3>
         </div>
+      </ng-template>
     </div>
 </div>
+
+<!-- Custom Modal Start -->
+  <div class="modal fade custom-modal selectSolutionModal" id="selectSolutionModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">Bank</h5>
+          <button type="button" class="btnclose" data-bs-dismiss="modal">
+            <img class="img-fluid" src="assets/images/icons/close-icon-white.png" alt="Close" />
+          </button>
+        </div>
+        <!-- Modal Body -->
+        <div class="solution-modal-body">
+          <div class="solution-cards">
+            <h4 class="block-title mb-5">Select a {{ selectedSolution?.title || 'banking' }} solution</h4>
+            <div class="container-fluid px-0">
+              <div class="row align-items-stretch">
+                <ng-container [ngSwitch]="selectedSolution?.title">
+                  <ng-container *ngSwitchCase="'Bank'">
+                    <div class="col-lg-4 mb-4" *ngFor="let btn of solutionOptions[selectedSolution?.title] || []">
+                      <button type="button" class="sol-btn" [class.active]="selectedButton === btn" (click)="selectButton(btn)">
+                        {{ btn }}
+                      </button>
+                    </div>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'Borrow'">
+                    <div class="col-lg-4 mb-4" *ngFor="let btn of solutionOptions[selectedSolution?.title] || []">
+                      <button type="button" class="sol-btn" [class.active]="selectedButton === btn" (click)="selectButton(btn)">
+                        {{ btn }}
+                      </button>
+                    </div>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'Save & Invest'">
+                    <div class="col-lg-4 mb-4" *ngFor="let btn of solutionOptions[selectedSolution?.title] || []">
+                      <button type="button" class="sol-btn" [class.active]="selectedButton === btn" (click)="selectButton(btn)">
+                        {{ btn }}
+                      </button>
+                    </div>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="'Insure'">
+                    <div class="col-lg-4 mb-4" *ngFor="let btn of solutionOptions[selectedSolution?.title] || []">
+                      <button type="button" class="sol-btn" [class.active]="selectedButton === btn" (click)="selectButton(btn)">
+                        {{ btn }}
+                      </button>
+                    </div>
+                  </ng-container> 
+                  <ng-container *ngSwitchDefault>
+                    <!-- Default buttons or message -->
+                  </ng-container>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button type="button" class="textBtn" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="textBtn" [disabled]="!selectedButton" (click)="next()">Next</button>
+        </div>
+ 
+      </div>
+    </div>
+  </div>
+<!-- Custom Modal End -->

@@ -1,82 +1,25 @@
-<div class="custom-container">
-  <div class="carousel-container">
-    <div class="sec-title-wrap">
-      <h2 class="sec-title">Manage your money wherever you are</h2>
+<div class="carousel-container">
+  <div class="custom-container">
+    <div class="title-bar">
+      <h2 class="text-heading-md">Manage your money wherever you are</h2>
     </div>
-    <div class="custom-carousel money-trans-slider">
-      <swiper-container #swiperMoneyTransCarousel init="false">
-        <swiper-slide>
-          <div class="slide">
-            <div class="slide-header">
-              <img
-                src="assets/images/media/laptop-online.png"
-                alt="laptop"
-                class="img-fluid"
-              />
-            </div>
-            <h3>Online banking</h3>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="slide">
-            <div class="slide-header">
-              <img
-                src="assets/images/media/mobile-online.png"
-                alt="mobile app"
-                class="img-fluid"
-              />
-            </div>
-            <h3>Mobile app</h3>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="slide">
-            <div class="slide-header">
-              <img
-                src="assets/images/media/atm-machine.png"
-                alt="atm"
-                class="img-fluid"
-              />
-            </div>
-            <h3>ATM</h3>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="slide">
-            <div class="slide-header">
-              <img
-                src="assets/images/media/sms-code.png"
-                alt="Cellphone app"
-                class="img-fluid"
-              />
-            </div>
-            <h3>Cellphone banking</h3>
-          </div>
-        </swiper-slide>
-        <swiper-slide>
-          <div class="slide">
-            <div class="slide-header">
-              <img
-                src="assets/images/media/sms-code.png"
-                alt="sms code app"
-                class="img-fluid"
-              />
-            </div>
-            <h3>Cellphone banking</h3>
-          </div>
-        </swiper-slide>
-      </swiper-container>
-      <div class="custom-controls">
-        <div class="custom-navigation">
-          <button class="mt-prev">
-            <img src="assets/images/icons/carousel-arrow-lt.png" alt="left arrow" />
-          </button>
-          <div class="mt-pagination"></div>
-          <button class="mt-next">
-            <img src="assets/images/icons/carousel-arrow-rt.png" alt="left arrow" />
-          </button>
+    <app-dynamic-swiper
+      [slides]="moneyUsage"
+      [itemTemplate]="slideTemplate"
+      [breakpoints]="customBreakpoints"
+    ></app-dynamic-swiper>
+    <ng-template #slideTemplate let-item>
+      <div class="slide">
+        <div class="slide-header">
+          <img
+            [src]="item.image"
+            [alt]="item.alt"
+            alt="laptop"
+            class="img-fluid"
+          />
         </div>
+        <h3>{{ item.title }}</h3>
       </div>
-    </div>
+    </ng-template>
   </div>
 </div>

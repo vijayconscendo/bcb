@@ -1,5 +1,5 @@
-<div class="sol-cards-container">
-    <h2 class="sec-heading-md">My Solutions</h2>
+<div class="sol-cards-container" *ngIf="isBrowser">
+    <h2 class="text-heading-sm text-white mb-4">My Solutions</h2>
     <swiper-container #swiperContainer init="false">
         <swiper-slide>
             <div class="sol-card">
@@ -15,7 +15,7 @@
                     <h3>R 589,678.00</h3>
                 </div>
                 <div class="sol-footer">
-                    <button type="button" class="text-uppercase transact-btn">Explore</button>
+                    <button type="button" class="text-uppercase explore-btn">Explore</button>
                 </div>
             </div>
         </swiper-slide>
@@ -33,7 +33,7 @@
                     <h3>R 60,300.00</h3>
                 </div>
                 <div class="sol-footer">
-                    <button type="button" class="text-uppercase transact-btn">Transact</button>
+                    <button type="button" class="text-uppercase explore-btn">Explore</button>
                 </div>
             </div>
         </swiper-slide>
@@ -50,7 +50,27 @@
                     <span>Reward Points</span>
                     <h3>45 000</h3>
                 </div>
-                <div class="sol-footer"></div>
+                <div class="sol-footer">
+                    <button type="button" class="text-uppercase explore-btn">Explore</button>
+                </div>
+            </div>
+        </swiper-slide>
+        <swiper-slide>
+            <div class="sol-card">
+                <div class="sol-header">
+                    <img src="assets/images/icons/add-icon.png" alt="ucount" class="img-fluid" />
+                    <div>
+                        <h5>Add more solutions</h5>
+                        <p>Explore Standard Bank solutions</p>
+                    </div>
+                </div>
+                <div class="sol-body">
+                    <span>&nbsp;</span>
+                    <h3>&nbsp;</h3>
+                </div>
+                <div class="sol-footer">
+                    <button type="button" class="text-uppercase explore-btn">Explore</button>
+                </div>
             </div>
         </swiper-slide>
         

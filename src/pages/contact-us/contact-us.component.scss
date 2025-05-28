@@ -18,8 +18,10 @@
         }
     }
     .backBtn{
-        display: flex; align-items: center; justify-content: center; gap: 0.3125rem; padding: 0; border: 1px solid #FFFFFF;
-        background: transparent; border: none; font-family: "BSP-Medium";font-size: 1.125rem; line-height: normal; color: #FFFFFF;
+        border-color: var(--color-white) !important;
+        span{
+            color: var(--color-white) !important;
+        }
     }
 }
 

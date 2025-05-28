@@ -1,11 +1,23 @@
 <div class="history-statements-sec">
     <div class="custom-container-md">
+        <!-- Demo Controls (For Development Only) -->
+        <div class="row mb-4">
+            <div class="col-lg-6">
+                <button class="btn btn-sm btn-primary me-2" (click)="toggleTransactions()">
+                    {{ hasTransactions ? 'Show Empty Transaction State' : 'Show Transaction Data' }}
+                </button>
+                <button class="btn btn-sm btn-primary" (click)="toggleStatements()">
+                    {{ hasStatements ? 'Show Empty Statement State' : 'Show Statement Data' }}
+                </button>
+            </div>
+        </div>
+        
         <div class="container-fluid px-0">
             <div class="row gx-3 align-items-stretch">
-                <div class="col-lg-8 d-flex flex-column">
-                    <h2 class="sec-heading-md">Transaction history</h2>
+                <div class="col-lg-8 d-flex flex-column">                    
+                    <h2 class="text-heading-sm mb-4">Transaction history</h2>
                     <div class="table-container">
-                        <ng-container>
+                    <ng-container>
                     <ng-select
                         [items]="accounts"
                         bindLabel="name"
@@ -13,6 +25,9 @@
                         [(ngModel)]="selectedAccount"
                         class="custom-ngs">
                     </ng-select>
+                    
+                    <!-- Show transaction data when available -->
+                    <ng-container *ngIf="hasTransactions">
                         <div class="table-overflow">
                             <div class="custom-table">
                                 <ul class="table-header-ul">
@@ -77,19 +92,21 @@
                             </div>
                         </div>
                         <button type="button" class="view-all-btn">view all <img src="assets/images/icons/col-icon-right.png" alt="col-icon-right" class="img-fluid" /></button>
-                <!-- Empty State -->
-                <div class="empty-state">
-                    <div class="empty-state-content">
-                        <img src="assets/images/icons/icn_card-pay.png" alt="icn_card-pay" class="img-fluid" />
-                        <p>Transaction history unavailable</p>
-                        <span>We're currently unable to load the transactions for this account</span>
+                    </ng-container>
+                    
+                    <!-- Empty State - Show when there are no transactions -->
+                    <div class="empty-state" *ngIf="!hasTransactions">
+                        <div class="empty-state-content">
+                            <img src="assets/images/icons/icn_card-pay.png" alt="icn_card-pay" class="img-fluid" />
+                            <p>Transaction history unavailable</p>
+                            <span>We're currently unable to load the transactions for this account</span>
+                        </div>
                     </div>
-                </div>
                     </ng-container>
                     </div>
                 </div>
                 <div class="col-lg-4 d-flex flex-column">
-                    <h2 class="sec-heading-md">Statements</h2>
+                    <h2 class="text-heading-sm mb-4">Statements</h2>
                     <div class="statement-container">
                     <ng-select
                         [items]="accounts"
@@ -98,6 +115,9 @@
                         [(ngModel)]="selectedAccount"
                         class="custom-ngs">
                     </ng-select>
+                        
+                    <!-- Show statement data when available -->
+                    <ng-container *ngIf="hasStatements">
                         <ul class="statement-ul">
                             <li>
                                 <div>
@@ -141,15 +161,16 @@
                             </li>
                         </ul>
                         <button type="button" class="view-all-btn">view all <img src="assets/images/icons/col-icon-right.png" alt="col-icon-right" class="img-fluid" /></button>
-                
-                <!-- Empty Stare -->
-                <div class="empty-state">
-                    <div class="empty-state-content">
-                        <img src="assets/images/icons/icn_document-down.png" alt="icn_card-pay" class="img-fluid" />
-                        <p>Statement list unavailable</p>
-                        <span>We’re currently unable to load your list of statements</span>
+                    </ng-container>
+                    
+                    <!-- Empty State - Show when there are no statements -->
+                    <div class="empty-state" *ngIf="!hasStatements">
+                        <div class="empty-state-content">
+                            <img src="assets/images/icons/icn_document-down.png" alt="icn_document-down" class="img-fluid" />
+                            <p>Statement list unavailable</p>
+                            <span>We're currently unable to load your list of statements</span>
+                        </div>
                     </div>
-                </div>
                     </div>
                 </div>
             </div>

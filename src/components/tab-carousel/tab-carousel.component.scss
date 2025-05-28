@@ -3,19 +3,31 @@
 .tab-carousel-sec {
   padding: 104px 0;
 }
-  .heading-title{
-      font-family: "BSP-Regular", sans-serif; font-size: 2.625rem; line-height: 1.3; color: var(--color-text);
-      margin-bottom: 1.5rem;
-      @include bp.respond-below('sm') {
-          font-size: 2.375rem;
-        }
-        @include bp.respond-below('xs') {
-          font-size: 2rem;
-        }
-        @include bp.respond-below('mobile-xs') {
-          font-size: 1.75rem;
-        }
+.heading-title {
+  font-family: "BSP-Regular", sans-serif;
+  font-size: 2.625rem;
+  line-height: 1.3;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  @include bp.respond-below("sm") {
+    font-size: 2.375rem;
   }
+  @include bp.respond-below("xs") {
+    font-size: 2rem;
+  }
+  @include bp.respond-below("mobile-xs") {
+    font-size: 1.75rem;
+  }
+}
+.mobile-tab-selector {
+  display: none;
+  margin-bottom: 2rem;
+
+  @include bp.respond-below("tablet") {
+    display: block;
+  }
+}
+
 .tabs-ul {
   display: flex;
   align-content: center;
@@ -25,6 +37,11 @@
   margin: 0 0 2.625rem;
   padding: 0;
   border-bottom: 1px solid var(--color-gray-pale);
+
+  @include bp.respond-below("tablet") {
+    display: none;
+  }
+
   li {
     button {
       border: none;
@@ -54,7 +71,7 @@
   }
 }
 
-.swiperslide{
+.swiperslide {
   display: flex;
   height: auto !important;
 }
@@ -90,8 +107,9 @@
       line-height: 1.3;
       color: var(--text-medium-gray);
       margin-bottom: 1.25rem;
-      @include bp.respond-below('mobile-xs') {
-        font-size: 1rem; margin-bottom: 1.125rem;
+      @include bp.respond-below("mobile-xs") {
+        font-size: 1rem;
+        margin-bottom: 1.125rem;
       }
     }
     p {
@@ -102,12 +120,13 @@
       margin-bottom: 1.25rem;
       display: -webkit-box;
       line-clamp: 2;
-      -webkit-line-clamp: 2; 
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
-      @include bp.respond-below('mobile-xs') {
-        font-size: 0.875rem; margin-bottom: 1.125rem;
+      @include bp.respond-below("mobile-xs") {
+        font-size: 0.875rem;
+        margin-bottom: 1.125rem;
       }
     }
   }
@@ -234,4 +253,3 @@
   margin-top: 16px;
   border-radius: 4px;
 }
-

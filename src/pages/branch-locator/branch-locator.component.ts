@@ -64,7 +64,6 @@ export class BranchLocatorComponent implements AfterViewInit {
   trackBranch(index: number, branch: any) {
     return `${branch.name}-${index}`;
   }
-
   async ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
       const { default: L } = await import('leaflet');
@@ -84,33 +83,71 @@ export class BranchLocatorComponent implements AfterViewInit {
           attribution: '&copy; OpenStreetMap contributors'
         }).addTo(this.map);
 
-        this.branches.forEach((branch, index) => {
-          const marker = L.marker([branch.lat, branch.lng])
-            .addTo(this.map)
-            .bindPopup(`<strong>${branch.name}</strong><br>${branch.address}`);
+        // Define custom marker icon
+        const customIcon = L.icon({
+          iconUrl: 'assets/images/icons/icn_location_outline.png',
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -32]
+        });
 
-          marker.on('click', () => {
+        // Clear previous markers
+        this.markers = [];
+
+        this.branches.forEach((branch, index) => {
+          const marker = L.marker([branch.lat, branch.lng], { icon: customIcon })
+            .addTo(this.map)
+            .bindPopup(`<strong>${branch.name}</strong><br>${branch.address}`);          marker.on('click', () => {
             this.selectedBranch = branch;
             this.cdr.detectChanges();
-
-            // Scroll selected branch card into view
-            setTimeout(() => {
-              const card = this.branchCards?.get(index);
-              card?.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 0);
+            // Don't use scrollIntoView to prevent page jumping
           });
 
           this.markers.push(marker);
         });
+          // Set The Glen Branch as selected but without scrolling
+        const glenBranchIndex = this.branches.findIndex(branch => branch.name === 'The Glen Branch');
+        if (glenBranchIndex !== -1) {
+          this.selectedBranch = this.branches[glenBranchIndex];
+          this.cdr.detectChanges();
+        }
       }, 0);
     }
-  }
-
-  onBranchClick(branch: any, index: number) {
+  }  onBranchClick(branch: any, index: number) {
     if (this.map) {
       this.selectedBranch = branch;
       this.map.setView([branch.lat, branch.lng], 15);
-      this.markers[index]?.openPopup();
+      
+      // Close all popups first
+      this.markers.forEach(marker => {
+        if (marker && marker.closePopup) {
+          marker.closePopup();
+        }
+      });
+      
+      // Then open the selected one
+      if (this.markers[index] && this.markers[index].openPopup) {
+        this.markers[index].openPopup();
+      }
+      
+      // Don't use scrollIntoView as it causes unwanted page scrolling
+      // Just ensure that the selected branch is visible if needed through other means
+      this.cdr.detectChanges();
+    }
+  }
+    // Helper method to programmatically select The Glen Branch
+  selectGlenBranch() {
+    const glenBranchIndex = this.branches.findIndex(branch => branch.name === 'The Glen Branch');
+    if (glenBranchIndex !== -1 && this.map) {
+      const branch = this.branches[glenBranchIndex];
+      this.selectedBranch = branch;
+      this.map.setView([branch.lat, branch.lng], 15);
+      
+      if (this.markers[glenBranchIndex] && this.markers[glenBranchIndex].openPopup) {
+        this.markers[glenBranchIndex].openPopup();
+      }
+      
+      this.cdr.detectChanges();
     }
   }
 

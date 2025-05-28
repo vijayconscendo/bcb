@@ -1,0 +1,91 @@
+<div class="page-wrapper">
+  <div class="custom-container">
+    <!-- Article Breadcrumb -->
+    <nav class="breadCrumb">
+        <ul>
+            <li>
+                <a class="route-name" [routerLink]="['/']"><span>Home</span></a>
+            </li>
+            <li>
+                <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
+            </li>
+            <li>
+                <a class="route-name"><span>Ways to bank</span></a>
+            </li>
+            <li>
+                <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
+            </li>
+            <li>
+                <a class="route-name"><span>Online banking for business</span></a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Article Breadcrumb End -->
+  <app-page-intro 
+    [title]="'Online Banking for Business'"
+    [description]="'Your new business banking platform'"
+    ></app-page-intro>   
+  <div class="sec-b-space"> 
+  <app-page-promo-card 
+      [title]="promoCardData.title"
+      [description]="promoCardData.description"
+      [imageSrc]="promoCardData.imageSrc"
+      [imageAlt]="promoCardData.imageAlt"
+      [storeImages]="promoCardData.storeImages"
+      [outlineBtnVisible]="promoCardData.outlineBtnVisible"
+      [outlineBtnText]="promoCardData.outlineBtnText"
+      [outlineBtnLink]="promoCardData.outlineBtnLink"
+      [primaryBtnVisible]="promoCardData.primaryBtnVisible"
+      [primaryBtnText]="promoCardData.primaryBtnText"
+      [primaryBtnLink]="promoCardData.primaryBtnLink"
+    ></app-page-promo-card>
+    </div>
+    <div class="sec-b-space">
+      <h3 class="text-heading-sm mb-4">Some of the benifits</h3>
+      <app-image-heading-card
+        [imageHeaduingCards]="imageHeadingCardsData"
+      ></app-image-heading-card>
+    </div>
+
+    <!-- Tab with list start -->
+    <div class="sec-b-space">
+      <app-tab-list></app-tab-list>
+    </div>
+    <!-- Tab with list end -->
+
+    <!-- Get In Touch Start -->
+     <app-get-in-touch></app-get-in-touch>
+    <!-- Get In Touch End -->
+
+    <!-- Go to new platform -->
+    <div class="go-to-platform">
+        <h4>Get into the platform</h4>
+        <p>Register or sign in to gain access to our new online banking for business</p>
+        <button type="button" class="primaryBtn">GO TO NEW PLATFORM</button>
+    </div>
+
+    <!-- We also offer carousel start -->
+    <div class="sec-b-space">
+      <h3 class="text-heading-sm mb-4">We also offer</h3>
+      <app-dynamic-swiper
+        [slides]="offerCardData"
+        [itemTemplate]="slideTemplate"
+        [breakpoints]="customBreakpoints"
+      ></app-dynamic-swiper>
+      <ng-template #slideTemplate let-carddata>
+        <app-featured-card
+          [title]="carddata.title"
+          [description]="carddata.description"
+          [imageSrc]="carddata.imageSrc"
+          [imageAlt]="carddata.imageAlt"
+          [buttonLabel]="carddata.buttonLabel"
+          [buttonLink]="carddata.buttonLink"
+          [className]="'wide-card-img'"
+        ></app-featured-card>
+      </ng-template>
+    </div>
+    <!-- We also offer carousel end -->
+
+    <app-faq></app-faq>
+  </div>
+</div>
