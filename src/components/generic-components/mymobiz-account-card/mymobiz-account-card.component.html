@@ -19,7 +19,7 @@
             <h3 class="price"><span>R</span>{{price}}</h3>
             <span class="pricetenure">{{pricetenure}}</span>
         </div>
-                <div>
+        <div>
             <h3 class="price"><span>R</span>{{price}}</h3>
             <span class="pricetenure">{{pricetenure}}</span>
         </div>
@@ -30,6 +30,7 @@
       </div>
       
       <div class="card-footer">
+        <p *ngIf="noteText" class="note-text">{{noteText}}</p>
         <div class="compare-container">
             <div class="checkbox-field">
                 <input class="checkbox-input" id="selectall" type="checkbox" (change)="toggleCompare()" />

@@ -45,92 +45,92 @@ export class TabCarouselComponent implements AfterViewInit, OnDestroy {
       title: '12 things to know before starting your own business',
       description:
         "If you're an entrepreneur planning to start your own business we've...",
-      link: '#',
+      link: '/help-me-start-my-business/articles/12-things-to-know-before-starting-your-own-business',
     },
     {
       img: 'assets/images/cards/small-business.png',
       title: '3 ways small businesses can protect themselves',
       description:
         'Starting a business requires a significant investment, and in',
-      link: '#',
+      link: '/help-me-start-my-business/articles/3-ways-small-businesses-can-protect-themselves-financially',
     },
     {
       img: 'assets/images/cards/chargebacks.png',
       title: 'Get familiar with chargebacks and fraud claims',
       description:
         'When consumers become victims of fraud, they can turn to the charge',
-      link: '#',
+      link: '/help-me-start-my-business/articles/get-familiar-with-chargebacks-and-fraud-claims',
     },
     {
       img: 'assets/images/cards/startup-founders.png',
       title: '3 characteristics of successful start-up founders',
       description:
         'Focus on these traits for a successful start-up business positioned for gr',
-      link: '#',
+      link: '/help-me-start-my-business/guides/3-characteristics-of-successful-start-up-founders',
     }
   ];
 
   // Slides for "Managing your business" tab
   manageBusinessSlides = [
     {
-      img: 'assets/images/cards/small-business.png',
-      title: 'Financial management tips for small businesses',
+      img: 'assets/images/articles/call-scam.jpg',
+      title: 'It takes a phone call to avoid this scam',
       description:
-        'Effective financial management is critical for small business success...',
-      link: '#',
+        'When a supplier changes banking details, businesses need to know that scammers are on the hunt to make lucrative profits',
+      link: '/help-me-manage-my-business/guides/It-takes-a-phone-call-to-avoid-this-scam',
     },
     {
-      img: 'assets/images/cards/chargebacks.png',
-      title: 'Managing cash flow for seasonal businesses',
+      img: 'assets/images/articles/late-payments.jpg',
+      title: 'How to effectively deal with late payments',
       description:
-        'Learn how to navigate the challenges of operating a seasonal business with...',
-      link: '#',
+        'Getting paid on time and in full is just as important as signing the deal or making the sale. But it’s a frustration that every business is likely to face at some stage.',
+      link: '/help-me-manage-my-business/guides/how-to-effectively-deal-with-late-payments',
     },
     {
-      img: 'assets/images/cards/own-business.png',
-      title: 'Streamlining your operations for efficiency',
+      img: 'assets/images/articles/digital-transformation.jpg',
+      title: 'Digital transformation will save you money',
       description:
-        'Discover proven methods to optimize your business processes and reduce...',
-      link: '#',
+        'How digital transformation can save costs and improve business efficiency and moving away from legacy systems.',
+      link: '/help-me-manage-my-business/articles/digital-transformation-will-save-you-money',
     },
     {
-      img: 'assets/images/cards/startup-founders.png',
-      title: 'Building and leading an effective team',
+      img: 'assets/images/articles/saving-tips.jpg',
+      title: '6 energy-saving tips for small businesses',
       description:
-        'Learn practical strategies for hiring, training, and motivating employees...',
-      link: '#',
+        'As a small business owner, you always have to be mindful of how to keep your operating costs low.',
+      link: '/help-me-manage-my-business/guides/6-energy-saving-tips-for-small-businesses',
     },
   ];
 
   // Slides for "Growing your business" tab
   growBusinessSlides = [
     {
-      img: 'assets/images/cards/startup-founders.png',
-      title: 'Scaling strategies for established businesses',
+      img: 'assets/images/articles/tailored-banking.jpg',
+      title: 'How our tailored banking solutions can benefit your accounting practice',
       description:
         'Ready to take your business to the next level? Explore proven approaches to...',
-      link: '#',
+      link: '/help-me-grow-my-business/articles/how-our-tailored-banking-solutions-can-benefit-your-accounting-practice',
     },
     {
-      img: 'assets/images/cards/own-business.png',
-      title: 'Digital marketing techniques for growth',
+      img: 'assets/images/articles/critical-ways.jpg',
+      title: '3 critical ways to create a solid support structure for your franchisees for business success',
       description:
-        'Learn how to leverage social media, SEO, and content marketing to expand your...',
-      link: '#',
+        'Getting your franchisees to sign on was the easy part; giving them adequate support to make a success of the business is the real challenge.',
+      link: '/help-me-grow-my-business/guides/support-structure-for-your-franchisees',
     },
     {
-      img: 'assets/images/cards/chargebacks.png',
-      title: 'Expansion opportunities: When to open a new location',
+      img: 'assets/images/articles/right-marketing.jpg',
+      title: 'How to find the right marketing channel for your target market',
       description:
-        'Considering physical expansion? This guide helps you evaluate timing and...',
-      link: '#',
+        'One of the most vital steps in a successful marketing campaign is choosing a marketing channel.',
+      link: '/help-me-grow-my-business/guides/how-to-find-the-right-marketing-channel-for-your-target-market',
     },
     {
-      img: 'assets/images/cards/small-business.png',
-      title: 'Finding and securing growth capital',
+      img: 'assets/images/articles/consumer-behaviour.jpg',
+      title: 'How to influence consumer behaviour with behavioural economics',
       description:
-        'Explore different financing options from traditional loans to venture capital...',
-      link: '#',
+        'When consumers become victims of fraud, they can turn to the chargeback process to recover',
+      link: '/help-me-grow-my-business/guides/how-to-influence-consumer-behaviour-with-behavioural-economics',
     },
   ];
 

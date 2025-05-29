@@ -5,9 +5,11 @@ import { serviceRequestRoutes } from '../pages/service-request/service-request.r
 import { authGuard } from '../services/authguard';
 import {  myDocumentsRoutes } from '../pages/my-documents/my-documents.routes';
 import { profile } from 'console';
-import { articleRoutes } from '../pages/articles/articles.routes';
 import { OnlineBankingLayoutComponent } from '../components/layouts/online-banking-layout/online-banking-layout.component';
 import { bankWithUsRoutes } from '../pages/bank-with-us/bank-with-us-routes';
+import { helpMeStartMyBusinessRoutes } from '../pages/help-me-start-my-business/help-me-start-my-business.routes';
+import { helpMeManageBusinessRoutes } from '../pages/help-me-manage-my-business/help-me-manage-my-business.routes';
+import { helpMeGrowMyBusinessRoutes } from '../pages/help-me-grow-my-business/help-me-grow-my-business.routes';
 
 export const routes: Routes = [
     {
@@ -49,7 +51,6 @@ export const routes: Routes = [
                 path: 'my-profile',
                 loadComponent: () => import('../pages/profile-management/profile-management.component').then(m => m.ProfileManagementComponent)
             },
-            ...articleRoutes,
             ...bankWithUsRoutes,
             {
                 path: 'faq',
@@ -70,7 +71,10 @@ export const routes: Routes = [
             {
                 path: 'ways-to-bank',
                 loadChildren: () => import('../pages/ways-to-bank/ways-to-bank.routes').then(m => m.waysToBankRoutes),
-            }
+            },
+            ...helpMeStartMyBusinessRoutes,
+            ...helpMeManageBusinessRoutes,
+            ...helpMeGrowMyBusinessRoutes
         ]
     },
       // 🔁 Tradesuite Layout Routes

@@ -1,3 +1,5 @@
+@use 'custom-pagination';
+
 .toolbar-info{
     background-color: #0033AA;
     border-radius: 0.75rem;
@@ -149,30 +151,8 @@
 }
 
   .custom-pagination{
-    display: flex; align-items: center; justify-content: center; margin: 4.375rem 0;
-    button{
-        background-color: transparent; border: none;
-    }
-    ul{
-        list-style: none; padding: 0 1rem;margin: 0;display: flex; align-items: center;
-        li{
-            &:not(:last-child){margin-right: 0.625rem;}
-            button{
-                width: 30px; height: 30px; border-radius: 0.5rem; background-color: #FFFFFF;
-                font-family: "BSP-Regular";
-                font-size: 1rem;
-                line-height: normal;
-                text-align: center;
-                color: var(--color-text);
-            }
-            &.selected{
-                button{
-                    background-color: #0062E1 !important; color: #FFFFFF !important;
-                }
-            }
-        }
-    }
-}
+    justify-content: center; margin: 4.375rem 0;
+  }
 
 .full-width-table{
     padding: 0;
