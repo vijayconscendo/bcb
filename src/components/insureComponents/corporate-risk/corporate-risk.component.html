@@ -1,0 +1,62 @@
+<div class="page-wrapper">
+  <div class="custom-container">
+    <app-breadcrumb 
+      [showBackButton]="false"
+      customClass="h-center"
+      [breadcrumbs]="[
+        { label: 'Home', url: '/' },
+        { label: 'Products and Services', url: '/products-and-services' },
+        { label: 'Insure what matters' }
+      ]"
+    ></app-breadcrumb>
+
+    <div class="sec-b-space">
+      <app-page-intro [title]="'Corporate risk management and insurance'" />
+    </div>
+    <div class="sec-b-space">
+      <app-page-promo-card
+        [title]="promoCardData.title"
+        [description]="promoCardData.description"
+        [imageSrc]="promoCardData.imageSrc"
+        [imageAlt]="promoCardData.imageAlt"
+        [storeImages]="promoCardData.storeImages"
+        [outlineBtnVisible]="promoCardData.outlineBtnVisible"
+        [outlineBtnText]="promoCardData.outlineBtnText"
+        [outlineBtnLink]="promoCardData.outlineBtnLink"
+        [primaryBtnVisible]="promoCardData.primaryBtnVisible"
+        [primaryBtnText]="promoCardData.primaryBtnText"
+        [primaryBtnLink]="promoCardData.primaryBtnLink"
+      ></app-page-promo-card>
+    </div>
+
+    <div class="sec-b-space">
+      <h3 class="text-heading-sm mb-4">Some of the Benefits</h3>
+      <app-image-heading-card [imageHeaduingCards]="imageHeadingCardsData"></app-image-heading-card>
+    </div>
+    <div class="sec-b-space">
+        <app-tab-list></app-tab-list>
+    </div>
+<!-- We also offer carousel start -->
+    <div class="sec-b-space">
+        <h3 class="text-heading-sm mb-4">We also offer</h3>
+        <app-dynamic-swiper
+            [slides]="featuredCardData"
+            [itemTemplate]="slideTemplate1"
+            [breakpoints]="customBreakpoints1"
+        ></app-dynamic-swiper>
+        <ng-template #slideTemplate1 let-carddata>
+              <app-featured-card
+                [title]="carddata.title" 
+                [description]="carddata.description" 
+                [imageSrc]="carddata.imageSrc" 
+                [imageAlt]="carddata.imageAlt"
+                [buttonLabel]="carddata.buttonLabel"
+                [buttonLink]="carddata.buttonLink"
+                [className]="'wide-card-img w-100'"
+            ></app-featured-card>
+        </ng-template>
+    </div>
+<!-- We also offer carousel end -->
+
+  </div>
+</div>

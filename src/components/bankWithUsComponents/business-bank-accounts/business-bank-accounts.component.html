@@ -7,37 +7,15 @@
 
     <div class="custom-container">
         <div>
-            <nav class="breadCrumb">
-                <ul>
-                    <li>
-                        <a [routerLink]="['/']" class="backBtn">
-                            <img class="img-fluid" src="assets/images/icons/back-left-icon.png" alt="back button">
-                            <span>Back</span>
-                        </a> 
-                    </li>
-                    <li>
-                        <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-                    </li>
-                    <li>
-                        <a class="route-name" [routerLink]="['/']"><span>Home</span></a>
-                    </li>
-                    <li>
-                        <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-                    </li>
-                    <li>
-                        <a class="route-name" [routerLink]="['/']"><span>Products and Services</span></a>
-                    </li>
-                    <li>
-                        <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-                    </li>
-                    <li>
-                        <a class="route-name"><span>Bank with us</span></a>
-                    </li>
-                    <li>
-                        <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-                    </li>
-                </ul>
-                </nav>
+            <app-breadcrumb
+                [showBackButton]="true"
+                customClass="mt-5 h-center"
+                [breadcrumbs]="[
+                    { label: 'Home', url: '/' },
+                    { label: 'Products and Services', url: '/products-and-services' },
+                    { label: 'Bank with us' }
+                ]"
+            ></app-breadcrumb>
             <!-- Article Breadcrumb End -->
             <app-page-intro
                 [title]="'Business bank accounts'"
@@ -49,26 +27,29 @@
     <div class="custom-container pb-5">
         <h3 class="text-heading-sm mb-4">Some of the Benefits</h3>
         <app-image-heading-card [imageHeaduingCards]="imageHeadingCardsData"></app-image-heading-card>
-    </div>
-
+    </div>    
     <div class="custom-container pb-5">
-        <h3 class="text-heading-sm mb-4">What are you looking for?</h3>
+        <h3 class="text-heading-sm mb-4">What are you looking for?</h3>            
             <ul class="tabs-ul">
-                <li class="activeTab"><button type="button">All</button></li>
-                <li><button type="button">Agricultural</button></li>
-                <li><button type="button">Flexible</button></li>
-                <li><button type="button">Term</button></li>
-            </ul>
-        <div class="account-cards-container">
+                <li *ngFor="let tab of categoryTabs" [ngClass]="{'activeTab': currentCategory === tab}">
+                    <button type="button" (click)="filterProductsByCategory(tab)">{{ tab }} ({{ getProductCountByCategory(tab) }})</button>
+                </li>
+            </ul>        
+            <div class="account-cards-container" *ngIf="filteredProducts.length > 0">
             <app-mymobiz-account-card 
-                *ngFor="let product of bankingProducts"
+                *ngFor="let product of filteredProducts"
+                [@cardAnimation]
                 [title]="product.title"
                 [description]="product.description"
                 [price]="product.price"
                 [badge]="product.badge"
+                [noteText]="product.noteText"
                 [pricetenure]="product.pricetenure"
                 [class.featured]="product.featured">
             </app-mymobiz-account-card>
+        </div>
+        <div class="no-products-message" *ngIf="filteredProducts.length === 0">
+            <p>No products available in the {{ currentCategory }} category.</p>
         </div>
     </div>
 

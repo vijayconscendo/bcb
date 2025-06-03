@@ -1,0 +1,97 @@
+<div class="page-wrapper">
+    <app-page-banner
+        [title]="'Corporate cards designed to meet your business’s needs'"
+        [imageUrl]="'assets/images/banners/our-cards.jpg'"
+    ></app-page-banner>
+
+    <div class="custom-container">
+        <app-breadcrumb
+            [showBackButton]="false"
+            customClass="mt-5 h-center"
+            [breadcrumbs]="[
+                { label: 'Home', url: '/' },
+                { label: 'Products and Services', url: '/products-and-services' },
+                { label: 'Bank with us' }
+            ]"
+        ></app-breadcrumb>
+
+        <app-page-intro
+            [title]="'Corporate and business credit cards'"
+            [description]="'Our corporate and business credit card solutions are not just for convenience and improving your business’s cashflow - it also helps you consolidate and manage your business spend.'"
+        ></app-page-intro>
+
+        <div class="sec-b-space">
+            <h3 class="text-heading-sm mb-4">Some of the Benefits</h3>
+            <app-image-heading-card [imageHeaduingCards]="imageHeadingCardsData"></app-image-heading-card>
+        </div>
+
+        <div class="sec-b-space">
+            <app-cta
+                heading="Standard Bank will never request your OTP"
+                description="If you’re asked to provide your OTP, immediately end the interaction and contact us to report it. Never share your OTP with anyone – not even the Fraud Department."
+        ></app-cta>
+        </div>
+    </div>
+
+    <div class="bg-white py-5">
+        <div class="custom-container">
+            <h3 class="text-heading-md mb-5 text-center">What are you looking for?</h3>
+            <h3 class="text-heading-sm mb-5">Travel and Entertainment Solutions</h3>
+            <div class="sec-b-space">   
+            <div class="cards-grid">
+                <app-mymobiz-account-card 
+                    *ngFor="let product of bankingProducts"
+                    [title]="product.title"
+                    [description]="product.description"
+                    [price]="product.price"
+                    [accountCardImg]="product.accountCardImg"
+                    [noteText]="product.noteText"
+                    [pricetenure]="product.pricetenure"
+                    [class.featured]="product.featured">
+                </app-mymobiz-account-card>
+                </div>
+            </div>
+
+        <app-cta
+            heading="Ready to move to Standard Bank?"
+            description="Open your account with people who are serious about where your business is going."
+            buttonLabel="Switch"
+            buttonUrl="/" 
+            [openInNewTab]="false"
+        ></app-cta>
+
+        <app-ucount-sec
+            [imageUrl]="'/assets/images/media/ucount-badge.png'"
+            [description]="'Get rewarded for your everyday business purchases by joining our UCount Rewards for Business programme...'"
+            [buttonText]="'TELL ME MORE'"
+            [buttonLink]="'/rewards'"
+            [steps]="ucountSteps">
+        </app-ucount-sec>
+
+        <!-- Tips and Guidance carousel start -->
+    <div class="sec-b-space">
+        <h3 class="text-heading-sm mb-4">Tips and guidance</h3>
+        <app-dynamic-swiper 
+            [slides]="cardLinks"
+            [itemTemplate]="slideTemplate"
+            [breakpoints]="customBreakpoints"
+        ></app-dynamic-swiper>
+        <ng-template #slideTemplate let-carddata>
+            <app-card-with-links
+                [title]="carddata.title"
+                [description]="carddata.description"
+                [links]="carddata.links"
+                class="w-100"
+                >
+            </app-card-with-links>
+        </ng-template>
+    </div>
+<!-- Tips and Guidance carousel end -->
+
+        </div>
+
+
+    </div>
+
+
+</div>

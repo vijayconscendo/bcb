@@ -119,34 +119,20 @@
 
     </div>
 
-    <div class="call-and-explore">
+    <div class="bg-white py-5">
         <div class="custom-container">
-            <div class="container-fluid px-0">
-                <div class="row align-items-stretch gy-lg-4">
-                    <div class="col-lg-6 col-md-12 mb-lg-0 mb-md-4 mb-sm-4">
-                        <div class="title-sec">
-                            <h3 class="title-md">Ready to switch your business account to Standard Bank?</h3>
-                            <p>Start your business banking journey the way you imagined it</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-auto col-md-12 mb-lg-0 mb-4 d-flex align-items-center ms-lg-auto">
-                        <a href="#" class="text-icon-box">
-                            <div class="icon">
-                                <img class="img-fluid" src="assets/images/icons/call-option.png" alt="icon call">
-                            </div>
-                            <span>Call me back</span>
-                        </a>
-                    </div>
-                    <div class="col-lg-auto col-md-12 mb-lg-0 mb-4 d-flex align-items-center">
-                        <a href="#" class="text-icon-box">
-                            <div class="icon">
-                                <img class="img-fluid" src="assets/images/icons/explore-accounts.png" alt="icon explore">
-                            </div>
-                            <span>Explore all bank accounts</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <app-call-and-explore
+            [heading]="'Ready to switch your business account to Standard Bank?'"
+            [subHeading]="'Start your business banking journey the way you imagined it'"
+                [callBackIcon]="'assets/images/icons/call-option.png'"
+                [callBackAlt]="'icon call'"
+                [callBackText]="'Call me back'"
+                [callBackUrl]="'/contact-us'"
+                [exploreIcon]="'assets/images/icons/explore-accounts.png'"
+                [exploreAlt]="'icon explore'"
+                [exploreText]="'Explore all bank accounts'"
+                [exploreUrl]="'/accounts'">
+            </app-call-and-explore>
         </div>
     </div>
 

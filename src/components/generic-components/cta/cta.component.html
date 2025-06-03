@@ -3,6 +3,7 @@
   @if(description){
     <p>{{ description }}</p>
   }
+  @if(buttonLabel){
   <a
     class="primaryBtn button"
     [href]="buttonUrl"
@@ -11,4 +12,6 @@
   >
     {{ buttonLabel }}
   </a>
+  }
+
 </div>

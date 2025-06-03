@@ -1,0 +1,136 @@
+<div class="page-wrapper">
+
+    <div class="custom-container">
+        <app-breadcrumb
+            [showBackButton]="false"
+            customClass="mt-5 h-center"
+            [breadcrumbs]="[
+                { label: 'Home', url: '/' },
+                { label: 'Products and Services', url: '/products-and-services' },
+                { label: 'Bank with us' }
+            ]"
+        ></app-breadcrumb>
+
+        <app-page-intro
+            [title]="'Business loan calculator'"
+            [description]="'Get an estimate of your monthly repayments by letting us know what loan term and interest rate works for you. Once you’re comfortable, apply for the loan and see what you qualify for.'"
+        ></app-page-intro>
+
+        <div class="loan-calculator-section">
+            <div class="calculator-container">
+                <div class="row">
+                    <!-- Left Column - Calculator Input Fields -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="calculator-input-panel">
+                            <h2 class="text-heading-sm mb-5">How much can I get for my business?</h2>
+                            
+                            <!-- Loan Amount Field -->
+                            <div class="form-group">
+                                <label>Loan amount (Enter an amount between R10 000 and R6 000 000)</label>
+                                <div class="input-with-prefix">
+                                    <span class="currency-prefix">R</span>
+                                    <input 
+                                        type="text" 
+                                        [(ngModel)]="loanAmount" 
+                                        (change)="calculateRepayment(); formatLoanAmount()" 
+                                        class="form-control"
+                                        [min]="minLoanAmount"
+                                        [max]="maxLoanAmount"
+                                    >
+                                </div>
+                                <div class="range-slider-container">
+                                    <input 
+                                        type="range" 
+                                        class="form-range" 
+                                        [(ngModel)]="loanAmount" 
+                                        [min]="minLoanAmount" 
+                                        [max]="maxLoanAmount"
+                                        (input)="onLoanAmountChange($any($event.target).value)"
+                                        step="10000"
+                                    >
+                                </div>
+                            </div>
+                            
+                            <!-- Loan Term Field -->
+                            <div class="form-group">
+                                <label>Loan term in months</label>
+                                <input 
+                                    type="number" 
+                                    [(ngModel)]="loanTerm" 
+                                    (change)="calculateRepayment()" 
+                                    class="form-control"
+                                    [min]="minTerm"
+                                    [max]="maxTerm"
+                                >
+                                <div class="range-slider-container">
+                                    <input 
+                                        type="range" 
+                                        class="form-range" 
+                                        [(ngModel)]="loanTerm" 
+                                        [min]="minTerm" 
+                                        [max]="maxTerm"
+                                        (input)="onLoanTermChange($any($event.target).value)"
+                                        step="1"
+                                    >
+                                    <div class="range-label">Months</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Interest Rate Field -->
+                            <div class="form-group">
+                                <label class="d-flex align-items-center">
+                                    Variable interest rate
+                                    <span class="info-icon ms-2" title="This is the current interest rate that will be applied to your loan">i</span>
+                                </label>
+                                <input 
+                                    type="number" 
+                                    [(ngModel)]="interestRate" 
+                                    (change)="calculateRepayment()" 
+                                    class="form-control"
+                                    [min]="minRate"
+                                    [max]="maxRate"
+                                    step="0.01"
+                                >
+                                <div class="range-slider-container">
+                                    <input 
+                                        type="range" 
+                                        class="form-range" 
+                                        [(ngModel)]="interestRate" 
+                                        [min]="minRate" 
+                                        [max]="maxRate"
+                                        (input)="onInterestRateChange($any($event.target).value)"
+                                        step="0.01"
+                                    >
+                                    <div class="range-label">%</div>
+                                </div>
+                            </div>
+                            
+                            <div class="step-indicator">Step 1</div>
+                            
+                            <!-- Calculator Button -->
+                            <button class="primaryBtn calculate-btn" (click)="moveToStep(2)">CALCULATE</button>
+                            
+                            <!-- Reset Button -->
+                            <button class="btn btn-link reset-btn primary-text" (click)="resetCalculator()">RESET</button>
+                        </div>
+                    </div>
+                      <!-- Right Column - Results Panel -->
+                    <div class="col-lg-6 col-md-12">                        
+                        <app-loan-calculator-results
+                            [monthlyRepayment]="monthlyRepayment"
+                            [loanAmount]="formattedLoanAmount"
+                            [firstRepaymentDate]="firstRepaymentDate"
+                            [currentStep]="currentStep"
+                            (applyNow)="applyForLoan()">
+                        </app-loan-calculator-results>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sec-b-space">
+            <h3 class="text-heading-sm mb-4">Disclaimer</h3>
+            <p class="text-subtitle-sm">This online calculator provides an indication only. You use this online calculator at your own discretion. The criterion used by this online calculator are subject to change at any point. Standard Bank gives no warranty, express or implied, as to the accuracy, reliability and completeness of any information, formulae or calculations provided through the use of this calculator and does not accept any liability for loss or damage of whatsoever nature, which may be attributable to the reliance on and use of this calculator. We do not warrant the integrity and security of this calculator or that it is free of errors, corruption, viruses, interception or interference.</p>
+        </div>
+    </div>
+
+</div>

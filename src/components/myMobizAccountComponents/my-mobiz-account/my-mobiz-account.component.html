@@ -1,0 +1,96 @@
+<div class="page-wrapper">
+    <div class="custom-container">
+        <!-- Article Breadcrumb -->
+        <nav class="breadCrumb">
+            <ul>
+                <li>
+                    <a class="route-name" [routerLink]="['/']"><span>Home</span></a>
+                </li>
+                <li>
+                    <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
+                </li>
+                <li>
+                    <a class="route-name" [routerLink]="['/my-mobiz-account']"><span>My Mobiz</span></a>
+                </li>
+                <li>
+                    <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
+                </li>
+                <li>
+                    <a class="route-name
+                    "><span>My Mobiz Account</span></a>
+                </li>
+            </ul>
+        </nav>
+
+
+        <app-page-intro
+            title="My Mobiz Account"
+        ></app-page-intro>
+
+        <div class="sec-b-space">
+        <app-page-intro-card
+            description="Open a My Mobiz Account today and enjoy the benefits of a business account with Standard Bank. Open a My Mobiz Account today and enjoy the benefits of a business account with Standard Bank."
+            imageSrc="/assets/images/media/online-banking-promo.jpg"
+            imageAlt="My Mobiz Account"
+            value="7"
+            valueDescription="Min monthly fee"
+            primaryButtonLabel="apply now"
+            primaryButtonLink="https://digital.standardbank.co.za/sbsa/landing"
+            primaryOutlineButtonLabel="compare"
+            primaryOutlineButtonLink="/my-mobiz-account/learn-more"
+        >
+        </app-page-intro-card>
+        </div>
+
+        <div class="sec-b-space">
+            <h3 class="text-heading-sm mb-4">Some of the Benefits</h3>
+            <app-image-heading-card [imageHeaduingCards]="imageHeadingCardsData"></app-image-heading-card>
+        </div>
+        <div class="sec-b-space">
+        <app-tab-list></app-tab-list>
+        </div>
+
+    <!-- CTA Start -->
+        <div class="sec-b-space">
+            <app-cta
+            heading="Are you ready to move to Standard Bank?"
+            buttonLabel="SWITCH"
+            buttonUrl="https://digital.standardbank.co.za/sbsa/landing"
+            [openInNewTab]="true"
+        ></app-cta>
+        </div>
+     <!-- CTA End -->
+    </div>
+</div>
+
+<div class="custom-container">
+<!-- We also offer carousel start -->
+    <div class="sec-b-space">
+        <h3 class="text-heading-sm mb-4">We also offer</h3>
+        <app-dynamic-swiper
+            [slides]="featuredCardData"
+            [itemTemplate]="slideTemplate"
+            [breakpoints]="customBreakpoints"
+        ></app-dynamic-swiper>
+        <ng-template #slideTemplate let-carddata>
+              <app-featured-card
+                [title]="carddata.title" 
+                [description]="carddata.description" 
+                [imageSrc]="carddata.imageSrc" 
+                [imageAlt]="carddata.imageAlt"
+                [buttonLabel]="carddata.buttonLabel"
+                [buttonLink]="carddata.buttonLink"
+                [className]="'wide-card-img'"
+            ></app-featured-card>
+        </ng-template>
+    </div>
+<!-- We also offer carousel end -->
+
+    <app-ucount-sec
+        [imageUrl]="'/assets/images/media/ucount-badge.png'"
+        [description]="'Get rewarded for your everyday business purchases by joining our UCount Rewards for Business programme...'"
+        [buttonText]="'TELL ME MORE'"
+        [buttonLink]="'/rewards'"
+        [steps]="ucountSteps">
+    </app-ucount-sec>
+</div>

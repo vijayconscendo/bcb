@@ -1,0 +1,47 @@
+<div class="page-wrapper">
+    <app-page-banner
+        [title]="'New challenges bring new opportunities'"
+        [imageUrl]="'assets/images/banners/specialised.jpg'"
+    ></app-page-banner>
+
+    <div class="custom-container">
+        <app-breadcrumb
+            [showBackButton]="false"
+            customClass="mt-5 h-center"
+            [breadcrumbs]="[
+                { label: 'Home', url: '/' },
+                { label: 'Products and Services', url: '/products-and-services' },
+                { label: 'Business solutions' }
+            ]"
+        ></app-breadcrumb>
+
+        <app-page-intro
+            [title]="'Specialised solutions'"
+            [description]="'Business conditions and customer demands are continually changing. Whatever your business life stage or sector, we can help you embrace change by finding innovative ways to meet new challenges as they arise.'"
+        ></app-page-intro>
+
+
+        <!-- Tips and Guidance carousel start -->
+    <div class="sec-b-space">
+        <h3 class="text-heading-sm mb-4">Tips and guidance</h3>
+        <app-dynamic-swiper
+            [slides]="cardLinks"
+            [itemTemplate]="slideTemplate"
+            [breakpoints]="customBreakpoints"
+        ></app-dynamic-swiper>
+        <ng-template #slideTemplate let-carddata>
+            <app-card-with-links
+                [title]="carddata.title"
+                [description]="carddata.description"
+                [links]="carddata.links"
+                class="w-100"
+                >
+            </app-card-with-links>
+        </ng-template>
+    </div>
+<!-- Tips and Guidance carousel end -->
+
+    </div>
+
+
+</div>

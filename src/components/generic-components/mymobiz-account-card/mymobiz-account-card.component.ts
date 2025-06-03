@@ -15,6 +15,8 @@ export class MymobizAccountCardComponent {
   @Input() pricetenure: string = '';
   @Input() badge: string = '';
   @Input() noteText: string = '';
+  @Input() accountCardImg: string = '';
+  @Input() accountImgAlt: string = '';
   
   addToCompare: boolean = false;
   isMobile: boolean = false;

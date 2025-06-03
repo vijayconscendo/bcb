@@ -10,7 +10,7 @@ import { Component, Input } from '@angular/core';
 export class CtaComponent {
   @Input() heading: string = '';
   @Input() description: string = '';
-  @Input() buttonLabel: string = '';
-  @Input() buttonUrl: string = '';
+  @Input() buttonLabel!: string;
+  @Input() buttonUrl!: string;
   @Input() openInNewTab: boolean = false;
 }

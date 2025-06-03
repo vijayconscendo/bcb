@@ -1,0 +1,30 @@
+
+<div class="inline-image-text-card" [ngClass]="{'verticalView': verticalView}">
+    <div class="left-image">
+        <img class="img-fluid" [src]="imageSrc" [alt]="imageAlt">
+    </div>
+    <div class="right-content">
+        <h4>{{ title }}</h4>
+        <div>
+            <p>{{ description }}</p>
+            <a [href]="linkUrl" class="text-arrow-btn">
+                <span>{{ linkText }}</span>
+                <img class="img-fluid icon" src="assets/images/icons/col-icon-right.png" alt="arrow icon">
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Usage -->
+
+
+<!-- <app-inline-image-text-card
+  [imageSrc]="'path/to/image.jpg'"
+  [imageAlt]="'Description of the image'"
+  [title]="'Custom Title'"
+  [description]="'Custom description text'"
+  [iconSrc]="'path/to/icon.svg'"
+  [linkText]="'Click Here'"
+  [linkUrl]="'/some-page'"
+  [verticalView]="false">
+</app-inline-image-text-card> -->

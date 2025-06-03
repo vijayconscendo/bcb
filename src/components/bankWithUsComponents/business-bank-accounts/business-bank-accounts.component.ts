@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { trigger, transition, style, animate } from '@angular/animations';
 import { ImageHeadingCardComponent } from '../../generic-components/image-heading-card/image-heading-card.component';
 import { MymobizAccountCardComponent } from '../../generic-components/mymobiz-account-card/mymobiz-account-card.component';
 import { PageBannerComponent } from "../../generic-components/page-banner/page-banner.component";
 import { PageIntroComponent } from "../../generic-components/page-intro/page-intro.component";
 import { ImageHeadingCard } from "../../../models/image-heading-card.model"
+import { BreadcrumbComponent } from '../../generic-components/breadcrumb/breadcrumb.component';
 
 interface BankingProduct {
   id: number;
@@ -13,18 +14,37 @@ interface BankingProduct {
   description: string;
   price: string;
   badge: string;
+  noteText: string;
   pricetenure: string;
   featured?: boolean;
+  category: string;
 }
 
 
 @Component({
   selector: 'app-business-bank-accounts',
-  imports: [CommonModule, RouterLink, MymobizAccountCardComponent, ImageHeadingCardComponent, PageBannerComponent, PageIntroComponent],
+  imports: [CommonModule, MymobizAccountCardComponent, ImageHeadingCardComponent, PageBannerComponent, PageIntroComponent, BreadcrumbComponent],
   templateUrl: './business-bank-accounts.component.html',
-  styleUrl: './business-bank-accounts.component.scss'
+  styleUrl: './business-bank-accounts.component.scss',
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('300ms', style({ opacity: 1 }))
+      ]),
+      transition(':leave', [
+        animate('300ms', style({ opacity: 0 }))
+      ])
+    ]),
+    trigger('cardAnimation', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(10px)' }),
+        animate('300ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+      ])
+    ])
+  ]
 })
-export class BusinessBankAccountsComponent {
+export class BusinessBankAccountsComponent implements OnInit {
 
   tabs = [
     { id: 'start-business', label: 'Starting a new business' },
@@ -33,6 +53,11 @@ export class BusinessBankAccountsComponent {
   ];
   currentTab: string = this.tabs[0].id;
 
+  // Category tabs for filtering products
+  categoryTabs: string[] = ['All', 'Agricultural', 'Flexible', 'Term'];
+  currentCategory: string = 'All';
+  filteredProducts: BankingProduct[] = [];
+
   bankingProducts: BankingProduct[] = [
     {
       id: 1,
@@ -40,8 +65,10 @@ export class BusinessBankAccountsComponent {
       description: 'Simple affordable banking for small businesses. Get everything you need to run your business with MyMoBiz. Manage your finances on the go and get dedicated support from a team of business bankers. Apply for your business account today and set your business up for success.',
       price: '9',
       pricetenure: 'Monthly fee',
+      noteText: 'No monthly service fee for the first 3 months',
       badge: 'Pay as you transact',
-      featured: true
+      featured: true,
+      category: 'Flexible'
     },
     {
       id: 2,
@@ -49,15 +76,19 @@ export class BusinessBankAccountsComponent {
       description: 'A business account that is tailored to fit your growing business banking needs. MyMoBiz Plus is an all-in-one solution that puts banking at your fingertips with a bundle of products and services at a fixed monthly service fee. Apply for your business account now and stay in control of your banking.',
       price: '165',
       pricetenure: 'Monthly fee',
-      badge: 'Bundle offering'
+      noteText: 'No monthly service fee for the first 3 months',
+      badge: 'Bundle offering',
+      category: 'Flexible'
     },
     {
       id: 3,
       title: 'Business Current Account',
-      description: 'Run your business with a business bank account that lets you manage your money and transact 24/7 from your Banking App or Internet Banking. Our business current account gives you access to secure electronic transfers, pre-paid purchases and payments, and allows you to boost your business’s cashflow with tailored business lending solutions.',
+      description: 'Run your business with a business bank account that lets you manage your money and transact 24/7 from your Banking App or Internet Banking. Our business current account gives you access to secure electronic transfers, pre-paid purchases and payments, and allows you to boost your business\'s cashflow with tailored business lending solutions.',
       price: '95',
       pricetenure: 'Min Monthly fee',
-      badge: ''
+      noteText: 'No monthly service fee for the first 3 months',
+      badge: '',
+      category: 'Term'
     },
     {
       id: 4,
@@ -65,7 +96,9 @@ export class BusinessBankAccountsComponent {
       description: 'Comprehensive banking package including dedicated relationship manager, premium cards, and preferential rates on loans and other banking services.',
       price: '300',
       pricetenure: 'Monthly fee',
-      badge: ''
+      noteText: 'No monthly service fee for the first 3 months',
+      badge: '',
+      category: 'Term'
     },
     {
       id: 5,
@@ -73,7 +106,9 @@ export class BusinessBankAccountsComponent {
       description: 'Start, manage, and grow your business with a business account that gives you added benefits, extensive support, and competitive pricing. \nDo your banking on our secure, fast digital banking platform, and access a dedicated team of Relationship Managers and Online Banking support.',
       price: '680',
       pricetenure: 'Monthly fee',
-      badge: ''
+      noteText: 'No monthly service fee for the first 3 months',
+      badge: '',
+      category: 'Term'
     },
     {
       id: 6,
@@ -81,7 +116,9 @@ export class BusinessBankAccountsComponent {
       description: 'Manage client funds in trust with a bank account that ticks all the legal boxes while earning interest.',
       price: '93',
       pricetenure: 'Monthly fee',
-      badge: ''
+      noteText: 'No monthly service fee for the first 3 months',
+      badge: '',
+      category: 'Agricultural'
     },
     {
       id: 7,
@@ -89,15 +126,19 @@ export class BusinessBankAccountsComponent {
       description: 'Manage funds for multiple accounts from a single bank account that offers competitive rates on term deposits, top-notch security and automated facilities.',
       price: '',
       pricetenure: '',
-      badge: ''
+      noteText: 'No monthly service fee for the first 3 months',
+      badge: '',
+      category: 'Agricultural'
     },
     {
       id: 8,
-      title: 'Executor’s Current Account',
+      title: 'Executor\'s Current Account',
       description: 'Manage third-party estates online with a bank account for executors, attorneys, accounting firms, administrators, liquidators or curators.',
       price: '70',
       pricetenure: 'Monthly fee',
-      badge: ''
+      noteText: 'No monthly service fee for the first 3 months',
+      badge: '',
+      category: 'Agricultural'
     },
     {
       id: 9,
@@ -105,12 +146,14 @@ export class BusinessBankAccountsComponent {
       description: 'Seamlessly manage third-party funds with a specialised Trust account. ',
       price: '70',
       pricetenure: 'Monthly fee',
-      badge: ''
+      noteText: 'No monthly service fee for the first 3 months',
+      badge: '',
+      category: 'Agricultural'
     }
   ];
 
 
-    imageHeadingCardsData: ImageHeadingCard[] = [
+  imageHeadingCardsData: ImageHeadingCard[] = [
     {
       imageUrl: 'assets/images/icons/dummy-shield.png',
       title: 'Confidence',
@@ -132,4 +175,36 @@ export class BusinessBankAccountsComponent {
       description: 'Do your banking through our vast African network wherever you do business'
     }
   ];
+
+  ngOnInit(): void {
+    this.filterProductsByCategory(this.currentCategory);
+  }
+
+  /**
+   * Filter products by the selected category tab
+   * @param category The selected category to filter by
+   */
+  filterProductsByCategory(category: string): void {
+    this.currentCategory = category;
+    
+    if (category === 'All') {
+      this.filteredProducts = [...this.bankingProducts];
+    } else {
+      this.filteredProducts = this.bankingProducts.filter(product => 
+        product.category === category
+      );
+    }
+  }
+
+  /**
+   * Get count of products for a specific category
+   * @param category Category to count products for
+   * @returns Number of products in the category
+   */
+  getProductCountByCategory(category: string): number {
+    if (category === 'All') {
+      return this.bankingProducts.length;
+    }
+    return this.bankingProducts.filter(product => product.category === category).length;
+  }
 }

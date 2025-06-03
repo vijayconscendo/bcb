@@ -34,12 +34,12 @@
             <div class="card-content">
                 <h4>{{ title }}</h4>
                 <p>{{ description }}</p>
-                <div class="curency">
+                <div class="curency" *ngIf="value">
                     <div class="currency-text">
                         <span>R</span>
-                        <h5>95</h5>
+                        <h5>{{value}}</h5>
                     </div>
-                    <span class="currency-tenure">Min Monthly fee</span>
+                    <span class="currency-tenure">{{valueDescription}}</span>
                 </div>
             </div>
 

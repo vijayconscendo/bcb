@@ -1,0 +1,9 @@
+.page-wrapper{
+    background-color: #F4F5F7;
+    padding: 3rem 0;
+}
+
+.card-grid-container{
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+}

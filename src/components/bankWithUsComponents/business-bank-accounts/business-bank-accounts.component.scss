@@ -2,22 +2,6 @@
     background-color: #f1f1f1;
 }
 
-.breadCrumb{
-    margin: 2.5rem 0 0;
-    ul{
-        list-style: none; padding: 0; margin: 0; display: flex; align-items: center; justify-content: center;
-        li{
-            .route-name{
-                font-family: "BSP-Regular";
-                font-size: 0.875rem;
-                line-height: 1.3;
-                text-decoration: none;
-                color: var(--color-text);
-            }
-            &:not(:last-child){margin-right: 0.625rem;}
-        }
-    }
-}
 
 .tabs-ul {
   display: flex;
@@ -41,8 +25,8 @@
     &.activeTab {
       position: relative;
       button {
-        font-family: "BSP-Bold" !important;
-        color: #0051ff !important;
+        font-family: "BSP-Medium" !important;
+        color: var(--color-primary) !important;
       }
       &:after {
         content: "";
@@ -51,7 +35,7 @@
         left: 0;
         right: 0;
         height: 2px;
-        background-color: #0051ff;
+        background-color: var(--color-primary);
       }
     }
   }
@@ -66,5 +50,19 @@
 @media (max-width: 768px) {
   .account-cards-container {
     grid-template-columns: 1fr; /* Mobile: 1 column */
+  }
+}
+
+.no-products-message {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  
+  p {
+    font-size: 1.2rem;
+    color: var(--text-medium-gray);
+    margin: 0;
   }
 }

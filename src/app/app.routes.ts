@@ -10,6 +10,11 @@ import { bankWithUsRoutes } from '../pages/bank-with-us/bank-with-us-routes';
 import { helpMeStartMyBusinessRoutes } from '../pages/help-me-start-my-business/help-me-start-my-business.routes';
 import { helpMeManageBusinessRoutes } from '../pages/help-me-manage-my-business/help-me-manage-my-business.routes';
 import { helpMeGrowMyBusinessRoutes } from '../pages/help-me-grow-my-business/help-me-grow-my-business.routes';
+import { myMobizRoutes } from '../pages/my-mobiz/my-mobiz.routes';
+import { borrowForYourNeeds } from '../pages/borrow-for-your-needs/borrow-for-your-needs.routes';
+import { savingAndInvestRoutes } from '../pages/saving-and-investment-accounts/saving-and-invest-account.routes';
+import { InsureWhatMattersRoutes } from '../pages/insure-what-matters/insure-what-matters.routes';
+import { businessSolutionsRoutes } from '../pages/business-solutions/business-solutions.routes';
 
 export const routes: Routes = [
     {
@@ -52,6 +57,7 @@ export const routes: Routes = [
                 loadComponent: () => import('../pages/profile-management/profile-management.component').then(m => m.ProfileManagementComponent)
             },
             ...bankWithUsRoutes,
+            ...borrowForYourNeeds,
             {
                 path: 'faq',
                 loadComponent: () => import('../pages/faq/faq.component').then(m => m.FaqComponent)
@@ -61,20 +67,16 @@ export const routes: Routes = [
                 loadComponent: () => import('../pages/product-detail/product-detail.component').then(m => m.ProductDetailComponent)
             },
             {
-                path: 'business-current-account-application',
-                loadComponent: () => import('../pages/business-current-account-application/business-current-account-application.component').then(m => m.BusinessCurrentAccountApplicationComponent)
-            },
-            {
-                path: 'my-mobiz-account',
-                loadComponent: () => import('../pages/my-mobiz-account/my-mobiz-account.component').then(m => m.MyMobizAccountComponent)
-            },
-            {
                 path: 'ways-to-bank',
                 loadChildren: () => import('../pages/ways-to-bank/ways-to-bank.routes').then(m => m.waysToBankRoutes),
             },
             ...helpMeStartMyBusinessRoutes,
             ...helpMeManageBusinessRoutes,
-            ...helpMeGrowMyBusinessRoutes
+            ...helpMeGrowMyBusinessRoutes,
+            ...myMobizRoutes,
+            ...savingAndInvestRoutes,
+            ...InsureWhatMattersRoutes,
+            ...businessSolutionsRoutes,
         ]
     },
       // 🔁 Tradesuite Layout Routes

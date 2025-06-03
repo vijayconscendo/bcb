@@ -1,0 +1,67 @@
+<div class="page-wrapper">
+    <app-page-banner
+        [title]="'Business investments and savings solutions'"
+        [imageUrl]="'assets/images/banners/our-accounts.jpg'"
+    ></app-page-banner>
+
+    <div class="custom-container">
+        <app-breadcrumb
+            [showBackButton]="false"
+            customClass="mt-5 h-center"
+            [breadcrumbs]="[
+                { label: 'Home', url: '/' },
+                { label: 'Products and Services', url: '/products-and-services' },
+                { label: 'Bank with us' }
+            ]"
+        ></app-breadcrumb>
+
+        <app-page-intro
+            [title]="'Business investments and savings accounts'"
+            [description]="'Earn top rates with business-focused savings accounts that help you grow your cash and the future stability of your business.'"
+        ></app-page-intro>
+
+        <div class="sec-b-space">
+            <h3 class="text-heading-sm mb-4">Some of the Benefits</h3>
+            <app-image-heading-card [imageHeaduingCards]="imageHeadingCardsData"></app-image-heading-card>
+        </div>
+
+                <div class="sec-b-space">
+            <h3 class="text-heading-sm mb-4">See which account suits you best</h3>            
+            <ul class="tabs-ul">
+                <li *ngFor="let tab of categoryTabs" [ngClass]="{'activeTab': currentCategory === tab}">
+                    <button type="button" (click)="filterProductsByCategory(tab)">{{ tab }} ({{ getProductCountByCategory(tab) }})</button>
+                </li>
+            </ul>        
+            <div class="account-cards-container" *ngIf="filteredProducts.length > 0">
+            <app-mymobiz-account-card 
+                *ngFor="let product of filteredProducts"
+                [@cardAnimation]
+                [title]="product.title"
+                [description]="product.description"
+                [price]="product.price"
+                [badge]="product.badge"
+                [noteText]="product.noteText"
+                [pricetenure]="product.pricetenure"
+                [class.featured]="product.featured">
+            </app-mymobiz-account-card>
+        </div>
+        <div class="no-products-message" *ngIf="filteredProducts.length === 0">
+            <p>No products available in the {{ currentCategory }} category.</p>
+        </div>
+        </div>
+
+    <!-- CTA Start -->
+        <div class="sec-b-space">
+            <app-cta
+            heading="Are you ready to move to Standard Bank?"
+            description="Open your account with people who are serious about where your business is going."
+            buttonLabel="SWITCH"
+            buttonUrl="https://digital.standardbank.co.za/sbsa/landing"
+            [openInNewTab]="true"
+        ></app-cta>
+        </div>
+     <!-- CTA End -->
+
+    </div>
+
+</div>

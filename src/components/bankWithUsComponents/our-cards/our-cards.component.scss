@@ -1,0 +1,11 @@
+.page-wrapper{
+    background-color: #F4F5F7
+}
+.cards-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    column-gap: 2rem; row-gap: 3.5rem;
+    @media (max-width: 680px) {
+        grid-template-columns: 1fr; /* Mobile: 1 column */
+    }
+}

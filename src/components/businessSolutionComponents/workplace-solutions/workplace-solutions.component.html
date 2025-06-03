@@ -1,0 +1,114 @@
+<app-page-banner
+[title]="'Your people first'"
+[imageUrl]="'assets/images/banners/workplace-solutions.jpg'"
+></app-page-banner>
+<div class="page-wrapper">
+    <div class="custom-container">
+        <app-breadcrumb
+            [showBackButton]="false"
+            customClass="h-center"
+            [breadcrumbs]="[
+                { label: 'Home', url: '/' },
+                { label: 'Products and Services', url: '/products-and-services' },
+                { label: 'Business solutions' }
+            ]"
+        ></app-breadcrumb>
+
+        <app-page-intro
+            [title]="'Workplace solutions'"
+            [description]="'Get the most out of your employees by helping to make financial security a reality for them. Our workplace solutions make it easier to pay unbanked staff, and offers special benefits and support to get them into the banking system.'"
+        ></app-page-intro>
+
+
+        <div class="sec-b-space">
+            <h3 class="text-heading-sm mb-4">Some of the Benefits</h3>
+            <app-image-heading-card [imageHeaduingCards]="imageHeadingCardsData"></app-image-heading-card>
+        </div>
+
+        <div class="sec-b-space">
+            <div class="card-grid-container">
+                <app-inline-image-text-card
+                    [imageSrc]="'assets/images/cards/salary-payments.jpg'"
+                    [imageAlt]="'Healthcare Solutions for Your Employees'"
+                    [title]="'Healthcare Solutions for Your Employees'"
+                    [description]="'Help your employees access affordable healthcare with one of our comprehensive healthcare plans'"
+                    [linkText]="'Tell me more'"
+                    [linkUrl]="'/healthcare-solutions'"
+                    [verticalView]="false">
+                </app-inline-image-text-card>
+
+                <app-inline-image-text-card
+                    [imageSrc]="'assets/images/cards/salary-payments.jpg'"
+                    [imageAlt]="'Salary Payments'"
+                    [title]="'Salary Payments'"
+                    [description]="'Easily make bulk salary payments via Standard Bank’s secure Internet Banking platform and ensure your employees get paid on time, every time.'"
+                    [linkText]="'Tell me more'"
+                    [linkUrl]="'/salary-payments'"
+                    [verticalView]="false">
+                </app-inline-image-text-card>
+
+                <app-inline-image-text-card
+                    [imageSrc]="'assets/images/cards/salary-payments.jpg'"
+                    [imageAlt]="'Employer Value Banking'"
+                    [title]="'Employer Value Banking'"
+                    [description]="'Help employees achieve financial security with regular, structured workplace banking days'"
+                    [linkText]="'Tell me more'"
+                    [linkUrl]="'/employer-value-banking'"
+                    [verticalView]="false">
+                </app-inline-image-text-card>
+
+                <app-inline-image-text-card
+                    [imageSrc]="'assets/images/cards/salary-payments.jpg'"
+                    [imageAlt]="'Instant Money Bulk Payments'"
+                    [title]="'Instant Money Bulk Payments'"
+                    [description]="'Pay staff or suppliers by sending Instant Money directly to their phone or digital wallet'"
+                    [linkText]="'Tell me more'"
+                    [linkUrl]="'/instant-money-bulk-payments'"
+                    [verticalView]="false">
+                </app-inline-image-text-card>
+
+                <app-inline-image-text-card
+                    [imageSrc]="'assets/images/cards/salary-payments.jpg'"
+                    [imageAlt]="'PayCard'"
+                    [title]="'PayCard'"
+                    [description]="'Struggling to pay staff with no bank account? Now you can, with this prepaid debit card'"
+                    [linkText]="'Tell me more'"
+                    [linkUrl]="'/paycard'"
+                    [verticalView]="false">
+                </app-inline-image-text-card>
+
+                <app-inline-image-text-card
+                    [imageSrc]="'assets/images/cards/salary-payments.jpg'"
+                    [imageAlt]="'Prepaid card solutions'"
+                    [title]="'Prepaid card solutions'"
+                    [description]="'Every business needs to take care of unique expenses that may arise from time to time, and we’ve got the prepaid cards to enable this without the risk or inconvenience of carrying cash.'"
+                    [linkText]="'Tell me more'"
+                    [linkUrl]="'/prepaid-card-solutions'"
+                    [verticalView]="false">
+                </app-inline-image-text-card>
+
+                <app-inline-image-text-card
+                    [imageSrc]="'assets/images/cards/salary-payments.jpg'"
+                    [imageAlt]="'Financial planning'"
+                    [title]="'Financial planning'"
+                    [description]="'Protect your business from the loss of key personnel who are central to the long-term viability of your enterprise.'"
+                    [linkText]="'Tell me more'"
+                    [linkUrl]="'/financial-planning'"
+                    [verticalView]="false">
+                </app-inline-image-text-card>
+
+                <app-inline-image-text-card
+                    [imageSrc]="'assets/images/cards/salary-payments.jpg'"
+                    [imageAlt]="'PaySpace Payroll and HR Solutions'"
+                    [title]="'PaySpace Payroll and HR Solutions'"
+                    [description]="'PaySpace offers a cloud-based, single instance multi-tenant architected HCM and payroll solution for any size business.'"
+                    [linkText]="'Tell me more'"
+                    [linkUrl]="'/payspace-payroll-hr-solutions'"
+                    [verticalView]="false">
+                </app-inline-image-text-card>
+            </div>
+        </div>
+
+    </div>
+
+</div>

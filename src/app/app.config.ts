@@ -12,6 +12,7 @@ import {
   withEventReplay,
 } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 export const appConfig: ApplicationConfig = {
@@ -21,5 +22,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
     provideAnimationsAsync(),
+    BrowserAnimationsModule
   ],
 };

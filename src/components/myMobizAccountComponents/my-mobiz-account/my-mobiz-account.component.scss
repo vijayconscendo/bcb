@@ -1,0 +1,21 @@
+.page-wrapper{
+    background-color: #F4F5F7; padding: 2rem 0;
+}
+
+.breadCrumb{
+    margin: 2.5rem 0 0;
+    ul{
+        list-style: none; padding: 0; margin: 0; display: flex; align-items: center; justify-content: center;
+        li{
+            .route-name{
+                font-family: "BSP-Regular";
+                font-size: 0.875rem;
+                line-height: 1.3;
+                text-decoration: none;
+                color: var(--color-primary);
+            }
+            &:not(:last-child){margin-right: 0.625rem;}
+        }
+    }
+}
+

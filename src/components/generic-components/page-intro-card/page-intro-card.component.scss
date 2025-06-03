@@ -48,7 +48,7 @@
 
     p {
       font-family: "BSP-Regular", sans-serif;
-      font-size: 1rem;
+      font-size: 1.25rem;
       line-height: 1.5;
       margin-bottom: 1.75rem;
       color: var(--color-gray-light);
@@ -58,7 +58,7 @@
       }
     }
 
-    .curency{
+    .curency{ margin-bottom: 2.5rem;
         .currency-text{
             display: flex; align-items: flex-start;gap: 0.25rem;
             span{

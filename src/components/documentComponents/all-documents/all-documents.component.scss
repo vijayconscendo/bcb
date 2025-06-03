@@ -205,32 +205,7 @@
 .pair-date-picker{
     display: flex; gap: 1.25rem;
 }
-// custom-input-group
-.custom-date-picker{
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    width: 100%; max-width: 290px;
-    background-color: #FFFFFF;
-    justify-content: space-between;
-    border: 1px solid var(--color-gray-pale);
-    border-radius: 0.5rem;
-    height: 50px;
-    padding: 0 1rem;
-    .date-input{
-        padding-right: 0.5rem;
-        border: none;
-        &:focus{outline: none;}
-    }
-    .date-btn{
-        padding: 0;
-        background-color: transparent; border: none;
-    }
-    .dropdown-menu.show{
-        top: 100% !important;
-    }
-}
+
 
 .filter-buttons{
     display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;

@@ -1,0 +1,32 @@
+<div class="calculator-results-panel">
+  <h3 class="text-heading-sm mb-5">Monthly loan repayments</h3>
+  
+  <!-- Monthly Repayment -->
+  <div class="result-block">
+    <div class="result-value">
+      <span class="currency">R</span>
+      <span class="amount">{{ monthlyRepayment | number:'1.0-0' }}</span>
+    </div>
+  </div>
+  
+  <!-- Loan Amount -->
+  <div class="result-block">
+    <div class="result-label">Loan amount</div>
+    <div class="result-value">
+      <span class="currency">R</span>
+      <span class="amount">{{ loanAmount }}</span>
+    </div>
+  </div>
+  
+  <!-- First Repayment Date -->
+  <div class="result-block">
+    <div class="result-label">First repayment date</div>
+    <div class="result-value">
+      <span class="date">{{ firstRepaymentDate }}</span>
+    </div>
+  </div>
+  
+  <div class="step-indicator">Step 2</div>
+    <!-- Apply Button -->
+  <button class="primaryBtn apply-btn" [disabled]="currentStep < 2" (click)="onApplyNowClick()">APPLY NOW</button>
+</div>

@@ -1,0 +1,85 @@
+.page-wrapper{
+    padding: 2rem 0 6rem;
+    background-color: #F4F5F7;
+}
+
+.breadCrumb{
+    margin: 2.5rem 0 0;
+    ul{
+        list-style: none; padding: 0; margin: 0; display: flex; align-items: center; justify-content: center;
+        li{
+            .route-name{
+                font-family: "BSP-Regular";
+                font-size: 0.875rem;
+                line-height: 1.3;
+                text-decoration: none;
+                color: var(--color-primary);
+            }
+            &:not(:last-child){margin-right: 0.625rem;}
+        }
+    }
+}
+
+
+.info-card-pair{
+    display: flex; align-items: stretch; gap: 2rem; 
+}
+.info-card{
+    border: 1px solid var(--color-gray-pale);
+    background-color: var(--color-white);
+    padding: 2.625rem 2rem; border-radius: 0.75rem;
+    display: flex; flex-direction: column;
+    .info-header{
+        text-align: center;
+        .avatar-img{
+            border-radius: 50%;
+        }
+        h4{
+            font-family: "BSP-Medium"; font-size: 1.5rem; line-height: 1.3; color: var(--color-text); margin: 1rem 0;
+        }
+        p{
+            font-family: "BSP-Regular"; font-size: 1rem; line-height: 1.3; color: var(--color-text); margin: 0 0 0.5rem;
+            span{
+                font-family: "BSP-Medium"; color: var(--color-primary);
+            }
+        }
+    }
+    .info-body{
+        padding: 2rem 0;
+        h5{
+            font-family: "BSP-Medium"; font-size: 1.125rem; line-height: 1.3; color: var(--color-text); margin: 1rem 0;
+        }
+    .list-with-icon {
+        list-style-type: none;
+        padding: 0; margin: 1rem 0 2rem;
+    li {
+      position: relative;
+      padding-left: 1.625rem;
+      margin-bottom: 0.3125rem;
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 6px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: linear-gradient(112.82deg, #ff681d 3.64%, #ffb81d 95.93%);
+      }
+      p {
+        font-family: "BSP-Regular";
+        font-size: 1rem;
+        line-height: 1.5;
+        color: var(--color-text);
+      }
+    }
+  }
+    }
+    .info-footer{
+        display: flex; align-items: center; justify-content: center; margin-top: auto;
+        button{
+            width: 100%; max-width: 280px;
+        }
+    }
+}

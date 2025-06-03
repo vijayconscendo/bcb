@@ -1,0 +1,59 @@
+<nav class="breadCrumb" *ngIf="breadcrumbs?.length" [ngClass]="customClass">
+  <ul>
+    <li *ngIf="showBackButton">
+      <!-- If backLink is provided, use routerLink -->
+      <a *ngIf="backLink; else goBackButton"
+         [routerLink]="[backLink]"
+         class="backBtn">
+        <img class="img-fluid" src="assets/images/icons/back-left-icon.png" alt="back button">
+        <span>Back</span>
+      </a>
+
+      <!-- Else use location.back() -->
+      <ng-template #goBackButton>
+        <a (click)="goBack()" class="backBtn">
+          <img class="img-fluid" src="assets/images/icons/back-left-icon.png" alt="back button">
+          <span>Back</span>
+        </a>
+      </ng-template>
+    </li>
+    <li *ngIf="showBackButton">
+      <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb separator" />
+    </li>
+
+    <ng-container *ngFor="let breadcrumb of breadcrumbs; let last = last">
+      <li>
+        <a *ngIf="breadcrumb.url" [routerLink]="[breadcrumb.url]" class="route-name">
+          <span>{{ breadcrumb.label }}</span>
+        </a>
+        <a *ngIf="!breadcrumb.url" class="route-name">
+          <span>{{ breadcrumb.label }}</span>
+        </a>
+      </li>
+      <li *ngIf="!last">
+        <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb separator" />
+      </li>
+    </ng-container>
+  </ul>
+</nav>
+
+
+<!-- Usage With Back Button -->
+<!-- With routerLink -->
+<!-- <app-breadcrumb
+  [showBackButton]="true"
+  backLink="/products"
+  [breadcrumbs]="[
+    { label: 'Home', url: '/' },
+    { label: 'Products' }
+  ]">
+</app-breadcrumb> -->
+
+<!-- Without backLink (will use location.back()) -->
+<!-- <app-breadcrumb
+  [showBackButton]="true"
+  [breadcrumbs]="[
+    { label: 'Dashboard', url: '/dashboard' },
+    { label: 'Reports' }
+  ]">
+</app-breadcrumb> -->

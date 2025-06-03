@@ -10,6 +10,8 @@ import { Component, Input } from '@angular/core';
 export class PageIntroCardComponent {
   @Input() title: string = '';
   @Input() description: string = '';
+  @Input() value: string = '';
+  @Input() valueDescription: string = '';
   @Input() imageSrc: string = '';
   @Input() imageAlt: string = '';
   @Input() showButtons: boolean = true;

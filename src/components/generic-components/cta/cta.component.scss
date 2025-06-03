@@ -3,9 +3,8 @@
   border-radius: 0.75rem;
   text-align: center;
   padding: 3rem 1.25rem;
-  margin-bottom: 4.375rem;
   h4 {
-    font-family: "BSP-Medium";
+    font-family: "BSP-Regular";
     font-size: 1.75rem;
     line-height: 1.3;
     color: #ffffff;
@@ -14,9 +13,11 @@
   p {
     font-family: "BSP-Regular";
     font-size: 1rem;
-    line-height: 1.3;
+    line-height: 1.5;
     color: #ffffff;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
+    max-width: 768px;
+    text-align: center;
   }
   .button {
     font-family: "BSP-Bold";

@@ -10,6 +10,7 @@ import {
 } from '@angular/core';
 import { SwiperOptions } from 'swiper/types';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab-carousel',
@@ -26,6 +27,9 @@ export class TabCarouselComponent implements AfterViewInit, OnDestroy {
     { id: 'grow-business', label: 'Growing your business' },
   ];
   currentTab: string = this.tabs[0].id;
+
+  constructor(private router: Router) {}
+
   toggleTab(tab: string) {
     if (this.currentTab === tab) return; // Avoid unnecessary reinitialization
     this.swiperVisible = false;
@@ -36,6 +40,27 @@ export class TabCarouselComponent implements AfterViewInit, OnDestroy {
         this.initializeSwiper();
       });
     }, 500);
+  }
+
+  // Method to navigate to the appropriate page based on current tab
+  navigateToViewAll(event: Event): void {
+    event.preventDefault();
+
+    let targetRoute: string;
+    switch (this.currentTab) {
+      case 'manage-business':
+        targetRoute = '/help-me-manage-my-business';
+        break;
+      case 'grow-business':
+        targetRoute = '/help-me-grow-my-business';
+        break;
+      case 'start-business':
+      default:
+        targetRoute = '/help-me-start-my-business';
+        break;
+    }
+
+    this.router.navigate([targetRoute]);
   }
 
   // Slides for "Starting a new business" tab
