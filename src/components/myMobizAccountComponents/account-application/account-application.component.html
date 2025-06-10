@@ -1,27 +1,17 @@
-<div class="page-wrapper">
+<div class="page-bg py-4">
   <div class="custom-container">
 
     <!-- Breadcrumb -->
-    <nav class="breadCrumb">
-      <ul>
-        <li>
-          <a class="route-name
-            " [routerLink]="['/']"><span>Home</span></a>    
-        </li>
-        <li>
-          <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-        </li>
-        <li>
-          <a class="route-name" [routerLink]="['/my-mobiz-account']"><span>My Mobiz</span></a>
-        </li>
-        <li>
-          <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-        </li>
-        <li>
-          <a class="route-name"><span>Business current account application</span></a>
-        </li>
-        </ul>
-    </nav>
+
+    <app-breadcrumb
+      [showBackButton]="false"
+      customClass="h-center"
+      [breadcrumbs]="[
+        { label: 'Home', url: '/' },
+        { label: 'My Mobiz', url: '/my-mobiz-account' },
+        { label: 'Business current account application' }
+      ]"
+      ></app-breadcrumb>        
 
     <app-page-intro
       title="Business current account application"
@@ -70,7 +60,7 @@
           </ul>
         </div>
         <div class="info-footer">
-          <button type="button" class="primaryBtn" [routerLink]="'/my-mobiz-account/apply-account'">apply now</button>
+          <button type="button" class="primary-btn" [routerLink]="'/my-mobiz-account/apply-account'">apply now</button>
         </div>
       </div>
       <div class="info-card">
@@ -114,7 +104,7 @@
           </ul>
         </div>
         <div class="info-footer">
-          <button type="button" class="primaryBtn">get started</button>
+          <button type="button" class="primary-btn">get started</button>
         </div>
       </div>
     </div>

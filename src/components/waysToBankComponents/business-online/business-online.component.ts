@@ -7,14 +7,14 @@ import { DynamicSwiperComponent } from '../../generic-components/dynamic-swiper/
 import { FeaturedCardComponent } from '../../generic-components/featured-card/featured-card.component';
 import { TabListComponent } from './tab-list/tab-list.component';
 import { PagePromoCardComponent } from '../../generic-components/page-promo-card/page-promo-card.component';
-import { RouterLink } from '@angular/router';
+import { BreadcrumbComponent } from '../../generic-components/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-business-online',
   imports: [
     CommonModule,
-    RouterLink,
     PageIntroComponent,
+    BreadcrumbComponent,
     ImageHeadingCardComponent,
     DynamicSwiperComponent,
     FeaturedCardComponent,

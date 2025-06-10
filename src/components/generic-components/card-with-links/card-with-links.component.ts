@@ -12,4 +12,12 @@ export class CardWithLinksComponent {
   @Input() description!: string;
   @Input() links!: { label: string; url: string }[];
   @Input() arrowIconUrl: string = 'assets/images/icons/col-icon-right.png';
+  
+  // Dynamic button properties
+  @Input() showButton: boolean = true;
+  @Input() buttonLabel: string = 'View More';
+  @Input() buttonUrl: string = '#';
+  @Input() buttonTarget: '_blank' | '_self' = '_self';
+  @Input() buttonClass: string = 'link-btn mt-4';
+  @Input() isExternalLink: boolean = false;
 }

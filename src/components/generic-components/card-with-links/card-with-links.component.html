@@ -7,8 +7,17 @@
         <span>{{ link.label }}</span>
         <img class="img-fluid arrow" [src]="arrowIconUrl" alt="arrow" />
       </a>
-    </li>
+    </li>  
   </ul>
+    <a 
+      *ngIf="showButton" 
+      [class]="buttonClass" 
+      [href]="buttonUrl"
+      [target]="buttonTarget"
+      [rel]="isExternalLink ? 'noopener noreferrer' : ''"
+    >
+      {{ buttonLabel }}
+    </a>
 </div>
 
 
@@ -20,8 +29,32 @@
   { label: 'Get or change your PIN', url: '#' }
 ];
 
- <app-card-with-links
+Basic usage:
+<app-card-with-links
   [title]="'Getting Started'"
   [description]="'Learn to make the most of your new card.'"
   [links]="cardLinks">
+</app-card-with-links>
+
+With custom button:
+  <app-card-with-links
+    [title]="carddata.title"
+    [description]="carddata.description"
+    [links]="carddata.links"
+    [showButton]="carddata.button?.show || false"
+    [buttonLabel]="carddata.button?.label || ''"
+    [buttonUrl]="carddata.button?.url || '#'"
+    [buttonTarget]="carddata.button?.target || '_self'"
+    [buttonClass]="carddata.button?.class || 'link-btn mt-4'"
+    [isExternalLink]="carddata.button?.isExternal || false"
+    class="w-100"
+  >
+  </app-card-with-links>
+
+Without button:
+<app-card-with-links
+  [title]="'Getting Started'"
+  [description]="'Learn to make the most of your new card.'"
+  [links]="cardLinks"
+  [showButton]="false">
 </app-card-with-links> -->

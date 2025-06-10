@@ -1,10 +1,7 @@
-.connect-with-us{
-    background-color: #f4f5f7; padding: 2.5rem 0;
-}
 
 
 .form-wrapper{
-    padding: 1.5rem; background-color: #FFFFFF; border-radius: 0.5rem;
+    padding: 1.5rem; background-color: var(--color-white); border-radius: 0.5rem;
 }
 
 .form-desc{
@@ -22,9 +19,9 @@
   
   .custom-input {
     border: 1px solid var(--color-gray-pale);
-    border-radius: 8px;
+    border-radius: 0.5rem;
     height: 3.125rem;
-    background-color: #ffffff;
+    background-color: var(--color-white);
     font-family: "BSP-Regular";
     font-size: 1rem;
     line-height: normal;
@@ -35,7 +32,7 @@
       font-family: "BSP-Regular";
       font-size: 1rem;
       line-height: normal;
-      color: #5c6c80;
+      color: var(--color-gray-lightest);
     }
     &:focus {
       outline: none;
@@ -44,9 +41,9 @@
 
   .custom-textarea {
     border: 1px solid var(--color-gray-pale);
-    border-radius: 8px;
-    height: 48px;
-    background-color: #ffffff;
+    border-radius: 0.5rem;
+    height: 3rem;
+    background-color: var(--color-white);
     font-family: "BSP-Regular";
     font-size: 1rem;
     line-height: normal;
@@ -58,7 +55,7 @@
       font-family: "BSP-Regular";
       font-size: 1rem;
       line-height: normal;
-      color: #5c6c80;
+      color: var(--color-gray-lightest);
     }
     &:focus {
       outline: none;
@@ -66,5 +63,5 @@
   }
 
   .submit-btn{
-    min-width: 167px;
+    min-width: 10.5rem;
   }

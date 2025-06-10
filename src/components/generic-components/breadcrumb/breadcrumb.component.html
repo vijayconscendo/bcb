@@ -4,14 +4,14 @@
       <!-- If backLink is provided, use routerLink -->
       <a *ngIf="backLink; else goBackButton"
          [routerLink]="[backLink]"
-         class="backBtn">
+         class="back-btn">
         <img class="img-fluid" src="assets/images/icons/back-left-icon.png" alt="back button">
         <span>Back</span>
       </a>
 
       <!-- Else use location.back() -->
       <ng-template #goBackButton>
-        <a (click)="goBack()" class="backBtn">
+        <a (click)="goBack()" class="back-btn">
           <img class="img-fluid" src="assets/images/icons/back-left-icon.png" alt="back button">
           <span>Back</span>
         </a>

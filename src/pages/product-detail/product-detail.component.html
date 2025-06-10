@@ -1,48 +1,17 @@
-<div class="page-wrapper">
+<div class="page-bg py-4">
   <div class="custom-container">
     <!-- Breadcrumb -->
-    <nav class="breadCrumb">
-      <ul>
-        <li>
-          <a class="backBtn">
-            <img
-              class="img-fluid"
-              src="assets/images/icons/back-left-icon.png"
-              alt="back button"
-            />
-            <span>Back</span>
-          </a>
-        </li>
-        <li>
-          <img
-            class="img-fluid"
-            src="assets/images/icons/breadcrumb-rt.png"
-            alt="breadcrumb-rt"
-          />
-        </li>
-        <li>
-          <a class="route-name" routerLink="/"><span>Home</span></a>
-        </li>
-        <li>
-          <img
-            class="img-fluid"
-            src="assets/images/icons/breadcrumb-rt.png"
-            alt="breadcrumb-rt"
-          />
-        </li>
-        <li>
-          <a class="route-name"><span>Product-detail</span></a>
-        </li>
-        <li>
-          <img
-            class="img-fluid"
-            src="assets/images/icons/breadcrumb-rt.png"
-            alt="breadcrumb-rt"
-          />
-        </li>
-      </ul>
-    </nav>
-    <!-- Breadcrumb end -->
+    <app-breadcrumb
+      [showBackButton]="true"
+      backLink="/"
+      customClass="mb-4"
+      [breadcrumbs]="[
+        { label: 'Back', url: '/' },
+        { label: 'Products and Services', url: '/products-and-services' },
+        { label: 'Product-detail' }
+      ]">
+    </app-breadcrumb>
+    <!-- ./Breadcrumb -->
     <h1 class="heading-base fw-md mb-4">Bank account</h1>
     <!-- Toolbar -->
     <app-toolbar-one></app-toolbar-one>

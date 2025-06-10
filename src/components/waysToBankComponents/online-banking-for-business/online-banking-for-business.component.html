@@ -1,26 +1,17 @@
-<div class="page-wrapper">
+<div class="page-bg py-4">
   <div class="custom-container">
-    <!-- Article Breadcrumb -->
-    <nav class="breadCrumb">
-        <ul>
-            <li>
-                <a class="route-name" [routerLink]="['/']"><span>Home</span></a>
-            </li>
-            <li>
-                <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-            </li>
-            <li>
-                <a class="route-name"><span>Ways to bank</span></a>
-            </li>
-            <li>
-                <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-            </li>
-            <li>
-                <a class="route-name"><span>Online banking for business</span></a>
-            </li>
-        </ul>
-    </nav>
-    <!-- Article Breadcrumb End -->
+    <!-- Breadcrumb -->
+     <app-breadcrumb
+        [showBackButton]="false"
+        customClass="h-center"
+        [breadcrumbs]="[
+          { label: 'Home', url: '/' },
+          { label: 'Ways to bank' },
+          { label: 'Online banking for business' }
+        ]"
+      >
+      </app-breadcrumb>
+    <!-- ./Breadcrumb -->
   <app-page-intro 
     [title]="'Online Banking for Business'"
     [description]="'Your new business banking platform'"
@@ -41,7 +32,7 @@
     ></app-page-promo-card>
     </div>
     <div class="sec-b-space">
-      <h3 class="text-heading-sm mb-4">Some of the benifits</h3>
+      <h3 class="heading-sm mb-4">Some of the benifits</h3>
       <app-image-heading-card
         [imageHeaduingCards]="imageHeadingCardsData"
       ></app-image-heading-card>
@@ -58,15 +49,19 @@
     <!-- Get In Touch End -->
 
     <!-- Go to new platform -->
-    <div class="go-to-platform">
-        <h4>Get into the platform</h4>
-        <p>Register or sign in to gain access to our new online banking for business</p>
-        <button type="button" class="primaryBtn">GO TO NEW PLATFORM</button>
+    <div class="sec-b-space">
+      <app-cta
+        heading="Standard Bank will never request your OTP"
+        description="Register or sign in to gain access to our new online banking for business."
+        buttonLabel="go to new platform"
+        buttonUrl="https://digital.standardbank.co.za/sbsa/landing"
+        [openInNewTab]="true"
+      ></app-cta>
     </div>
 
     <!-- We also offer carousel start -->
     <div class="sec-b-space">
-      <h3 class="text-heading-sm mb-4">We also offer</h3>
+      <h3 class="heading-sm mb-4">We also offer</h3>
       <app-dynamic-swiper
         [slides]="offerCardData"
         [itemTemplate]="slideTemplate"

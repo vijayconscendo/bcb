@@ -1,0 +1,30 @@
+.styled-tabs-one{
+      border-bottom: 1px solid var(--color-gray-pale);
+      margin-bottom: 2.625rem;
+      gap: 1rem;
+      .nav-link{
+        position: relative;
+        margin-bottom: 0;
+        padding: 1.5rem 0.5rem;
+        background-color: transparent;
+        border: none;
+        font-family: "BSP-Regular";
+        font-size: 1rem;
+        line-height: normal;
+        color: var(--color-gray-medium);
+        &.active {
+            font-family: "BSP-Bold" !important;
+            color: var(--color-primary) !important;
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background-color: var(--color-primary);
+                border-radius: 6px;
+            }
+        }
+      }
+}

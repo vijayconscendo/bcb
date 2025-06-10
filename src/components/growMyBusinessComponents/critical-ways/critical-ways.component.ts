@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { BreadcrumbComponent } from '../../generic-components/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-critical-ways',
-  imports: [RouterLink],
+  imports: [BreadcrumbComponent],
   templateUrl: './critical-ways.component.html',
   styleUrl: './critical-ways.component.scss'
 })

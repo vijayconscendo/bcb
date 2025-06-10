@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { BreadcrumbComponent } from '../../generic-components/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-chargebacks',
-  imports: [RouterLink],
+  imports: [BreadcrumbComponent],
   templateUrl: './chargebacks.component.html',
   styleUrl: '../things-to-know/things-to-know.component.scss'
 })

@@ -1,0 +1,83 @@
+
+// ========== [ SWIPER CUSTOM STYLES ] ==========
+.swiper-carousel,
+.tab-carousel-swiper,
+.featured-solutions-sec,
+.guidance-swiper-sec,
+.sol-cards-container,
+.explore-sol-slider,
+.money-trans-slider,
+.commonSiwper, .custom-swiper{
+    .swiper-pagination-bullet {
+      display: inline-block !important;
+      width: 30px;
+      height: 3px;
+      background-color: rgba(92, 108, 128, 0.5);
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: var(--color-primary) !important; 
+    }
+    .swiper-button-disabled{
+      opacity: 0.5 !important;
+      pointer-events: none !important;
+    }
+  }
+
+  .featured-solutions-sec{
+    .swiper-pagination-bullet {
+      background-color: var(--color-white);
+    }
+  }
+.digital-hub-pusher-slider{
+  .swiper-pagination-bullet {
+    display: inline-block !important;
+    width: 6px;
+    height: 6px;
+    background-color: rgba(92, 108, 128, 0.5);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    margin: 0 0.25rem;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: var(--color-primary) !important; 
+  }
+  .swiper-button-disabled{
+    opacity: 0.5 !important;
+    pointer-events: none !important;
+  }
+}
+// ========== [ ./SWIPER CUSTOM STYLES ] ==========
+
+// ========== [ DYNAMIC SWIPER STYLES ] ==========
+.custom-swiper-wrapper{
+  .swiper-pagination{
+      .swiper-pagination-bullet {
+        display: inline-block !important;
+        width: 30px;
+        height: 3px;
+        background-color: rgba(92, 108, 128, 0.5);
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+      .swiper-pagination-bullet-active {
+        background-color: var(--color-primary); 
+      }
+    }
+    .swiper-button-disabled{
+      opacity: 0.5 !important;
+      pointer-events: none !important;
+    }
+}
+.featured-solutions-swiper{
+  .swiper-pagination-bullet {
+    background-color: var(--color-white) !important; 
+  }
+  .swiper-pagination-bullet-active {
+    background-color: var(--color-primary) !important; 
+  }
+}
+// ========== [ ./SWIPER CUSTOM STYLES ] ==========
+  
+

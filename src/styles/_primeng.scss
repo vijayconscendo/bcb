@@ -1,0 +1,33 @@
+.p-custom-calendar{
+  position: relative;
+  display: block;
+  width: 100%;
+  .calendar-icon {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--color-primary);
+  }
+}
+.p-calendar {
+  width: 100%;
+}
+.p-calendar .p-inputtext {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-family: "BSP-Regular";
+  font-size: 1rem;
+  color: var(--color-text);
+  border-color: var(--color-gray-pale);
+  box-shadow: none;
+}
+.p-calendar .p-inputtext:hover{
+  border-color: var(--color-gray-pale);
+  box-shadow: none;
+}
+.p-calendar .p-inputtext:focus {
+  border-color: var(--color-gray-pale);
+  box-shadow: none;
+}

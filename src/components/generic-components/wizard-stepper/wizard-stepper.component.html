@@ -26,19 +26,19 @@
       <div class="demo-controls">
         <button 
           (click)="resetStepper()" 
-          class="btn-common border-1 border-light-subtle">
+          class="btn-text border-1 border-light-subtle">
           Reset
         </button>
         <button 
           (click)="previousStep()" 
           [disabled]="currentStep() === 1"
-          class="primaryBtnOutline ms-auto">
+          class="primary-btn-outline ms-auto">
           Previous
         </button>
         <button 
           (click)="nextStep()" 
           [disabled]="currentStep() === steps.length"
-          class="primaryBtn">
+          class="primary-btn">
           Next
         </button>
         

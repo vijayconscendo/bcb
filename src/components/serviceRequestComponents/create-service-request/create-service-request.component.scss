@@ -1,6 +1,4 @@
-.create-req-sec {
-  padding: 1.875rem 0;
-}
+
 .create-req-container {
   border: 1px solid var(--color-gray-pale);
   border-radius: 0.75rem;
@@ -11,33 +9,7 @@
   justify-content: center;
   margin: 1.5rem auto;
 }
-.action-info {
-  margin-bottom: 1.5rem;
-  .section-title {
-    font-family: "BSP-Regular";
-    font-size: 1.75rem;
-    line-height: 1.3;
-    margin: 0;
-  }
-}
 
-.backBtn {
-  border: 1px solid #0062e1;
-  border-radius: 30px;
-  margin-bottom: 0.5rem;
-  padding: 3px 14px;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  span {
-    font-family: "BSP-Medium";
-    font-size: 0.875rem;
-    line-height: normal;
-    text-align: center;
-  }
-}
 .create-req-form {
   max-width: 420px;
   margin: auto;
@@ -66,7 +38,7 @@
     font-family: "BSP-Medium";
     font-size: 0.75rem;
     line-height: 1.3;
-    color: var(--text-medium-gray);
+    color: var(--color-gray-medium);
   }
 }
 
@@ -85,7 +57,7 @@
     font-family: "BSP-Regular";
     font-size: 1rem;
     line-height: normal;
-    color: #5c6c80;
+    color: var(--color-gray-lightest);
   }
   &:focus {
     outline: none;
@@ -119,7 +91,7 @@
   font-family: "BSP-Regular";
   font-size: 0.75rem;
   line-height: normal;
-  color: #5c6c80;
+  color: var(--color-gray-lightest);
   display: block;
   margin: 4px 0;
   text-align: end;
@@ -153,7 +125,7 @@
   background-color: #ffffff;
   width: 20px;
   height: 20px;
-  border: 2px solid var(--text-medium-gray);
+  border: 2px solid var(--color-gray-medium);
   margin: 0;
   border-radius: 50%;
   display: grid;
@@ -169,12 +141,12 @@
   border-radius: 50%;
   transform: scale(0);
   transition: 0.3s transform ease-in-out;
-  box-shadow: inset 10px 10px #0051ff;
+  box-shadow: inset 10px 10px var(--color-primary);
 }
 
 .radio-input:checked {
-  background: #ffffff;
-  border-color: #0051ff;
+  background: var(--color-white);
+  border-color: var(--color-primary);
 }
 
 .radio-input:checked::before {
@@ -186,7 +158,7 @@
   padding: 6px 12px;
   font-family: "BSP-Regular";
   font-size: 0.875rem;
-  color: var(--text-medium-gray);
+  color: var(--color-gray-medium);
   line-height: normal;
 }
 

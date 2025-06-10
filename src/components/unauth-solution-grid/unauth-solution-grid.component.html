@@ -1,12 +1,18 @@
-<div class="products-grid custom-container">
-  <div class="title-bar">
-      <h2 class="text-heading-md">Our most popular solutions</h2>
-      <p class="text-subtitle">Discover the solutions our business customers use the most</p>
+<div class="products-grid">
+  <div class="custom-container">
+    <div class="title-bar">
+      <h2 class="heading-lg">Our most popular solutions</h2>
+      <p class="subtitle-md">Discover the solutions our business customers use the most</p>
   </div>
-  <app-featured-product></app-featured-product>
   <div class="row">
-    <div class="col-md-4 col-sm-6 mb-4" *ngFor="let product of products">
-      <app-product-card [product]="product"></app-product-card>
+    <div class="col-12 mb-4">
+      <app-product-card [product]="products[0]" [customClassName]="'featured-card'"></app-product-card>
     </div>
+    <ng-container *ngFor="let product of products.slice(1)">
+      <div class="col-md-4 col-sm-6 col-12 mb-4">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+    </ng-container>
   </div>
+</div>
 </div>

@@ -22,7 +22,7 @@
                     <!-- Left Column - Calculator Input Fields -->
                     <div class="col-lg-6 col-md-12">
                         <div class="calculator-input-panel">
-                            <h2 class="text-heading-sm mb-5">How much can I get for my business?</h2>
+                            <h2 class="heading-sm mb-5">How much can I get for my business?</h2>
                             
                             <!-- Loan Amount Field -->
                             <div class="form-group">
@@ -108,28 +108,30 @@
                             <div class="step-indicator">Step 1</div>
                             
                             <!-- Calculator Button -->
-                            <button class="primaryBtn calculate-btn" (click)="moveToStep(2)">CALCULATE</button>
+                            <button class="primary-btn calculate-btn" (click)="moveToStep(2)">CALCULATE</button>
                             
                             <!-- Reset Button -->
-                            <button class="btn btn-link reset-btn primary-text" (click)="resetCalculator()">RESET</button>
+                            <button class="btn btn-link reset-btn color-primary" (click)="resetCalculator()">RESET</button>
                         </div>
                     </div>
                       <!-- Right Column - Results Panel -->
-                    <div class="col-lg-6 col-md-12">                        
-                        <app-loan-calculator-results
-                            [monthlyRepayment]="monthlyRepayment"
-                            [loanAmount]="formattedLoanAmount"
-                            [firstRepaymentDate]="firstRepaymentDate"
-                            [currentStep]="currentStep"
-                            (applyNow)="applyForLoan()">
-                        </app-loan-calculator-results>
+                    <div class="col-lg-6 col-md-12">  
+                        <div class="calculator-input-panel">                      
+                            <app-loan-calculator-results
+                                [monthlyRepayment]="monthlyRepayment"
+                                [loanAmount]="formattedLoanAmount"
+                                [firstRepaymentDate]="firstRepaymentDate"
+                                [currentStep]="currentStep"
+                                (applyNow)="applyForLoan()">
+                            </app-loan-calculator-results>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="sec-b-space">
-            <h3 class="text-heading-sm mb-4">Disclaimer</h3>
-            <p class="text-subtitle-sm">This online calculator provides an indication only. You use this online calculator at your own discretion. The criterion used by this online calculator are subject to change at any point. Standard Bank gives no warranty, express or implied, as to the accuracy, reliability and completeness of any information, formulae or calculations provided through the use of this calculator and does not accept any liability for loss or damage of whatsoever nature, which may be attributable to the reliance on and use of this calculator. We do not warrant the integrity and security of this calculator or that it is free of errors, corruption, viruses, interception or interference.</p>
+            <h3 class="heading-sm mb-4">Disclaimer</h3>
+            <p class="subtitle-sm">This online calculator provides an indication only. You use this online calculator at your own discretion. The criterion used by this online calculator are subject to change at any point. Standard Bank gives no warranty, express or implied, as to the accuracy, reliability and completeness of any information, formulae or calculations provided through the use of this calculator and does not accept any liability for loss or damage of whatsoever nature, which may be attributable to the reliance on and use of this calculator. We do not warrant the integrity and security of this calculator or that it is free of errors, corruption, viruses, interception or interference.</p>
         </div>
     </div>
 

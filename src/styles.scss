@@ -1,131 +1,40 @@
+// 1. Variables and utilities (no CSS output)
+@use "variables" as *;
 @use "custom-breakpoints" as bp;
-@use "buttons";
+
+// 2. Base and foundational styles
+@use "base";
+
+// 3. Component-specific libraries
+@use "primeng";
 @use "ng-select";
+@use "swiper-styles";
 
-:root{
-  /* Primary Colors */
-  --color-primary: #0062E1;
-  --color-primary-dark: #0033AA;
-  --color-primary-deeper: #00164E;
-  --color-white: #FFFFFF;
-  --color-black: #000000;
-  --color-orange: #fa6400;
+// 4. Custom components
+@use "buttons";
+@use "typography";
 
-  /* Text Colors */
-  --color-text: #1A314D;
-  
-  /* Gray Scale */
-  --color-gray-pale: #E3E6EA;
-  --color-gray-light: #697786;
-  --color-gray-medium: #222E37;
-  --color-gray-dark: #02070D;
-  
-  /* Theme Colors */
-  --color-lightmode: #091C35;
+// 5. Overrides (always last)
+@use "overrides";
 
+// ========== [ UTILITY CLASSES ] ==========
+.page-bg {
+  background-color: var(--page-bg-color);
 }
 
-body{
-    font-family: "BSP-Regular", sans-serif;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.primary-text{
-  color: var(--color-primary) !important;
-}
-
-// ----- CUSTOM CONTAINER STYLES -----
+// ========== [ CUSTOM CONTAINER STYLES ] ==========
 .custom-container{
-    width: 100%; max-width: 1328px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem;
+    width: 100%;
+    max-width: 1328px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
-// ----- CUSTOM CONTAINER STYLES END-----
-
-
-// ========== [ HEADING STYLES START ] ==========
-.text-heading-md{
-  font-family: "BSP-Regular", sans-serif;
-  font-size: 2.625rem;
-  line-height: 1.3;
-  margin-bottom: 0.5rem;
-  color: var(--color-text);
-  @include bp.respond-below('sm') {
-    font-size: 2.375rem;
-  }
-  @include bp.respond-below('xs') {
-    font-size: 2rem;
-  }
-  @include bp.respond-below('mobile-xs') {
-    font-size: 1.75rem;
-  }
-}
-.text-heading-sm{
-  font-family: "BSP-Regular", sans-serif;
-  font-size: 1.75rem;
-  line-height: 1.3;
-  margin-bottom: 0.5rem;
-  color: var(--color-text);
-  @include bp.respond-below('sm') {
-    font-size: 1.625rem;
-  }
-  @include bp.respond-below('xs') {
-    font-size: 1.5rem;
-  }
-  @include bp.respond-below('mobile-xs') {
-    font-size: 1.375rem;
-  }
-}
-.heading-base{
-  font-family: "BSP-Regular", sans-serif;
-  font-size: 24px;
-  line-height: 1.3;
-  margin-bottom: 0.5rem;
-  color: var(--color-text);
-}
-.text-subtitle{
-  font-family: "BSP-Regular", sans-serif;
-  font-size: 1.25rem;
-  line-height: 1.5;
-  color: #000000;
-  margin-bottom: 1rem;
-  @include bp.respond-below("sm") {
-    font-size: 1.125rem;
-  }
-}
-.text-subtitle-sm{
-  font-family: "BSP-Regular", sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.5;
-  color: #000000;
-  margin-bottom: 1rem;
-  @include bp.respond-below("sm") {
-    font-size: 1rem;
-  }
-}
-
-.fw-md{
-  font-family: "BSP-Medium", sans-serif !important;
-}
-// ========== [ ./HEADING STYLES END ] ==========
-
-
-// ========== [ FORM STYLES START ] ==========
-.label-base{
-  display: inline-block;
-  font-family: "BSP-Regular", sans-serif;
-  font-size: 0.875rem;
-  line-height: 1.3;
-  color: var(--color-text);
-  margin-bottom: 0.5rem;
-    sup{
-      color: #DC0A0A; top: 0; font-size: 1rem;
-    }
-}
-// ========== [ ./FORM STYLES END ] ==========
+// ========== [ ./CUSTOM CONTAINER STYLES ] ==========
 
 .sec-b-space{
-      padding-bottom: 4.375rem;
+  padding-bottom: 4.375rem;
 }
 
 .pageBannerContent{
@@ -137,119 +46,4 @@ body{
   }
 }
 
-// ----- SWIPER CUSTOM STYLES -----
-.swiper-carousel,
-.tab-carousel-swiper,
-.featured-solutions-sec,
-.guidance-swiper-sec,
-.sol-cards-container,
-.explore-sol-slider,
-.money-trans-slider,
-.commonSiwper, .custom-swiper{
-    .swiper-pagination-bullet {
-      display: inline-block !important;width: 30px;height: 3px;
-      background-color: rgba(92, 108, 128, 0.5); border-radius: 4px;
-      transition: background-color 0.3s ease;
-    }
-    .swiper-pagination-bullet-active {
-      background-color: var(--color-primary) !important; 
-    }
-    .swiper-button-disabled{
-      opacity: 0.5 !important;
-      pointer-events: none !important;
-    }
-  }
-
-  .featured-solutions-sec{
-    .swiper-pagination-bullet {
-      background-color: var(--color-white);
-    }
-  }
-.digital-hub-pusher-slider{
-  .swiper-pagination-bullet {
-    display: inline-block !important;width: 6px;height: 6px;
-    background-color: rgba(92, 108, 128, 0.5); border-radius: 50%;
-    transition: background-color 0.3s ease; margin: 0 0.25rem;
-  }
-  .swiper-pagination-bullet-active {
-    background-color: var(--color-primary) !important; 
-  }
-  .swiper-button-disabled{
-    opacity: 0.5 !important;
-    pointer-events: none !important;
-  }
-}
-// ----- SWIPER CUSTOM STYLES END -----
-
-
-// Dynamic Swiper Styles start
-.custom-swiper-wrapper{
-  .swiper-pagination{
-      .swiper-pagination-bullet {
-        display: inline-block !important;width: 30px;height: 3px;
-        background-color: rgba(92, 108, 128, 0.5); border-radius: 4px;
-        transition: background-color 0.3s ease;
-      }
-      .swiper-pagination-bullet-active {
-        background-color: var(--color-primary); 
-      }
-    }
-    .swiper-button-disabled{
-      opacity: 0.5 !important;
-      pointer-events: none !important;
-    }
-}
-.featured-solutions-swiper{
-  .swiper-pagination-bullet {
-    background-color: var(--color-white) !important; 
-  }
-  .swiper-pagination-bullet-active {
-    background-color: var(--color-primary) !important; 
-  }
-}
-// Dynamic Swiper Styles end
-  
-
-
-// ----- PRIMENG COMMON STYLES -----
-.p-custom-calendar{
-  position: relative; display: block; width: 100%;
-  .calendar-icon {
-    position: absolute;
-    top: 50%;
-    right: 1rem;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #007ad9;
-  }
-}
-.p-calendar {
-  width: 100%;
-}
-.p-calendar .p-inputtext {
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  font-family: "BSP-Regular";
-  font-size: 1rem;
-  color: var(--color-text);
-  border-color: var(--color-gray-pale);
-  box-shadow: none;
-}
-.p-calendar .p-inputtext:hover{
-  border-color: var(--color-gray-pale);box-shadow: none;
-}
-.p-calendar .p-inputtext:focus {
-  border-color: var(--color-gray-pale);box-shadow: none;
-}
-// ----- PRIMENG COMMON STYLES END -----
-
-
-.featured-card {
-  width: 100%;
-  &.wide-card-img {
-    .featured-card__image img {
-      height: 200px;
-    }
-  }
-}
 

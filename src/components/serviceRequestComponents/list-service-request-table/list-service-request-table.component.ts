@@ -1,6 +1,7 @@
 import { Component, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CustomSearchComponent } from '../../generic-components/custom-search/custom-search.component';
 
 type TicketStatus = 'in-progress' | 'resolved';
 
@@ -16,7 +17,7 @@ interface Ticket {
 
 @Component({
   selector: 'app-list-service-request-table',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, CustomSearchComponent],
   templateUrl: './list-service-request-table.component.html',
   styleUrl: './list-service-request-table.component.scss'
 })
@@ -26,6 +27,8 @@ export class ListServiceRequestTableComponent {
  searchQuery = signal<string>('');
  currentPage = signal<number>(1);
  itemsPerPage = signal<number>(5);
+
+ searchTerm = signal<string>('');
 
  // Sample data - in a real app, this would come from a service
  allTickets = signal<Record<TicketStatus, Ticket[]>>({

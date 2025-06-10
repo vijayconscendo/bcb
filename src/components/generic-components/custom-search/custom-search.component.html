@@ -1,13 +1,12 @@
-<div class="search-container">
-  <img
-    class="search-icon"
-    src="assets/images/icons/search-icon.png"
-    alt="Search icon"
-  />
-  <input
-    type="text"
-    [placeholder]="placeholder"
-    [value]="value"
-    (input)="onInputChange($event)"
-  />
+<div class="custom-search">
+    <img
+        [src]="iconSrc"
+        class="img-fluid"
+        [alt]="iconAlt"
+    />
+    <input 
+        type="text" 
+        [placeholder]="placeholder"
+        [ngModel]="searchValue"
+        (ngModelChange)="onSearchChange($event)">
 </div>

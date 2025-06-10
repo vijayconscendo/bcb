@@ -1,12 +1,10 @@
 <div *ngIf="isBrowser">
   <app-landing-banner></app-landing-banner>
 </div>
-<div *ngIf="isBrowser">
   <app-featured-solutions-carousel></app-featured-solutions-carousel>
-</div>
 <div class="custom-container">
     <div class="my-img-split">
-        <app-content-image-split
+      <app-content-image-split
         title="Your business is our top priority"
         imageUrl="assets/images/cards/proirity-card-img.png"
         imageAlt="Our service illustration"
@@ -21,7 +19,7 @@
           Get tailor-made banking solutions, use our financial health monitor and
           never worry about the status of your business's finances. No two
           businesses are the same, that's why we tailor your experience.
-        </p>
+      </p>
       </app-content-image-split>
     </div>
     <div class="my-img-split">
@@ -40,10 +38,13 @@
     </div>
 </div>
 <app-explore-banner></app-explore-banner>
-<div class="custom-container" *ngIf="isBrowser">
-  <app-tab-carousel></app-tab-carousel>
-</div>
 <app-get-started></app-get-started>
+<div class="custom-container">
+  <div class="tab-slider-sec">
+    <h2 class="heading-lg mb-2">Gain valuable knowledge</h2>
+    <app-tab-slider-one></app-tab-slider-one>
+  </div>
+</div>
 <app-download-app></app-download-app>
 <app-support-contact></app-support-contact>
 <app-switch-bank></app-switch-bank>

@@ -1,0 +1,14 @@
+<div class="featured-card" [ngClass]="className">
+  <div class="featured-card__image">
+    <img [src]="imageSrc" [alt]="imageAlt" class="featured-card__img" />
+  </div>
+  <div class="featured-card__info">
+    <div class="featured-card__content">
+      <h4 class="featured-card__title">{{ title }}</h4>
+      <p class="featured-card__description">{{ description }}</p>
+    </div>
+    <a [routerLink]="buttonLink" class="featured-card__btn text-link-btn">
+      {{ buttonLabel }}
+    </a>
+  </div>
+</div>

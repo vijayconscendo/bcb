@@ -16,8 +16,8 @@
             <div *ngIf="noteText" class="noteText">{{noteText}}</div>
         </div>
           <div class="action-buttons" *ngIf="outlineBtnVisible || primaryBtnVisible">
-              <a *ngIf="outlineBtnVisible" [href]="outlineBtnLink" class="primaryBtn">{{ outlineBtnText }}</a>
-              <a *ngIf="primaryBtnVisible" [href]="primaryBtnLink" class="primaryBtnOutline">{{ primaryBtnText }}</a>
+              <a *ngIf="outlineBtnVisible" [href]="outlineBtnLink" class="primary-btn">{{ outlineBtnText }}</a>
+              <a *ngIf="primaryBtnVisible" [href]="primaryBtnLink" class="primary-btn-outline">{{ primaryBtnText }}</a>
           </div>
         </div>
       </div>

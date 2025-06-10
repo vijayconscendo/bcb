@@ -6,15 +6,15 @@ import { CommonModule } from '@angular/common';
 import { DynamicSwiperComponent } from '../../generic-components/dynamic-swiper/dynamic-swiper.component';
 import { FeaturedCardComponent } from '../../generic-components/featured-card/featured-card.component';
 import { PagePromoCardComponent } from '../../generic-components/page-promo-card/page-promo-card.component';
-import { RouterLink } from '@angular/router';
 import { TabListComponent } from './tab-list/tab-list.component';
+import { BreadcrumbComponent } from '../../generic-components/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-atm-banking',
   imports: [
     CommonModule,
-    RouterLink,
     PageIntroComponent,
+    BreadcrumbComponent,
     ImageHeadingCardComponent,
     DynamicSwiperComponent,
     FeaturedCardComponent,

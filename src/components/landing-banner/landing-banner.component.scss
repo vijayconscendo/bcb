@@ -25,7 +25,7 @@
     }
   }
   .bnr-desc{
-    font-family: "BSP-Regular"; font-size: 1.125rem; line-height: 1.3; color: var(--text-medium-gray);margin-bottom: 1.5rem; max-width: 420px;
+    margin-bottom: 1.5rem;
   }
   .bnr-btn{
     padding: 1rem 2.875rem;
@@ -51,7 +51,7 @@
 
     span{
       display: inline-block; width: 30px;height: 3px;
-      background-color: #5C6C80;border-radius: 4px;
+      background-color: var(--color-gray-lightest);border-radius: 4px;
       transition: background-color 0.3s ease;
     }
   }
@@ -79,7 +79,7 @@
   .slide-pagination span {
     width: 30px;
     height: 3px;
-    background-color: #5C6C80;
+    background-color: var(--color-gray-lightest);
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;

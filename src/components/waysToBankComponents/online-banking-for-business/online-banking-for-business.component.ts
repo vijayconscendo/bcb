@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { PageIntroComponent } from '../../generic-components/page-intro/page-intro.component';
 import { ImageHeadingCardComponent } from '../../generic-components/image-heading-card/image-heading-card.component';
 import { DynamicSwiperComponent } from '../../generic-components/dynamic-swiper/dynamic-swiper.component';
@@ -10,19 +9,22 @@ import { ImageHeadingCard } from '../../../models/image-heading-card.model';
 import { TabListComponent } from './tab-list/tab-list.component';
 import { GetInTouchComponent } from './get-in-touch/get-in-touch.component';
 import { FaqComponent } from '../faq/faq.component';
+import { BreadcrumbComponent } from '../../generic-components/breadcrumb/breadcrumb.component';
+import { CtaComponent } from '../../generic-components/cta/cta.component';
 
 @Component({
   selector: 'app-online-banking-for-business',
   imports: [
     CommonModule,
-    RouterLink,
     PageIntroComponent,
+    BreadcrumbComponent,
     PagePromoCardComponent,
     ImageHeadingCardComponent,
     DynamicSwiperComponent,
     FeaturedCardComponent,
     TabListComponent,
     GetInTouchComponent,
+    CtaComponent,
     FaqComponent
 ],
   templateUrl: './online-banking-for-business.component.html',

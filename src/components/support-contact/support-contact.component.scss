@@ -56,7 +56,7 @@
             color: var(--color-text);
             margin: 1.625rem 0 2.25rem;
         }
-        .primaryBtn{width: 100%;}
+        .primary-btn{width: 100%;}
     }
 
 }
@@ -115,7 +115,7 @@
         max-width: 446px; margin: 1.5rem auto 0;
         input{
             width: 100%;
-            border: 1px solid #5c6c80;
+            border: 1px solid var(--color-gray-lightest);
             border-radius: 8px;
             height: 48px;
             background-color: #ffffff;
@@ -129,7 +129,7 @@
               font-family: "BSP-Regular";
               font-size: 1rem;
               line-height: normal;
-              color: #5c6c80;
+              color: var(--color-gray-lightest);
             }
             &:focus {
               outline: none;

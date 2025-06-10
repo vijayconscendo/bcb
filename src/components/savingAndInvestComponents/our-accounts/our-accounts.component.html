@@ -21,12 +21,12 @@
         ></app-page-intro>
 
         <div class="sec-b-space">
-            <h3 class="text-heading-sm mb-4">Some of the Benefits</h3>
+            <h3 class="heading-sm mb-4">Some of the Benefits</h3>
             <app-image-heading-card [imageHeaduingCards]="imageHeadingCardsData"></app-image-heading-card>
         </div>
 
                 <div class="sec-b-space">
-            <h3 class="text-heading-sm mb-4">See which account suits you best</h3>            
+            <h3 class="heading-sm mb-4">See which account suits you best</h3>            
             <ul class="tabs-ul">
                 <li *ngFor="let tab of categoryTabs" [ngClass]="{'activeTab': currentCategory === tab}">
                     <button type="button" (click)="filterProductsByCategory(tab)">{{ tab }} ({{ getProductCountByCategory(tab) }})</button>

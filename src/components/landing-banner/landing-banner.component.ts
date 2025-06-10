@@ -15,7 +15,7 @@ export class LandingBannerComponent {
 
 
 
-    currentSlide = 0;
+  currentSlide = 0;
 
   slides = [
     {

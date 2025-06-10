@@ -13,7 +13,7 @@ import { helpMeGrowMyBusinessRoutes } from '../pages/help-me-grow-my-business/he
 import { myMobizRoutes } from '../pages/my-mobiz/my-mobiz.routes';
 import { borrowForYourNeeds } from '../pages/borrow-for-your-needs/borrow-for-your-needs.routes';
 import { savingAndInvestRoutes } from '../pages/saving-and-investment-accounts/saving-and-invest-account.routes';
-import { InsureWhatMattersRoutes } from '../pages/insure-what-matters/insure-what-matters.routes';
+import { insureWhatMattersRoutes } from '../pages/insure-what-matters/insure-what-matters.routes';
 import { businessSolutionsRoutes } from '../pages/business-solutions/business-solutions.routes';
 
 export const routes: Routes = [
@@ -75,7 +75,7 @@ export const routes: Routes = [
             ...helpMeGrowMyBusinessRoutes,
             ...myMobizRoutes,
             ...savingAndInvestRoutes,
-            ...InsureWhatMattersRoutes,
+            ...insureWhatMattersRoutes,
             ...businessSolutionsRoutes,
         ]
     },

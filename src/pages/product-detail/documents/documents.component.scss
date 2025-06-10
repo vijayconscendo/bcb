@@ -57,13 +57,13 @@
   &.focused .floating-label {
     top: 0;
     font-size: 0.75rem;
-    color: var(--text-medium-gray);
+    color: var(--color-gray-medium);
     z-index: 9;
   }
   ng-select.ng-select-focused ~ .floating-label {
     top: 0;
     font-size: 0.75rem;
-    color: var(--text-medium-gray);
+    color: var(--color-gray-medium);
     z-index: 9;
   }
 }

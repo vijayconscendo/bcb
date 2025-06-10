@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { BreadcrumbComponent } from '../../generic-components/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-right-marketing',
-  imports: [RouterLink],
+  imports: [BreadcrumbComponent],
   templateUrl: './right-marketing.component.html',
   styleUrl: './right-marketing.component.scss'
 })

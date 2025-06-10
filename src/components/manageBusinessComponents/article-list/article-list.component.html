@@ -1,97 +1,116 @@
 <div class="artical-page">
-    <div class="custom-container">
-            <!-- Article Breadcrumb -->
-            <nav class="breadCrumb">
-                <ul>
-                    <li>
-                        <a class="route-name" [routerLink]="['/']"><span>Home</span></a>
-                    </li>
-                    <li>
-                        <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-                    </li>
-                    <li>
-                        <a class="route-name" [routerLink]="['/articles']"><span>Help me manage by business</span></a>
-                    </li>
-                    <li>
-                        <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-                    </li>
-                </ul>
-                </nav>
-            <!-- Article Breadcrumb End -->
-            <!-- Page Intro -->
-            <app-page-intro
-                [title]="'Business management articles'"
-                [description]="'Management is a complex skill. Whether you’ve just started your own business or are a veteran manager, you can always expect new challenges to test your abilities. Our collection of articles can help by sharing the experiences of other managers who have dealt with similar situations.'"
-            ></app-page-intro>
+  <div class="custom-container">
+    <!-- Breadcrumb -->
+    <app-breadcrumb
+      [showBackButton]="false"
+      customClass="h-center"
+      [breadcrumbs]="[
+        { label: 'Home', url: '/' },
+        { label: 'Help me manage by business', url: '/articles' }
+      ]"
+    ></app-breadcrumb>
+    <!-- ./Breadcrumb -->
+    <!-- Page Intro -->
+    <app-page-intro
+      [title]="'Business management articles'"
+      [description]="
+        'Management is a complex skill. Whether you’ve just started your own business or are a veteran manager, you can always expect new challenges to test your abilities. Our collection of articles can help by sharing the experiences of other managers who have dealt with similar situations.'
+      "
+    ></app-page-intro>
 
-        <h2 class="heading-base fw-md mb-4">ARTICLES FOR MANAGING YOUR BUSINESS</h2>
-        <div class="container-fluid px-0">
-            <div class="row">
-                <div class="col-lg-9 col-md-8 col-sm-12">            
-                    <div class="mb-4">
-                        <span class="label-base">Search</span>
-                            <app-custom-search
-                                [(value)]="searchTerm"
-                                placeholder="Search here..."
-                            >
-                            </app-custom-search>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-12">
-                    <div class="formgroup">
-                        <span class="label-base">Select year</span>
-                        <ng-select
-                            [items]="selectyear"
-                            bindLabel="name"
-                            bindValue="id"
-                            [(ngModel)]="selectedYear"
-                            placeholder="Please select"
-                            class="custom-ngs"
-                        >
-                        </ng-select>
-                    </div>
-                </div>
-            </div>
+    <h2 class="heading-base fw-md mb-4">ARTICLES FOR MANAGING YOUR BUSINESS</h2>
+    <div class="container-fluid px-0">
+      <div class="row">
+        <div class="col-lg-9 col-md-8 col-sm-12">
+          <div class="mb-4">
+            <span class="label-base">Search</span>
+              <app-custom-search
+                  placeholder="Search tickets...">
+              </app-custom-search>
+          </div>
         </div>
-    
-        <div class="grid-container">
-            <div class="artical-card featured-card" *ngFor="let article of paginatedArticles; let i = index"
-                 [ngClass]="{'featured-card': i === 0, 'horizontal-card': i !== 0}">
-              <img *ngIf="article.imageUrl" [src]="article.imageUrl" alt="Article image" />
-              <div class="content">
-                <div class="small-text"><span>{{ article.category }}</span><span *ngIf="article.date">{{ article.date }}</span></div>
-                <h3><a [href]="article.readMoreLink">{{ article.title }}</a></h3>
-                <p *ngIf="article.summary">{{ article.summary }}</p>
-                <a [href]="article.readMoreLink" class="read-more">READ MORE <img class="img-fluid arrow" src="assets/images/icons/col-icon-right.png" alt="right arrow" /></a>
-              </div>
-            </div>
+        <div class="col-lg-3 col-md-4 col-sm-12">
+          <div class="formgroup">
+            <span class="label-base">Select year</span>
+            <ng-select
+              [items]="selectyear"
+              bindLabel="name"
+              bindValue="id"
+              [(ngModel)]="selectedYear"
+              placeholder="Please select"
+              class="custom-ngs"
+            >
+            </ng-select>
+          </div>
         </div>
-          
-       <!-- Pagination -->
-        <div class="custom-pagination">
-            <button type="button" (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">
-            <img
-                src="assets/images/icons/carousel-arrow-lt.png"
-                alt="arrow"
-                class="img-fluid"
-            />
-            </button>
-            <ul>
-                <li class="selected" *ngFor="let page of [].constructor(totalPages()); let i = index" [class.active]="currentPage === i + 1"
-                >
-                    <button type="button" (click)="setPage(i + 1)">{{ i + 1 }}</button>
-                </li>
-            </ul>
-            <button type="button" (click)="setPage(currentPage + 1)" [disabled]="currentPage === totalPages()">
-            <img
-                src="assets/images/icons/carousel-arrow-rt.png"
-                alt="arrow"
-                class="img-fluid"
-            />
-            </button>
-        </div>
-        <!-- Pagination End-->
-
+      </div>
     </div>
-</div>
 
+    <div class="grid-container">
+      <div
+        class="artical-card featured-card"
+        *ngFor="let article of paginatedArticles; let i = index"
+        [ngClass]="{ 'featured-card': i === 0, 'horizontal-card': i !== 0 }"
+      >
+        <img
+          *ngIf="article.imageUrl"
+          [src]="article.imageUrl"
+          alt="Article image"
+        />
+        <div class="content">
+          <div class="small-text">
+            <span>{{ article.category }}</span
+            ><span *ngIf="article.date">{{ article.date }}</span>
+          </div>
+          <h3>
+            <a [href]="article.readMoreLink">{{ article.title }}</a>
+          </h3>
+          <p *ngIf="article.summary">{{ article.summary }}</p>
+          <a [href]="article.readMoreLink" class="read-more"
+            >READ MORE
+            <img
+              class="img-fluid arrow"
+              src="assets/images/icons/col-icon-right.png"
+              alt="right arrow"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="custom-pagination">
+      <button
+        type="button"
+        (click)="setPage(currentPage - 1)"
+        [disabled]="currentPage === 1"
+      >
+        <img
+          src="assets/images/icons/carousel-arrow-lt.png"
+          alt="arrow"
+          class="img-fluid"
+        />
+      </button>
+      <ul>
+        <li
+          class="selected"
+          *ngFor="let page of [].constructor(totalPages()); let i = index"
+          [class.active]="currentPage === i + 1"
+        >
+          <button type="button" (click)="setPage(i + 1)">{{ i + 1 }}</button>
+        </li>
+      </ul>
+      <button
+        type="button"
+        (click)="setPage(currentPage + 1)"
+        [disabled]="currentPage === totalPages()"
+      >
+        <img
+          src="assets/images/icons/carousel-arrow-rt.png"
+          alt="arrow"
+          class="img-fluid"
+        />
+      </button>
+    </div>
+    <!-- Pagination End-->
+  </div>
+</div>

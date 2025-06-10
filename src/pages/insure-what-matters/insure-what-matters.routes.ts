@@ -7,7 +7,7 @@ import { CorporateRiskComponent } from '../../components/insureComponents/corpor
 import { YourAgriBusinessComponent } from '../../components/insureComponents/your-agri-business/your-agri-business.component';
 import { YourVehiclesComponent } from '../../components/insureComponents/your-vehicles/your-vehicles.component';
 
-export const InsureWhatMattersRoutes: Routes = [
+export const insureWhatMattersRoutes: Routes = [
   {
     path: 'insure-what-matters',
     component: InsureWhatMattersComponent,

@@ -10,7 +10,6 @@ import { ShariahBankingComponent } from '../../components/bankWithUsComponents/s
 import { OurCardsComponent } from '../../components/bankWithUsComponents/our-cards/our-cards.component';
 
 export const bankWithUsRoutes: Routes = [
-
   {
     path: 'bank-with-us',
     component: BankWithUsComponent,

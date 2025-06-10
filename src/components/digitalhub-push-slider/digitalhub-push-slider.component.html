@@ -1,4 +1,6 @@
-<button data-bs-toggle="modal" data-bs-target="#digitalhubSlider"
+<!-- Digital Hub Push Slider Web View -->
+<div class="digital-hub-push-slider-web">
+   <button data-bs-toggle="modal" data-bs-target="#digitalhubSlider"
   class="sidebar-toggle fixed-toggle" *ngIf="!sidebarToggle" (click)="shoHideSidebarToggle()">
   <div class="digital-hub-toggle">
     <img class="img-fluid" src="assets/images/icons/digitalhub-icon.png" alt="digitalhub-icon"/>
@@ -7,7 +9,7 @@
 </button>
 
 <!-- Modal -->
-<div class="modal fade right-modal" id="digitalhubSlider" tabindex="-1" aria-labelledby="digitalhubSliderLabel" aria-hidden="true">
+<div class="modal fade right-modal" id="digitalhubSlider" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="digitalhubSliderLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-slideout">
     <div class="modal-content modalcontent">
       <button data-bs-dismiss="modal" aria-label="Close" type="button" class="close-btn" *ngIf="sidebarToggle" (click)="shoHideSidebarToggle()">
@@ -30,3 +32,24 @@
     </div>
   </div>
 </div>
+</div>
+
+<!-- ./Digital Hub Push Slider Web View End -->
+
+<!-- Digital Hub Push Slider Mob View -->
+<div class="digital-hub-push-slider-mob">
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Toggle bottom offcanvas</button>
+
+<div class="offcanvas offcanvas-bottom full-height-offcanvas" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+  <div class="offcanvas-header">
+    <h3 class="text-heading-base mb-0 text-white">Digital Hub</h3>
+    <button type="button" class="canvas-close-btn ms-auto" data-bs-dismiss="offcanvas">
+      <img class="img-fluid" src="assets/images/icons/icn_close-white.png" alt="icn_close-white"/>
+    </button>
+  </div>
+  <div class="offcanvas-body small">
+    <app-welcome-slider (showCreateHub)="onShowCreateHubClicked()" *ngIf="!showCreateHubComponent"></app-welcome-slider>
+    <app-create-digital-hub *ngIf="showCreateHubComponent"></app-create-digital-hub>
+  </div>
+</div>
+<!-- ./Digital Hub Push Slider Mob View End -->

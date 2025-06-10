@@ -1,23 +1,15 @@
 <div class="artical-page">
     <div class="custom-container">
-            <!-- Article Breadcrumb -->
-            <nav class="breadCrumb">
-                <ul>
-                    <li>
-                        <a class="route-name" [routerLink]="['/']"><span>Home</span></a>
-                    </li>
-                    <li>
-                        <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-                    </li>
-                    <li>
-                        <a class="route-name" [routerLink]="['/articles']"><span>Help me grow my business</span></a>
-                    </li>
-                    <li>
-                        <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-                    </li>
-                </ul>
-                </nav>
-            <!-- Article Breadcrumb End -->
+            <!-- Breadcrumb -->
+            <app-breadcrumb
+                [showBackButton]="false"
+                customClass="h-center"
+                [breadcrumbs]="[
+                    { label: 'Home', url: '/' },
+                    { label: 'Help me grow my business', url: '/articles' }
+                ]">
+            </app-breadcrumb>
+            <!-- ./Breadcrumb -->
             <!-- Page Intro -->
             <app-page-intro
                 [title]="'Growing a healthy business'"
@@ -30,11 +22,9 @@
                 <div class="col-lg-9 col-md-8 col-sm-12">            
                     <div class="mb-4">
                         <span class="label-base">Search</span>
-                            <app-custom-search
-                                [(value)]="searchTerm"
-                                placeholder="Search here..."
-                            >
-                            </app-custom-search>
+                        <app-custom-search
+                            placeholder="Search tickets...">
+                        </app-custom-search>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-12">

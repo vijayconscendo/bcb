@@ -1,15 +1,15 @@
 <div class="container-fluid px-0 sec-content-image-split">
   <div class="row g-0" [ngClass]="{ reverse: reverseLayout }">
     <!-- Left Column (Text Content) -->
-    <div class="col-lg-6 colLeft">
+    <div class="col-lg-6 colLeft order-2 order-lg-0">
       <div class="text-content">
-        <h2>{{ title }}</h2>
+        <h2 class="heading-xl">{{ title }}</h2>
         <ng-content></ng-content>
         <a
           *ngIf="buttonText || btnIconUrl"
           href="#"
           role="button"
-          class="primaryBtn"
+          class="primary-btn" 
         >
           <span *ngIf="buttonText">{{ buttonText }}</span>
           <img *ngIf="btnIconUrl" [src]="btnIconUrl" alt="Arrow Icon" />
@@ -18,7 +18,7 @@
     </div>
     <!-- Right Column (Image) -->
     <div
-      class="col-lg-6 colRight d-flex align-items-center p-0 mobile-center"
+      class="col-lg-6 order-lg-1 order-0 colRight d-flex align-items-center p-0 mobile-center"
       [ngClass]="reverseLayout ? 'justify-content-start' : 'justify-content-end'"
     >
       <div class="image-container">

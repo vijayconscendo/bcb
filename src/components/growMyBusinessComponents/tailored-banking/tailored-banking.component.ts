@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { BreadcrumbComponent } from '../../generic-components/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-tailored-banking',
-  imports: [RouterLink],
+  imports: [BreadcrumbComponent],
   templateUrl: './tailored-banking.component.html',
   styleUrl: './tailored-banking.component.scss'
 })

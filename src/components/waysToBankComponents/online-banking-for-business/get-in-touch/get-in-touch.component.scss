@@ -9,6 +9,10 @@
     gap: 1.5rem;
     height: 100%;
     background-color: #ffffff;
+    word-break: break-word;
+    @media screen and (max-width: 480px) {
+      flex-direction: column;
+    }
     h4 {
       font-family: "BSP-Regular";
       font-size: 1.375rem;

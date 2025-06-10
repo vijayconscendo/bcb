@@ -1,6 +1,6 @@
 .breadCrumb{
     ul{
-        list-style: none; padding: 0; margin: 0; display: flex; align-items: center;
+        list-style: none; padding: 0; margin: 0; display: flex; align-items: center; flex-wrap: wrap; row-gap: 0.75rem;
         li{
             .route-name{
                 font-family: "BSP-Regular";
@@ -15,6 +15,9 @@
     &.h-center{
         ul{
             justify-content: center;
+            @media screen and (max-width: 768px) {
+                justify-content: flex-start;
+            }
         }
     }
 }

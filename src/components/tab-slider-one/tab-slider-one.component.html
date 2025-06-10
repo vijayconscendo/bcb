@@ -1,0 +1,55 @@
+<!-- Desktop: Tabs -->
+<ul class="nav nav-tabs d-none d-md-flex styled-tabs-one" role="tablist">
+  <li class="nav-item" role="presentation" *ngFor="let tab of tabs">
+    <button
+      class="nav-link"
+      [class.active]="tab.active"
+      [id]="tab.id + '-tab'"
+      data-bs-toggle="tab"
+      [attr.data-bs-target]="'#' + tab.id"
+      type="button"
+      role="tab"
+      [attr.aria-controls]="tab.id"
+      [attr.aria-selected]="tab.active"
+      (click)="activateTab(tab.id)"
+    >
+      {{ tab.label }}
+    </button>
+  </li>
+</ul>
+
+<!-- Mobile: Dropdown using ng-select -->
+<div class="d-block d-md-none mb-3">
+  <ng-select
+    [items]="tabs"
+    bindLabel="label"
+    bindValue="id"
+    [clearable]="false"
+    [(ngModel)]="activeTabId"
+    (change)="activateTab(activeTabId)"
+    class="custom-ngs"
+  >
+  </ng-select>
+</div>
+
+<div class="tab-content">
+  <div
+    class="tab-pane fade"
+    *ngFor="let tab of tabs"
+    [class.show]="tab.active"
+    [class.active]="tab.active"
+    [id]="tab.id"
+    role="tabpanel"
+    [attr.aria-labelledby]="tab.id + '-tab'"
+  >
+    <ng-container *ngIf="tab.component; else textContent">
+      <ng-container *ngComponentOutlet="tab.component"></ng-container>
+    </ng-container>
+
+    <ng-template #textContent>
+      {{ tab.content }}
+    </ng-template>
+  </div>
+</div>
+
+

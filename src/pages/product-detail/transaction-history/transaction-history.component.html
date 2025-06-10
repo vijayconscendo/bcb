@@ -35,14 +35,12 @@
         </div>
 
         <div class="search-and-filter">
-          <app-custom-search
-            [(value)]="searchTerm"
-            placeholder="Search here..."
-          >
-          </app-custom-search>
+            <app-custom-search
+                placeholder="Search tickets...">
+            </app-custom-search>
           <button
             type="button"
-            class="primaryBtnOutline"
+            class="primary-btn-outline"
             (click)="toggleSearchFilter()"
           >
             <span>FILTER</span

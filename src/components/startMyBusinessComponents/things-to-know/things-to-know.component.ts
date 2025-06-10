@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { BreadcrumbComponent } from '../../generic-components/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-things-to-know',
-  imports: [RouterLink],
+  imports: [BreadcrumbComponent],
   templateUrl: './things-to-know.component.html',
   styleUrl: './things-to-know.component.scss'
 })

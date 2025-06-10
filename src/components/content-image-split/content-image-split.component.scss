@@ -13,26 +13,16 @@
   align-items: center;
   padding: 1.5rem 2.5rem;
   @include bp.respond-below("sm") {
-    padding: 40px 1rem;
+    padding: 1.5rem;
   }
-  @include bp.respond-below("xs") {
-    padding: 0 0 30px;
+  @include bp.respond-below("tablet") {
+    padding: 1.5rem 0;
   }
 }
 .text-content {
   h2 {
-    font-family: "BSP-Regular", sans-serif;
-    font-size: 3rem;
-    line-height: 1.3;
     margin-bottom: 1.875rem;
-    color: var(--color-text);
     max-width: 420px;
-    @include bp.respond-below("sm") {
-      font-size: 2.375rem;
-    }
-    @include bp.respond-below("xs") {
-      font-size: 2rem;
-    }
     @include bp.respond-below("mobile-xs") {
       font-size: 1.75rem;
     }
@@ -51,7 +41,7 @@
       margin-bottom: 1.875rem;
     }
   }
-  .primaryBtn {
+  .primary-btn {
     min-width: 280px;
     @include bp.respond-below("mobile-xs") {
       min-width: auto;

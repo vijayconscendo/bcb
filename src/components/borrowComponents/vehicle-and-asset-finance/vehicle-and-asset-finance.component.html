@@ -1,16 +1,15 @@
-<div class="page-wrapper">
 <!-- PAGE BANNER START -->
 <app-page-banner
-    [title]="'Lease, or buy'"
-    [imageUrl]="'assets/images/banners/vehicle-and-asset-finance.jpg'"
+[title]="'Lease, or buy'"
+[imageUrl]="'assets/images/banners/vehicle-and-asset-finance.jpg'"
 ></app-page-banner>
 <!-- ./PAGE BANNER END -->
 
+<div class="page-bg">
     <div class="custom-container">
-
         <app-breadcrumb
             [showBackButton]="false"
-            customClass="mt-5 h-center"
+            customClass="py-5 h-center"
             [breadcrumbs]="[
                 { label: 'Home', url: '/' },
                 { label: 'Borrow', url: '/borrow' },

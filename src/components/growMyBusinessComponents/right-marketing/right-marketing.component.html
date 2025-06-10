@@ -11,46 +11,17 @@
       </div>
       <!-- Article Banner End-->
 
-      <!-- Article Breadcrumb -->
-      <nav class="breadCrumb">
-        <ul>
-          <li>
-            <a class="route-name" [routerLink]="['/']"><span>Home</span></a>
-          </li>
-          <li>
-            <img
-              class="img-fluid"
-              src="assets/images/icons/breadcrumb-rt.png"
-              alt="breadcrumb-rt"
-            />
-          </li>
-          <li>
-            <a class="route-name" [routerLink]="['/articles']"
-              ><span>Help me start my business</span></a
-            >
-          </li>
-          <li>
-            <img
-              class="img-fluid"
-              src="assets/images/icons/breadcrumb-rt.png"
-              alt="breadcrumb-rt"
-            />
-          </li>
-          <li>
-            <a class="route-name" [routerLink]="['/articles']"
-              ><span>guides</span></a
-            >
-          </li>
-          <li>
-            <img
-              class="img-fluid"
-              src="assets/images/icons/breadcrumb-rt.png"
-              alt="breadcrumb-rt"
-            />
-          </li>
-        </ul>
-      </nav>
-      <!-- Article Breadcrumb End -->
+      <!-- Breadcrumb -->
+      <app-breadcrumb
+        [showBackButton]="false"
+        customClass="h-center mb-4"
+        [breadcrumbs]="[
+          { label: 'Home', url: '/' },
+          { label: 'Help me grow my business', url: '/articles' },
+          { label: 'guides', url: '/articles' }
+        ]"
+      ></app-breadcrumb>
+      <!-- ./Breadcrumb -->
 
       <!-- Article Tagline and Date -->
       <div class="article-tagline">

@@ -11,46 +11,17 @@
       </div>
       <!-- Article Banner End-->
 
-      <!-- Article Breadcrumb -->
-      <nav class="breadCrumb">
-        <ul>
-          <li>
-            <a class="route-name" [routerLink]="['/']"><span>Home</span></a>
-          </li>
-          <li>
-            <img
-              class="img-fluid"
-              src="assets/images/icons/breadcrumb-rt.png"
-              alt="breadcrumb-rt"
-            />
-          </li>
-          <li>
-            <a class="route-name" [routerLink]="['/articles']"
-              ><span>Help me start my business</span></a
-            >
-          </li>
-          <li>
-            <img
-              class="img-fluid"
-              src="assets/images/icons/breadcrumb-rt.png"
-              alt="breadcrumb-rt"
-            />
-          </li>
-          <li>
-            <a class="route-name" [routerLink]="['/articles']"
-              ><span>Guides</span></a
-            >
-          </li>
-          <li>
-            <img
-              class="img-fluid"
-              src="assets/images/icons/breadcrumb-rt.png"
-              alt="breadcrumb-rt"
-            />
-          </li>
-        </ul>
-      </nav>
-      <!-- Article Breadcrumb End -->
+      <!-- Breadcrumb -->
+      <app-breadcrumb
+        [showBackButton]="false"
+        customClass="h-center mb-4"
+        [breadcrumbs]="[
+          { label: 'Home', url: '/' },
+          { label: 'Help me manage my business', url: '/articles' },
+          { label: 'Guides', url: '/articles' }
+        ]"
+      ></app-breadcrumb>
+      <!-- ./Breadcrumb -->
 
       <!-- Article Tagline and Date -->
       <div class="article-tagline">
@@ -59,49 +30,98 @@
       <!-- Article Tagline and Date End -->
 
       <div>
-        <h1 class="article-title">
-          It takes a phone call to avoid this scam
-        </h1>
+        <h1 class="article-title">It takes a phone call to avoid this scam</h1>
         <p class="article-title-description">
-          When a supplier changes banking details, businesses need to know that scammers are on the hunt to make lucrative profits.
+          When a supplier changes banking details, businesses need to know that
+          scammers are on the hunt to make lucrative profits.
         </p>
         <p class="text-normal">
-          There is an alarming increase in the rate of cyber scams affecting many businesses, and the scammers are becoming more convincing. 
+          There is an alarming increase in the rate of cyber scams affecting
+          many businesses, and the scammers are becoming more convincing.
         </p>
-        <p class="text-normal">If you are concerned about a certain email or suspect it may be fraudulent activity on the changing of banking details of your supplier, it's important to flag it. </p>
-        <p class="text-normal">Bilal Kajee, head of Risk Management, Business and Commercial Banking at Standard Bank Group, says the old fashioned way of verifying email notification from a supplier or third party is easy as making a phone call. </p>
-        <p class="text-normal">Criminals go to great lengths to prolong a scam; it’s only when the real supplier terminates services that clients realise they have been scammed. </p>
+        <p class="text-normal">
+          If you are concerned about a certain email or suspect it may be
+          fraudulent activity on the changing of banking details of your
+          supplier, it's important to flag it.
+        </p>
+        <p class="text-normal">
+          Bilal Kajee, head of Risk Management, Business and Commercial Banking
+          at Standard Bank Group, says the old fashioned way of verifying email
+          notification from a supplier or third party is easy as making a phone
+          call.
+        </p>
+        <p class="text-normal">
+          Criminals go to great lengths to prolong a scam; it’s only when the
+          real supplier terminates services that clients realise they have been
+          scammed.
+        </p>
       </div>
-      </div>
+    </div>
 
-      <div class="bg-gray-light pt-5 pb-2">
-        <div class="article-page-container">
-            <h3 class="heading-md">5 ways to identify and avoid change of banking details scams</h3>
-            <ol>
-              <li>
-                <p class="text-normal">Be aware of emails notifying you of changes in the banking details of said supplier or third party. You should follow up by making a phone call to the beneficiary to check whether the information received is correct. Kajee advises avoiding contacting new numbers or names in the email as this may be a way for fraudsters to get in contact with you. Call the people you have been doing business with for a long period of time directly.</p>
-              </li>
-              <li>
-                <p class="text-normal">If you are unable to contact the supplier or beneficiary to confirm the change in banking details, contact the bank as they provide account validation letters.</p>
-              </li>
-              <li>
-                <p class="text-normal">Standard Bank clients can validate the bank account details through the account verification services function on Standard Bank’s payment platform.</p>
-              </li>
-              <li>
-                <p class="text-normal">To avoid fraudsters, send the supplier or beneficiary the proof of payment directly. </p>
-              </li>
-              <li>
-                <p class="text-normal">Upgrade your computer security software and email systems. This includes turning on 2-step verifications. </p>
-              </li>
-            </ol>
-
-            <p class="text-normal"><strong>Top tip:</strong> Often communicate your client strategies to your suppliers, staff and finance staff to educate them on the threats and ask them to call and do basic follow-up checks. This greatly assists in defending you against scammers.</p>
-            <h3 class="heading-sm">Reference</h3>
+    <div class="bg-gray-light pt-5 pb-2">
+      <div class="article-page-container">
+        <h3 class="heading-md">
+          5 ways to identify and avoid change of banking details scams
+        </h3>
+        <ol>
+          <li>
             <p class="text-normal">
-              IT News Africa. 2023. ‘Businesses Can Protect Themselves from Scammers’. [Online] Available: <a class="link" target="_blank" href="https://www.itnewsafrica.com/2023/04/businesses-can-protect-themselves-from-scammers/">https://www.itnewsafrica.com/2023/04/businesses-can-protect-themselves-from-scammers/</a> (Accessed 12 May 2023).
+              Be aware of emails notifying you of changes in the banking details
+              of said supplier or third party. You should follow up by making a
+              phone call to the beneficiary to check whether the information
+              received is correct. Kajee advises avoiding contacting new numbers
+              or names in the email as this may be a way for fraudsters to get
+              in contact with you. Call the people you have been doing business
+              with for a long period of time directly.
             </p>
-          </div>
-      </div>
+          </li>
+          <li>
+            <p class="text-normal">
+              If you are unable to contact the supplier or beneficiary to
+              confirm the change in banking details, contact the bank as they
+              provide account validation letters.
+            </p>
+          </li>
+          <li>
+            <p class="text-normal">
+              Standard Bank clients can validate the bank account details
+              through the account verification services function on Standard
+              Bank’s payment platform.
+            </p>
+          </li>
+          <li>
+            <p class="text-normal">
+              To avoid fraudsters, send the supplier or beneficiary the proof of
+              payment directly.
+            </p>
+          </li>
+          <li>
+            <p class="text-normal">
+              Upgrade your computer security software and email systems. This
+              includes turning on 2-step verifications.
+            </p>
+          </li>
+        </ol>
 
+        <p class="text-normal">
+          <strong>Top tip:</strong> Often communicate your client strategies to
+          your suppliers, staff and finance staff to educate them on the threats
+          and ask them to call and do basic follow-up checks. This greatly
+          assists in defending you against scammers.
+        </p>
+        <h3 class="heading-sm">Reference</h3>
+        <p class="text-normal">
+          IT News Africa. 2023. ‘Businesses Can Protect Themselves from
+          Scammers’. [Online] Available:
+          <a
+            class="link"
+            target="_blank"
+            href="https://www.itnewsafrica.com/2023/04/businesses-can-protect-themselves-from-scammers/"
+            >https://www.itnewsafrica.com/2023/04/businesses-can-protect-themselves-from-scammers/</a
+          >
+          (Accessed 12 May 2023).
+        </p>
+      </div>
     </div>
   </div>
+</div>

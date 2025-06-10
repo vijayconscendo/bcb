@@ -1,7 +1,7 @@
 <div class="contact-us-page">
     <div class="banner">
         <div class="custom-container">
-            <button type="button" class="backBtn" [routerLink]="'/'" ><img class="img-fluid" src="assets/images/icons/back-icon-lt-white.png" alt="back icon"> <span>Back</span></button>
+            <button type="button" class="back-btn" [routerLink]="'/'" ><img class="img-fluid" src="assets/images/icons/back-icon-lt-white.png" alt="back icon"> <span>Back</span></button>
             <div class="banner-content">
                 <div class="banner-text">
                     <h1>Contact us</h1>
@@ -16,15 +16,27 @@
             @for (card of contactCards; track card) {
                 <div class="contact-card">
                   <div class="inner-content">
-                    <img class="img-fluid" [src]="card.image" [alt]="card.title" />
+                    <img class="img-fluid card-icon" [src]="card.image" [alt]="card.title" />
                     <h5>{{ card.title }}</h5>
                     <p>{{ card.description }}</p>
-                    <button type="button" class="primaryBtnOutline contact-btn"
-                      [attr.data-bs-toggle]="card.buttonText === 'Subscribe to newsletter' ? 'modal' : null"
-                      [attr.data-bs-target]="card.buttonText === 'Subscribe to newsletter' ? '#subscribenewsletter' : null"
+                    <button
+                      *ngIf="card.buttonUrl; else modalOrDefault"
+                      type="button"
+                      class="primary-btn-outline contact-btn"
+                      [routerLink]="card.buttonUrl"
                     >
                       {{ card.buttonText }}
                     </button>
+                    <ng-template #modalOrDefault>
+                      <button
+                        type="button"
+                        class="primary-btn-outline contact-btn"
+                        [attr.data-bs-toggle]="card.buttonText === 'Subscribe to newsletter' ? 'modal' : null"
+                        [attr.data-bs-target]="card.buttonText === 'Subscribe to newsletter' ? '#subscribenewsletter' : null"
+                      >
+                        {{ card.buttonText }}
+                      </button>
+                    </ng-template>
                   </div>
                 </div>
               }

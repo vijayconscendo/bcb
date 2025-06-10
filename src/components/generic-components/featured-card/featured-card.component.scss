@@ -1,9 +1,9 @@
-@use "../../../styles/custom-breakpoints" as bp;
+@use "custom-breakpoints" as bp;
 
 .featured-card {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100%; width: 100%;
   overflow: hidden;
   border-radius: 0.75rem;
   margin-bottom: 1.125rem;
@@ -17,6 +17,7 @@
       height: auto;
       max-height: 240px;
       display: block;
+      object-fit: cover;
     }
   }
 
@@ -47,16 +48,18 @@
     }
 
     .featured-card__description {
+      font-family: "BSP-Regular", sans-serif;
       font-size: 1rem;
       line-height: 1.3;
-      margin-bottom: 1rem;
+      color: var(--color-gray-medium);
+      margin-bottom: 1.25rem;
       display: -webkit-box;
+      line-clamp: 2;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
-
-      @include bp.respond-below('mobile-xs') {
+      @include bp.respond-below("mobile-xs") {
         font-size: 0.875rem;
         margin-bottom: 1.125rem;
       }

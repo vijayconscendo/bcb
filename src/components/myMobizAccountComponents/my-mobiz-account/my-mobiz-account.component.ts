@@ -3,21 +3,21 @@ import { PageIntroComponent } from '../../generic-components/page-intro/page-int
 import { ImageHeadingCard } from '../../../models/image-heading-card.model';
 import { ImageHeadingCardComponent } from '../../generic-components/image-heading-card/image-heading-card.component';
 import { TabListComponent } from './tab-list/tab-list.component';
-import { RouterLink } from '@angular/router';
 import { CtaComponent } from '../../generic-components/cta/cta.component';
 import { DynamicSwiperComponent } from '../../generic-components/dynamic-swiper/dynamic-swiper.component';
 import { UcountSecComponent } from '../../generic-components/ucount-sec/ucount-sec.component';
 import { FeaturedCardComponent } from '../../generic-components/featured-card/featured-card.component';
 import { PageIntroCardComponent } from '../../generic-components/page-intro-card/page-intro-card.component';
+import { BreadcrumbComponent } from '../../generic-components/breadcrumb/breadcrumb.component';
 
 
 @Component({
   selector: 'app-my-mobiz-account',
   imports: [
     PageIntroComponent,
+    BreadcrumbComponent,
     ImageHeadingCardComponent,
     TabListComponent,
-    RouterLink,
     CtaComponent,
     DynamicSwiperComponent,
     UcountSecComponent,

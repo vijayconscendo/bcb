@@ -1,5 +1,5 @@
 <div *ngIf="isBrowser" class="custom-swiper-wrapper" [id]="uniqueId">
-  <swiper-container #customSwiper init="false" class="custom-swiper">
+  <swiper-container #customSwiper init="false">
     <!-- <swiper-slide class="swiper-slide" *ngFor="let slide of slides">
       <p>{{ slide }}</p>
     </swiper-slide> -->
@@ -7,8 +7,7 @@
         <ng-container *ngTemplateOutlet="itemTemplate; context: { $implicit: slide }"></ng-container>
     </swiper-slide>
   </swiper-container>
-
-  <div class="custom-control">
+  <div class="custom-control" *ngIf="showControls">
     <div class="custom-navigation">
       <button class="swiper-prev">
         <img src="assets/images/icons/carousel-arrow-lt.png" alt="Previous" />

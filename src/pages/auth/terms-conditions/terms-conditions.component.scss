@@ -6,6 +6,9 @@
 }
 .terms-block {
   padding: 1rem;
+  @media screen and (max-width: 680px) {
+    padding: 1rem 0.5rem;
+  }
   h4 {
     font-family: "BSP-Bold";
     font-size: 1rem;

@@ -6,7 +6,7 @@
 
   <div class="container-fluid px-0 count-block">
     <div class="row">
-      <div class="col-lg-4" *ngFor="let step of steps">
+      <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let step of steps">
         <div class="ucount-block">
           <h4>{{ step.number }}</h4>
           <span>{{ step.title }}</span>
@@ -16,7 +16,7 @@
     </div>
   </div>
 
-  <button type="button" class="primaryBtn" [routerLink]="buttonLink">
+  <button type="button" class="primary-btn" [routerLink]="buttonLink">
     {{ buttonText }}
   </button>
 </div>

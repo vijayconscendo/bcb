@@ -57,7 +57,7 @@
         }
       }
     }
-    .primaryBtn {
+    .primary-btn {
         max-width: 300px;
     }
   }
@@ -86,7 +86,7 @@
       display: inline-block;
       width: 30px;
       height: 3px;
-      background-color: #5c6c80;
+      background-color: var(--color-gray-lightest);
       border-radius: 4px;
       transition: background-color 0.3s ease;
     }

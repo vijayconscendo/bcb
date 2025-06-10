@@ -2,6 +2,9 @@
   padding: 1.5rem;
   background-color: var(--color-white);
   height: 100%;
+  @media screen and (max-width: 767px) {
+    padding: 1rem;
+  }
 }
 .slider-container {
   position: relative;
@@ -18,6 +21,12 @@
       color: var(--color-text);
       margin: 0;
       max-width: 264px;
+      @media screen and (max-width: 991px) {
+        max-width: 100%;
+      }
+      @media screen and (max-width: 767px) {
+        font-size: 1.25rem;
+      }
     }
   }
   .slide-card-image {
@@ -69,8 +78,10 @@
 }
 
 // Custom Carousel Controls
-.push-slide-pagination{
-    display: flex; justify-content: center; padding-top: 0.5rem;
+.push-slide-pagination {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5rem;
 }
 
 .slide-prev,

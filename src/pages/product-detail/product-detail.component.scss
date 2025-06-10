@@ -1,34 +1,7 @@
 @use "../../styles/custom-modal";
 @use "../../styles/custom-pagination.scss";
 
-.page-wrapper {
-  padding: 1.625rem 0;
-  background-color: #f4f5f7;
-}
 
-.breadCrumb {
-  margin-bottom: 1.5rem;
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    li {
-      .route-name {
-        font-family: "BSP-Regular";
-        font-size: 0.875rem;
-        line-height: 1.3;
-        text-decoration: none;
-        color: var(--color-text);
-        cursor: pointer;
-      }
-      &:not(:last-child) {
-        margin-right: 0.625rem;
-      }
-    }
-  }
-}
 
 // tab-container
 .tab-container {

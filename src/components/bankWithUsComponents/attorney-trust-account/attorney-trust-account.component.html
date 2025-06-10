@@ -1,80 +1,90 @@
-<div class="page-wrapper">
-    <div class="custom-container">
-        <app-breadcrumb
-            [showBackButton]="false"
-            customClass="mt-5 h-center"
-            [breadcrumbs]="[
-                { label: 'Home', url: '/' },
-                { label: 'Products and Services', url: '/products-and-services' },
-                { label: 'Bank with us' }
-            ]"
-        ></app-breadcrumb>
+<div class="page-bg py-4">
+  <div class="custom-container">
+    <app-breadcrumb
+      [showBackButton]="false"
+      customClass="h-center"
+      [breadcrumbs]="[
+        { label: 'Home', url: '/' },
+        { label: 'Products and Services', url: '/products-and-services' },
+        { label: 'Bank with us', url: '/bank-with-us' },
+        { label: 'Trust accounts' }
+      ]"
+    ></app-breadcrumb>
 
-        <app-page-intro
-            [title]="'Attorney Trust Account'"
-        ></app-page-intro>
-        <app-page-intro-card
-            [description]="'Manage client funds in trust with a bank account that ticks all the legal boxes while earning interest.'"
-            [imageSrc]="'assets/images/media/attorney-trust-account.jpg'"
-            [imageAlt]="'Attorney Trust Account'"
-            [primaryButtonLabel]="'apply now'"
-            [primaryButtonLink]="'/open-account'"
-            [primaryOutlineButtonLabel]="'compare'"
-            [primaryOutlineButtonLink]="'/learn-more-attorney-trust-account'"
-            [showButtons]="true"
-            [value]="'0.00'"
-            [valueDescription]="'Monthly fee'"
-        ></app-page-intro-card>
-
-        <div class="sec-b-space">
-            <h3 class="text-heading-sm mb-4">Some of the Benefits</h3>
-            <app-image-heading-card [imageHeaduingCards]="imageHeadingCardsData"></app-image-heading-card>
-        </div>
-        <div class="sec-b-space">
-            <app-tab-list></app-tab-list>
-        </div>
-
-<!-- Tips and Guidance carousel start -->
+    <app-page-intro [title]="'Attorney Trust Account'"></app-page-intro>
     <div class="sec-b-space">
-        <h3 class="text-heading-sm mb-4">Tips and guidance</h3>
-        <app-dynamic-swiper 
-            [slides]="cardLinks"
-            [itemTemplate]="slideTemplate"
-            [breakpoints]="customBreakpoints"
-        ></app-dynamic-swiper>
-        <ng-template #slideTemplate let-carddata>
-            <app-card-with-links
-                [title]="carddata.title"
-                [description]="carddata.description"
-                [links]="carddata.links"
-                class="w-100"
-                >
-            </app-card-with-links>
-        </ng-template>
+      <app-page-intro-card
+        [description]="
+          'Manage client funds in trust with a bank account that ticks all the legal boxes while earning interest.'
+        "
+        [imageSrc]="'assets/images/media/attorney-trust-account.jpg'"
+        [imageAlt]="'Attorney Trust Account'"
+        [primaryButtonLabel]="'apply now'"
+        [primaryButtonLink]="'/open-account'"
+        [primaryOutlineButtonLabel]="'compare'"
+        [primaryOutlineButtonLink]="'/learn-more-attorney-trust-account'"
+        [showButtons]="true"
+        [value]="'93'"
+        [valueDescription]="'Monthly fee'"
+      ></app-page-intro-card>
     </div>
-<!-- Tips and Guidance carousel end -->
 
-<!-- We also offer carousel start -->
+    <div>
+      <h3 class="heading-sm mb-4">Some of the Benefits</h3>
+      <app-image-heading-card
+        [imageHeaduingCards]="imageHeadingCardsData"
+      ></app-image-heading-card>
+    </div>
+  </div>
+</div>
+<div class="py-5">
+  <div class="custom-container">
     <div class="sec-b-space">
-        <h3 class="text-heading-sm mb-4">We also offer</h3>
-        <app-dynamic-swiper 
-            [slides]="featuredCardData"
-            [itemTemplate]="slideTemplate1"
-            [breakpoints]="customBreakpoints1"
-        ></app-dynamic-swiper>
-        <ng-template #slideTemplate1 let-carddata>
-              <app-featured-card
-                [title]="carddata.title" 
-                [description]="carddata.description" 
-                [imageSrc]="carddata.imageSrc" 
-                [imageAlt]="carddata.imageAlt"
-                [buttonLabel]="carddata.buttonLabel"
-                [buttonLink]="carddata.buttonLink"
-                [className]="'wide-card-img w-100'"
-            ></app-featured-card>
-        </ng-template>
+      <app-tab-list></app-tab-list>
     </div>
-<!-- We also offer carousel end -->
 
+    <!-- Tips and Guidance carousel start -->
+    <div class="sec-b-space">
+      <h3 class="heading-sm mb-4">Tips and guidance</h3>
+      <app-dynamic-swiper
+        [slides]="cardLinks"
+        [itemTemplate]="slideTemplate"
+        [breakpoints]="customBreakpoints"
+      ></app-dynamic-swiper>
+      <ng-template #slideTemplate let-carddata>
+        <app-card-with-links
+          [title]="carddata.title"
+          [description]="carddata.description"
+          [links]="carddata.links"
+          [showButton]="carddata.button?.show || false"
+          class="w-100"
+        >
+        </app-card-with-links>
+      </ng-template>
     </div>
+    <!-- Tips and Guidance carousel end -->
+
+    <!-- We also offer carousel start -->
+    <div class="sec-b-space">
+      <h3 class="heading-sm mb-4">We also offer</h3>
+      <app-dynamic-swiper
+        [slides]="featuredCardData"
+        [itemTemplate]="slideTemplate1"
+        [breakpoints]="customBreakpoints1"
+      ></app-dynamic-swiper>      
+      <ng-template #slideTemplate1 let-carddata>
+        <app-featured-card
+          [title]="carddata.title"
+          [description]="carddata.description"
+          [imageSrc]="carddata.imageSrc"
+          [imageAlt]="carddata.imageAlt"
+          [buttonLabel]="carddata.buttonLabel"
+          [buttonLink]="carddata.buttonLink"
+          [className]="'wide-card-img w-100'"
+          class="w-100"
+        ></app-featured-card>
+      </ng-template>
+    </div>
+    <!-- We also offer carousel end -->
+  </div>
 </div>

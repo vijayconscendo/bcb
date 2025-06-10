@@ -1,114 +1,115 @@
 @use "custom-breakpoints" as bp;
 
-/* ----- BUTTON COMMON STYLES ----- */
-.primaryBtn {
+// Mixins
+@mixin btn-common {
   display: inline-flex;
-  justify-content: center;
   align-items: center;
-  gap: 0.625rem;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-family: "BSP-Medium", Arial, sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  line-height: normal;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 50px;
+  &:disabled,
+  &[aria-disabled="true"] {
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  @media screen and (max-width: 1365.99px) {
+    min-height: 45px;
+  }
+  @media screen and (max-width: 1200px) {
+    min-height: 42px;
+  }
+  @media screen and (max-width: 1024px) {
+    font-size: 0.75rem;
+    min-height: 40px;
+  }
+
+}
+
+// Primary Button
+.primary-btn {
+  @include btn-common;
+  border-color: var(--color-primary);
   background-color: var(--color-primary);
   color: var(--color-white);
-  text-decoration: none;
-  font-family: "BSP-Medium", sans-serif;
-  font-size: 0.875rem;
-  letter-spacing: 0.0625rem;
-  text-transform: uppercase;
-  line-height: normal;
-  padding: 0.5rem 1rem;
-  min-height: 3.125rem;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  &:hover {
+    background-color: rgba(0, 98, 225, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 }
 
-.primaryBtn:hover {
-  background-color: rgba(0, 98, 225, 0.9);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.primaryBtn:disabled {
-  background-color: #CCCCCC;
-  color: #888888;
-  cursor: not-allowed;
-}
-
-.primaryBtnOutline {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.625rem;
-  background-color: var(--color-white);
+// Primary Button Outline
+.primary-btn-outline {
+  @include btn-common;
+  border-color: var(--color-primary);
+  background-color: transparent;
   color: var(--color-primary);
-  text-decoration: none;
-  font-family: "BSP-Medium", sans-serif;
-  font-size: 0.875rem;
-  letter-spacing: 0.0625rem;
-  text-transform: uppercase;
-  line-height: normal;
-  min-height: 3.125rem;
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--color-primary);
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-
+  &:hover {
+    background-color: rgba(0, 98, 225, 0.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
 }
 
-.primaryBtnOutline:hover {
-  background-color: rgba(0, 98, 225, 0.05);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
 
-.primaryBtnOutline:disabled {
-  border-color: #CCCCCC;
-  color: #888888;
-  cursor: not-allowed;
-}
-
-.btn-common{
-  display: inline-flex; align-items: center; justify-content: center;gap:0.625rem;text-decoration: none;
-  font-family: "BSP-Medium"; font-size: 0.875rem; text-transform: uppercase; line-height: normal;
-  padding: 0.5rem 1rem;min-height: 3.125rem;border: 1px solid transparent; border-radius: 0.5rem; cursor: pointer; background-color: transparent;
-  transition: all 0.3s ease;
-}
-
-.btn-outline-white{
+// Primary Button White
+.primary-btn-white {
+  @include btn-common;
   border-color: var(--color-white);
-  color: var(--color-white);
-}
-
-.btn-text{
-  color: var(--color-white);
-}
-
-.primaryBtnWhite {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
   background-color: var(--color-white);
   color: var(--color-primary);
-  text-decoration: none;
-  font-family: "BSP-Medium", sans-serif;
-  font-size: 0.875rem;
-  letter-spacing: 0.0625rem;
-  text-transform: uppercase;
-  line-height: normal;
-  padding: 1rem;
-  border: 1px solid var(--color-white);
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  &:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
 }
 
-.primaryBtnWhite:hover {
-  background-color: var(--color-primary);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+// White Outline Text Button
+.btn-outline-white{
+  @include btn-common;
   color: var(--color-white);
+  border-color: var(--color-white);
+  background-color: transparent;
+}
+
+// Button Text 
+.btn-text {
+  @include btn-common;
+  background-color: var(--color-primary);
+  color: var(--color-primary);
+  border: none;
 }
 
 
-.backBtn{
+// Link Button
+.link-btn {
+  @include btn-common;
+  padding: 0;
+  min-height: auto;
+  background: none;
+  border: none;
+  color: var(--color-primary);
+}
+
+.btn-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  object-fit: contain;
+}
+
+// Back Button for previous page
+.back-btn{
     border: 1px solid var(--color-primary);
     border-radius: 30px;
     padding: 3px 14px;
@@ -126,4 +127,25 @@
         color: var(--color-primary);
     }
 }
-/* ----- BUTTON COMMON STYLES END ----- */
+
+// Button Unstyles
+.btn-null{
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  color: inherit !important;
+  cursor: pointer !important;
+}
+
+.text-link-btn{
+  font-family: "BSP-Medium";
+  font-size: 0.875rem;
+  line-height: normal;
+  color: var(--color-primary);
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  &:hover{
+    text-decoration: underline; text-underline-offset: 0.25rem;
+  }
+}

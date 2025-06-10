@@ -1,81 +1,86 @@
-<div class="page-wrapper">
-    <app-page-banner
-        [title]="'To use, or buy to let'"
-        [imageUrl]="'assets/images/banners/commercial-property.jpg'"
-    ></app-page-banner>
+<app-page-banner
+  [title]="'To use, or buy to let'"
+  [imageUrl]="'assets/images/banners/commercial-property.jpg'"
+></app-page-banner>
+<div class="page-bg py-5">
+  <div class="custom-container">
+    <app-breadcrumb
+      [showBackButton]="false"
+      customClass="h-center"
+      [breadcrumbs]="[
+        { label: 'Home', url: '/' },
+        { label: 'Products and Services', url: '/products-and-services' },
+        { label: 'Bank with us' }
+      ]"
+    ></app-breadcrumb>
 
-    <div class="custom-container">
-        <app-breadcrumb
-            [showBackButton]="false"
-            customClass="mt-5 h-center"
-            [breadcrumbs]="[
-                { label: 'Home', url: '/' },
-                { label: 'Products and Services', url: '/products-and-services' },
-                { label: 'Bank with us' }
-            ]"
-        ></app-breadcrumb>
+    <app-page-intro
+      [title]="'Commercial property finance'"
+      [description]="
+        'Time for premises you can call your own? Or found the next asset for your portfolio? Get customised terms with our property experts.'
+      "
+    ></app-page-intro>
 
-        <app-page-intro
-            [title]="'Commercial property finance'"
-            [description]="'Time for premises you can call your own? Or found the next asset for your portfolio? Get customised terms with our property experts.'"
-        ></app-page-intro>
-
-
-        <div class="sec-b-space">
-            <h3 class="text-heading-sm mb-4">Some of the Benefits</h3>
-            <app-image-heading-card [imageHeaduingCards]="imageHeadingCardsData"></app-image-heading-card>
-        </div>
-
-        <div class="sec-b-space">
-            <h3 class="text-heading-sm mb-4">What are you looking for?</h3>
-            <div class="card-grid-container">
-                <app-inline-image-text-card
-                    [imageSrc]="'assets/images/media/bus.jpg'"
-                    [imageAlt]="'Description of the image'"
-                    [title]="'For investors'"
-                    [description]="'Maximise your portfolio’s growth potential with expert support.'"
-                    [linkText]="'Tell me more'"
-                    [linkUrl]="'/some-page'"
-                    [verticalView]="false">
-                </app-inline-image-text-card>
-                <app-inline-image-text-card
-                    [imageSrc]="'assets/images/media/bus.jpg'"
-                    [imageAlt]="'Description of the image'"
-                    [title]="'For owner-occupiers'"
-                    [description]="'Eliminate rental escalations with your own appreciating asset.'"
-                    [linkText]="'Tell me more'"
-                    [linkUrl]="'/some-page'"
-                    [verticalView]="false">
-                </app-inline-image-text-card>
-            </div>
-        </div>
-    </div>
-
-    <div class="bg-white pt-5">
-        <div class="custom-container">
-                    <!-- We also offer carousel start -->
     <div class="sec-b-space">
-        <h3 class="heading-base mb-4">We also offer</h3>
-        <app-dynamic-swiper
-            [slides]="featuredCardData"
-            [itemTemplate]="slideTemplate"
-            [breakpoints]="customBreakpoints"
-        ></app-dynamic-swiper>
-        <ng-template #slideTemplate let-carddata>
-              <app-featured-card
-                [title]="carddata.title" 
-                [description]="carddata.description" 
-                [imageSrc]="carddata.imageSrc" 
-                [imageAlt]="carddata.imageAlt"
-                [buttonLabel]="carddata.buttonLabel"
-                [buttonLink]="carddata.buttonLink"
-                [className]="'wide-card-img'"
-            ></app-featured-card>
-        </ng-template>
-    </div>
-<!-- We also offer carousel end -->
-        </div>
+      <h3 class="heading-sm mb-4">Some of the Benefits</h3>
+      <app-image-heading-card
+        [imageHeaduingCards]="imageHeadingCardsData"
+      ></app-image-heading-card>
     </div>
 
-
+    <div class="pb-3">
+      <h3 class="heading-sm mb-4">What are you looking for?</h3>
+      <div class="card-grid-container">
+        <app-inline-image-text-card
+          [imageSrc]="'assets/images/media/bus.jpg'"
+          [imageAlt]="'Description of the image'"
+          [title]="'For investors'"
+          [description]="
+            'Maximise your portfolio’s growth potential with expert support.'
+          "
+          [linkText]="'Tell me more'"
+          [linkUrl]="'/some-page'"
+          [verticalView]="false"
+        >
+        </app-inline-image-text-card>
+        <app-inline-image-text-card
+          [imageSrc]="'assets/images/media/bus.jpg'"
+          [imageAlt]="'Description of the image'"
+          [title]="'For owner-occupiers'"
+          [description]="
+            'Eliminate rental escalations with your own appreciating asset.'
+          "
+          [linkText]="'Tell me more'"
+          [linkUrl]="'/some-page'"
+          [verticalView]="false"
+        >
+        </app-inline-image-text-card>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pt-5">
+  <div class="custom-container">
+    <!-- We also offer carousel start -->
+    <div class="sec-b-space">
+      <h3 class="heading-base mb-4">We also offer</h3>
+      <app-dynamic-swiper
+        [slides]="featuredCardData"
+        [itemTemplate]="slideTemplate"
+        [breakpoints]="customBreakpoints"
+      ></app-dynamic-swiper>
+      <ng-template #slideTemplate let-carddata>
+        <app-featured-card
+          [title]="carddata.title"
+          [description]="carddata.description"
+          [imageSrc]="carddata.imageSrc"
+          [imageAlt]="carddata.imageAlt"
+          [buttonLabel]="carddata.buttonLabel"
+          [buttonLink]="carddata.buttonLink"
+          [className]="'wide-card-img'"
+        ></app-featured-card>
+      </ng-template>
+    </div>
+    <!-- We also offer carousel end -->
+  </div>
 </div>

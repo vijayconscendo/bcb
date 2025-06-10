@@ -1,26 +1,17 @@
-<div class="page-wrapper">
+<div class="page-bg py-4">
   <div class="custom-container">
-    <!-- Article Breadcrumb -->
-    <nav class="breadCrumb">
-        <ul>
-            <li>
-                <a class="route-name" [routerLink]="['/']"><span>Home</span></a>
-            </li>
-            <li>
-                <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-            </li>
-            <li>
-                <a class="route-name"><span>Ways to bank</span></a>
-            </li>
-            <li>
-                <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-            </li>
-            <li>
-                <a class="route-name"><span>Cellphone banking</span></a>
-            </li>
-        </ul>
-    </nav>
-    <!-- Article Breadcrumb End -->
+    <!-- Breadcrumb -->
+     <app-breadcrumb
+        [showBackButton]="false"
+        customClass="h-center"
+        [breadcrumbs]="[
+          { label: 'Home', url: '/' },
+          { label: 'Ways to bank' },
+          { label: 'Cellphone banking' }
+        ]"
+      >
+      </app-breadcrumb>
+    <!-- ./Breadcrumb -->
   <app-page-intro [title]="'Cellphone banking'"></app-page-intro>   
   <div class="sec-b-space"> 
   <app-page-promo-card 
@@ -38,7 +29,7 @@
     ></app-page-promo-card>
     </div>
     <div class="sec-b-space">
-      <h3 class="text-heading-sm mb-4">Some of the benefits</h3>
+      <h3 class="heading-sm mb-4">Some of the benefits</h3>
       <app-image-heading-card
         [imageHeaduingCards]="imageHeadingCardsData"
       ></app-image-heading-card>
@@ -52,7 +43,7 @@
 
     <!-- We also offer carousel start -->
     <div class="sec-b-space">
-      <h3 class="text-heading-sm mb-4">We also offer</h3>
+      <h3 class="heading-sm mb-4">We also offer</h3>
       <app-dynamic-swiper
         [slides]="offerCardData"
         [itemTemplate]="slideTemplate"

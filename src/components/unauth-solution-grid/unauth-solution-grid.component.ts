@@ -3,12 +3,11 @@ import { Component } from '@angular/core';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product.model';
-import { FeaturedProductComponent } from '../featured-product/featured-product.component';
 
 
 @Component({
   selector: 'app-unauth-solution-grid',
-  imports: [CommonModule, ProductCardComponent, FeaturedProductComponent],
+  imports: [CommonModule, ProductCardComponent],
   templateUrl: './unauth-solution-grid.component.html',
   styleUrl: './unauth-solution-grid.component.scss',
 
@@ -19,7 +18,7 @@ export class UnauthSolutionGridComponent {
   ngOnInit() {
     this.productService.getProducts().subscribe(products => {
       // Filter out the featured product from the grid
-      this.products = products.filter(product => !product.featured);
+      this.products = products;
     });
   }
 }

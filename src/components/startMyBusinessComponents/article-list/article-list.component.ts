@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { PageIntroComponent } from '../../generic-components/page-intro/page-intro.component';
 import { CustomSearchComponent } from "../../generic-components/custom-search/custom-search.component";
+import { BreadcrumbComponent } from '../../generic-components/breadcrumb/breadcrumb.component';
 
 
 interface Article {
@@ -18,16 +18,13 @@ interface Article {
 }
 @Component({
   selector: 'app-article-list',
-  imports: [CommonModule, RouterLink, NgSelectModule, FormsModule, PageIntroComponent, CustomSearchComponent],
+  imports: [CommonModule, BreadcrumbComponent, NgSelectModule, FormsModule, PageIntroComponent, CustomSearchComponent],
   templateUrl: './article-list.component.html',
   styleUrl: './article-list.component.scss'
 })
 export class ArticleListComponent {
  currentPage = 1;
   articlesPerPage = 9;
-
-  searchTerm=""
-
 
   selectyear = [
     { id: 1, name: '2020' },
@@ -81,7 +78,7 @@ export class ArticleListComponent {
       id: 5,
       title: 'Starting a side hustle',
       summary: 'Starting a side hustle is a smart financial move if you want to start your own business',
-      imageUrl: 'assets/images/banners/artical-banner-one.jpg',
+      imageUrl: 'assets/images/articles/article-banner-one.jpg',
       category: 'START YOUR BUSINESS',
       date: '15 OCT 2022',
       readMoreLink: '#'
@@ -90,7 +87,7 @@ export class ArticleListComponent {
       id: 6,
       title: 'The importance of patenting your products',
       summary: 'When you create a new product, design or process, you\'re likely to invest significant',
-      imageUrl: 'assets/images/banners/artical-banner-one.jpg',
+      imageUrl: 'assets/images/articles/article-banner-one.jpg',
       category: 'START YOUR BUSINESS',
       date: '30 AUG 2022',
       readMoreLink: '#'
@@ -99,7 +96,7 @@ export class ArticleListComponent {
       id: 7,
       title: 'The importance of patenting your products',
       summary: 'When you create a new product, design or process, you\'re likely to invest significant',
-      imageUrl: 'assets/images/banners/artical-banner-one.jpg',
+      imageUrl: 'assets/images/articles/article-banner-one.jpg',
       category: 'START YOUR BUSINESS',
       date: '30 AUG 2022',
       readMoreLink: '#'
@@ -108,7 +105,7 @@ export class ArticleListComponent {
       id: 8,
       title: 'The importance of patenting your products',
       summary: 'When you create a new product, design or process, you\'re likely to invest significant',
-      imageUrl: 'assets/images/banners/artical-banner-one.jpg',
+      imageUrl: 'assets/images/articles/article-banner-one.jpg',
       category: 'START YOUR BUSINESS',
       date: '30 AUG 2022',
       readMoreLink: '#'
@@ -117,7 +114,7 @@ export class ArticleListComponent {
       id: 9,
       title: 'The importance of patenting your products',
       summary: 'When you create a new product, design or process, you\'re likely to invest significant',
-      imageUrl: 'assets/images/banners/artical-banner-one.jpg',
+      imageUrl: 'assets/images/articles/article-banner-one.jpg',
       category: 'START YOUR BUSINESS',
       date: '30 AUG 2022',
       readMoreLink: '#'
@@ -126,7 +123,7 @@ export class ArticleListComponent {
       id: 10,
       title: 'The importance of patenting your products',
       summary: 'When you create a new product, design or process, you\'re likely to invest significant',
-      imageUrl: 'assets/images/banners/artical-banner-one.jpg',
+      imageUrl: 'assets/images/articles/article-banner-one.jpg',
       category: 'START YOUR BUSINESS',
       date: '30 AUG 2022',
       readMoreLink: '#'
@@ -135,7 +132,7 @@ export class ArticleListComponent {
       id: 11,
       title: 'The importance of patenting your products',
       summary: 'When you create a new product, design or process, you\'re likely to invest significant',
-      imageUrl: 'assets/images/banners/artical-banner-one.jpg',
+      imageUrl: 'assets/images/articles/article-banner-one.jpg',
       category: 'START YOUR BUSINESS',
       date: '30 AUG 2022',
       readMoreLink: '#'

@@ -1,4 +1,4 @@
-.search-container {
+.custom-search {
   display: flex;
   align-items: center;
   width: 100%;
@@ -7,7 +7,8 @@
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   background-color: var(--color-white);
-  .search-icon {
+  
+  .img-fluid {
     width: 20px;
     height: 20px;
   }
@@ -22,6 +23,7 @@
     color: var(--color-text);
     width: 100%;
     background-color: inherit;
+    
     &:focus {
       outline: none;
     }

@@ -1,8 +1,8 @@
-.page-wrapper {
-  background-color: #F4F5F7;
-  padding: 2rem 0;
-}
+
 
 .card-grid-container{
     display: grid; grid-template-columns: 1fr 1fr;
+    @media screen and (max-width: 991px) {
+        grid-template-columns: 1fr; gap: 1.5rem;
+    }
 }

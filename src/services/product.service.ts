@@ -12,7 +12,6 @@ export class ProductService {
       type: 'bank',
       title: 'Business Current Account',
       description: 'Streamline your banking with a business account that gives you access to secure electronic transfers, prepaid purchases and more',
-      featured: true,
       imageUrl: 'assets/images/cards/product-card.png'
     },
     {
@@ -45,7 +44,8 @@ export class ProductService {
   }
 
   getFeaturedProduct(): Observable<Product | undefined> {
-    return of(this.products.find(product => product.featured));
+    // Since 'featured' is not a property, just return the first product as featured
+    return of(this.products[0]);
   }
 
   getProductsByType(type: string): Observable<Product[]> {

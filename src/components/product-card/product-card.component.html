@@ -1,4 +1,4 @@
-<div class="product-card">
+<div class="product-card" [ngClass]="customClassName">
     <div class="pcard">
       <div class="pcard-header">
         <!-- <span class="badge" [ngClass]="{
@@ -24,8 +24,8 @@
           <p class="cardtext">{{ product.description }}</p>
         </div>
         <div class="card-actions">
-          <button class="primaryBtnOutline">LEARN MORE</button>
-          <button class="primaryBtn">APPLY NOW</button>
+          <button class="primary-btn-outline" [routerLink]="'/'">LEARN MORE</button>
+          <button class="primary-btn" [routerLink]="'/'">APPLY NOW</button>
         </div>
       </div>
     </div>

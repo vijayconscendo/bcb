@@ -4,12 +4,12 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FeaturedSolutionsCarouselComponent } from '../../components/featured-solutions-carousel/featured-solutions-carousel.component';
 import { ContentImageSplitComponent } from '../../components/content-image-split/content-image-split.component';
 import { ExploreBannerComponent } from '../../components/explore-banner/explore-banner.component';
-import { TabCarouselComponent } from '../../components/tab-carousel/tab-carousel.component';
 import { GetStartedComponent } from '../../components/get-started/get-started.component';
 import { DownloadAppComponent } from '../../components/download-app/download-app.component';
 import { SupportContactComponent } from '../../components/support-contact/support-contact.component';
 import { FaqComponent } from '../../components/faq/faq.component';
 import { SwitchBankComponent } from '../../components/switch-bank/switch-bank.component';
+import { TabSliderOneComponent } from '../../components/tab-slider-one/tab-slider-one.component';
 
 @Component({
   selector: 'app-landing-page',
@@ -19,12 +19,12 @@ import { SwitchBankComponent } from '../../components/switch-bank/switch-bank.co
     FeaturedSolutionsCarouselComponent,
     ContentImageSplitComponent,
     ExploreBannerComponent,
-    TabCarouselComponent,
     GetStartedComponent,
     DownloadAppComponent,
     SupportContactComponent,
     FaqComponent,
-    SwitchBankComponent
+    SwitchBankComponent,
+    TabSliderOneComponent
 ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',

@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { PageIntroComponent } from '../../generic-components/page-intro/page-intro.component';
 import { CustomSearchComponent } from "../../generic-components/custom-search/custom-search.component";
+import { BreadcrumbComponent } from '../../generic-components/breadcrumb/breadcrumb.component';
 
 
 interface Article {
@@ -18,15 +18,13 @@ interface Article {
 }
 @Component({
   selector: 'app-article-list',
-  imports: [CommonModule, RouterLink, NgSelectModule, FormsModule, PageIntroComponent, CustomSearchComponent],
+  imports: [CommonModule, BreadcrumbComponent, NgSelectModule, FormsModule, PageIntroComponent, CustomSearchComponent],
   templateUrl: './article-list.component.html',
   styleUrl: './article-list.component.scss'
 })
 export class ArticleListComponent {
  currentPage = 1;
   articlesPerPage = 9;
-
-  searchTerm=""
 
 
   selectyear = [

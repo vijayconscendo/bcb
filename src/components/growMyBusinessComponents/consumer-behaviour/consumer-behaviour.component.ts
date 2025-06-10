@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { BreadcrumbComponent } from '../../generic-components/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-consumer-behaviour',
-  imports: [RouterLink],
+  imports: [BreadcrumbComponent],
   templateUrl: './consumer-behaviour.component.html',
   styleUrl: './consumer-behaviour.component.scss'
 })

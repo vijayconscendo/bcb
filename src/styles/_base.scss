@@ -1,0 +1,40 @@
+@use "variables" as *;
+
+/* Mixin for using CSS variable fallback */
+@mixin color-var($var, $fallback) {
+  color: var(--#{$var}, #{$fallback});
+}
+
+/* Set root variables from SCSS variables for easier maintenance */
+:root {
+  --color-primary: #{$color-primary};
+  --color-primary-dark: #{$color-primary-dark};
+  --color-primary-deeper: #{$color-primary-deeper};
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
+  --color-orange: #{$color-orange};
+  --color-text: #{$color-text};
+  --color-gray-pale: #{$color-gray-pale};
+  --color-gray-light: #{$color-gray-light};
+  --color-gray-medium: #{$color-gray-medium};
+  --color-gray-dark: #{$color-gray-dark};
+  --color-gray-lightest: #{$color-gray-lightest};
+  --page-bg-color: #{$page-bg-color};
+  --color-lightmode: #{$color-lightmode};
+  --color-error: #{$color-error};
+}
+
+/* Global base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,17 @@
+<app-dynamic-swiper
+    [slides]="featuredCardData"
+    [itemTemplate]="slideTemplate"
+    [breakpoints]="customBreakpoints"
+    [showControls]="false"
+></app-dynamic-swiper>
+<ng-template #slideTemplate let-carddata>
+        <app-featured-card-two
+        [title]="carddata.title" 
+        [description]="carddata.description" 
+        [imageSrc]="carddata.imageSrc" 
+        [imageAlt]="carddata.imageAlt"
+        [buttonLabel]="carddata.buttonLabel"
+        [buttonLink]="carddata.buttonLink"
+    ></app-featured-card-two>
+</ng-template>
+<button class="primary-btn mt-3">view all</button>

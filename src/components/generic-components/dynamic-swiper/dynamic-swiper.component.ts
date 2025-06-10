@@ -13,11 +13,11 @@ let uniqueIdCounter = 0;
 })
 export class DynamicSwiperComponent {
 
-
   @Input() slides: any[] = []; // Accept object array
   @Input() itemTemplate!: TemplateRef<any>; // Template for each slide
   @Input() config: SwiperOptions = {}; // Allow custom configs
   @Input() breakpoints: SwiperOptions['breakpoints'] = {};
+  @Input() showControls: boolean = true; // Control visibility of navigation and pagination
 
   @ViewChild('customSwiper', { static: false }) customSwiper!: ElementRef;
 
@@ -29,7 +29,6 @@ export class DynamicSwiperComponent {
     uniqueIdCounter++;
     this.uniqueId = `swiper-${uniqueIdCounter}`;
   }
-
   ngAfterViewInit() {
     if (!this.isBrowser || !this.customSwiper?.nativeElement) return;
 
@@ -38,16 +37,20 @@ export class DynamicSwiperComponent {
       spaceBetween: 15,
       initialSlide: 0,
       centeredSlides: false,
-      pagination: {
-        el: `#${this.uniqueId} .swiper-pagination`,
-        clickable: true,
-      },
-      navigation: {
-        nextEl: `#${this.uniqueId} .swiper-next`,
-        prevEl: `#${this.uniqueId} .swiper-prev`,
-      },
       breakpoints: this.breakpoints, // inject the dynamic breakpoints here
     };
+
+    // Only add pagination and navigation if showControls is true
+    if (this.showControls) {
+      defaultParams.pagination = {
+        el: `#${this.uniqueId} .swiper-pagination`,
+        clickable: true,
+      };
+      defaultParams.navigation = {
+        nextEl: `#${this.uniqueId} .swiper-next`,
+        prevEl: `#${this.uniqueId} .swiper-prev`,
+      };
+    }
 
   const mergedParams = { ...defaultParams, ...this.config };
   Object.assign(this.customSwiper.nativeElement, mergedParams);

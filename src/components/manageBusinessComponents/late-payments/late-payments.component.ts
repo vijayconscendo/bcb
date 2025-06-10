@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { BreadcrumbComponent } from '../../generic-components/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-late-payments',
-  imports: [RouterLink],
+  imports: [BreadcrumbComponent],
   templateUrl: './late-payments.component.html',
   styleUrl: './late-payments.component.scss'
 })

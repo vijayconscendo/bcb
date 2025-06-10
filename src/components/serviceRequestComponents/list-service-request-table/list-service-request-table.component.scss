@@ -11,21 +11,7 @@
 .controls{
     display: flex; align-items: center; gap: 1.5rem; padding: 0.5rem 1rem 1rem;
 }
-.custom-search{
-    display: flex; align-items: center; gap: .5rem;
-    border: 1px solid #5C6C80; background-color: #FFFFFF; border-radius: 0.5rem;
-    padding:0.5rem 1.125rem; height: 3rem; width: 100%; max-width: 400px;
-    input{
-        border: none; width: 100%;
-        font-family: "BSP-Regular"; font-size: 1rem; line-height: normal; color: var(--color-text);
-        &::placeholder{
-            color: #5C6C80;
-        }
-        &:focus{
-            outline: none; background-color: transparent;
-        }
-    }
-}
+
 .filter-btn{
     border: 1px solid #0051FF; height: 48px; padding: 0.5rem 1.375rem; background-color: #FFFFFF;
     font-family: "BSP-Bold"; font-size: 1rem; line-height: normal; color: #0051FF; text-transform: uppercase;
@@ -46,7 +32,7 @@
         font-size: 1rem;
         line-height: 1.3;
         text-align: center;
-        color: var(--text-medium-gray);
+        color: var(--color-gray-medium);
         border: none; background-color: transparent;
         @include bp.respond-below('mobile-xs') {
             font-size: 0.875rem; padding: 1rem 1.5rem;
@@ -125,10 +111,10 @@
         font-family: "BSP-Regular";
         font-size: 0.75rem;
         line-height: normal;
-        color: var(--text-medium-gray);
+        color: var(--color-gray-medium);
        }
     .dot{
-        width: 7px; height: 7px; background-color: var(--text-medium-gray); display: inline-block; border-radius: 50%;margin-right: 4px;
+        width: 7px; height: 7px; background-color: var(--color-gray-medium); display: inline-block; border-radius: 50%;margin-right: 4px;
     }
     &.in-progress{
         border-color: #FFE9C7 !important; background-color: rgba(255, 138, 0, 0.03) !important;

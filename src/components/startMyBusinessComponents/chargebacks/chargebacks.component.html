@@ -12,44 +12,15 @@
       <!-- Article Banner End-->
 
       <!-- Article Breadcrumb -->
-      <nav class="breadCrumb">
-        <ul>
-          <li>
-            <a class="route-name" [routerLink]="['/']"><span>Home</span></a>
-          </li>
-          <li>
-            <img
-              class="img-fluid"
-              src="assets/images/icons/breadcrumb-rt.png"
-              alt="breadcrumb-rt"
-            />
-          </li>
-          <li>
-            <a class="route-name" [routerLink]="['/articles']"
-              ><span>Help me start my business</span></a
-            >
-          </li>
-          <li>
-            <img
-              class="img-fluid"
-              src="assets/images/icons/breadcrumb-rt.png"
-              alt="breadcrumb-rt"
-            />
-          </li>
-          <li>
-            <a class="route-name" [routerLink]="['/articles']"
-              ><span>Articles</span></a
-            >
-          </li>
-          <li>
-            <img
-              class="img-fluid"
-              src="assets/images/icons/breadcrumb-rt.png"
-              alt="breadcrumb-rt"
-            />
-          </li>
-        </ul>
-      </nav>
+      <app-breadcrumb
+        [showBackButton]="false"
+        customClass="h-center mb-4"
+        [breadcrumbs]="[
+          { label: 'Home', url: '/' },
+          { label: 'Help me start my business', url: '/articles' },
+          { label: 'Articles', url: '/articles' }
+        ]">
+      </app-breadcrumb>
       <!-- Article Breadcrumb End -->
 
       <!-- Article Tagline and Date -->

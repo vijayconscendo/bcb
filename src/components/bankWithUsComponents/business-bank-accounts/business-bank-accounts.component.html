@@ -1,56 +1,64 @@
-<div class="bank-with-us-page">
-    <!-- Banner with edge-to-edge image -->
-    <app-page-banner
-        [title]="'Open a business banking account today'"
-        [imageUrl]="'assets/images/banners/solutions-banner.png'"
-    ></app-page-banner>
+<!-- Banner with edge-to-edge image -->
+<app-page-banner
+  [title]="'Open a business banking account today'"
+  [imageUrl]="'assets/images/banners/solutions-banner.png'"
+></app-page-banner>
 
-    <div class="custom-container">
-        <div>
-            <app-breadcrumb
-                [showBackButton]="true"
-                customClass="mt-5 h-center"
-                [breadcrumbs]="[
-                    { label: 'Home', url: '/' },
-                    { label: 'Products and Services', url: '/products-and-services' },
-                    { label: 'Bank with us' }
-                ]"
-            ></app-breadcrumb>
-            <!-- Article Breadcrumb End -->
-            <app-page-intro
-                [title]="'Business bank accounts'"
-                [description]="'Being able to move your money around freely is what keeps you in business. Opening a bank account with us lets you do it safely and easily anytime, on any device.'">
-            </app-page-intro>
-        </div>
+<div class="page-bg py-5">
+  <div class="custom-container">
+    <app-breadcrumb
+      [showBackButton]="true"
+      customClass="h-center"
+      [breadcrumbs]="[
+        { label: 'Home', url: '/' },
+        { label: 'Products and Services', url: '/products-and-services' },
+        { label: 'Bank with us' }
+      ]"
+    ></app-breadcrumb>
+    <app-page-intro
+      [title]="'Business bank accounts'"
+      [description]="
+        'Being able to move your money around freely is what keeps you in business. Opening a bank account with us lets you do it safely and easily anytime, on any device.'
+      "
+    >
+    </app-page-intro>
+    <div class="sec-b-space">
+      <h3 class="heading-sm mb-4">Some of the Benefits</h3>
+      <app-image-heading-card
+        [imageHeaduingCards]="imageHeadingCardsData"
+      ></app-image-heading-card>
     </div>
-
-    <div class="custom-container pb-5">
-        <h3 class="text-heading-sm mb-4">Some of the Benefits</h3>
-        <app-image-heading-card [imageHeaduingCards]="imageHeadingCardsData"></app-image-heading-card>
-    </div>    
-    <div class="custom-container pb-5">
-        <h3 class="text-heading-sm mb-4">What are you looking for?</h3>            
-            <ul class="tabs-ul">
-                <li *ngFor="let tab of categoryTabs" [ngClass]="{'activeTab': currentCategory === tab}">
-                    <button type="button" (click)="filterProductsByCategory(tab)">{{ tab }} ({{ getProductCountByCategory(tab) }})</button>
-                </li>
-            </ul>        
-            <div class="account-cards-container" *ngIf="filteredProducts.length > 0">
-            <app-mymobiz-account-card 
-                *ngFor="let product of filteredProducts"
-                [@cardAnimation]
-                [title]="product.title"
-                [description]="product.description"
-                [price]="product.price"
-                [badge]="product.badge"
-                [noteText]="product.noteText"
-                [pricetenure]="product.pricetenure"
-                [class.featured]="product.featured">
-            </app-mymobiz-account-card>
-        </div>
-        <div class="no-products-message" *ngIf="filteredProducts.length === 0">
-            <p>No products available in the {{ currentCategory }} category.</p>
-        </div>
+    <div>
+      <h3 class="heading-sm mb-4">What are you looking for?</h3>
+      <div class="tabs-scroll">
+              <ul class="tabs-ul">
+        <li
+          *ngFor="let tab of categoryTabs"
+          [ngClass]="{ activeTab: currentCategory === tab }"
+        >
+          <button type="button" (click)="filterProductsByCategory(tab)">
+            {{ tab }} ({{ getProductCountByCategory(tab) }})
+          </button>
+        </li>
+      </ul>
+      </div>
+      <div class="account-cards-container" *ngIf="filteredProducts.length > 0">
+        <app-mymobiz-account-card
+          *ngFor="let product of filteredProducts"
+          [@cardAnimation]
+          [title]="product.title"
+          [description]="product.description"
+          [price]="product.price"
+          [badge]="product.badge"
+          [noteText]="product.noteText"
+          [pricetenure]="product.pricetenure"
+          [class.featured]="product.featured"
+        >
+        </app-mymobiz-account-card>
+      </div>
+      <div class="no-products-message" *ngIf="filteredProducts.length === 0">
+        <p>No products available in the {{ currentCategory }} category.</p>
+      </div>
     </div>
-
+  </div>
 </div>

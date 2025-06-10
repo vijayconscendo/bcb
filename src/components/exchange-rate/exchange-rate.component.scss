@@ -89,13 +89,13 @@
     &.focused .floating-label {
       top: 0;
       font-size: 0.75rem;
-      color: var(--text-medium-gray);
+      color: var(--color-gray-medium);
       z-index: 1;
     }
     ng-select.ng-select-focused ~ .floating-label {
       top: 0;
       font-size: 0.75rem;
-      color: var(--text-medium-gray); 
+      color: var(--color-gray-medium); 
       z-index: 1;
   
     }
@@ -111,7 +111,7 @@
       transform: translateY(-50%);
       background: #FFFFFF;
       padding: 0 4px;
-      color: var(--text-medium-gray);
+      color: var(--color-gray-medium);
       font-size: 0.75rem;
       transition: 0.2s ease all;
       pointer-events: none;
@@ -128,7 +128,7 @@
         }
         input{
             border: none; outline: none; margin-left: auto; text-align: end;
-            &::placeholder{font-family: "BSP-Regular" !important; color: #5C6C80;}
+            &::placeholder{font-family: "BSP-Regular" !important; color: var(--color-gray-lightest);}
             font-family: "BSP-Medium";color: #00164E; font-size: 1rem; width: 100%;
             &:focus{outline: none;} 
             &[type='number']::-webkit-inner-spin-button,

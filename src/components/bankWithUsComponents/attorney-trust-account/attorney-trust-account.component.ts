@@ -116,7 +116,7 @@ customBreakpoints1 = {
 featuredCardData = [
   {
     title: 'Third-Party Fund Administration',
-    description: "Manage funds for multiple accounts from a single bank account that offers competitive rates on term deposits, top-notch security and automated facilities",
+    description: "Manage funds for multiple accounts from a single bank account that offers competitive rates on term deposits, top-notch security and automated facilities.",
     imageSrc: 'assets/images/media/vans.jpg',
     imageAlt: "card img",
     buttonLabel: 'tell me more',

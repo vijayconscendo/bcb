@@ -5,6 +5,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 
 import { CalendarModule } from 'primeng/calendar';
 import { ToolbarOneComponent } from '../../generic-components/toolbar-one/toolbar-one.component';
+import { BreadcrumbComponent } from '../../generic-components/breadcrumb/breadcrumb.component';
 
 // countries.ts
 const accounts = [
@@ -20,7 +21,7 @@ const accounts = [
 
 @Component({
   selector: 'app-save-and-invest',
-  imports: [CommonModule, NgSelectModule, FormsModule, CalendarModule, ToolbarOneComponent],
+  imports: [CommonModule, BreadcrumbComponent ,NgSelectModule, FormsModule, CalendarModule, ToolbarOneComponent],
   templateUrl: './save-and-invest.component.html',
   styleUrl: './save-and-invest.component.scss'
 })

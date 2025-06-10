@@ -1,136 +1,164 @@
-<div class="page-wrapper">
-    <app-page-banner
-        [title]="'Make foreign payments with confidence'"
-        [imageUrl]="'assets/images/banners/foreign-exchange.jpg'"
-    ></app-page-banner>
+<div class="page-bg">
+  <app-page-banner
+    [title]="'Make foreign payments with confidence'"
+    [imageUrl]="'assets/images/banners/foreign-exchange.jpg'"
+  ></app-page-banner>
 
+  <div class="custom-container">
+    <app-breadcrumb
+      [showBackButton]="false"
+      customClass="mt-5 h-center"
+      [breadcrumbs]="[
+        { label: 'Home', url: '/' },
+        { label: 'Products and Services', url: '/products-and-services' },
+        { label: 'Bank with us' }
+      ]"
+    ></app-breadcrumb>
+
+    <app-page-intro
+      [title]="'Foreign Exchange'"
+      [description]="
+        'Standard Bank’s Foreign Exchange (FX) team consists of experienced professionals with a broad skill set, serving a diverse range of international and domestic clients. We offer a comprehensive suite of digital and traditional solutions to meet all your forex and cross-border requirements.'
+      "
+    ></app-page-intro>
+
+    <div class="sec-b-space">
+      <h3 class="heading-sm mb-4">Some of the Benefits</h3>
+      <app-image-heading-card
+        [imageHeaduingCards]="imageHeadingCardsData"
+      ></app-image-heading-card>
+    </div>
+  </div>
+
+  <div class="bg-white pt-5">
     <div class="custom-container">
-        <app-breadcrumb
-            [showBackButton]="false"
-            customClass="mt-5 h-center"
-            [breadcrumbs]="[
-                { label: 'Home', url: '/' },
-                { label: 'Products and Services', url: '/products-and-services' },
-                { label: 'Bank with us' }
-            ]"
-        ></app-breadcrumb>
-
-        <app-page-intro
-            [title]="'Foreign Exchange'"
-            [description]="'Standard Bank’s Foreign Exchange (FX) team consists of experienced professionals with a broad skill set, serving a diverse range of international and domestic clients. We offer a comprehensive suite of digital and traditional solutions to meet all your forex and cross-border requirements.'"
-        ></app-page-intro>
-
-        <div class="sec-b-space">
-            <h3 class="text-heading-sm mb-4">Some of the Benefits</h3>
-            <app-image-heading-card [imageHeaduingCards]="imageHeadingCardsData"></app-image-heading-card>
+      <div class="sec-b-space">
+        <h3 class="heading-sm mb-4">
+          Make international payments on a digital platform
+        </h3>
+        <div class="card-grid-container">
+          <app-inline-image-text-card
+            [imageSrc]="'assets/images/media/bus.jpg'"
+            [imageAlt]="'Description of the image'"
+            [title]="'Payments on internet banking'"
+            [description]="
+              'Get a live exchange rate and make payments to overseas beneficiaries with ease.'
+            "
+            [linkText]="'Click Here'"
+            [linkUrl]="'/some-page'"
+            [verticalView]="false"
+          >
+          </app-inline-image-text-card>
+          <app-inline-image-text-card
+            [imageSrc]="'assets/images/media/bus.jpg'"
+            [imageAlt]="'Description of the image'"
+            [title]="'eMarketTrader'"
+            [description]="
+              'eMarketTrader is a web based  cross-asset electronic trading platform for your business.'
+            "
+            [linkText]="'Click Here'"
+            [linkUrl]="'/some-page'"
+            [verticalView]="false"
+          >
+          </app-inline-image-text-card>
+          <app-inline-image-text-card
+            [imageSrc]="'assets/images/media/bus.jpg'"
+            [imageAlt]="'Description of the image'"
+            [title]="'International banking foreign exchange (IBFX)'"
+            [description]="'IBFX for business forex and payment requirements. '"
+            [linkText]="'Click Here'"
+            [linkUrl]="'/some-page'"
+            [verticalView]="false"
+          >
+          </app-inline-image-text-card>
+          <app-inline-image-text-card
+            [imageSrc]="'assets/images/media/bus.jpg'"
+            [imageAlt]="'Description of the image'"
+            [title]="'eMarketTrader Mobile'"
+            [description]="
+              'Leverage the power of your mobile to support your business’s foreign exchange requirements'
+            "
+            [linkText]="'Click Here'"
+            [linkUrl]="'/some-page'"
+            [verticalView]="false"
+          >
+          </app-inline-image-text-card>
         </div>
+      </div>
+
+      <div class="sec-b-space">
+        <h3 class="heading-sm mb-4">Forex Expertise</h3>
+        <div class="card-grid-container">
+          <app-inline-image-text-card
+            [imageSrc]="'assets/images/media/bus.jpg'"
+            [imageAlt]="'Description of the image'"
+            [title]="'Client experience desk'"
+            [description]="
+              'Your access to advisory team managed by a group of qualified foreign exchange specialists.'
+            "
+            [linkText]="'Click Here'"
+            [linkUrl]="'/some-page'"
+            [verticalView]="false"
+          >
+          </app-inline-image-text-card>
+          <app-inline-image-text-card
+            [imageSrc]="'assets/images/media/bus.jpg'"
+            [imageAlt]="'Description of the image'"
+            [title]="'Cross-border payments'"
+            [description]="
+              'List of necessary documentation when submitting your cross border payment '
+            "
+            [linkText]="'Click Here'"
+            [linkUrl]="'/some-page'"
+            [verticalView]="false"
+          >
+          </app-inline-image-text-card>
+          <app-inline-image-text-card
+            [imageSrc]="'assets/images/media/bus.jpg'"
+            [imageAlt]="'Description of the image'"
+            [title]="'Centralised treasury'"
+            [description]="
+              'Standard Bank Centralised Treasury - A single point of contact for FX. '
+            "
+            [linkText]="'Click Here'"
+            [linkUrl]="'/some-page'"
+            [verticalView]="false"
+          >
+          </app-inline-image-text-card>
+          <app-inline-image-text-card
+            [imageSrc]="'assets/images/media/bus.jpg'"
+            [imageAlt]="'Description of the image'"
+            [title]="'Renminbi'"
+            [description]="
+              'Standard Bank provides a centralised solution for payment clearing and trade settlements in Renminbi.'
+            "
+            [linkText]="'Click Here'"
+            [linkUrl]="'/some-page'"
+            [verticalView]="false"
+          >
+          </app-inline-image-text-card>
+        </div>
+      </div>
+
+      <div class="sec-b-space">
+        <h3 class="heading-sm mb-4">Forex Expertise</h3>
+        <div class="row">
+          <div class="col-lg-6">
+            <app-inline-image-text-card
+              [imageSrc]="'assets/images/media/bus.jpg'"
+              [imageAlt]="'Description of the image'"
+              [title]="'Foreign notes for your business'"
+              [description]="
+                'Are you travelling abroad for business purposes? Get foreign currency notes delivered to your work.'
+              "
+              [linkText]="'Click Here'"
+              [linkUrl]="'/some-page'"
+              [verticalView]="false"
+            >
+            </app-inline-image-text-card>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="bg-white pt-5">
-        <div class="custom-container">
-            
-        <div class="sec-b-space">
-            <h3 class="text-heading-sm mb-4">Make international payments on a digital platform</h3>
-            <div class="card-grid-container">
-                <app-inline-image-text-card
-                    [imageSrc]="'assets/images/media/bus.jpg'"
-                    [imageAlt]="'Description of the image'"
-                    [title]="'Payments on internet banking'"
-                    [description]="'Get a live exchange rate and make payments to overseas beneficiaries with ease.'"
-                    [linkText]="'Click Here'"
-                    [linkUrl]="'/some-page'"
-                    [verticalView]="false">
-                </app-inline-image-text-card>
-                <app-inline-image-text-card
-                    [imageSrc]="'assets/images/media/bus.jpg'"
-                    [imageAlt]="'Description of the image'"
-                    [title]="'eMarketTrader'"
-                    [description]="'eMarketTrader is a web based  cross-asset electronic trading platform for your business.'"
-                    [linkText]="'Click Here'"
-                    [linkUrl]="'/some-page'"
-                    [verticalView]="false">
-                </app-inline-image-text-card>
-                <app-inline-image-text-card
-                    [imageSrc]="'assets/images/media/bus.jpg'"
-                    [imageAlt]="'Description of the image'"
-                    [title]="'International banking foreign exchange (IBFX)'"
-                    [description]="'IBFX for business forex and payment requirements. '"
-                    [linkText]="'Click Here'"
-                    [linkUrl]="'/some-page'"
-                    [verticalView]="false">
-                </app-inline-image-text-card>
-                <app-inline-image-text-card
-                    [imageSrc]="'assets/images/media/bus.jpg'"
-                    [imageAlt]="'Description of the image'"
-                    [title]="'eMarketTrader Mobile'"
-                    [description]="'Leverage the power of your mobile to support your business’s foreign exchange requirements'"
-                    [linkText]="'Click Here'"
-                    [linkUrl]="'/some-page'"
-                    [verticalView]="false">
-                </app-inline-image-text-card>
-            </div>
-        </div>
-
-        <div class="sec-b-space">
-            <h3 class="text-heading-sm mb-4">Forex Expertise</h3>
-            <div class="card-grid-container">
-                <app-inline-image-text-card
-                    [imageSrc]="'assets/images/media/bus.jpg'"
-                    [imageAlt]="'Description of the image'"
-                    [title]="'Client experience desk'"
-                    [description]="'Your access to advisory team managed by a group of qualified foreign exchange specialists.'"
-                    [linkText]="'Click Here'"
-                    [linkUrl]="'/some-page'"
-                    [verticalView]="false">
-                </app-inline-image-text-card>
-                <app-inline-image-text-card
-                    [imageSrc]="'assets/images/media/bus.jpg'"
-                    [imageAlt]="'Description of the image'"
-                    [title]="'Cross-border payments'"
-                    [description]="'List of necessary documentation when submitting your cross border payment '"
-                    [linkText]="'Click Here'"
-                    [linkUrl]="'/some-page'"
-                    [verticalView]="false">
-                </app-inline-image-text-card>
-                <app-inline-image-text-card
-                    [imageSrc]="'assets/images/media/bus.jpg'"
-                    [imageAlt]="'Description of the image'"
-                    [title]="'Centralised treasury'"
-                    [description]="'Standard Bank Centralised Treasury - A single point of contact for FX. '"
-                    [linkText]="'Click Here'"
-                    [linkUrl]="'/some-page'"
-                    [verticalView]="false">
-                </app-inline-image-text-card>
-                <app-inline-image-text-card
-                    [imageSrc]="'assets/images/media/bus.jpg'"
-                    [imageAlt]="'Description of the image'"
-                    [title]="'Renminbi'"
-                    [description]="'Standard Bank provides a centralised solution for payment clearing and trade settlements in Renminbi.'"
-                    [linkText]="'Click Here'"
-                    [linkUrl]="'/some-page'"
-                    [verticalView]="false">
-                </app-inline-image-text-card>
-            </div>
-        </div>
-
-        <div class="sec-b-space">
-            <h3 class="text-heading-sm mb-4">Forex Expertise</h3>
-            <div class="row">
-                <div class="col-lg-6">
-                <app-inline-image-text-card
-                    [imageSrc]="'assets/images/media/bus.jpg'"
-                    [imageAlt]="'Description of the image'"
-                    [title]="'Foreign notes for your business'"
-                    [description]="'Are you travelling abroad for business purposes? Get foreign currency notes delivered to your work.'"
-                    [linkText]="'Click Here'"
-                    [linkUrl]="'/some-page'"
-                    [verticalView]="false">
-                </app-inline-image-text-card>
-                </div>
-            </div>
-        </div>
-        </div>
-    </div>
-
-
+  </div>
 </div>

@@ -1,44 +1,38 @@
-<div class="page-wrapper">
+<div class="page-bg py-4">
   <div class="custom-container">
-    <!-- Article Breadcrumb -->
-    <nav class="breadCrumb">
-        <ul>
-            <li>
-                <a class="route-name" [routerLink]="['/']"><span>Home</span></a>
-            </li>
-            <li>
-                <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-            </li>
-            <li>
-                <a class="route-name"><span>Ways to bank</span></a>
-            </li>
-            <li>
-                <img class="img-fluid" src="assets/images/icons/breadcrumb-rt.png" alt="breadcrumb-rt">
-            </li>
-            <li>
-                <a class="route-name"><span>ATM banking</span></a>
-            </li>
-        </ul>
-    </nav>
-    <!-- Article Breadcrumb End -->
-  <app-page-intro [title]="'ATM banking'"></app-page-intro>   
-  <div class="sec-b-space"> 
-  <app-page-promo-card 
-      [title]="promoCardData.title"
-      [description]="promoCardData.description"
-      [imageSrc]="promoCardData.imageSrc"
-      [imageAlt]="promoCardData.imageAlt"
-      [storeImages]="promoCardData.storeImages"
-      [outlineBtnVisible]="promoCardData.outlineBtnVisible"
-      [outlineBtnText]="promoCardData.outlineBtnText"
-      [outlineBtnLink]="promoCardData.outlineBtnLink"
-      [primaryBtnVisible]="promoCardData.primaryBtnVisible"
-      [primaryBtnText]="promoCardData.primaryBtnText"
-      [primaryBtnLink]="promoCardData.primaryBtnLink"
-    ></app-page-promo-card>
-    </div>
+    <!-- Breadcrumb -->
+    <app-breadcrumb
+      [showBackButton]="false"
+      customClass="h-center"
+      [breadcrumbs]="[
+        { label: 'Home', url: '/' },
+        { label: 'Ways to bank' },
+        { label: 'ATM banking' }
+      ]"
+    >
+    </app-breadcrumb>
+    <!-- ./Breadcrumb -->
+
+    <app-page-intro [title]="'ATM banking'"></app-page-intro>
+
     <div class="sec-b-space">
-      <h3 class="text-heading-sm mb-4">Some of the benefits</h3>
+      <app-page-promo-card
+        [title]="promoCardData.title"
+        [description]="promoCardData.description"
+        [imageSrc]="promoCardData.imageSrc"
+        [imageAlt]="promoCardData.imageAlt"
+        [storeImages]="promoCardData.storeImages"
+        [outlineBtnVisible]="promoCardData.outlineBtnVisible"
+        [outlineBtnText]="promoCardData.outlineBtnText"
+        [outlineBtnLink]="promoCardData.outlineBtnLink"
+        [primaryBtnVisible]="promoCardData.primaryBtnVisible"
+        [primaryBtnText]="promoCardData.primaryBtnText"
+        [primaryBtnLink]="promoCardData.primaryBtnLink"
+      ></app-page-promo-card>
+    </div>
+
+    <div class="sec-b-space">
+      <h3 class="heading-sm mb-4">Some of the benefits</h3>
       <app-image-heading-card
         [imageHeaduingCards]="imageHeadingCardsData"
       ></app-image-heading-card>
@@ -46,13 +40,13 @@
 
     <!-- Tab with list start -->
     <div class="sec-b-space">
-      <app-tab-list></app-tab-list>
+      <app-tab-list/>
     </div>
     <!-- Tab with list end -->
-
+     
     <!-- We also offer carousel start -->
     <div class="sec-b-space">
-      <h3 class="text-heading-sm mb-4">We also offer</h3>
+      <h3 class="heading-sm mb-4">We also offer</h3>
       <app-dynamic-swiper
         [slides]="offerCardData"
         [itemTemplate]="slideTemplate"

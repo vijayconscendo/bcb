@@ -10,11 +10,14 @@ import { FeaturedCardComponent } from '../../generic-components/featured-card/fe
 import { UcountSecComponent } from '../../generic-components/ucount-sec/ucount-sec.component';
 import { CardWithLinksComponent } from '../../generic-components/card-with-links/card-with-links.component';
 import { TextImageCardComponent } from '../../generic-components/text-image-card/text-image-card.component';
+import { TabListComponent } from './tab-list/tab-list.component';
+import { BreadcrumbComponent } from '../../generic-components/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-business-current-account',
   imports: [
     CommonModule,
+    BreadcrumbComponent,
     PageIntroCardComponent,
     PageIntroComponent,
     ImageHeadingCardComponent,
@@ -23,7 +26,8 @@ import { TextImageCardComponent } from '../../generic-components/text-image-card
     FeaturedCardComponent,
     UcountSecComponent,
     CardWithLinksComponent,
-    TextImageCardComponent
+    TextImageCardComponent,
+    TabListComponent
 ],
   templateUrl: './business-current-account.component.html',
   styleUrl: './business-current-account.component.scss'
@@ -32,7 +36,7 @@ export class BusinessCurrentAccountComponent {
     imageHeadingCardsData: ImageHeadingCard[] = [
     {
       imageUrl: 'assets/images/icons/dummy-shield.png',
-      title: 'Confidence',
+      title: 'Convenient payment solutions',
       description: 'Rely on fast, secure transactions, local or international, online or by card'
     },
     {
@@ -82,20 +86,20 @@ export class BusinessCurrentAccountComponent {
 
 featuredCardData = [
   {
-    title: 'Restructure your vehicle financing',
-    description: "Call us on 086 110 2347 during office hours to adjust your repayments. We'll give you a unique reference number to access our secure portal, where you can submit everything you need to complete your application.",
-    imageSrc: 'assets/images/media/vans.jpg',
+    title: 'Business Overdraft',
+    description: "Ideal as a short-term credit facility, you can access funds whenever you need it and only pay interest on the outstanding balance",
+    imageSrc: 'assets/images/cards/business-overdraft.jpg',
     imageAlt: "card img",
-    buttonLabel: 'go to portal',
-    buttonLink: '#'
+    buttonLabel: 'tell me more',
+    buttonLink: 'https://www.standardbank.co.za/southafrica/business/products-and-services/borrow-for-your-needs/business-loans/business-overdraft'
   },
   {
-    title: 'Vehicle and asset insurance',
-    description: 'Safeguard the continuity of your business with an insurance solution that’s customised to your business operations',
-    imageSrc: 'assets/images/media/vans.jpg',
+    title: 'Business Revolving credit plan',
+    description: 'Open a line of business credit to use as working capital or bridging finance to expand your operations or make acquisitions',
+    imageSrc: 'assets/images/cards/resolving-credit-plan.jpg',
     imageAlt: 'card img',
     buttonLabel: 'tell me more',
-    buttonLink: '#'
+    buttonLink: 'https://www.standardbank.co.za/southafrica/business/products-and-services/borrow-for-your-needs/business-loans/revolving-credit-plan'
   },
 ];
 
@@ -128,8 +132,8 @@ cardLinks = [
     ]
   },
   {
-    title: 'Security Tips',
-    description: 'Keep your card and banking information secure.',
+    title: 'Managing your business',
+    description: 'Get expert insights at BizConnect™',
     links: [
       { label: 'How to report fraud', url: '#' },
       { label: 'Set card limits', url: '#' }

@@ -54,9 +54,10 @@
         <!-- Profile and Sign Out buttons (Web View)-->
         <div class="user-controls" *ngIf="!isDashboard">
           <div class="profile-dropdown">
-            <button class="sign-out-btn" id="signInRegisterBtn" data-bs-toggle="dropdown" aria-expanded="false"> <!--[routerLink]="['/dashboard']" (click)="onSignIn()"--> 
+
+            <button type="button" class="primary-btn">
               <img class="img-fluid btn-icon" src="assets/images/icons/lock-icon.png" alt="signin-icon"/>
-              <span>SIGN IN / REGISTER</span>
+              <span>SIGN in / register</span>
             </button>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="signInRegisterBtn">
               <li><a class="dropdown-item" (click)="onSignIn()">SIGN IN</a></li>

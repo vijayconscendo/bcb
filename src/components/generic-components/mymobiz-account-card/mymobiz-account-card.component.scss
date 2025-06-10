@@ -168,7 +168,7 @@
     height: 20px;
     border-radius: 4px;
     transform: scale(1);
-    border: 2px solid #5C6C80;
+    border: 2px solid var(--color-gray-lightest);
     transition: all 0.3s ease;
     display: flex; align-items: center; justify-content: center;
   }
@@ -237,9 +237,5 @@
   .price {
     font-size: 28px;
   }
-  
-  .btn-apply, .btn-more {
-    padding: 10px 15px;
-    font-size: 13px;
-  }
+
 }
