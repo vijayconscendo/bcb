@@ -4,7 +4,12 @@
   position:relative;
   width: 100%;
 }
+.swiperslide{
+  display: flex; align-items: stretch;
+  height: inherit;
+}
 .bnr-content{
+  width: 100%;
   padding: 185px 0 140px;
   @include bp.respond-below('tablet') {
     padding: 6.25rem 0;

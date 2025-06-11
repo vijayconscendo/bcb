@@ -1,0 +1,15 @@
+<div [class]="containerClass">
+  <div [class]="rowClass">
+    <div [class]="leftColumnClass">
+      <h3 [class]="titleClass">{{ title }}</h3>
+      <p [class]="descriptionClass">
+        {{ description }}
+      </p>
+    </div>
+    <div [class]="rightColumnClass">
+      <button type="button" [class]="buttonClass" [routerLink]="buttonLink">
+        {{ buttonText }}
+      </button>
+    </div>
+  </div>
+</div>

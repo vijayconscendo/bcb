@@ -1,3 +1,4 @@
+@use "custom-breakpoints" as bp;
 .new-service-request {
   border: 1px solid var(--color-gray-pale);
   border-radius: 0.75rem;
@@ -7,6 +8,15 @@
   align-items: center;
   justify-content: center;
   margin: 1.5rem auto;
+  @include bp.respond-below("sm") {
+    padding: 2rem;
+  }
+  @include bp.respond-below("tablet") {
+    padding: 1.875rem 1.5rem;
+  }
+  @include bp.respond-below("mobile-lg") {
+    padding: 1.5rem 1rem;
+  }
   .content {
     max-width: 420px;
     margin: auto;
@@ -14,39 +24,17 @@
     .avatar-icon {
       margin-bottom: 1.5rem;
     }
-    h3 {
-      font-family: "BSP-Medium";
-      font-size: 1.75rem;
-      line-height: 1.3;
-      text-align: center;
-      margin-bottom: 0.75rem;
-      color: var(--color-text);
-    }
-    p {
-      font-family: "BSP-Regular";
-      font-size: 1rem;
-      line-height: 1.3;
-      text-align: center;
-      margin-bottom: 2rem;
-      color: var(--color-text);
-    }
     .req-btn {
       min-width: 220px;
     }
   }
 }
 
-@media only screen and (max-width: 768px) {
+  @include bp.respond-below("mobile-lg") {
   .new-service-request {
     .content {
       .avatar-icon {
         max-width: 60px;
-      }
-      h3 {
-        font-size: 1.5rem;
-      }
-      p {
-        font-size: 0.875rem;
       }
     }
   }

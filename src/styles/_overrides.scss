@@ -8,3 +8,12 @@
     }
   }
 }
+
+.pageBannerContent{
+  background-color: var(--color-primary) !important;
+  .banner-content{
+    .banner-title, .banner-text{
+      color: var(--color-white) !important;
+    }
+  }
+}

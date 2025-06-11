@@ -7,7 +7,7 @@
 
   <div class="custom-container">
     <app-breadcrumb
-      [showBackButton]="true"
+      [showBackButton]="false"
       customClass="mt-5 h-center"
       [breadcrumbs]="[
         { label: 'Home', url: '/' },
@@ -15,68 +15,41 @@
         { label: 'Bank with us' }
       ]"
     ></app-breadcrumb>
+    <div class="sec-b-space">
+      <app-page-intro
+        [title]="'Shari’ah-compliant Banking for your Business'"
+        [description]="
+          'Experience a combination of centuries of thoughtful economic principles and today’s essential financial services when you apply for our Shari’ah-compliant offerings that take your business seriously.'
+        "
+      ></app-page-intro>
+    </div>
 
-    <app-page-intro
-      [title]="'Shari’ah-compliant Banking for your Business'"
-      [description]="
-        'Experience a combination of centuries of thoughtful economic principles and today’s essential financial services when you apply for our Shari’ah-compliant offerings that take your business seriously.'
-      "
-    ></app-page-intro>
-
-    <div class="sec-b-space pt-5">
-        <div class="container-fluid p-0">
-            <div class="row gy-3">
-                <div class="col-lg-8">
-                    <h3 class="heading-sm mb-2">
-                        WHAT IS SHARI’AH COMPLIANT BANKING?
-                    </h3>
-                    <p class="subtitle-sm">
-                        Shari’ah-compliant banking – based on the economic principles and philosophies of the Shari’ah - is not only for Muslims. Shari’ah-compliant banking is for anyone who wants to do their banking differently.     
-                    </p>
-                </div>
-                <div class="col-lg-4 text-lg-end">
-                    <button type="button" class="primary-btn">tell me more</button>
-                </div>
-            </div>
-        </div>
+    <div class="sec-b-space">
+      <app-content-button
+        [title]="'WHAT IS SHARI\'AH COMPLIANT BANKING?'"
+        [description]="
+          'Shari\'ah-compliant banking – based on the economic principles and philosophies of the Shari\'ah - is not only for Muslims. Shari\'ah-compliant banking is for anyone who wants to do their banking differently.'
+        "
+        [buttonText]="'tell me more'"
+        [buttonLink]="'/'"
+      ></app-content-button>
     </div>
 
     <!-- Get In Touch -->
-<div class="get-in-touch">
-    <div class="mb-4">
-        <h3 class="heading-sm">GET IN TOUCH WITH US</h3>
-        <p class="subtitle-sm">We know you'll enjoy the perks and time-saving benefits of our new Online Banking for Business platform</p>
+    <div class="sec-b-space">
+      <h3 class="heading-sm">GET IN TOUCH WITH US</h3>
+      <p class="subtitle-sm mb-4">
+        We know you'll enjoy the perks and time-saving benefits of our new
+        Online Banking for Business platform
+      </p>
+      <app-contact-card
+        [contactCards]="contactCards"
+        [showGrid]="true"
+      ></app-contact-card>
     </div>
-
-    <div class="container-fluid px-0 pt-4">
-    <div class="row">
-        <div class="col-lg-6 column mb-4 mb-lg-0">
-            <div class="contact-card">
-                <img class="img-fluid" src="assets/images/icons/icn_mail.png" alt="mail icon">
-                <div>
-                    <h4>Click here to view our Personal Shari'ah compliant products</h4>
-                    <p>Explore our Shari’ah-compliant products that are true to the tradition and principles of Shari’ah</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 column">
-            <div class="contact-card">
-                <img class="img-fluid" src="assets/images/icons/icn_call.png" alt="call icon">
-                <div>
-                    <h4>Click here to view the Shari'ah offerings for your business</h4>
-                    <p>View our Shari’ah-compliant Business Banking products that are true to both the principles of innovation and tradition</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-</div>
-
 
     <div class="sec-b-space">
-      <h3 class="heading-sm mb-4">
-        Our Shari'ah offerings for your business
-      </h3>
+      <h3 class="heading-sm mb-4">Our Shari'ah offerings for your business</h3>
       <div *ngIf="isBrowser" class="guidance-swiper-sec">
         <swiper-container
           #guidanceswiperContainerWeb
@@ -85,184 +58,94 @@
         >
           <swiper-slide class="swiperslide">
             <div class="card-grid-container">
-              <div class="inline-image-text-card">
-                <div class="left-image">
-                  <img
-                    class="img-fluid"
-                    src="assets/images/media/bus.jpg"
-                    alt="bus"
-                  />
-                </div>
-                <div class="right-content">
-                  <h4>Shari’ah  Business Current Account</h4>
-                  <div>
-                    <p>
-                      Advance your business and open a Shari’ah Business Current Account today. Get access to everyday banking such as transferring of funds, making of payments and managing debit orders. Explore your benefits and get value for your business.
-                    </p>
-                    <a href="#" class="text-arrow-btn"
-                      ><span>TELL ME MORE</span
-                      ><img
-                        class="img-fluid icon"
-                        src="assets/images/icons/col-icon-right.png"
-                        alt="arrow icon"
-                    /></a>
-                  </div>
-                </div>
-              </div>
-              <div class="inline-image-text-card">
-                <div class="left-image">
-                  <img
-                    class="img-fluid"
-                    src="assets/images/media/bus.jpg"
-                    alt="bus"
-                  />
-                </div>
-                <div class="right-content">
-                  <h4>Commercial Vehicles</h4>
-                  <div>
-                    <p>
-                      Need a delivery van, flat-bed truck or an HCV? We'll give
-                      you great terms on the finance plan you prefer.
-                    </p>
-                    <a href="#" class="text-arrow-btn"
-                      ><span>TELL ME MORE</span
-                      ><img
-                        class="img-fluid icon"
-                        src="assets/images/icons/col-icon-right.png"
-                        alt="arrow icon"
-                    /></a>
-                  </div>
-                </div>
-              </div>
-              <div class="inline-image-text-card">
-                <div class="left-image">
-                  <img
-                    class="img-fluid"
-                    src="assets/images/media/bus.jpg"
-                    alt="bus"
-                  />
-                </div>
-                <div class="right-content">
-                  <h4>Commercial Vehicles</h4>
-                  <div>
-                    <p>
-                      Need a delivery van, flat-bed truck or an HCV? We'll give
-                      you great terms on the finance plan you prefer.
-                    </p>
-                    <a href="#" class="text-arrow-btn"
-                      ><span>TELL ME MORE</span
-                      ><img
-                        class="img-fluid icon"
-                        src="assets/images/icons/col-icon-right.png"
-                        alt="arrow icon"
-                    /></a>
-                  </div>
-                </div>
-              </div>
-              <div class="inline-image-text-card">
-                <div class="left-image">
-                  <img
-                    class="img-fluid"
-                    src="assets/images/media/bus.jpg"
-                    alt="bus"
-                  />
-                </div>
-                <div class="right-content">
-                  <h4>Commercial Vehicles</h4>
-                  <div>
-                    <p>
-                      Need a delivery van, flat-bed truck or an HCV? We'll give
-                      you great terms on the finance plan you prefer.
-                    </p>
-                    <a href="#" class="text-arrow-btn"
-                      ><span>TELL ME MORE</span
-                      ><img
-                        class="img-fluid icon"
-                        src="assets/images/icons/col-icon-right.png"
-                        alt="arrow icon"
-                    /></a>
-                  </div>
-                </div>
-              </div>
+              <app-inline-image-text-card
+                [imageSrc]="'assets/images/media/bus.jpg'"
+                [imageAlt]="'Description of the image'"
+                [title]="'Shari’ah  Business Current Account'"
+                [description]="
+                  'Advance your business and open a Shari’ah Business Current Account today. Get access to everyday banking such as transferring of funds, making of payments and managing debit orders. Explore your benefits and get value for your business.'
+                "
+                [linkText]="'Tell me more'"
+                [linkUrl]="'/'"
+                [verticalView]="false"
+              >
+              </app-inline-image-text-card>
+              <app-inline-image-text-card
+                [imageSrc]="'assets/images/media/bus.jpg'"
+                [imageAlt]="'bus'"
+                [title]="'Commercial Vehicles'"
+                [description]="
+                  'Need a delivery van, flat-bed truck or an HCV? We\'ll give you great terms on the finance plan you prefer.'
+                "
+                [linkText]="'TELL ME MORE'"
+                [linkUrl]="'#'"
+                [verticalView]="false"
+              >
+              </app-inline-image-text-card>
+              <app-inline-image-text-card
+                [imageSrc]="'assets/images/media/bus.jpg'"
+                [imageAlt]="'bus'"
+                [title]="'Commercial Vehicles'"
+                [description]="
+                  'Need a delivery van, flat-bed truck or an HCV? We\'ll give you great terms on the finance plan you prefer.'
+                "
+                [linkText]="'TELL ME MORE'"
+                [linkUrl]="'#'"
+                [verticalView]="false"
+              >
+              </app-inline-image-text-card>
+              <app-inline-image-text-card
+                [imageSrc]="'assets/images/media/bus.jpg'"
+                [imageAlt]="'bus'"
+                [title]="'Commercial Vehicles'"
+                [description]="
+                  'Need a delivery van, flat-bed truck or an HCV? We\'ll give you great terms on the finance plan you prefer.'
+                "
+                [linkText]="'TELL ME MORE'"
+                [linkUrl]="'#'"
+                [verticalView]="false"
+              >
+              </app-inline-image-text-card>
             </div>
           </swiper-slide>
           <swiper-slide class="swiperslide">
             <div class="card-grid-container">
-              <div class="inline-image-text-card">
-                <div class="left-image">
-                  <img
-                    class="img-fluid"
-                    src="assets/images/media/bus.jpg"
-                    alt="bus"
-                  />
-                </div>
-                <div class="right-content">
-                  <h4>Commercial Vehicles</h4>
-                  <div>
-                    <p>
-                      Need a delivery van, flat-bed truck or an HCV? We'll give
-                      you great terms on the finance plan you prefer.
-                    </p>
-                    <a href="#" class="text-arrow-btn"
-                      ><span>TELL ME MORE</span
-                      ><img
-                        class="img-fluid icon"
-                        src="assets/images/icons/col-icon-right.png"
-                        alt="arrow icon"
-                    /></a>
-                  </div>
-                </div>
-              </div>
-              <div class="inline-image-text-card">
-                <div class="left-image">
-                  <img
-                    class="img-fluid"
-                    src="assets/images/media/bus.jpg"
-                    alt="bus"
-                  />
-                </div>
-                <div class="right-content">
-                  <h4>Commercial Vehicles</h4>
-                  <div>
-                    <p>
-                      Need a delivery van, flat-bed truck or an HCV? We'll give
-                      you great terms on the finance plan you prefer.
-                    </p>
-                    <a href="#" class="text-arrow-btn"
-                      ><span>TELL ME MORE</span
-                      ><img
-                        class="img-fluid icon"
-                        src="assets/images/icons/col-icon-right.png"
-                        alt="arrow icon"
-                    /></a>
-                  </div>
-                </div>
-              </div>
-              <div class="inline-image-text-card">
-                <div class="left-image">
-                  <img
-                    class="img-fluid"
-                    src="assets/images/media/bus.jpg"
-                    alt="bus"
-                  />
-                </div>
-                <div class="right-content">
-                  <h4>Commercial Vehicles</h4>
-                  <div>
-                    <p>
-                      Need a delivery van, flat-bed truck or an HCV? We'll give
-                      you great terms on the finance plan you prefer.
-                    </p>
-                    <a href="#" class="text-arrow-btn"
-                      ><span>TELL ME MORE</span
-                      ><img
-                        class="img-fluid icon"
-                        src="assets/images/icons/col-icon-right.png"
-                        alt="arrow icon"
-                    /></a>
-                  </div>
-                </div>
-              </div>
+              <app-inline-image-text-card
+                [imageSrc]="'assets/images/media/bus.jpg'"
+                [imageAlt]="'bus'"
+                [title]="'Commercial Vehicles'"
+                [description]="
+                  'Need a delivery van, flat-bed truck or an HCV? We\'ll give you great terms on the finance plan you prefer.'
+                "
+                [linkText]="'TELL ME MORE'"
+                [linkUrl]="'#'"
+                [verticalView]="false"
+              >
+              </app-inline-image-text-card>
+              <app-inline-image-text-card
+                [imageSrc]="'assets/images/media/bus.jpg'"
+                [imageAlt]="'bus'"
+                [title]="'Commercial Vehicles'"
+                [description]="
+                  'Need a delivery van, flat-bed truck or an HCV? We\'ll give you great terms on the finance plan you prefer.'
+                "
+                [linkText]="'TELL ME MORE'"
+                [linkUrl]="'#'"
+                [verticalView]="false"
+              >
+              </app-inline-image-text-card>
+              <app-inline-image-text-card
+                [imageSrc]="'assets/images/media/bus.jpg'"
+                [imageAlt]="'bus'"
+                [title]="'Commercial Vehicles'"
+                [description]="
+                  'Need a delivery van, flat-bed truck or an HCV? We\'ll give you great terms on the finance plan you prefer.'
+                "
+                [linkText]="'TELL ME MORE'"
+                [linkUrl]="'#'"
+                [verticalView]="false"
+              >
+              </app-inline-image-text-card>
             </div>
           </swiper-slide>
         </swiper-container>
@@ -372,9 +255,7 @@
     </div>
 
     <div class="sec-b-space">
-      <h3 class="heading-sm mb-4">
-        SHARI’AH BANKING COMPLIANCE CERTIFICATES
-      </h3>
+      <h3 class="heading-sm mb-4">SHARI’AH BANKING COMPLIANCE CERTIFICATES</h3>
       <p class="subtitle-sm">Download a pdf of our compliance certificates</p>
       <div class="certificate-card-grid">
         <div class="certificate-card">

@@ -1,0 +1,36 @@
+<div class="contact-cards-container" [ngClass]="customClass">
+  <div [ngClass]="showGrid ? 'container-fluid px-0' : ''">
+    <div [ngClass]="showGrid ? 'row' : 'd-flex flex-wrap'">
+      <div 
+        *ngFor="let card of contactCards" 
+        [ngClass]="showGrid ? 'col-lg-6 column mb-4 mb-lg-0' : 'contact-card-item'"
+      >
+        <div class="contact-card">
+          <img class="img-fluid" [src]="card.icon" [alt]="card.iconAlt">
+          <div>
+            <h4 class="heading-base mb-2">{{ card.title }}</h4>
+            
+            <!-- Email link -->
+            <p class="text-normal" *ngIf="card.linkType === 'email' && card.linkUrl">
+              <a [href]="'mailto:' + card.linkUrl">{{ card.description || card.linkUrl }}</a>
+            </p>
+              <!-- Phone link -->
+            <div *ngIf="card.linkType === 'tel' && card.linkUrl">
+              <p class="text-normal">{{ card.description }} <a [href]="'tel:' + card.linkUrl.split(',')[0].trim()">{{ card.linkUrl.split(',')[0].trim() }}</a><span *ngIf="card.additionalInfo">, {{ card.additionalInfo }}</span></p>
+              <p class="text-normal" *ngIf="card.linkUrl.includes(',')">International: <a [href]="'tel:' + card.linkUrl.split(',')[1].trim()">{{ card.linkUrl.split(',')[1].trim() }}</a></p>
+            </div>
+            
+            <!-- URL link -->
+            <div *ngIf="card.linkType === 'url' && card.linkUrl">
+              <p class="text-normal">{{ card.description }}</p>
+              <a [routerLink]="card.linkUrl" *ngIf="card.linkText">{{ card.linkText }}</a>
+            </div>
+            
+            <!-- Default text -->
+            <p class="text-normal" *ngIf="!card.linkType || !card.linkUrl">{{ card.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

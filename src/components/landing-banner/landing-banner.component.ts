@@ -25,7 +25,7 @@ export class LandingBannerComponent {
     },
     {
       class: 'banner-two',
-      title: 'Access all your business needs in one place',
+      title: 'Access all your ',
       description: 'From small to large businesses, we\'ve got the solutions you need to get your business ahead'
     },
     {

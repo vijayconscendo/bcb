@@ -1,33 +1,3 @@
-.new-sevice-request-sec {
-  padding: 1.875rem 0;
-}
-.action-info {
-  margin-bottom: 1.5rem;
-  .section-title {
-    font-family: "BSP-Regular";
-    font-size: 1.75rem;
-    line-height: 1.3;
-    margin: 0;
-  }
-}
-.back-btn {
-  border: 1px solid #0062e1;
-  border-radius: 30px;
-  margin-bottom: 0.5rem;
-  padding: 3px 14px;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  span {
-    font-family: "BSP-Medium";
-    font-size: 0.875rem;
-    line-height: normal;
-    text-align: center;
-  }
-}
-
 .track-tabs {
   border: 1px solid var(--color-gray-pale);
   overflow: hidden;
@@ -41,6 +11,12 @@
   row-gap: 1rem;
   flex-wrap: nowrap;
   border-bottom: 1px solid var(--color-gray-pale);
+  overflow-x: auto;
+
+  @media screen and (max-width: 680px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .tab-step-button {
   border: none;
@@ -56,8 +32,15 @@
     gap: 0.5rem;
     border: none;
     width: 100%;
+    min-width: 220px;
     max-width: 260px;
     flex: 1;
+    @media screen and (max-width: 1024px) {
+      padding: 1rem;
+    }
+    @media screen and (max-width: 680px) {
+      padding: 1rem 0;
+    }
     .tab-step-info {
       display: flex;
       flex-direction: column;
@@ -87,9 +70,9 @@
       font-size: 0.875rem;
       line-height: 1.3;
       color: var(--color-text);
-        img {
-            display: none;
-        }
+      img {
+        display: none;
+      }
       &.active {
         background-color: var(--color-primary);
         color: var(--color-white);
@@ -97,12 +80,14 @@
     }
   }
   &.active {
-     .num{
-        display: none !important;
-     }
-      .tab-step-icon {
-        img{display: inline-block !important;}
+    .num {
+      display: none !important;
+    }
+    .tab-step-icon {
+      img {
+        display: inline-block !important;
       }
+    }
   }
 }
 
@@ -112,7 +97,16 @@
   height: 1px;
   background: var(--color-gray-pale);
   margin: 0.5rem 0;
+  @media screen and (max-width: 680px) {
+    display: none;
+  }
 }
 .tabcontent {
   padding: 2.5rem;
+  @media screen and (max-width: 1024px) {
+    padding: 1.5rem;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 1rem;
+  }
 }

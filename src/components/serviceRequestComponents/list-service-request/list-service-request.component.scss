@@ -1,7 +1,4 @@
-
-.action-info {
-  margin-bottom: 1.5rem;
-}
+@use "custom-breakpoints" as bp;
 
 .new-service-request {
   border: 1px solid var(--color-gray-pale);
@@ -11,25 +8,21 @@
   display: flex;
   align-items: center;
   margin-bottom: 2.5rem;
+  @include bp.respond-below("sm") {
+    padding: 2rem;
+  }
+  @include bp.respond-below("tablet") {
+    padding: 1.875rem 1.5rem;
+  }
+  @include bp.respond-below("mobile-lg") {
+    padding: 1.5rem 1rem;
+  }
+
   .content {
     max-width: 420px;
     .avatar-icon {
       margin-bottom: 0.5rem;
       width: 24px;
-    }
-    h3 {
-      font-family: "BSP-Medium";
-      font-size: 1.75rem;
-      line-height: 1.3;
-      margin-bottom: 0.75rem;
-      color: var(--color-text);
-    }
-    p {
-      font-family: "BSP-Regular";
-      font-size: 1rem;
-      line-height: 1.3;
-      margin-bottom: 1rem;
-      color: var(--color-gray-light);
     }
     .req-btn {
       min-width: 220px;
@@ -37,16 +30,4 @@
   }
 }
 
-@media (max-width: 768px) {
-  .new-service-request {
-    .content {
-      h3 {
-        font-size: 1.5rem;
-      }
-      p {
-        font-size: 0.875rem;
-      }
-    }
-    padding: 2rem 1.5rem;
-  }
-}
+

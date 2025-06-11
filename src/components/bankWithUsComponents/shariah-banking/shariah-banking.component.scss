@@ -200,39 +200,3 @@
     }
 }
 
-.get-in-touch {
-  margin-bottom: 4.375rem;
-  .contact-card {
-    border: 1px solid var(--color-gray-pale);
-    border-radius: 0.625rem;
-    padding: 2rem 1.5rem 1rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-    height: 100%;
-    background-color: #ffffff;
-    h4 {
-      font-family: "BSP-Regular";
-      font-size: 1.375rem;
-      line-height: 1.5;
-      color: var(--color-text);
-      margin-bottom: 0.25rem;
-    }
-    p {
-      font-family: "BSP-Regular";
-      font-size: 0.875rem;
-      line-height: 1.5;
-      color: var(--color-text);
-      margin-bottom: 0.25rem;
-      a {
-        color: inherit;
-        text-decoration: none;
-        &:hover {
-          text-decoration: underline;
-          text-underline-offset: 4px;
-          color: var(--color-primary);
-        }
-      }
-    }
-  }
-}

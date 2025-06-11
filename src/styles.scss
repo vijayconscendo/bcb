@@ -21,6 +21,9 @@
 .page-bg {
   background-color: var(--page-bg-color);
 }
+.sec-b-space{
+  padding-bottom: 4.375rem;
+}
 
 // ========== [ CUSTOM CONTAINER STYLES ] ==========
 .custom-container{
@@ -33,17 +36,6 @@
 }
 // ========== [ ./CUSTOM CONTAINER STYLES ] ==========
 
-.sec-b-space{
-  padding-bottom: 4.375rem;
-}
 
-.pageBannerContent{
-  background-color: var(--color-primary) !important;
-  .banner-content{
-    .banner-title, .banner-text{
-      color: var(--color-white) !important;
-    }
-  }
-}
 
 
