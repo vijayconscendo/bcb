@@ -40,10 +40,16 @@
       font-size: 1.75rem;
       line-height: 1.3;
       margin-bottom: 0.625rem;
-
-      @include bp.respond-below('mobile-xs') {
-        font-size: 1rem;
+      @include bp.respond-below('sm') {
+        font-size: 1.5rem;
+      }
+      @include bp.respond-below('tablet') {
+        font-family: "BSP-Medium", sans-serif;
+        font-size: 1.25rem;
         margin-bottom: 1.125rem;
+      }
+      @include bp.respond-below("mobile-md") {
+        font-size: 1.125rem;
       }
     }
 
@@ -51,7 +57,7 @@
       font-family: "BSP-Regular", sans-serif;
       font-size: 1rem;
       line-height: 1.3;
-      color: var(--color-gray-medium);
+      color: var(--color-gray-lightest);
       margin-bottom: 1.25rem;
       display: -webkit-box;
       line-clamp: 2;

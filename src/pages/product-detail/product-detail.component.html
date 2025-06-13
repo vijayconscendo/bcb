@@ -2,11 +2,11 @@
   <div class="custom-container">
     <!-- Breadcrumb -->
     <app-breadcrumb
-      [showBackButton]="true"
+      [showBackButton]="false"
       backLink="/"
       customClass="mb-4"
       [breadcrumbs]="[
-        { label: 'Back', url: '/' },
+        { label: 'Home', url: '/' },
         { label: 'Products and Services', url: '/products-and-services' },
         { label: 'Product-detail' }
       ]">
@@ -73,5 +73,16 @@
   </div>
 </div>
 
+<div class="d-flex bg-white justify-content-between align-items-center border-top">
+  <button class="mobile-filter-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSearchSheet" aria-controls="mobileSearchSheet">
+    <img class="img-fluid icn" src="assets/images/icons/icn_search-primary.png" alt="search icon" />
+    <span>Search</span>
+  </button>
+  <button class="mobile-filter-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileFilterSheet" aria-controls="mobileFilterSheet">
+    <img class="img-fluid icn" src="assets/images/icons/icn_filter-primary.png" alt="filter icon" />
+      <span>Filter</span>
+  </button>
+</div>
 <app-bottom-sheet-filters></app-bottom-sheet-filters>
+<app-bottom-sheet-search></app-bottom-sheet-search>
 <app-bottom-sheet-actions></app-bottom-sheet-actions>

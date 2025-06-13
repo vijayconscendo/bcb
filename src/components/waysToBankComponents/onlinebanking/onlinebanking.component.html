@@ -49,7 +49,7 @@
         [itemTemplate]="slideTemplate"
         [breakpoints]="customBreakpoints"
       ></app-dynamic-swiper>
-      <ng-template #slideTemplate let-carddata>
+      <ng-template #slideTemplate let-carddata class="w-100">
         <app-featured-card
           [title]="carddata.title"
           [description]="carddata.description"

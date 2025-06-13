@@ -30,7 +30,8 @@ solutioncards = [
   { title: 'Borrow', image: 'assets/images/icons/borrow-img.png' },
   { title: 'Save & Invest', image: 'assets/images/icons/grow-img.png' },
   { title: 'Insure', image: 'assets/images/icons/insure-img.png' },
-  { title: 'Bank', image: 'assets/images/icons/insure-img.png' },
+  { title: 'Business', image: 'assets/images/icons/insure-img.png' },
+  { title: 'Grow', image: 'assets/images/icons/insure-img.png' },
 ];
 
 solutionOptions: { [key: string]: string[] } = {
@@ -39,13 +40,18 @@ solutionOptions: { [key: string]: string[] } = {
     'Trust accounts',
     'Business and corporate credit cards',
     'Foreign exchange',
-    'Shariah banking'
+    'Shariah banking',
+    'Attorney trust account',
+    'Our cards',
+    'Business current account',
+    'Save and invest',
   ],
   'Borrow': [
     'Business loans',
-    'Overdrafts',
-    'Asset finance',
-    'Trade finance'
+    'Vehicle & asset financing',
+    'Commercial property financing',
+    'Specialised financing',
+    'Loan calculator'
   ],
   'Save & Invest': [
     'Savings accounts',
@@ -54,10 +60,21 @@ solutionOptions: { [key: string]: string[] } = {
     'Retirement plans'
   ],
   'Insure': [
-    'Business insurance',
-    'Employee benefits',
-    'Asset insurance',
-    'Liability insurance'
+    'Your business',
+    'Loans',
+    'Corporate risk',
+    'Your agri business',
+    'Your vehicles'
+  ],
+  'Grow': [
+    'Business investments and savings accounts',
+  ],
+  'Business': [
+    'Workplace solutions',
+    'Fleet management',
+    'Trade Suite',
+    'Specialised',
+    'Industry'
   ]
 };
 
@@ -79,25 +96,41 @@ solutionOptions: { [key: string]: string[] } = {
 routeMap: { [key: string]: string } = {
   // Bank
   'Business bank accounts': '/bank-with-us/business-bank-accounts',
-  'Trust accounts': '/trust-account',
-  'Business and corporate credit cards': '/corporate-credit-cards',
-  'Foreign exchange': '/foreign-exchange',
-  'Shariah banking': '/shariah-banking',
+  'Trust accounts': '/bank-with-us/trust-account',
+  'Business and corporate credit cards': '/bank-with-us/corporate-credit-cards',
+  'Foreign exchange': '/bank-with-us/foreign-exchange',
+  'Shariah banking': '/bank-with-us/shariah-banking',
+  'Attorney trust account' : '/bank-with-us/attorney-trust-account',
+  'Our cards' : '/bank-with-us/our-cards',
+  'Business current account': '/bank-with-us/business-current-account',
+  'Save and invest': '/bank-with-us/save-and-invest',
   // Borrow
-  'Business loans': '/business-loans',
-  'Overdrafts': '/overdrafts',
-  'Asset finance': '/asset-finance',
-  'Trade finance': '/trade-finance',
+  'Business loans': '/borrow-for-your-needs/business-loans',
+  'Vehicle & asset financing': '/borrow-for-your-needs/vehicle-and-asset-finance',
+  'Commercial property financing': '/borrow-for-your-needs/commercial-property-financing',
+  'Specialised financing': '/borrow-for-your-needs/specialised-financing',
+  'Loan calculator': '/borrow-for-your-needs/loan-calculator',
   // Save & Invest
-  'Savings accounts': '/savings-accounts',
-  'Fixed deposits': '/fixed-deposits',
-  'Investment funds': '/investment-funds',
-  'Retirement plans': '/retirement-plans',
+  'Savings accounts': '/saving-and-investment-accounts/savings-accounts',
+  'Fixed deposits': '/saving-and-investment-accounts/fixed-deposits',
+  'Investment funds': '/saving-and-investment-accounts/investment-funds',
+  'Retirement plans': '/saving-and-investment-accounts/retirement-plans',
   // Insure
-  'Business insurance': '/business-insurance',
-  'Employee benefits': '/employee-benefits',
-  'Asset insurance': '/asset-insurance',
-  'Liability insurance': '/liability-insurance'
+  'Your business': '/insure-what-matters/small-business-insurance',
+  'Loans': '/insure-what-matters/owner-loan-protection-plan',
+  'Corporate risk': '/insure-what-matters/corporate-risk-management-and-insurance',
+  'Your agri business': '/insure-what-matters/your-agri-business',
+  'Your vehicles': '/insure-what-matters/your-vehicles',
+  // Business
+  'Workplace solutions': '/business-solutions/workplace-solutions',
+  'Fleet management': '/business-solutions/fleet-management',
+  'Trade Suite': '/business-solutions/trade-suite',
+  'Specialised': '/business-solutions/specialised',
+  'Industry': '/business-solutions/industry',
+  'Merchant Solutions': '/business-solutions/merchant-solutions',
+  // Grow
+  'Business investments and savings accounts': '/grow-your-money/saving-and-investment-accounts/our-accounts',
+
 };
 
 next() {

@@ -5,7 +5,7 @@ import { TooltipDirective } from '../../../../directives/tooltip.directive';
   selector: 'app-resolved',
   imports: [TooltipDirective],
   templateUrl: './resolved.component.html',
-  styleUrl: './resolved.component.scss'
+  styleUrl: '../assigned/assigned.component.scss'
 })
 export class ResolvedComponent {
 

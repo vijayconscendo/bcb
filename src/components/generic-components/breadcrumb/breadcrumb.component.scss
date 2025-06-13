@@ -1,23 +1,48 @@
-.breadCrumb{
-    ul{
-        list-style: none; padding: 0; margin: 0; display: flex; align-items: center; flex-wrap: wrap; row-gap: 0.75rem;
-        li{
-            .route-name{
-                font-family: "BSP-Regular";
-                font-size: 0.875rem;
-                line-height: 1.3;
-                text-decoration: none;
-                color: var(--color-primary);
-            }
-            &:not(:last-child){margin-right: 0.625rem;}
-        }
+@use "custom-breakpoints" as bp;
+
+.breadCrumb {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 0.75rem;
+    @include bp.respond-below("mobile-lg") {
+      row-gap: 0.5rem;
     }
-    &.h-center{
-        ul{
-            justify-content: center;
-            @media screen and (max-width: 768px) {
-                justify-content: flex-start;
-            }
+    li {
+      .route-name {
+        font-family: "BSP-Regular";
+        font-size: 0.875rem;
+        line-height: 1.3;
+        text-decoration: none;
+        color: var(--color-primary);
+        @include bp.respond-below("mobile-lg") {
+          font-size: 0.75rem;
         }
+      }
+      &:not(:last-child) {
+        margin-right: 0.625rem;
+      }
+      .chevron-rt{
+        width: 1.125rem;
+        @include bp.respond-below("sm") {
+          width: 1rem;
+        }
+        @include bp.respond-below("mobile-lg") {
+          width: 0.875rem;
+        }
+      }
     }
+  }
+  &.h-center {
+    ul {
+      justify-content: center;
+      @media screen and (max-width: 768px) {
+        justify-content: flex-start;
+      }
+    }
+  }
 }

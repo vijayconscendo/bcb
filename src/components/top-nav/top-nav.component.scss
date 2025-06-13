@@ -1,12 +1,21 @@
-.top-nav{
-    background-color: #0033AA; padding: 9px 0;
-
+.top-nav {
+  background-color: var(--color-primary-dark);
+  padding: 9px 0;
 }
-.top-nav-container{
-    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+.top-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-.text-title{
-    font-family: "BSP-Regular";font-size: 0.875rem; line-height: normal; margin: 0; color: #FFFFFF;
+.text-title {
+  font-family: "BSP-Regular";
+  font-size: 0.875rem;
+  line-height: normal;
+  margin: 0;
+  color: #ffffff;
+  span {
+    font-family: "BSP-Medium";
+  }
 }
-

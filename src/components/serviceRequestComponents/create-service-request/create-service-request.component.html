@@ -7,9 +7,8 @@
         <div class="create-req-form">
             <h3 class="heading-sm fw-md mb-3">Create a new request</h3>
             <p class="text-normal mb-4">Share your thoughts by sending us a compliment, complaint or query, and easily monitor the status of your request. Your feedback enables us to ensure you have a seamless experience at all times. </p>
-            
             <div class="formgroup">
-                <span class="labeltext">Request type</span>
+                <span class="label-normal">Request type</span>
                 <div class="radio-container">
                     <div class="radio-btn">
                         <input class="radio-input" id="query" type="radio" name="reqtype" />
@@ -26,7 +25,7 @@
                   </div>
             </div>
             <div class="formgroup">
-                <span class="labeltext">Category</span>
+                <span class="label-normal">Category</span>
                 <ng-select
                     [items]="categories"
                     bindLabel="name"
@@ -38,7 +37,7 @@
                 </ng-select>
             </div>
             <div class="formgroup">
-                <span class="labeltext">Sub-Category</span>
+                <span class="label-normal">Sub-Category</span>
                 <ng-select
                     [items]="categories"
                     bindLabel="name"
@@ -50,12 +49,12 @@
                 </ng-select>
             </div>
             <div class="formgroup">
-                <span class="labeltext">Sub-Category</span>
+                <span class="label-normal">Sub-Category</span>
                 <input type="text" class="custom-input" placeholder="Add Subject" />
             </div>
             <div class="formgroup">
-                <span class="labeltext">Sub-Category</span>
-                <textarea class="custom-textarea" placeholder="Enter a detailed description of your request" rows="10"></textarea>
+                <span class="label-normal">Sub-Category</span>
+                <textarea class="custom-textarea" placeholder="Enter a detailed description of your request" rows="8"></textarea>
                 <span class="wordCount">0/120</span>
             </div>
             <a href="#" class="primary-btn req-btn" [routerLink]="['/service-request/failed']">SEND REQUEST</a>

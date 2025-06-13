@@ -1,13 +1,16 @@
+@use "custom-breakpoints" as bp;
 // Shared styles for tab-list components
 .tabs-with-list {
   border: 1px solid var(--color-gray-pale);
   border-radius: 0.75rem;
-  background-color: #ffffff;
+  background-color: var(--color-white);
   overflow: hidden;
   .nav-tabs {
     border-bottom: 1px solid var(--color-gray-pale);
     background-color: transparent;
     padding: 0 1.875rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     .nav-item:not(:last-child) {
       margin-right: 2rem;
     }
@@ -21,6 +24,7 @@
       margin-bottom: 0;
       padding: 1.5rem 0;
       position: relative;
+      white-space: nowrap;
       &.active::after {
         content: "";
         display: block;
@@ -55,7 +59,6 @@
     line-height: 1.5;
     color: var(--color-text);
     margin-bottom: 1.5rem;
-
   }
   .list-with-icon {
     list-style-type: none;
@@ -72,6 +75,9 @@
       position: relative;
       padding-left: 1.625rem;
       margin-bottom: 0.3125rem;
+      @include bp.respond-below("sm") {
+        padding-left: 1rem;
+      }
       &::before {
         content: "";
         display: inline-block;
@@ -82,12 +88,18 @@
         height: 10px;
         border-radius: 50%;
         background: linear-gradient(112.82deg, #ff681d 3.64%, #ffb81d 95.93%);
+        @include bp.respond-below("sm") {
+          width: 6px; height: 6px;
+        }
       }
       p {
         font-family: "BSP-Regular";
         font-size: 1rem;
         line-height: 1.5;
         color: var(--color-text);
+        @include bp.respond-below("sm") {
+          font-size: 0.875rem;
+        }
         a {
           font-family: "BSP-Medium";
           color: var(--color-primary);
@@ -117,6 +129,9 @@
         font-size: 1rem;
         line-height: 1.5;
         margin: 0.5rem 0;
+        @include bp.respond-below("sm") {
+          font-size: 0.875rem;
+        }
         &:hover {
             text-decoration: underline;
             text-underline-offset: 4px;

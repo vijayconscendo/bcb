@@ -7,6 +7,7 @@ import { BottomSheetFiltersComponent } from './bottom-sheet-filters/bottom-sheet
 import { DocumentsComponent } from './documents/documents.component';
 import { TransactionHistoryComponent } from './transaction-history/transaction-history.component';
 import { BreadcrumbComponent } from '../../components/generic-components/breadcrumb/breadcrumb.component';
+import { BottomSheetSearchComponent } from './bottom-sheet-search/bottom-sheet-search.component';
 
 
 @Component({
@@ -18,8 +19,9 @@ import { BreadcrumbComponent } from '../../components/generic-components/breadcr
     BottomSheetActionsComponent,
     BottomSheetFiltersComponent,
     TransactionHistoryComponent,
-    DocumentsComponent
-  ],
+    DocumentsComponent,
+    BottomSheetSearchComponent
+],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss',
 })

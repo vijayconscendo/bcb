@@ -1,11 +1,11 @@
 <div class="cta-sec">
-  <h4>{{ heading }}</h4>
+  <h4 class="heading-sm text-white mb-4">{{ heading }}</h4>
   @if(description){
-    <p>{{ description }}</p>
+    <p class="text-normal text-center text-white">{{ description }}</p>
   }
   @if(buttonLabel){
   <a
-    class="primary-btn button"
+    class="primary-btn-white button"
     [href]="buttonUrl"
     [target]="openInNewTab ? '_blank' : '_self'"
     role="button"

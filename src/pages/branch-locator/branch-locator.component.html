@@ -8,14 +8,14 @@
         />
         <span>Back</span>
       </button>
-      <h3 class="heading-sm fw-md mb-4">Branch locator</h3>
+      <h3 class="heading-sm mb-4">Branch locator</h3>
 
     <div class="container-fluid px-0">
       <div class="row gy-4">
         <div class="col-lg-4">
           <div class="filter-block">
             <div class="formgroup">
-              <span class="labeltext">I'm looking for a</span>
+              <span class="label-normal">I'm looking for a</span>
               <ng-select
                 [items]="typeOptions"
                 [(ngModel)]="selectedType"
@@ -25,7 +25,7 @@
             </div>
 
             <div class="formgroup">
-              <span class="labeltext">Enter your location</span>
+              <span class="label-normal">Enter your location</span>
               <input
                 type="text"
                 class="custom-input"
@@ -35,7 +35,7 @@
             </div>
 
             <div class="formgroup">
-              <span class="labeltext">Filter by</span>
+              <span class="label-normal">Filter by</span>
               <ng-select
                 [items]="filterOptions"
                 [(ngModel)]="selectedFilter"

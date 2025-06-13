@@ -1,251 +1,104 @@
-.form-subtitle{
-    font-family: "BSP-Regular";
-    font-size: 1.5rem;
-    line-height: 1.3;
-    color: var(--color-gray-medium);
-    margin-bottom: 1rem;
-}
-.form-small-title{
-    font-family: "BSP-Regular";
-    font-size: 1.375rem;
-    line-height: 1.3;
-    color: var(--color-gray-light);
-    margin-bottom: 1rem;
-}
-
-  .formgroup {
-    position: relative;
-    padding-bottom: 1.5rem;
-    .labeltext {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-family: "BSP-Medium";
-      font-size: 0.75rem;
-      line-height: 1.3;
-      color: var(--color-gray-medium);
-    }
-  }
-  .custom-input {
-    border: 1px solid var(--color-gray-pale);
-    border-radius: 8px;
-    height: 50px;
-    background-color: #ffffff;
-    font-family: "BSP-Regular";
-    font-size: 1rem;
-    line-height: normal;
-    color: var(--color-text);
-    padding: 0.5rem 1rem;
-    width: 100%;
-  &::placeholder {
-    font-family: "BSP-Regular";
-    font-size: 1rem;
-    line-height: normal;
-    color: var(--color-gray-lightest);
-  }
-  &:focus {
-    outline: none;
-  }
-}
-
-
-
-.checkbox-input {
-    position: absolute;
-    visibility: hidden;
-  }
-  
-  .checkbox {
-    user-select: none;
-    cursor: pointer;
-    padding: 6px 0;
-    border-radius: 6px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    display: flex; align-items: center;
-  }
-  
-  .checkbox:not(:last-child) {
-    margin-right: 6px;
-  }
-  
-  
-  .checkbox span:first-child {
-    position: relative;
-    min-width: 20px;
-    height: 20px;
-    border-radius: 4px;
-    transform: scale(1);
-    border: 2px solid var(--color-gray-lightest);
-    transition: all 0.3s ease;
-    display: flex; align-items: center; justify-content: center;
-  }
-  
-  .checkbox span:first-child .tick {
-    transition: all 0.3s ease;
-    transform: translate3d(0, 0, 0);
-  }
-  
-  .checkbox .device-info {
-    padding: 0 18px;
-  }
-  
-  .checkbox:hover span:first-child {
-    border-color: var(--color-primary);
-  }
-  
-  .checkbox-input:checked + .checkbox span:first-child {
-    background: var(--color-primary);
-    border-color: var(--color-primary);
-  }
-  
-
-.check-text{
-    display: inline-flex; align-items: center; margin-left: 0.5rem; flex-wrap: wrap;
-    div{
-        p{
-            font-family: "BSP-Regular"; font-size: 1rem; color: var(--color-text);margin: 1.5px;
-            &:last-child{margin-bottom: 0;}
-            .link{color: var(--color-primary); text-decoration: none; text-transform: uppercase;font-family: "BSP-Medium";}
-        }
-    }
-}
+@use "custom-breakpoints" as bp;
+@use "tab-list";
 
 .radio-container {
-  box-sizing: border-box;
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  flex-flow: row wrap;
-  padding: 0.25rem 0 0.5rem;
-  margin:1rem 0 2.5rem;
+  .radio-btn:not(:last-child) {
+    margin-right: 2rem;
+  }
 }
 
-.radio-container * {
-  box-sizing: border-box;
-}
-.radio-container{
-  display: flex; row-gap: 1rem;
-}
-.radio-btn{
-  display: inline-flex; align-items: center;
-}
-
-.radio-input {
-  appearance: none;
-  background-color: #ffffff;
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--color-gray-medium);
-  margin: 0;
-  border-radius: 50%;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.radio-input::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  transform: scale(0);
-  transition: 0.3s transform ease-in-out;
-  box-shadow: inset 10px 10px #0051ff;
-}
-
-.radio-input:checked {
-  background: #ffffff;
-  border-color: #0051ff;
-}
-
-.radio-input:checked::before {
-  transform: scale(1);
-}
-
-.radio {
-  cursor: pointer;
-  padding: 6px 12px;
+.form-small-title {
   font-family: "BSP-Regular";
-  font-size: 0.875rem;
-  color: var(--color-gray-medium);
-  line-height: normal;
+  font-size: 1.375rem;
+  line-height: 1.3;
+  color: var(--color-gray-light);
+  margin-bottom: 1rem;
+  @include bp.respond-below("sm") {
+    font-size: 1.25rem;
+  }
+  @include bp.respond-below("xs") {
+    font-size: 1.125rem;
+  }
 }
 
-.radio-btn:not(:last-child) {
-  margin-right: 12px;
-}
-
-.text{
-    font-family: "BSP-Regular"; font-size: 1rem; color: var(--color-text);
-    a{
-        color: var(--color-primary);text-decoration: none;
-        &:hover{text-decoration: underline; text-underline-offset: 0.25rem;}
+.text {
+  font-family: "BSP-Regular";
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+  @include bp.respond-below("sm") {
+    font-size: 0.875rem;
+  }
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 0.25rem;
     }
+  }
 }
-
-.link-btn{
-    font-family: "BSP-Medium"; font-size: 1rem; line-height: normal; color: var(--color-primary); text-decoration: none;
-    border: none; padding: 0; background-color: transparent;
+.link-btn {
+  font-family: "BSP-Medium";
+  font-size: 1rem;
+  line-height: normal;
+  color: var(--color-primary);
+  text-decoration: none;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  @include bp.respond-below("sm") {
+    font-size: 0.875rem;
+  }
 }
-.next-btn{
-    width: 100%; max-width: 300px;
-    margin: 0 auto;
-    display: flex;
+.next-btn {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
 }
-
-  .list-with-icon {
-    list-style-type: none;
-    padding: 0;
-    margin-bottom: 2rem;
-    li {
-      position: relative;
-      padding-left: 1.625rem;
-      margin-bottom: 0.3125rem;
-      &::before {
-        content: "";
-        display: inline-block;
-        position: absolute;
-        left: 0;
-        top: 6px;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: linear-gradient(112.82deg, #ff681d 3.64%, #ffb81d 95.93%);
-      }
-      p {
-        font-family: "BSP-Regular";
-        font-size: 1rem;
-        line-height: 1.5;
-        color: var(--color-text);
-        a {
-          font-family: "BSP-Medium";
-          color: var(--color-primary);
-          text-decoration: none;
-          &:hover {
-            text-decoration: underline;
-            text-underline-offset: 4px;
-          }
+.list-with-icon {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 2rem;
+  li {
+    position: relative;
+    padding-left: 1.625rem;
+    margin-bottom: 0.3125rem;
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(112.82deg, #ff681d 3.64%, #ffb81d 95.93%);
+    }
+    p {
+      font-family: "BSP-Regular";
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--color-text);
+      a {
+        font-family: "BSP-Medium";
+        color: var(--color-primary);
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+          text-underline-offset: 4px;
         }
       }
     }
   }
-
-
-
-
-
-
-
-/* Wizard Container */
+} /* Wizard Container */
 .wizard {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-}
-
-/* Steps Indicator List */
+} /* Steps Indicator List */
 .wizard__steps-indicator {
   list-style: none;
   padding: 0;
@@ -255,11 +108,9 @@
   align-items: center;
   position: relative;
   counter-reset: step-counter;
-}
-
-/* Progress Line Behind Steps */
+} /* Progress Line Behind Steps */
 .wizard__steps-indicator::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 25%;
   left: calc(50% / 4);
@@ -268,9 +119,7 @@
   background-color: #e0e0e0;
   transform: translateY(-50%);
   z-index: 1;
-}
-
-/* Individual Step Item */
+} /* Individual Step Item */
 .step {
   display: flex;
   flex-direction: column;
@@ -284,9 +133,7 @@
   counter-increment: step-counter;
   flex: 1;
   max-width: 150px;
-}
-
-/* Step Circle/Indicator */
+} /* Step Circle/Indicator */
 .step-item {
   width: 32px;
   height: 32px;
@@ -299,51 +146,39 @@
   margin-bottom: 12px;
   position: relative;
   transition: all 0.3s ease;
-}
-
-/* Step Number */
+} /* Step Number */
 .step-item::before {
   content: counter(step-counter);
   font-size: 14px;
   font-weight: 600;
   color: #999;
   transition: color 0.3s ease;
-}
-
-/* Active Step Styles */
+} /* Active Step Styles */
 .step.active {
   color: #007bff;
 }
-
 .step.active .step-item {
   background-color: #007bff;
   border-color: #007bff;
   box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.2);
 }
-
 .step.active .step-item::before {
   color: white;
-}
-
-/* Completed Step Styles */
+} /* Completed Step Styles */
 .step.completed {
   color: #28a745;
 }
-
 .step.completed .step-item {
   background-color: #28a745;
   border-color: #28a745;
 }
-
 .step.completed .step-item::before {
-  content: '✓';
+  content: "✓";
   color: white;
   font-size: 16px;
-}
-
-/* Progress Line for Completed Steps */
+} /* Progress Line for Completed Steps */
 .step.completed::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 16px;
   left: 50%;
@@ -351,30 +186,22 @@
   height: 2px;
   background-color: #28a745;
   z-index: 1;
-}
-
-/* Hide progress line for last step */
+} /* Hide progress line for last step */
 .step:last-child::after {
   display: none;
-}
-
-/* Hover Effects */
+} /* Hover Effects */
 .step:hover {
   cursor: pointer;
 }
-
 .step:not(.active):not(.completed):hover .step-item {
   border-color: #007bff;
   background-color: rgba(0, 123, 255, 0.1);
-}
-
-/* Responsive Design */
+} /* Responsive Design */
 @media (max-width: 768px) {
   .wizard__steps-indicator {
     flex-direction: column;
     gap: 20px;
   }
-  
   .wizard__steps-indicator::before {
     top: 0;
     bottom: 0;
@@ -383,7 +210,6 @@
     height: auto;
     transform: translateX(-50%);
   }
-  
   .step {
     flex-direction: row;
     text-align: left;
@@ -392,31 +218,25 @@
     justify-content: flex-start;
     gap: 15px;
   }
-  
   .step-item {
     margin-bottom: 0;
     flex-shrink: 0;
   }
-  
   .step::after {
     display: none;
   }
 }
-
 @media (max-width: 480px) {
   .wizard {
     padding: 15px;
   }
-  
   .step {
     font-size: 13px;
   }
-  
   .step-item {
     width: 28px;
     height: 28px;
   }
-  
   .step-item::before {
     font-size: 12px;
   }

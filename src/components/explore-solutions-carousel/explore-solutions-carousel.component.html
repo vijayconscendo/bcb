@@ -64,6 +64,20 @@
                       </button>
                     </div>
                   </ng-container> 
+                  <ng-container *ngSwitchCase="'Business'">
+                    <div class="col-lg-4 mb-4" *ngFor="let btn of solutionOptions[selectedSolution?.title] || []">
+                      <button type="button" class="sol-btn" [class.active]="selectedButton === btn" (click)="selectButton(btn)">
+                        {{ btn }}
+                      </button>
+                    </div>
+                  </ng-container> 
+                  <ng-container *ngSwitchCase="'Grow'">
+                    <div class="col-lg-4 mb-4" *ngFor="let btn of solutionOptions[selectedSolution?.title] || []">
+                      <button type="button" class="sol-btn" [class.active]="selectedButton === btn" (click)="selectButton(btn)">
+                        {{ btn }}
+                      </button>
+                    </div>
+                  </ng-container> 
                   <ng-container *ngSwitchDefault>
                     <!-- Default buttons or message -->
                   </ng-container>

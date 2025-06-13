@@ -1,125 +1,146 @@
-    <div class="toolbar-one">
-        <div class="toolbar-header">
-            <div class="toolbar-title">
-                <div class="icon-avatar">
-                    <img
-                        class="img-fluid"
-                        src="assets/images/icons/document-sm.png"
-                        alt="document"
-                    />
-                </div>
-                <div class="title-info">
-                    <h4 class="heading-sm">Save & Invest</h4>
-                </div>
-            </div>
-            <p class="toolbar-title-two">4 products</p>
-        </div>
-        <div class="toolbar-body">
-            <div class="account-bal">
-                <span class="labeltext">Total investment amount</span>
-                <h4>R 589 678.00</h4>
-            </div>
-        </div>
-        <div class="toolbar-footer">
-            <div class="acc-info-wrapper">
-              <div class="acc-info">
-                <span class="labeltext">Account number</span>
-                <h5>0987 6543 3212</h5>
-              </div>
-              <div class="acc-info">
-                <span class="labeltext">Account type</span>
-                <h5>Cheque Account</h5>
-              </div>
-            </div>
-            <div class="btn-group">
-                <button type="button" class="btn-text btn-text" data-bs-toggle="modal" data-bs-target="#viewAccountDetails">
-                    VIEW ACCOUNT DETAILS
-                </button>
-                <button type="button" class="btn-text btn-outline-white">
-                    TRANSFER
-                </button>
-            </div>
-        </div>
+<div class="toolbar-container">
+  <div class="toolbar-header">
+    <div class="toolbar-title">
+      <div class="icon-avatar">
+        <img
+          class="img-fluid"
+          src="assets/images/icons/document-sm.png"
+          alt="document"
+        />
+      </div>
+      <div class="title-info">
+        <h4 class="heading-sm text-white mb-0">Save & Invest</h4>
+      </div>
     </div>
+    <p class="toolbar-title-two">4 products</p>
+  </div>
+  <div class="toolbar-body">
+    <div class="account-bal">
+      <span class="labeltext">Total investment amount</span>
+      <h4>R 589 678.00</h4>
+    </div>
+  </div>
+  <div class="toolbar-footer border-top">
+    <div class="acc-info-wrapper">
+      <div class="acc-info">
+        <span class="labeltext">Account number</span>
+        <h5>0987 6543 3212</h5>
+      </div>
+      <div class="acc-info">
+        <span class="labeltext">Account type</span>
+        <h5>Cheque Account</h5>
+      </div>
+    </div>
+    <div class="btn-group">
+      <button
+        type="button"
+        class="primary-btn"
+        data-bs-toggle="modal"
+        data-bs-target="#viewAccountDetails"
+      >
+        VIEW ACCOUNT DETAILS
+      </button>
+      <button type="button" class="btn-outline-white">TRANSFER</button>
+    </div>
+  </div>
+</div>
 
 <!-- Custom Modal Start -->
-  <div class="modal fade custom-modal view-account-detail-modal" id="viewAccountDetails" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h5 class="modal-title">Account Details</h5>
-          <button type="button" class="btnclose" data-bs-dismiss="modal">
-            <img class="img-fluid" src="assets/images/icons/close-icon-white.png" alt="Close" />
-          </button>
-        </div>
-        <!-- Modal Body -->
-        <div class="modal-body">
-            <div class="modal-ac-details">
-                <h4 class="heading-title">Business Current Account</h4>
-                <div class="container-fluid px-0">
-                    <div class="row">
-                        <div class="col-lg-4 mb-4">
-                            <div class="detail">
-                                <span>Account name</span>
-                                <p>Account Details</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mb-4">
-                            <div class="detail">
-                                <span>Account type</span>
-                                <p>Business Cheque</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mb-4">
-                            <div class="detail">
-                                <span>Account number</span>
-                                <p>0987 6543 2123</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mb-4">
-                            <div class="detail">
-                                <span>Currency</span>
-                                <p>ZAR</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-4"><hr class="m-0"></div>
-                    <div class="row">
-                        <div class="col-lg-4 mb-4">
-                            <div class="detail">
-                                <span>Available Balance</span>
-                                <p>ZAR 456 567.89</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mb-4">
-                            <div class="detail">
-                                <span>Latest Balance</span>
-                                <p>ZAR 234 567.89</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 mb-4">
-                            <div class="detail">
-                                <span>Date account opened</span>
-                                <p>1 June 2021</p>
-                            </div>
-                        </div>
-                    </div>
+<div
+  class="modal fade custom-modal view-account-detail-modal"
+  id="viewAccountDetails"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h5 class="modal-title">Account Details</h5>
+        <button type="button" class="btnclose" data-bs-dismiss="modal">
+          <img
+            class="img-fluid"
+            src="assets/images/icons/close-icon-white.png"
+            alt="Close"
+          />
+        </button>
+      </div>
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <div class="modal-ac-details">
+          <h4 class="heading-title">Business Current Account</h4>
+          <div class="container-fluid px-0">
+            <div class="row">
+              <div class="col-md-4 col-sm-6 mb-4">
+                <div class="detail">
+                  <span>Account name</span>
+                  <p>Account Details</p>
                 </div>
+              </div>
+              <div class="col-md-4 col-sm-6 mb-4">
+                <div class="detail">
+                  <span>Account type</span>
+                  <p>Business Cheque</p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6 mb-4">
+                <div class="detail">
+                  <span>Account number</span>
+                  <p>0987 6543 2123</p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6 mb-4">
+                <div class="detail">
+                  <span>Currency</span>
+                  <p>ZAR</p>
+                </div>
+              </div>
             </div>
+            <div class="mb-4"><hr class="m-0" /></div>
+            <div class="row">
+              <div class="col-md-4 col-sm-6 mb-4">
+                <div class="detail">
+                  <span>Available Balance</span>
+                  <p>ZAR 456 567.89</p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6 mb-4">
+                <div class="detail">
+                  <span>Latest Balance</span>
+                  <p>ZAR 234 567.89</p>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6 mb-4">
+                <div class="detail">
+                  <span>Date account opened</span>
+                  <p>1 June 2021</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <!-- Modal Footer -->
-        <div class="modal-footer-two">
-          <button type="button" class="img-btn">
-            <img class="img-fluid" src="assets/images/icons/icn_mail-primary.png" alt="mail" />
-          </button>
-          <button type="button" class="img-btn">
-            <img class="img-fluid" src="assets/images/icons/icn_print-primary.png" alt="print" />
-          </button>
-        </div>
-
+      <!-- Modal Footer -->
+      <div class="modal-footer-two">
+        <button type="button" class="img-btn">
+          <img
+            class="img-fluid"
+            src="assets/images/icons/icn_mail-primary.png"
+            alt="mail"
+          />
+        </button>
+        <button type="button" class="img-btn">
+          <img
+            class="img-fluid"
+            src="assets/images/icons/icn_print-primary.png"
+            alt="print"
+          />
+        </button>
       </div>
     </div>
   </div>
+</div>
 <!-- Custom Modal End -->

@@ -1,26 +1,16 @@
-.mobile-filter-btn {
-  position: fixed;
-  bottom: 2rem;
-  right: 1.5rem;
-  border: none;
-  background-color: transparent;
-}
 
 .statement-offcanvas {
   background-color: transparent;
   height: auto;
   border: none;
-
   .statement-offcanvas-wrapper {
     background-color: transparent;
     padding: 1rem;
-
     .statement-content {
       .statement-action-group {
         background: #dbdbdb;
         border-radius: 0.75rem;
         overflow: hidden;
-
         .action-group-title {
           font-family: "BSP-Regular";
           font-size: 0.75rem;
@@ -31,7 +21,6 @@
           margin: 0;
           border-bottom: 1px solid #cbcbcb;
         }
-
         .action-btn {
           font-family: "BSP-Regular";
           font-size: 1rem;
@@ -42,17 +31,15 @@
           background-color: transparent;
           border: none;
           border-bottom: 1px solid #cbcbcb;
-
           &:last-child {
             border-bottom: none;
           }
         }
       }
-
       .btn-cancel {
         font-family: "BSP-Regular";
         font-size: 1rem;
-        background-color: #ffffff;
+        background-color: var(--color-white);
         color: var(--color-primary);
         border: none;
         padding: 1rem;
@@ -61,6 +48,10 @@
     }
   }
   .drag-line {
-    height: 3px; width: 80px; background-color: var(--color-white); margin: 0 auto 1rem; border-radius: 0.5rem;
+    height: 3px;
+    width: 80px;
+    background-color: var(--color-white);
+    margin: 0 auto 1rem;
+    border-radius: 0.5rem;
   }
 }

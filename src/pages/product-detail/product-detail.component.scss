@@ -1,11 +1,13 @@
-@use "../../styles/custom-modal";
-@use "../../styles/custom-pagination.scss";
+@use "custom-modal";
+@use "custom-pagination.scss";
+
+@use "custom-breakpoints" as bp;
 
 
 
 // tab-container
 .tab-container {
-  background-color: #ffffff;
+  background-color: var(--color-white);
   border-radius: 0.75rem;
   border: 1px solid var(--color-gray-pale);
   .tabs-list {
@@ -19,6 +21,9 @@
       font-size: 1rem;
       line-height: normal;
       color: var(--color-text);
+      @include bp.respond-below("mobile-lg") {
+        font-size: 0.875rem; padding: 1rem 0.875rem;
+      }
       &.activeTab {
         color: var(--color-primary);
         &::after {
@@ -40,7 +45,25 @@
   justify-content: center; margin: 2.5rem 0;
 }
 
-
-
-
+.mobile-filter-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  .icn {
+    width: 1.5rem;
+  }
+  span {
+    display: inline-block;
+    font-family: "BSP-Medium";
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--color-primary);
+  }
+  &:focus {
+    outline: none;
+  }
+}
 

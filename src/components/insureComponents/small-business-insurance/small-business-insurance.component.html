@@ -10,9 +10,7 @@
       ]"
     ></app-breadcrumb>
 
-    <div class="sec-b-space">
-      <app-page-intro [title]="'Small Business Insurance'" />
-    </div>
+    <app-page-intro [title]="'Small Business Insurance'" />
     <div class="sec-b-space">
       <app-page-promo-card
         [title]="promoCardData.title"
@@ -31,32 +29,34 @@
 
     <div class="sec-b-space">
       <h3 class="heading-sm mb-4">Some of the Benefits</h3>
-      <app-image-heading-card [imageHeaduingCards]="imageHeadingCardsData"></app-image-heading-card>
+      <app-image-heading-card
+        [imageHeaduingCards]="imageHeadingCardsData"
+      ></app-image-heading-card>
     </div>
     <div class="sec-b-space">
-        <app-tab-list></app-tab-list>
+      <app-tab-list></app-tab-list>
     </div>
-<!-- We also offer carousel start -->
+    <!-- We also offer carousel start -->
     <div class="sec-b-space">
-        <h3 class="heading-sm mb-4">We also offer</h3>
-        <app-dynamic-swiper
-            [slides]="featuredCardData"
-            [itemTemplate]="slideTemplate1"
-            [breakpoints]="customBreakpoints1"
-        ></app-dynamic-swiper>
-        <ng-template #slideTemplate1 let-carddata>
-              <app-featured-card
-                [title]="carddata.title" 
-                [description]="carddata.description" 
-                [imageSrc]="carddata.imageSrc" 
-                [imageAlt]="carddata.imageAlt"
-                [buttonLabel]="carddata.buttonLabel"
-                [buttonLink]="carddata.buttonLink"
-                [className]="'wide-card-img w-100'"
-            ></app-featured-card>
-        </ng-template>
+      <h3 class="heading-sm mb-4">We also offer</h3>
+      <app-dynamic-swiper
+        [slides]="featuredCardData"
+        [itemTemplate]="slideTemplate1"
+        [breakpoints]="customBreakpoints1"
+      ></app-dynamic-swiper>
+      <ng-template #slideTemplate1 let-carddata>
+        <app-featured-card
+          [title]="carddata.title"
+          [description]="carddata.description"
+          [imageSrc]="carddata.imageSrc"
+          [imageAlt]="carddata.imageAlt"
+          [buttonLabel]="carddata.buttonLabel"
+          [buttonLink]="carddata.buttonLink"
+          [className]="'wide-card-img w-100'"
+          class="w-100"
+        ></app-featured-card>
+      </ng-template>
     </div>
-<!-- We also offer carousel end -->
-
+    <!-- We also offer carousel end -->
   </div>
 </div>

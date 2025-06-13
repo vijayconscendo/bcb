@@ -1,6 +1,10 @@
+@use "custom-breakpoints" as bp;
 .choose-account {
   padding: 1.5rem;
-  background-color: #ffffff;
+  background-color: var(--color-white);
+  @include bp.respond-below(xs) {
+    padding: 1rem;
+  }
   .info-text {
     display: flex;
     align-items: flex-start;
@@ -34,7 +38,6 @@
 .ngs-floating-label-wrapper {
   position: relative;
   max-width: 627px;
-  margin: 1rem 0 1.375rem;
   z-index: 1;
   ng-select {
     width: 100%;

@@ -1,25 +1,7 @@
-@use '../../styles/custom-breakpoints' as bp;
+@use 'custom-breakpoints' as bp;
 
 .download-app-content{
     max-width: 570px;
-    h2{
-        font-family: "BSP-Regular", sans-serif; font-size: 3rem; line-height: 1.3; margin-bottom: 1rem; color: var(--color-white); 
-        @include bp.respond-below('sm') {
-            font-size: 2.375rem;
-          }
-          @include bp.respond-below('xs') {
-            font-size: 2rem;
-          }
-          @include bp.respond-below('mobile-xs') {
-            font-size: 1.75rem;
-          }
-    }
-    p{
-        font-family: "BSP-Regular", sans-serif; font-size: 1rem; line-height: 1.3; margin-bottom: 1.5rem; color: var(--color-white); max-width: 430px;
-        @include bp.respond-below('mobile-xs') {
-            font-size: 0.875rem; margin-bottom: 1.875rem;
-        }
-    }
 }
 .download-app{
     background-image: url("../../assets/images/background/download-bg.svg");

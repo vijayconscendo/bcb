@@ -1,8 +1,18 @@
+    @use "custom-breakpoints" as bp;
+    @include bp.respond-below("sm") {
+    .stepper-scrollable {
+        overflow-x: auto;
+        padding: 1rem 0;
+    }
+  }
     .stepper {
         display: flex;
         align-items: center;
         justify-content: space-between;
         position: relative;
+        @include bp.respond-below("sm") {
+          min-width: 800px;
+        }
     }
 
     .step {
@@ -97,14 +107,19 @@
     .step-content {
       min-height: 200px; margin-top: 2.5rem;
       padding: 1rem 2.625rem;
+      @include bp.respond-below("sm") {
+        padding: 1rem;
+      }
+      @include bp.respond-below("xs") {
+        padding: 0;
+      }
+
     }
 
 
     /* Responsive design */
     @media (max-width: 768px) {
-      .stepper-container {
-        padding: 20px;
-      }
+
 
       .step-title {
         font-size: 14px;

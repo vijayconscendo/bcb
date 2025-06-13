@@ -1,3 +1,4 @@
+@use "custom-breakpoints" as bp;
 .image-heading-card-container {
   .column{
     display: flex;
@@ -17,8 +18,14 @@
       display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 1rem;
       padding: 4rem 1.5rem 2rem; background-color: #FFFFFF; width: 100%; max-width: 400px;
       flex: 1;
-      @media screen and (max-width: 991.99px) {
+      @include bp.respond-below("tablet") {
         max-width: 100%;
+      }
+      @include bp.respond-below("sm") {
+        padding: 4rem 1.5rem 1.5rem;
+      }
+      @include bp.respond-below("xs") {
+        padding: 4rem 1rem 1.5rem;
       }
       .image-heading-card-title {
         font-family: "BSP-Medium";
@@ -26,6 +33,12 @@
         line-height: 1.5;
         color: var(--color-text);
         margin-bottom: 0.625rem;
+        @include bp.respond-below("sm") {
+          font-size: 1.5rem;
+        }
+        @include bp.respond-below("xs") {
+          font-size: 1.25rem;
+        }
       }
       .image-heading-card-text {
         font-family: "BSP-Regular";

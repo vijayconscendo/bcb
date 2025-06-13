@@ -1,5 +1,6 @@
  <div class="stepper-container">
-      <div class="stepper">
+      <div class="stepper-scrollable">
+              <div class="stepper">
         @for (step of steps; track step.id) {
           <div 
             class="step"
@@ -17,6 +18,7 @@
           </div>
         }
       </div>
+      </div>
 
       <!-- Dynamic Component Container -->
       <div class="step-content">
@@ -26,7 +28,7 @@
       <div class="demo-controls">
         <button 
           (click)="resetStepper()" 
-          class="btn-text border-1 border-light-subtle">
+          class="primary-btn border-1 border-light-subtle">
           Reset
         </button>
         <button 

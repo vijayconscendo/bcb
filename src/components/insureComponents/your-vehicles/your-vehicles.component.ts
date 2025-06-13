@@ -29,8 +29,12 @@ customBreakpoints = {
 }
 
   customBreakpoints1 = {
-    640: {
+  640: {
     slidesPerView: 1,
+  },
+  768: {
+    slidesPerView: 2,
+    spaceBetween: 16,
   },
   1024: {
     slidesPerView: 2,
