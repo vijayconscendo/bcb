@@ -5,7 +5,6 @@
   padding-bottom: 1.5rem;
 }
 
-
 // ========== [INPUT STYLES] ==========
 .custom-input {
   border: 1px solid var(--color-gray-pale);
@@ -53,7 +52,6 @@
 }
 // ========== [./TEXTAREA STYLES] ==========
 
-
 // ========== [RADIO BUTTON STYLES] ==========
 .radio-container * {
   box-sizing: border-box;
@@ -66,10 +64,15 @@
   flex-flow: row wrap;
   row-gap: 1rem;
   padding: 0.25rem 0 0.5rem;
+  .radio-field {
+    display: flex;
+    align-items: center;
+  }
 }
 
-.radio-btn{
-  display: inline-flex; align-items: center;
+.radio-btn {
+  display: inline-flex;
+  align-items: center;
 }
 
 .radio-input {
@@ -118,8 +121,6 @@
   margin-right: 12px;
 }
 // ========== [./RADIO BUTTON STYLES] ==========
-
-
 
 // ========== [CHECKBOX STYLES] ==========
 .checkbox-input {

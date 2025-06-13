@@ -1,0 +1,131 @@
+@use "custom-breakpoints" as bp;
+
+// ----- NGSELECT COMMON STYLES -----
+.account-select{
+    position: relative;
+    .number{
+        position: absolute;
+        top: 70%;
+        left: 0.75rem;
+        transform: translateY(-50%);
+    }
+    .balance{
+        position: absolute;
+        top: 50%;
+        right: 3.5rem;
+        transform: translateY(-50%);
+    }
+}
+.ng-select.select-account-ngs {
+  border:0;border-radius: 0;
+}
+.ng-select.select-account-ngs .ng-select-container  {     
+  height: 75px !important;
+  min-height: 75px !important;
+  border-radius: 0.5rem;
+  border-color: var(--color-gray-pale);
+}
+.ng-select.select-account-ngs .ng-select-container .ng-value-container .ng-input{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ng-select.select-account-ngs .ng-input input {
+  height: 100% !important;
+  line-height: normal !important;
+  font-size: 1rem !important;
+}
+
+
+/* Apply to both the container and dropdown */
+.ng-select.select-account-ngs,
+.ng-select.select-account-ngs .ng-dropdown-panel {
+  font-family: "BSP-Regular", sans-serif;
+  font-size: 1rem;
+  line-height: normal;
+  color: #1A314D;
+}
+
+/* Specific elements that need styling */
+.ng-select.select-account-ngs .ng-select-container {
+  font-family: inherit;
+  color: inherit;
+}
+
+/* Input field */
+.ng-select.select-account-ngs .ng-input input {
+  font-family: "BSP-Regular", sans-serif !important;
+  font-size: 1rem !important;
+  color: #1A314D !important;
+  line-height: normal !important;
+}
+
+/* Dropdown options */
+.ng-select.select-account-ngs .ng-option {
+  font-family: inherit;
+  color: inherit;
+  padding: 10.5px;
+}
+.ng-select.select-account-ngs .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked{
+  background-color: #0062E1 !important;
+  color: #FFFFFF !important;
+  .ng-option-label{
+    font-weight: 400 !important;
+  }
+}
+.ng-select.select-account-ngs .ng-dropdown-panel.ng-select-bottom{
+  border-bottom-right-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0px 2px 3px 0px #00000029;
+}
+.ng-select.select-account-ngs .ng-arrow-wrapper .ng-arrow{
+  border-color: #0062E1 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+}
+
+.ng-select.select-account-ngs.ng-select-opened > .ng-select-container .ng-arrow {
+  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #0062E1;
+}
+
+/* Placeholder text */
+.ng-select.select-account-ngs .ng-placeholder {
+  font-family: "BSP-Regular", sans-serif;
+  color: #1A314D; /* Optional: different color for placeholder */
+}
+
+.ng-select.select-account-ngs .ng-select-container .ng-value-container .ng-placeholder{
+  color: var(--color-gray-lightest) !important;
+}
+
+/* Selected values */
+.ng-select.select-account-ngs .ng-value {
+  font-family: inherit;
+  color: inherit;
+}
+.ng-select.select-account-ngs .ng-select-container .ng-value-container{
+    margin-bottom: 1rem;
+}
+
+/* Clear and dropdown icons */
+.ng-select.select-account-ngs .ng-clear,
+.ng-select.select-account-ngs .ng-arrow {
+  color: #1A314D; /* Match icon color to text */
+}
+
+
+/* Remove focus ring/outline */
+.ng-select.select-account-ngs .ng-select-container:focus,
+.ng-select.select-account-ngs .ng-select-container:focus-within,
+.ng-select.select-account-ngs .ng-select-container:active,
+.ng-select.select-account-ngs.ng-select-focused .ng-select-container {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: var(--color-gray-pale) !important; /* Keep your original border color */
+}
+
+/* Remove border when dropdown is open */
+.ng-select.select-account-ngs.ng-select-opened .ng-select-container {
+  border-color: var(--color-gray-pale) !important; /* Same as your default border */
+  z-index: inherit;
+}
+// ----- NGSELECT COMMON STYLES END -----

@@ -54,6 +54,12 @@
   @include bp.respond-below("tablet") {
     font-size: 1.5rem; // 24px
   }
+    @include bp.respond-below("mobile-lg") {
+    font-size: 1.375rem; // 22px
+  }
+  @include bp.respond-below("mobile-md") {
+    font-size: 1.25rem; // 20px
+  }
 }
 
 .heading-sm {

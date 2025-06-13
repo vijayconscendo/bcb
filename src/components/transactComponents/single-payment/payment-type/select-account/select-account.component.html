@@ -1,0 +1,12 @@
+    <div class="account-select">
+        <ng-select
+            [items]="accounts"
+            bindLabel="name"
+            [(ngModel)]="selectedAccount"
+            placeholder="Select an account"
+            class="select-account-ngs"
+            >
+        </ng-select>
+        <p class="number">{{selectedAccount.number}}</p>
+        <p class="balance">{{selectedAccount.balance}}</p>
+    </div>

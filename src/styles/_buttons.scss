@@ -74,6 +74,14 @@
   }
 }
 
+// Primary Button Light
+.primary-btn-light {
+  @include btn-common;
+  border-color: #F2F6FF;
+  background-color: #F2F6FF;
+  color: var(--color-primary);
+}
+
 // White Outline Text Button
 .btn-outline-white{
   @include btn-common;

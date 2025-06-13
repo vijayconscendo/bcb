@@ -3,7 +3,7 @@
   padding-right: 30px;
 }
 .header {
-  background-color: #00164e; color: #ffffff; position: relative; z-index: 9;
+  background-color: var(--color-primary-deeper); color: var(--color-white); position: relative; z-index: 9;
 }
 .header-content {
   display: flex; justify-content: space-between; align-items: center; padding: 1rem 0;
@@ -25,7 +25,7 @@
 
 .profile-dropdown{
   .dropdown-menu{
-    padding: 0.5rem; background-color: #FFFFFF;
+    padding: 0.5rem; background-color: var(--color-white);
     li{
       a{
         display: block; border-radius: 0.25rem; cursor: pointer;
@@ -66,6 +66,18 @@
   }
 }
 
+.notifier-btn{
+  border: none; background-color: transparent; position: relative;
+  padding: 0; object-fit: cover; margin-right: 1.5rem;
+  .btn-icon{
+    width: 22px; height: 22px; display: inline-block; vertical-align: middle;
+  }
+  .text{
+    position: absolute; top: -8px; right: -8px;padding: 1.5px 8px; border-radius: 0.5rem;
+    background-color: #ff0000; color: #ffffff; font-family: "BSP-Regular"; font-size: 0.75rem; line-height:normal;
+  }
+}
+
 /* Desktop Navigation */
 .desktop-nav {
   // flex-grow: 1;
@@ -75,11 +87,11 @@
 }
 
 .navlinks {
-  display: flex; list-style: none; margin-left: 40px; margin-bottom: 0;
+  display: flex; list-style: none; margin-bottom: 0; padding-left: 2.5rem;
 }
 
 .navitem {
-  position: static; margin-right: 2.5rem;
+  position: static; margin-right: 1.5rem;
 }
 
 .navlink {
@@ -93,6 +105,9 @@
   display: flex;
   align-items: center;
   transition: color 0.3s;
+  @media screen and (max-width: 1365.99px) {
+    font-size: 0.875rem;
+  }
   &:hover {
     .arrow {
       transform: rotate(-180deg);
@@ -128,27 +143,31 @@
 }
 
 .mega-menu-column {
-  flex: 1;
+  flex: 1; max-width: 218px;
   h3 {
-    font-family: "BSP-Medium"; font-size: 1rem; line-height: 1.3; color: #1a314d; margin-bottom: 1rem;
+    font-family: "BSP-Bold"; font-size: 1rem; line-height: 1.3; color: var(--color-black); margin-bottom: 1rem;
   }
 
   ul {
     list-style: none; margin: 0; padding: 0;
     li {
-      margin-bottom: 10px;
+      margin-bottom: 0.5rem;
       a {
         font-family: "BSP-Regular";
         font-size: 0.875rem;
         line-height: 1.3;
-        color: #1a314d;
+        color: var(--color-text);
         text-decoration: none;
         padding: 0.5rem 0;
         display: block;
         transition: color 0.3s;
+        border-radius: 0.25rem;
         &:hover {
-          font-family: "BSP-Medium";
-          color: #0062e1;
+          color: var(--color-primary-dark);
+        }
+        &:active {
+          padding: 0.5rem;
+          background-color: rgba(0, 98, 225, 0.2);
         }
       }
     }
@@ -296,24 +315,13 @@
   background-color: #1a53ff;
 }
 
-/* Responsiveness */
-//   @media (max-width: 767px) {
-//     .header-content {
-//       padding: 10px 0;
-//     }
-//   }
 
-//   @media (min-width: 768px) and (max-width: 991px) {
-//     .nav-link {
-//       font-size: 14px;
-//     }
-//   }
 
 @media (max-width: 1365.99px) {
   .desktop-nav{
-    .navlinks{ margin-left: 1.875rem;
+    .navlinks{ padding-left: 1.875rem;
       .navitem{
-        margin-right: 1.875rem;
+        margin-right: 1.5rem;
       }
       .navlink{
         font-size: 0.875rem;
@@ -322,15 +330,5 @@
   }
 }
 
-@media (max-width: 1200px) {
-  .desktop-nav{
-    .navlinks{ margin-left: 1.25rem;
-      .navitem{
-        margin-right: 1.25rem;
-      }
-      .navlink{
-        font-size: 0.875rem;
-      }
-    }
-  }
-}
+
+

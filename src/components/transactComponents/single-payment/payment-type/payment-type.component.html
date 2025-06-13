@@ -1,0 +1,249 @@
+<div class="payment-form-container">
+  <!-- Payment Type Section -->
+  <div class="payment-type-section mb-4">
+    <h4 class="heading-base fw-md mb-3">Payment type</h4>
+    <div class="radio-container">
+      <div class="radio-field">
+        <input
+          class="radio-input"
+          id="payToAccount"
+          type="radio"
+          name="paymentType"
+          value="account"
+          [(ngModel)]="selectedPaymentType"
+        />
+        <label class="radio" for="payToAccount">Pay to an account</label>
+      </div>
+      <div class="radio-field">
+        <input
+          class="radio-input"
+          id="payToPublic"
+          type="radio"
+          name="paymentType"
+          value="public"
+          [(ngModel)]="selectedPaymentType"
+        />
+        <label class="radio" for="payToPublic">Pay a public recipient</label>
+      </div>
+    </div>
+  </div>
+  <!-- From Account Section -->
+  <div class="from-account-section mb-4">
+    <h4 class="heading-base fw-md mb-3">From account</h4>
+    <p class="label-sm mb-2">Select an account</p>    
+    <div class="formgroup">
+    <app-select-account></app-select-account>
+
+    </div>
+  </div>
+
+  <!-- Form Content -->
+  <div class="row">
+    <!-- Beneficiary Details Column -->
+    <div class="col-lg-6">
+      <h4 class="heading-base fw-md mb-3">Beneficiary details</h4>
+
+      <!-- Select Beneficiary -->
+      <div class="formgroup">
+        <span class="label-sm">Select Beneficiary</span>
+        <ng-select
+          [items]="beneficiaries"
+          bindLabel="name"
+          bindValue="name"
+          [(ngModel)]="selectedBeneficiary"
+          placeholder="Select or enter a beneficiary name"
+          class="custom-ngs"
+        >
+        </ng-select>
+      </div>
+
+      <!-- Beneficiary Name -->
+      <div class="formgroup">
+        <span class="label-sm">Beneficiary name</span>
+        <input
+          type="text"
+          class="custom-input"
+          placeholder="Amy"
+          [(ngModel)]="beneficiaryName"
+        />
+      </div>
+
+      <!-- Beneficiary Surname -->
+      <div class="formgroup">
+        <span class="label-sm">Beneficiary surname</span>
+        <input
+          type="text"
+          class="custom-input"
+          placeholder="Carter"
+          [(ngModel)]="beneficiarySurname"
+        />
+      </div>
+
+      <!-- Beneficiary Cellphone -->
+      <div class="formgroup">
+        <span class="label-sm">Beneficiary cellphone</span>
+        <input
+          type="text"
+          class="custom-input"
+          placeholder="079 504 4280"
+          [(ngModel)]="beneficiaryCell"
+        />
+      </div>
+
+      <!-- Beneficiary Email -->
+      <div class="formgroup">
+        <span class="label-sm">Beneficiary email address</span>
+        <ng-select
+          [items]="['amy.carter@address.com']"
+          [(ngModel)]="beneficiaryEmail"
+          placeholder="amy.carter@address.com"
+          class="custom-ngs"
+          [addTag]="true"
+        >
+        </ng-select>
+      </div>
+
+      <!-- Account Name -->
+      <div class="formgroup">
+        <span class="label-sm">Account name</span>
+        <input
+          type="text"
+          class="custom-input"
+          placeholder="Marks Tyre's Pty Ltd"
+          [(ngModel)]="accountName"
+        />
+      </div>
+
+      <!-- Beneficiary Bank -->
+      <div class="formgroup">
+        <span class="label-sm">Beneficiary bank</span>
+        <ng-select
+          [items]="banks"
+          bindLabel="name"
+          bindValue="name"
+          [(ngModel)]="beneficiaryBank"
+          placeholder="Standard Bank"
+          class="custom-ngs"
+        >
+        </ng-select>
+      </div>
+
+      <!-- Branch Code -->
+      <div class="formgroup">
+        <span class="label-sm">Branch code</span>
+        <input
+          type="text"
+          class="custom-input"
+          placeholder="05001"
+          [(ngModel)]="branchCode"
+        />
+      </div>
+
+      <!-- Account Number -->
+      <div class="formgroup">
+        <span class="label-sm">Account number</span>
+        <input
+          type="text"
+          class="custom-input"
+          placeholder="89101921112922222222"
+          [(ngModel)]="accountNumber"
+        />
+      </div>
+
+      <!-- Save Beneficiary Details -->
+      <div class="checkbox-field">
+        <input
+          class="checkbox-input"
+          id="saveBeneficiary"
+          type="checkbox"
+          [(ngModel)]="saveBeneficiaryDetails"
+        />
+        <label class="checkbox" for="saveBeneficiary">
+          <span>
+            <img
+              class="img-fluid tick"
+              src="assets/images/icons/checkbox-tick.png"
+              alt="checkbox"
+            />
+          </span>
+          <div class="check-text">
+            <div>
+              <p>Save Beneficiary Details</p>
+            </div>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <!-- Payment Details Column -->
+    <div class="col-lg-6">
+      <h4 class="heading-base fw-md mb-3">Payment details</h4>
+
+      <!-- Amount -->
+      <div class="formgroup">
+        <span class="label-sm">Amount</span>
+        <div class="amount-input-wrapper">
+          <ng-select
+            [items]="currencies"
+            bindLabel="name"
+            bindValue="name"
+            [(ngModel)]="selectedCurrency"
+            placeholder="ZAR"
+            class="custom-ngs me-2"
+          >
+          </ng-select>
+          <input
+            type="text"
+            class="custom-input text-end"
+            placeholder="40 000.00"
+            [(ngModel)]="amount"
+          />
+        </div>
+      </div>
+
+      <!-- Beneficiary Reference -->
+      <div class="formgroup">
+        <span class="label-sm">Beneficiary reference</span>
+        <input
+          type="text"
+          class="custom-input"
+          placeholder="New Toolset From Game"
+          [(ngModel)]="beneficiaryReference"
+        />
+      </div>
+
+      <!-- Your Reference -->
+      <div class="formgroup">
+        <span class="label-sm">Your reference</span>
+        <input
+          type="text"
+          class="custom-input"
+          placeholder="New Toolset From Game"
+          [(ngModel)]="yourReference"
+        />
+      </div>
+
+      <!-- Frequency -->
+      <div class="formgroup">
+        <span class="label-sm">Frequency</span>
+        <ng-select
+          [items]="frequencies"
+          bindLabel="name"
+          bindValue="name"
+          [(ngModel)]="frequency"
+          placeholder="Once-off"
+          class="custom-ngs"
+        >
+        </ng-select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="btn-group mt-4">
+    <button class="primary-btn-light" (click)="onClear()">CLEAR</button>
+    <span class="space me-auto"></span>
+    <button class="primary-btn-outline" (click)="onCancel()">CANCEL</button>
+    <button class="primary-btn" (click)="onNext()">NEXT</button>
+  </div>
+</div>

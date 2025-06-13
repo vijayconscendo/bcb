@@ -1,0 +1,118 @@
+<h3 class="heading-sm fw-md mb-4 mb-lg-5">Confirm payment</h3>
+
+<div class="row mb-4 align-items-stretch">
+  <div class="col-sm col-xs-12">
+    <span class="field-label">From</span>
+    <div class="gray-block">
+      <div class="mb-3">
+        <img
+          class="img-fluid"
+          src="assets/images/icons/icn_avatar-account.png"
+          alt="icn_avatar-account"
+        />
+      </div>
+      <span class="field-label">Payment type</span>
+      <p class="field-text-sm">Single payment</p>
+    </div>
+  </div>
+  <div class="col-sm-auto d-flex align-items-center justify-content-center">
+    <img
+      class="img-fluid mt-4"
+      src="assets/images/icons/icn_arrow-forward.png"
+      alt="icn_arrow-forward"
+    />
+  </div>
+  <div class="col-sm col-xs-12">
+    <span class="field-label">To</span>
+    <div class="gray-block">
+      <div class="field-avatar mb-3"><span>AC</span></div>
+      <div>
+        <span class="field-label">Amy Carter</span>
+        <p class="field-text-sm">05001 / 89101921112922222222</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mb-4">
+  <span class="field-label">Your reference</span>
+  <p class="field-text-md fw-bold">ZAR 40,000.00</p>
+</div>
+
+<div class="gray-block mb-4">
+  <span class="field-label-md mb-4">Beneficiary details</span>
+  <div class="row">
+    <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
+      <span class="field-label">Beneficiary name</span>
+      <p class="field-text-sm">New Toolset From Game</p>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
+      <span class="field-label">Beneficiary account number</span>
+      <p class="field-text-sm">1234567890</p>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 mb-4">
+      <span class="field-label">Beneficiary account number</span>
+      <p class="field-text-sm">1234567890</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-sm-6 col-xs-12 mb-4 mb-lg-0">
+      <span class="field-label">Beneficiary name</span>
+      <p class="field-text-sm">New Toolset From Game</p>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 mb-4 mb-lg-0">
+      <span class="field-label">Beneficiary account number</span>
+      <p class="field-text-sm">1234567890</p>
+    </div>
+    <div class="col-md-4 col-sm-6 col-xs-12 mb-4 mb-lg-0">
+      <span class="field-label">Beneficiary account number</span>
+      <p class="field-text-sm">1234567890</p>
+    </div>
+  </div>
+</div>
+
+<div class="mb-4">
+  <span class="field-label">Amount</span>
+  <p class="field-text">New Toolset From Game</p>
+</div>
+
+<div class="pb-4 border-bottom">
+  <span class="field-label">Beneficiary reference</span>
+  <p class="field-text">New Toolset From Game</p>
+</div>
+
+<div class="row pt-4 mb-4">
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <span class="field-label">Payment date</span>
+    <p class="field-text">24-10-2022</p>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <span class="field-label">Frequency</span>
+    <p class="field-text">once-off</p>
+  </div>
+</div>
+
+<div class="checkbox-field mb-5">
+  <input class="checkbox-input" id="selectall" type="checkbox" />
+  <label class="checkbox" for="selectall">
+    <span>
+      <img
+        class="img-fluid tick"
+        src="assets/images/icons/checkbox-tick.png"
+        alt="checkbox"
+      />
+    </span>
+    <div class="check-text">
+      <div>
+        <p>Save Beneficiary Details</p>
+      </div>
+    </div>
+  </label>
+</div>
+
+<div class="btn-group">
+  <button class="primary-btn-light">CLEAR</button>
+  <span class="space me-auto"></span>
+  <button class="primary-btn-outline">EDIT</button>
+  <button class="primary-btn" (click)="onConfirm()">CONFIRM</button>
+</div>

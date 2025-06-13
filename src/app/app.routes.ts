@@ -15,6 +15,7 @@ import { borrowForYourNeeds } from '../pages/borrow-for-your-needs/borrow-for-yo
 import { savingAndInvestRoutes } from '../pages/saving-and-investment-accounts/saving-and-invest-account.routes';
 import { insureWhatMattersRoutes } from '../pages/insure-what-matters/insure-what-matters.routes';
 import { businessSolutionsRoutes } from '../pages/business-solutions/business-solutions.routes';
+import { transactRoutes } from '../pages/transact/transact.routes';
 
 export const routes: Routes = [
     {
@@ -77,6 +78,7 @@ export const routes: Routes = [
             ...savingAndInvestRoutes,
             ...insureWhatMattersRoutes,
             ...businessSolutionsRoutes,
+            ...transactRoutes,
         ]
     },
       // 🔁 Tradesuite Layout Routes

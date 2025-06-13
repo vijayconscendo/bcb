@@ -21,6 +21,20 @@
         <nav class="desktop-nav">
           <ul class="navlinks">
             <li class="navitem" 
+                (mouseenter)="toggleMenu('transact', true)" 
+                (mouseleave)="toggleMenu('transact', false)">
+              <a href="#" class="navlink">Transact <span class="arrow">
+                <img src="assets/images/icons/chevron-down-white.png" alt="arrow-down" class="img-fluid" />
+              </span></a>
+            </li>
+            <li class="navitem" 
+                (mouseenter)="toggleMenu('manage', true)" 
+                (mouseleave)="toggleMenu('manage', false)">
+              <a href="#" class="navlink">Manage <span class="arrow">
+                <img src="assets/images/icons/chevron-down-white.png" alt="arrow-down" class="img-fluid" />
+              </span></a>
+            </li>
+            <li class="navitem" 
                 (mouseenter)="toggleMenu('business', true)" 
                 (mouseleave)="toggleMenu('business', false)">
               <a href="/our-solutions" class="navlink">Business Solutions <span class="arrow">
@@ -66,7 +80,7 @@
           </div>
         </div>
         <div class="user-controls" *ngIf="isDashboard">
-            <div class="profile-dropdown">
+            <div class="profile-dropdown d-none">
               <button *ngIf="firstName" class="profile-btn" id="profileMenuBtn" data-bs-toggle="dropdown" aria-expanded="false">
                 <img class="img-fluid btn-icon" src="assets/images/icons/profile-icon.png" alt="signin-icon"/>
                 <span>{{firstName}}</span>
@@ -76,8 +90,11 @@
                 <li><a class="dropdown-item" routerLink="/profile-selection">Switch Profile</a></li>
               </ul>
             </div>
-
-            <button class="sign-out-btn" [routerLink]="['/']"><!--(click)="onSignOut()" -->
+            <button type="button" class="notifier-btn">
+              <span class="text">15</span>
+              <img class="img-fluid btn-icon" src="assets/images/icons/icn_mail-white.png" alt="mail"/>
+            </button>
+            <button class="primary-btn" [routerLink]="['/']"><!--(click)="onSignOut()" -->
               <img class="img-fluid btn-icon" src="assets/images/icons/lock-icon.png" alt="signin-icon"/>
               <span>SIGN OUT</span>
             </button>
@@ -129,6 +146,37 @@
     </div>
   
     <!-- Full-Width Mega Menus -->
+    <div class="mega-menu" [class.active]="isTransactOpen" (mouseenter)="toggleMenu('transact', true)" (mouseleave)="toggleMenu('transact', false)">
+      <div class="custom-container">
+        <div class="mega-menu-content">
+            <div class="mega-menu-column">
+                <h3>Pay</h3>
+                <ul>
+                  <li><a [routerLink]="'/transact/single-payment'">Single payment</a></li>
+                  <li><a href="#">Multiple payments</a></li>
+                  <li><a href="#">Instant Money</a></li>
+                  <li><a href="#">Bill payments</a></li>
+                  <li><a href="#">Salary payments</a></li>
+                  <li><a href="#">Incoming International payments</a></li>
+                  <li><a href="#">Outgoing International payments</a></li>
+                  <li><a href="#">PayShap</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu-column">
+                <h3>Transfer</h3>
+                <ul>
+                  <li><a href="#">Transfer between accounts</a></li>
+                </ul>
+              </div>
+              <div class="mega-menu-column">
+                <h3>Buy</h3>
+                <ul>
+                  <li><a href="#">Airtime, data bundles & electricity</a></li>
+                </ul>
+              </div>
+        </div>
+      </div>
+    </div>
     <div class="mega-menu" [class.active]="isBusinessSolutionsOpen" (mouseenter)="toggleMenu('business', true)" (mouseleave)="toggleMenu('business', false)">
       <div class="custom-container">
         <div class="mega-menu-content">

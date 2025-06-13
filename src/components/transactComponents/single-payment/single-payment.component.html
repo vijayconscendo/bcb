@@ -1,0 +1,47 @@
+<div class="page-bg py-4">
+<div class="custom-container">
+    <div class="mb-4">
+        <app-breadcrumb
+        [showBackButton]="true"
+        [breadcrumbs]="[
+        { label: 'Dashboard', url: '/dashboard' },
+        { label: 'Transact', url: '/transact' },
+        { label: 'Single payment', url: '/transact/single-payment' },
+        ]"
+    ></app-breadcrumb>
+    </div>
+    <h3 class="heading-md mb-4">Transact - Pay</h3>
+    <div class="title-toolbar mb-4">
+        <div class="icn-avatar">
+            <img class="img-fluid" src="assets/images/icons/savings-icon.png" alt="transaction icon" />
+        </div>
+        <div class="title-toolbar-text">
+            <h3 class="heading-sm fw-md mb-0 text-white">Make single payment</h3>
+        </div>
+    </div>
+    
+    <div class="container-block mb-4">
+        <div class="content-block">
+            <!-- Step 1: Payment Type Form -->
+            <app-payment-type 
+                *ngIf="currentStep === 'payment-type'"
+                (next)="onNext()"
+            ></app-payment-type>
+
+            <!-- Step 2: Confirm Payment -->
+            <app-confirm-payment 
+                *ngIf="currentStep === 'confirm-payment'" 
+                (confirm)="onConfirm()"
+                (back)="onBack()"
+            ></app-confirm-payment>
+
+            <!-- Step 3: Summary -->
+            <app-summery 
+                *ngIf="currentStep === 'summary'"
+                (back)="onBack()"
+            ></app-summery>
+        </div>
+    </div>
+
+</div>
+</div>

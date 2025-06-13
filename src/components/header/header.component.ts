@@ -22,6 +22,7 @@ export class HeaderComponent {
   // isDashboard End
 
 
+  isTransactOpen = false;
   isBusinessSolutionsOpen = false;
   isSelfServiceToolsOpen = false;
   isSupportContactOpen = false;
@@ -109,6 +110,7 @@ export class HeaderComponent {
   }
 
   closeAllMenus() {
+    this.isTransactOpen = false;
     this.isBusinessSolutionsOpen = false;
     this.isSelfServiceToolsOpen = false;
     this.isSupportContactOpen = false;
@@ -121,6 +123,9 @@ export class HeaderComponent {
     
     this.closeAllMenus();
     switch (menu) {
+      case 'transact':
+        this.isTransactOpen = isOpen;
+        break;
       case 'business':
         this.isBusinessSolutionsOpen = isOpen;
         break;
