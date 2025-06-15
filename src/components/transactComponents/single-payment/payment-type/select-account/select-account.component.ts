@@ -10,9 +10,9 @@ import { NgSelectModule } from '@ng-select/ng-select';
   styleUrl: './select-account.component.scss'
 })
 export class SelectAccountComponent {
-
   // Account data
-  selectedAccount: any = { name: 'BUSINESS CURRENT ACCOUNT', number: '000010000053536', balance: 'R1 364 201.24' };
+  selectedAccount: any = null; // Changed from empty string to null for better placeholder handling
+  // any = { name: 'BUSINESS CURRENT ACCOUNT', number: '000010000053536', balance: 'R1 364 201.24' };
   accounts = [
     { name: 'BUSINESS CURRENT ACCOUNT', number: '000010000053536', balance: 'R1 364 201.24' },
     { name: 'BUSINESS SAVINGS ACCOUNT', number: '000010000053537', balance: 'R2 500 000.00' },

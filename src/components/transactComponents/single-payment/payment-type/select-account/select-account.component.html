@@ -1,12 +1,20 @@
-    <div class="account-select">
-        <ng-select
-            [items]="accounts"
-            bindLabel="name"
-            [(ngModel)]="selectedAccount"
-            placeholder="Select an account"
-            class="select-account-ngs"
-            >
-        </ng-select>
-        <p class="number">{{selectedAccount.number}}</p>
-        <p class="balance">{{selectedAccount.balance}}</p>
+<div class="account-select">
+    <ng-select
+        [items]="accounts"
+        bindLabel="name"
+        [(ngModel)]="selectedAccount"
+        placeholder="Select an account" 
+        class="select-account-ngs"
+        >
+    </ng-select>
+    <div *ngIf="selectedAccount; else noAccountSelected" class="account-details">
+        <p class="number"><span class="label-sm">Account number :</span> {{selectedAccount.number}}</p>
+        <p class="balance"><span class="label-sm">Balance :</span> {{selectedAccount.balance}}</p>
     </div>
+    <ng-template #noAccountSelected>
+        <div class="account-details">
+            <p class="number"><span class="label-sm">Account number :</span> &#9734;&#9734;&#9734;&#9734;&#9734;&#9734;</p>
+            <p class="balance"><span class="label-sm">Balance :</span> &#9734;&#9734;&#9734;&#9734;&#9734;&#9734;</p>
+        </div>
+    </ng-template>
+</div>
